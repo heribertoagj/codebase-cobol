@@ -1,0 +1,62 @@
+TABELA GFCT2090 - 09/02/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002968   TICKET-56435
+==========================================================
+
+
+GFCT2090
+GFCT2091
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT2090 N P14 GFCT2090*  RJ:GFCT2091*                               GFCT2090 P14
+               GFCT2091*  DJ:GFCT2090*                               GFCT2090 P14
+                         RJ:GFCT2095 *                              GFCT2090 P14
+               GFCT2095*  DJ:GFCT2091*                               GFCT2090 P14
+                         RJ:GFCT2097*                               GFCT2090 P14
+                         RJ:GFCT2098*                               GFCT2090 P14
+                        GFJ:                                       CMTFN112 P14
+               GFCT2097*  DJ:GFCT2095 *                              GFCT2090 P14
+               GFCT2098 * DJ:GFCT2095 *                              GFCT2090 P14
+                         RJ:GFCT2099*                               GFCT2090 P14
+               GFCT2099*  DJ:GFCT2098 *                              GFCT2090 P14
+                         RJ:GFCT2990*                               GFCT2090 P14
+               GFCT2990*  DJ:GFCT2099*                               GFCT2090 P14
+                         RJ:GFCT2991*                               GFCT2090 P14
+               GFCT2991 * DJ:GFCT2990*                               GFCT2090 P14
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002968   TICKET-56435
+==========================================================
+
+JOB GFCT2090
+   EXEC PGM=GFCT2090 (UTLIZA BOOK I#CLIE20) - AJUSTADO
+      MJ.CLIE.PRP.CADNGERA(i#CLIE20) ==>MJ.CLIE.PRP.CADNGERA.ALFA	(CLIEW01B)
+   EXEC PGM=GFCT2092 (UTLIZA BOOK I#CLIE20) - AJUSTADO
+     MJ.CLIE.PRV.SEGMENTO.DIFZERO	I#CLIETO	MJ.CLIE.PRV.SEGTO.DIFZERAF	CLIEW06B - AJUSTADO
+   EXEC PGM=GFCT2094 (UTLIZA BOOK I#CLIE20 E I#GFCTD0) - AJUSTADO
+   EXEC PGM=GFCT2096 (UTILIZA BOOK I#GFCTD0) - AJUSTADO
+
+JOB GFCT2091
+   EXEC PGM=GFCT2098 (utiliza book I#SCMPSL e I#GFCTD0) - PENDENTE - na hora de compilar pedir para retirar o book SCMP000840 do complexo.
+   EXEC PGM=GFCT2101 (UTILIZA BOOK I#GFCTD0)
+   EXEC PGM=GFCT2102 (UTILIZA BOOK I#GFCTD0)
+   EXEC PGM=GFCT2104  (UTILIZA BOOK I#GFCTD0)
+   EXEC PGM=GFCT2112  (UTILIZA BOOK I#GFCTD0)
+   EXEC PGM=GFCT2099  (UTILIZA BOOK I#GFCTD0)
+
+JOB GFCT2095
+   EXEC PGM=GFCT1585 (UTILIZA TABELA CLIEV004 E GFCTB0I0) - AJUSTADO
+   EXEC PGM=GFCT1200 (utiliza tabela OBJEV000) - AJUSTADO
+   EXEC PGM=GFCT1201 (utiliza tabela OBJEV000)
+
+
+
+
+
+
+
+
+

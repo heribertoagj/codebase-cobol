@@ -1,0 +1,415 @@
+
+Tabela GFCTPEDI - 31012026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002952  TICKET-56438
+==========================================================
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTPEDI N P14 GFCTD001*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTD002*   NAO HA DEPENDENCIAS/RELEASES                         
+                        RSI:GFCTD001 *                                          
+                        RSI:GFCT3910*                                           
+                        RSI:GFCT3910*                                           
+                        RSI:GFCT3910 *                                          
+               GFCTD003*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTD004 *   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTD005 *   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTD006 *   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTD007 *   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTD008 *   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTD009 *   NAO HA DEPENDENCIAS/RELEASES                         
+                        RSI:GFCTD001*                                           
+               GFCTD010 *   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTD011 *   NAO HA DEPENDENCIAS/RELEASES                         
+                        RSI: *GFCTD012                                           
+               GFCTD012 *   NAO HA DEPENDENCIAS/RELEASES                         
+GFCTPEDI N P14 GFCTD012 * RSI:GFCT3540*                          
+                        RSI:GFCT3546 *                         
+               GFCTD013 *   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTD014 *   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTD015 *   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTD016  *  NAO HA DEPENDENCIAS/RELEASES        
+               GFCTD017 *   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTD018 *   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTD019 *   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTD020 *   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTD021 *   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTD022 *   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTD023 *   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTD024 *   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTD025 *   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTD026 *   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTD027 *   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTD028 *   NAO HA DEPENDENCIAS/RELEASES        
+GFCTPEDI N P14 GFCTD029 *   NAO HA DEPENDENCIAS/RELEASES      
+               GFCTD030 *   NAO HA DEPENDENCIAS/RELEASES      
+               GFCTD031 *   NAO HA DEPENDENCIAS/RELEASES      
+               GFCTD032 *   NAO HA DEPENDENCIAS/RELEASES      
+               GFCTD033 *   NAO HA DEPENDENCIAS/RELEASES      
+               GFCTD034 *   NAO HA DEPENDENCIAS/RELEASES      
+               GFCTD035 *   NAO HA DEPENDENCIAS/RELEASES      
+               GFCTD036 *   NAO HA DEPENDENCIAS/RELEASES      
+               GFCTD037 *   NAO HA DEPENDENCIAS/RELEASES      
+               GFCTD038 *   NAO HA DEPENDENCIAS/RELEASES      
+               GFCTD039 *   NAO HA DEPENDENCIAS/RELEASES      
+               GFCTD040 *   NAO HA DEPENDENCIAS/RELEASES      
+               GFCTE001*   NAO HA DEPENDENCIAS/RELEASES      
+               GFCTE002   NAO HA DEPENDENCIAS/RELEASES      
+               GFCTE003   NAO HA DEPENDENCIAS/RELEASES      
+               GFCTE004   NAO HA DEPENDENCIAS/RELEASES      
+               GFCTE005   NAO HA DEPENDENCIAS/RELEASES      
+               GFCTE006   NAO HA DEPENDENCIAS/RELEASES      
+GFCTPEDI N P14 GFCTE007   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTE008   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTE009   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTE010   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTE011   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTE012   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTE013   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTE014   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTE015   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTE016   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTE017   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTE018   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTE019   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTE020   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTE021   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTE022   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTE023   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTE024   NAO HA DEPENDENCIAS/RELEASES       
+GFCTPEDI N P14 GFCTE025   NAO HA DEPENDENCIAS/RELEASES    
+               GFCTE026   NAO HA DEPENDENCIAS/RELEASES    
+               GFCTE027   NAO HA DEPENDENCIAS/RELEASES    
+               GFCTE028   NAO HA DEPENDENCIAS/RELEASES    
+               GFCTE029   NAO HA DEPENDENCIAS/RELEASES    
+               GFCTE030   NAO HA DEPENDENCIAS/RELEASES    
+               GFCTE031   NAO HA DEPENDENCIAS/RELEASES    
+               GFCTE032   NAO HA DEPENDENCIAS/RELEASES    
+               GFCTE033   NAO HA DEPENDENCIAS/RELEASES    
+               GFCTE034   NAO HA DEPENDENCIAS/RELEASES    
+               GFCTE035   NAO HA DEPENDENCIAS/RELEASES    
+               GFCTE036   NAO HA DEPENDENCIAS/RELEASES    
+               GFCTE037   NAO HA DEPENDENCIAS/RELEASES    
+               GFCTE038   NAO HA DEPENDENCIAS/RELEASES    
+               GFCTE039   NAO HA DEPENDENCIAS/RELEASES    
+               GFCTE040*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCTF001   NAO HA DEPENDENCIAS/RELEASES    
+               GFCTF002   NAO HA DEPENDENCIAS/RELEASES    
+GFCTPEDI N P14 GFCTF003   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTF004   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTF005   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTF006   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTF007   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTF008   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTF009   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTF010   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTF011   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTF012   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTF013   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTF014   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTF015   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTF016   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTF017   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTF018   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTF019   NAO HA DEPENDENCIAS/RELEASES       
+               GFCTF020   NAO HA DEPENDENCIAS/RELEASES       
+GFCTPEDI N P14 GFCTF021   NAO HA DEPENDENCIAS/RELEASES         
+               GFCTF022   NAO HA DEPENDENCIAS/RELEASES         
+               GFCTF023   NAO HA DEPENDENCIAS/RELEASES         
+               GFCTF024   NAO HA DEPENDENCIAS/RELEASES         
+               GFCTF025   NAO HA DEPENDENCIAS/RELEASES         
+               GFCTF026   NAO HA DEPENDENCIAS/RELEASES         
+               GFCTF027   NAO HA DEPENDENCIAS/RELEASES         
+               GFCTF028   NAO HA DEPENDENCIAS/RELEASES         
+               GFCTF029   NAO HA DEPENDENCIAS/RELEASES         
+               GFCTF030   NAO HA DEPENDENCIAS/RELEASES         
+               GFCTF031   NAO HA DEPENDENCIAS/RELEASES         
+               GFCTF032   NAO HA DEPENDENCIAS/RELEASES         
+               GFCTF033   NAO HA DEPENDENCIAS/RELEASES         
+               GFCTF034   NAO HA DEPENDENCIAS/RELEASES         
+               GFCTF035   NAO HA DEPENDENCIAS/RELEASES         
+               GFCTF036   NAO HA DEPENDENCIAS/RELEASES         
+               GFCTF037   NAO HA DEPENDENCIAS/RELEASES         
+               GFCTF038   NAO HA DEPENDENCIAS/RELEASES         
+GFCTPEDI N P14 GFCTF039   NAO HA DEPENDENCIAS/RELEASES            
+               GFCTF040   NAO HA DEPENDENCIAS/RELEASES            
+               GFCTG001   NAO HA DEPENDENCIAS/RELEASES            
+               GFCTG002   NAO HA DEPENDENCIAS/RELEASES            
+               GFCTG003   NAO HA DEPENDENCIAS/RELEASES            
+               GFCTG004   NAO HA DEPENDENCIAS/RELEASES            
+               GFCTG005   NAO HA DEPENDENCIAS/RELEASES            
+               GFCTG006   NAO HA DEPENDENCIAS/RELEASES            
+               GFCTG007   NAO HA DEPENDENCIAS/RELEASES            
+               GFCTG008   NAO HA DEPENDENCIAS/RELEASES            
+               GFCTG009   NAO HA DEPENDENCIAS/RELEASES            
+               GFCTG010   NAO HA DEPENDENCIAS/RELEASES            
+               GFCTG011   NAO HA DEPENDENCIAS/RELEASES            
+               GFCTG012   NAO HA DEPENDENCIAS/RELEASES            
+               GFCTG013   NAO HA DEPENDENCIAS/RELEASES            
+               GFCTG014   NAO HA DEPENDENCIAS/RELEASES            
+               GFCTG015   NAO HA DEPENDENCIAS/RELEASES            
+               GFCTG016   NAO HA DEPENDENCIAS/RELEASES            
+GFCTPEDI N P14 GFCTG017   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTG018   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTG019   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTG020   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTG021   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTG022   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTG023   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTG024   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTG025   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTG026   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTG027   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTG028   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTG029   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTG030   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTG031   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTG032   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTG033   NAO HA DEPENDENCIAS/RELEASES        
+               GFCTG034   NAO HA DEPENDENCIAS/RELEASES        
+GFCTPEDI N P14 GFCTG035   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTG036   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTG037   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTG038   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTG039   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTG040 *  NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTQ790*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTQ791*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTX001*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTX002 *  NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTX003*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTX025*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTX070* DED:SBAT0250 MX.ISDB.GFCT.GFCTX070         SBATESPE P11
+                        DED:SBAT0250 MX.ISDB.GFCT.GFCTX070         SBAT0250 P11
+                        GFJ:                                       GFCTMASS P14
+               GFCTX071* DED:SBAT0250 MX.ISDB.GFCT.GFCTX071         SBATESPE P11
+                        DED:SBAT0250 MX.ISDB.GFCT.GFCTX071         SBAT0250 P11
+                         RJ:GFCTMASS *                              GFCTMASS P14
+GFCTPEDI N P14 GFCTX072* DED:SBAT0250 MX.ISDB.GFCT.GFCTX072         SBATESPE P11
+                        DED:SBAT0250 MX.ISDB.GFCT.GFCTX072         SBAT0250 P11
+                         RJ:GFCTMASS                               GFCTMASS P14
+               GFCTX200   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTX980*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5000*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5001*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5015*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5018*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5040*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5045 *   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5060*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5061*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5062 *   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5063*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5064*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5065*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5066*   NAO HA DEPENDENCIAS/RELEASES                         
+GFCTPEDI N P14 GFCT5067*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT5068*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT5145 *   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT5146*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT5190 *   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT5305*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT5340*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT5345*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT5380 *   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT5382*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT5384*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT5390*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT5395*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT5450 *  NAO HA DEPENDENCIAS/RELEASES    
+               GFCT5452 *  NAO HA DEPENDENCIAS/RELEASES    
+               GFCT5454 *  NAO HA DEPENDENCIAS/RELEASES    
+               GFCT5456*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT5458*   NAO HA DEPENDENCIAS/RELEASES    
+GFCTPEDI N P14 GFCT5460*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5462*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5464*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5470*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5510*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5550*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5608*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5610*   NAO HA DEPENDENCIAS/RELEASES                         
+                        GFJ:GFCT5964*                               GFCTPEDI P14
+                        GFJ:GFCT5965*                               GFCTPEDI P14
+               GFCT5800*   NAO HA DEPENDENCIAS/RELEASES                         
+               *GFCT5805*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5810 *   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5815*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5820 *   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5825 *  NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5830 *  NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5831 *  NAO HA DEPENDENCIAS/RELEASES                         
+GFCTPEDI N P14 GFCT5832*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5833*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5834*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5835*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5860*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5924*  RJ:GFCT5925*                               GFCTPEDI P14
+                        GFJ:GFCT5925*                               GFCTPEDI P14
+               GFCT5925*  DJ:GFCT5924 *                              GFCTPEDI P14
+                        DFJ:GFCT5924 *                              GFCTPEDI P14
+               GFCT5960*  RJ:GFCT5961 *                              GFCTPEDI P14
+                        GFJ:GFCT5961 *                              GFCTPEDI P14
+               GFCT5961*  DJ:GFCT5960*                               GFCTPEDI P14
+                        DFJ:GFCT5960*                               GFCTPEDI P14
+               GFCT5964* DFJ:GFCT5610*                               GFCTPEDI P14
+                         RJ:GFCT5965*                               GFCTPEDI P14
+               GFCT5965 * DJ:GFCT5964*                               GFCTPEDI P14
+                        DFJ:GFCT5610 *                              GFCTPEDI P14
+               GFCT5998*   NAO HA DEPENDENCIAS/RELEASES                         
+GFCTPEDI N P14 GFCT5998* DFJ:GFCT0014 *                               GFCT0005 P14
+               GFCT5999* DFJ:GFCT0014*                               GFCT0005 P14
+               GFCT6300*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT7777*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9027*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9028*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9040 *  NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9050*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9051*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9052*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9070*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9071*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9072*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9076*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9077*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9078 *  NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9080*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9081*   NAO HA DEPENDENCIAS/RELEASES                         
+GFCTPEDI N P14 GFCT9200*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT9201*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT9202*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT9203*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT9204*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT9206*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT9207*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT9271*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT9272*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT9273*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT9280 *   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT9281*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT9282*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT9283*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT9284*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT9285*   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT9289 *   NAO HA DEPENDENCIAS/RELEASES    
+               GFCT9290*   NAO HA DEPENDENCIAS/RELEASES    
+GFCTPEDI N P14 GFCT9291 *   NAO HA DEPENDENCIAS/RELEASES                         
+                        GFJ:GFCT9293*                               GFCTPEDI P14
+                        GFJ:GFCT9294*                               GFCTPEDI P14
+               GFCT9292*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9293* DFJ:GFCT9291 *                               GFCTPEDI P14
+                         RJ:GFCT9294*                               GFCTPEDI P14
+               GFCT9294*  DJ:GFCT9293*                              GFCTPEDI P14
+                        DFJ:GFCT9291*                               GFCTPEDI P14
+               GFCT9515*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9516*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9818*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9819*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9820*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9821*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9840*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9841*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9842*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9843*   NAO HA DEPENDENCIAS/RELEASES                         
+GFCTPEDI N P14 GFCT9844*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9845*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9846*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9847*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9848*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9849*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9850*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9851*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9852*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9853*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9854*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9855*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9856*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9857*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9882*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9884*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT9929* DED:SBAT0250 MX.ISDB.GFCT.GFCT9929         SBATESPE P11
+                        DED:SBAT0250 MX.ISDB.GFCT.GFCT9929         SBAT0250 P11
+GFCTPEDI N P14 GFCT9929*  RJ:GFCTMASS                        
+               GFCT9995*   NAO HA DEPENDENCIAS/RELEASES      
+               GFCT9996*   NAO HA DEPENDENCIAS/RELEASES      
+               GFCT9997*   NAO HA DEPENDENCIAS/RELEASES      
+               GFCT9998*   NAO HA DEPENDENCIAS/RELEASES      
+                                                            
+
+
+
+job GFCTD001
+   EXEC PGM=GFCT9208 (não)
+   EXEC PGM=GFCT9209 (não)
+
+job GFCTD002 
+   EXEC PGM=GFCT9208 (não)
+   EXEC PGM=GFCT9209 (não)
+
+job GFCTD003
+   EXEC PGM=GFCT9208 (não)
+   EXEC PGM=GFCT9209 (não)
+
+(vai até o job GFCTD040 chamando os programas GFCT9208 e GFCT9209 )
+
+job GFCTE001 
+   EXEC PGM=GFCT9209 (não)
+(vai até o job GFCTE040 chamando o programa GFCT9209)
+
+JOB GFCTF001  ATÉ GFCTF040
+
+JOB GFCTG001 ATÉ GFCTG040
+
+JOB GFCTQ791 - ANALISAR
+
+JOB GFCTX071 - ANALISAR
+
+
+HERIBA NÃO ESTOU ENTENDENDO NADA DESSA NET, VIM AQUI POR CAUSA DO JOB GFCT5805 que tem um programa que alteramos.. rsrsr
+
+job GFCT5452
+    EXEC PGM=GFCT1105  ==> está sendo tratado nas nets  GFCT1010 / GFCT9400 / GFCTESPE
+
+job GFCT5454    
+   EXEC PGM=GFCT1866(não)
+   EXEC PGM=GFCT1115(não)
+   EXEC PGM=GFCT1112 (não)
+   EXEC PGM=GFCT1125(não)
+   EXEC PGM=GFCT1116 (não)
+   EXEC PGM=GFCT1117(não)
+   EXEC PGM=GFCT1118(não)
+     
+job GFCT5608
+   EXEC PGM=GFCT1688(não)
+   
+job GFCT5805
+   EXEC PGM=GFCT4150(utiliza book I#GFCTIL) - AJUSTADO
+   EXEC PGM=GFCT4155(utiliza book I#GFCTIL) - AJUSTADO
+   EXEC PGM=GFCT4160(utiliza book I#GFCTIL) - AJUSTADO
+
+job GFCT5810
+   EXEC PGM=GFCT4165 (não)
+   EXEC PGM=GFCT4170 (utiliza book I#GFCTIL) - AJUSTADO
+   
+job GFCT5815
+   EXEC PGM=GFCT4175  (utiliza book I#GFCTIL) - AJUSTADO
+   
+job GFCT5820
+   EXEC PGM=GFCT4185  (utiliza book I#GFCTIL) - AJUSTADO
+
+job GFCT5825
+   EXEC PGM=GFCT4180 (não)
+   
+job GFCT5830 - NAO HA IMPACTO
+
+job GFCT5831 - NAO HA IMPACTO
+
+
+job GFCT5832 - NAO HA IMPACTO
+
+job GFCT5833 - NAO HA IMPACTO
+
+job GFCT5834 - NAO HA IMPACTO
+
+  

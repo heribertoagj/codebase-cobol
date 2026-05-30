@@ -1,0 +1,85 @@
+{
+  "name": "Workspace Cobol",
+  "description": "this application to have a target of automatization of the EFIR processing",
+  "version": "1.0.0",
+  "author": {
+    "name": "IBM CORPORATION"
+  },
+  "propertyGroups": [
+    {
+      "name": "cobol-local-files",
+      "language": "cobol",
+      "libraries": [
+        {
+          "name": "syslib",
+          "type": "local",
+          "locations": [
+            "./LIBS/COPYLIB/**",
+            "./LIBS/DCLGEN/**",
+            "./Projetos/**/cpy/**",
+            "./Projetos/**",
+            "./LIBS/**"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "hlasm-local-files",
+      "language": "hlasm",
+      "libraries": [
+        {
+          "name": "syslib",
+          "type": "local",
+          "locations": [
+            "./LIBS/COPYLIB/**",
+            "./LIBS/DCLGEN/**",
+            "./Projetos/**/cpy/**",
+            "./Projetos/**",
+            "./LIBS/**"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "jcl-local-files",
+      "language": "jcl",
+      "libraries": [
+        {
+          "name": "syslib",
+          "type": "local",
+          "locations": [
+            "./LIBS/COPYLIB/**",
+            "./LIBS/DCLGEN/**",
+            "./Projetos/**/cpy/**",
+            "./Projetos/**",
+            "./LIBS/**"
+          ]
+        }
+      ]
+    }
+  ],
+  "profiles": [
+    {
+      "name": "RSE-Mappings",
+      "type": "rseapi",
+      "settings": {
+        "mappings": [
+          {
+            "resource": "**.SAMPLE.COB**",
+            "extension": "cbl",
+            "transfer": "text",
+            "encoding": "IBM-037",
+            "memberMappings": [
+              {
+                "extension": "dat",
+                "transfer": "binary",
+                "resource": "*DAT"
+              }
+            ]
+          }
+        ],
+        "default.encoding": "IBM-037"
+      }
+    }
+  ]
+}

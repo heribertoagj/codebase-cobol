@@ -1,0 +1,332 @@
+Tabela GFCT5200 - 31012026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002960   TICKET-56429
+==========================================================
+
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT5200 N P14 GFCTCARG *  NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT5200*  RJ:GFCT5201*                               GFCT5200 P14
+               GFCT5201 * DJ:GFCT5200*                               GFCT5200 P14
+                         RJ:GFCT5208*                               GFCT5200 P14
+                         RJ:GFCT5202*                               GFCT5200 P14
+                         RJ:GFCT5204*                               GFCT5200 P14
+                         RJ:GFCT5206*                               GFCT5200 P14
+                         RJ:GFCT5210*                               GFCT5200 P14
+                         RJ:GFCT5212*                               GFCT5200 P14
+                         RJ:GFCT5248*                               GFCT5200 P14
+                         RJ:GFCT5244*                               GFCT5200 P14
+                         RJ:GFCT5246*                               GFCT5200 P14
+                         RJ:GFCT5214*                               GFCT5200 P14
+                         RJ:GFCT5242*                               GFCT5200 P14
+               GFCT5202*  DJ:GFCT5201*                               GFCT5200 P14
+                         RJ:GFCT5216 *                              GFCT5200 P14
+               GFCT5204*  DJ:GFCT5201*                               GFCT5200 P14
+                         RJ:GFCT5218 *                              GFCT5200 P14
+GFCT5200 N P14 GFCT5206*  DJ:GFCT5201 *                              GFCT5200 P14
+                         RJ:GFCT5224 *                              GFCT5200 P14
+                         RJ:GFCT5220 *                              GFCT5200 P14
+                         RJ:GFCT5221 *                              GFCT5200 P14
+                         RJ:GFCT5222 *                              GFCT5200 P14
+                         RJ:GFCT5223 *                              GFCT5200 P14
+               GFCT5208 * DJ:GFCT5201*                               GFCT5200 P14
+                         RJ:GFCT5225 *                              GFCT5200 P14
+                         RJ:GFCT5226 *                              GFCT5200 P14
+                         RJ:GFCT5233*                               GFCT5200 P14
+                         RJ:GFCT5230*                               GFCT5200 P14
+                         RJ:GFCT5227*                               GFCT5200 P14
+                         RJ:GFCT5231*                               GFCT5200 P14
+                         RJ:GFCT5228 *                              GFCT5200 P14
+                         RJ:GFCT5229 *                              GFCT5200 P14
+                         RJ:GFCT5232 *                              GFCT5200 P14
+                         RJ:GFCT5234 *                              GFCT5200 P14
+               GFCT5210*  DJ:GFCT5201*                               GFCT5200 P14
+
+GFCT5200 N P14 GFCT5210*  RJ:GFCT5236*                               GFCT5200 P14
+               GFCT5212*  DJ:GFCT5201 *                              GFCT5200 P14
+                         RJ:GFCT5238*                               GFCT5200 P14
+               GFCT5214*  DJ:GFCT5201*                               GFCT5200 P14
+                         RJ:GFCT5240 *                              GFCT5200 P14
+               GFCT5216 * DJ:GFCT5202*                               GFCT5200 P14
+                         RJ:GFCT5256*                               GFCT5200 P14
+               GFCT5218*  DJ:GFCT5204*                               GFCT5200 P14
+                         RJ:GFCT5258*                               GFCT5200 P14
+               GFCT5220 * DJ:GFCT5206 *                              GFCT5200 P14
+                         RJ:GFCT5260*                               GFCT5200 P14
+               GFCT5221*  DJ:GFCT5206*                               GFCT5200 P14
+                         RJ:GFCT5261*                               GFCT5200 P14
+                         RJ:GFCT5282 *                              GFCT5200 P14
+               GFCT5222*  DJ:GFCT5206*                               GFCT5200 P14
+                         RJ:GFCT5282 *                              GFCT5200 P14
+                         RJ:GFCT5262*                               GFCT5200 P14
+               GFCT5223 * DJ:GFCT5206 *                              GFCT5200 P14
+GFCT5200 N P14 GFCT5223*  RJ:GFCT5263 *                              GFCT5200 P14
+                         RJ:GFCT5282 *                              GFCT5200 P14
+               GFCT5224*  DJ:GFCT5206*                               GFCT5200 P14
+                         RJ:GFCT5282*                               GFCT5200 P14
+                         RJ:GFCT5264*                               GFCT5200 P14
+               GFCT5225 * DJ:GFCT5208*                               GFCT5200 P14
+                         RJ:GFCT5265*                               GFCT5200 P14
+                         RJ:GFCT5284 *                              GFCT5200 P14
+               GFCT5226*  DJ:GFCT5208*                               GFCT5200 P14
+                         RJ:GFCT5284 *                              GFCT5200 P14
+                         RJ:GFCT5266*                               GFCT5200 P14
+               GFCT5227 * DJ:GFCT5208 *                              GFCT5200 P14
+                         RJ:GFCT5267*                               GFCT5200 P14
+                         RJ:GFCT5284 *                              GFCT5200 P14
+               GFCT5228*  DJ:GFCT5208*                               GFCT5200 P14
+                         RJ:GFCT5284*                               GFCT5200 P14
+                         RJ:GFCT5268*                               GFCT5200 P14
+               GFCT5229*  DJ:GFCT5208*                               GFCT5200 P14
+GFCT5200 N P14 GFCT5229*  RJ:GFCT5269*                               GFCT5200 P14
+                         RJ:GFCT5284 *                              GFCT5200 P14
+               GFCT5230*  DJ:GFCT5208 *                              GFCT5200 P14
+                         RJ:GFCT5284 *                              GFCT5200 P14
+                         RJ:GFCT5270*                               GFCT5200 P14
+               GFCT5231 * DJ:GFCT5208 *                              GFCT5200 P14
+                         RJ:GFCT5271*                               GFCT5200 P14
+                         RJ:GFCT5284 *                              GFCT5200 P14
+               GFCT5232*  DJ:GFCT5208*                               GFCT5200 P14
+                         RJ:GFCT5284*                               GFCT5200 P14
+                         RJ:GFCT5272*                               GFCT5200 P14
+               GFCT5233 * DJ:GFCT5208*                               GFCT5200 P14
+                         RJ:GFCT5273*                               GFCT5200 P14
+                         RJ:GFCT5284*                               GFCT5200 P14
+               GFCT5234*  DJ:GFCT5208*                               GFCT5200 P14
+                         RJ:GFCT5284 *                              GFCT5200 P14
+                         RJ:GFCT5274*                               GFCT5200 P14
+               GFCT5236*  DJ:GFCT5210 *                              GFCT5200 P14
+GFCT5200 N P14 GFCT5236*  RJ:GFCT5276*                               GFCT5200 P14
+               GFCT5238*  DJ:GFCT5212 *                              GFCT5200 P14
+                         RJ:GFCT5278*                               GFCT5200 P14
+               GFCT5240*  DJ:GFCT5214*                               GFCT5200 P14
+                         RJ:GFCT5280*                               GFCT5200 P14
+               GFCT5242*  DJ:GFCT5201*                               GFCT5200 P14
+                         RJ:GFCT5250 *                              GFCT5200 P14
+               GFCT5244 * DJ:GFCT5201 *                              GFCT5200 P14
+               GFCT5246*  DJ:GFCT5201 *                              GFCT5200 P14
+               GFCT5248*  DJ:GFCT5201 *                              GFCT5200 P14
+               GFCT5250*  DJ:GFCT5242*                               GFCT5200 P14
+                         RJ:GFCT5251*                               GFCT5200 P14
+               GFCT5251 * DJ:GFCT5250*                               GFCT5200 P14
+                         RJ:GFCT5253*                               GFCT5200 P14
+                         RJ:GFCT5254*                               GFCT5200 P14
+                         RJ:GFCT5252 *                              GFCT5200 P14
+               GFCT5252*  DJ:GFCT5251 *                              GFCT5200 P14
+                         RJ:GFCT5298*                               GFCT5200 P14
+GFCT5200 N P14 GFCT5252 * RJ:GFCT5296*                               GFCT5200 P14
+               GFCT5253 * DJ:GFCT5251 *                              GFCT5200 P14
+                         RJ:GFCT5296 *                              GFCT5200 P14
+                         RJ:GFCT5298 *                              GFCT5200 P14
+               GFCT5254*  DJ:GFCT5251*                               GFCT5200 P14
+                         RJ:GFCT5298 *                              GFCT5200 P14
+                         RJ:GFCT5296*                               GFCT5200 P14
+               GFCT5256 * DJ:GFCT5216 *                              GFCT5200 P14
+                         RJ:GFCT5296 *                              GFCT5200 P14
+                         RJ:GFCT5298 *                              GFCT5200 P14
+               GFCT5258*  DJ:GFCT5218 *                              GFCT5200 P14
+                         RJ:GFCT5298*                               GFCT5200 P14
+                         RJ:GFCT5296 *                              GFCT5200 P14
+               GFCT5260*  DJ:GFCT5220*                               GFCT5200 P14
+                         RJ:GFCT5296 *                              GFCT5200 P14
+                         RJ:GFCT5298 *                              GFCT5200 P14
+               GFCT5261 * DJ:GFCT5221*                               GFCT5200 P14
+                         RJ:GFCT5296*                               GFCT5200 P14
+GFCT5200 N P14 GFCT5261 * RJ:GFCT5298*                               GFCT5200 P14
+               GFCT5262*  DJ:GFCT5222*                               GFCT5200 P14
+                         RJ:GFCT5296*                               GFCT5200 P14
+                         RJ:GFCT5298 *                              GFCT5200 P14
+               GFCT5263 * DJ:GFCT5223*                               GFCT5200 P14
+                         RJ:GFCT5296*                               GFCT5200 P14
+                         RJ:GFCT5298 *                              GFCT5200 P14
+               GFCT5264 * DJ:GFCT5224*                               GFCT5200 P14
+                         RJ:GFCT5296*                               GFCT5200 P14
+                         RJ:GFCT5298*                               GFCT5200 P14
+               GFCT5265*  DJ:GFCT5225*                               GFCT5200 P14
+                         RJ:GFCT5296 *                              GFCT5200 P14
+                         RJ:GFCT5298*                               GFCT5200 P14
+               GFCT5266*  DJ:GFCT5226*                               GFCT5200 P14
+                         RJ:GFCT5298 *                              GFCT5200 P14
+                         RJ:GFCT5296*                               GFCT5200 P14
+               GFCT5267*  DJ:GFCT5227*                               GFCT5200 P14
+                         RJ:GFCT5298 *                              GFCT5200 P14
+GFCT5200 N P14 GFCT5267*  RJ:GFCT5296*                               GFCT5200 P14
+               GFCT5268*  DJ:GFCT5228*                               GFCT5200 P14
+                         RJ:GFCT5296*                               GFCT5200 P14
+                         RJ:GFCT5298 *                              GFCT5200 P14
+               GFCT5269*  DJ:GFCT5229*                               GFCT5200 P14
+                         RJ:GFCT5298 *                              GFCT5200 P14
+                         RJ:GFCT5296 *                              GFCT5200 P14
+               GFCT5270*  DJ:GFCT5230 *                              GFCT5200 P14
+                         RJ:GFCT5296*                               GFCT5200 P14
+                         RJ:GFCT5298 *                              GFCT5200 P14
+               GFCT5271 * DJ:GFCT5231*                               GFCT5200 P14
+                         RJ:GFCT5298*                               GFCT5200 P14
+                         RJ:GFCT5296 *                              GFCT5200 P14
+               GFCT5272*  DJ:GFCT5232*                               GFCT5200 P14
+                         RJ:GFCT5298*                               GFCT5200 P14
+                         RJ:GFCT5296*                               GFCT5200 P14
+               GFCT5273*  DJ:GFCT5233*                               GFCT5200 P14
+                         RJ:GFCT5298*                               GFCT5200 P14
+GFCT5200 N P14 GFCT5273*  RJ:GFCT5296*                              GFCT5200 P14
+               GFCT5274*  DJ:GFCT5234*                               GFCT5200 P14
+                         RJ:GFCT5298 *                              GFCT5200 P14
+                         RJ:GFCT5296*                               GFCT5200 P14
+               GFCT5276*  DJ:GFCT5236*                               GFCT5200 P14
+                         RJ:GFCT5296 *                              GFCT5200 P14
+                         RJ:GFCT5298  *                             GFCT5200 P14
+               GFCT5278*  DJ:GFCT5238 *                              GFCT5200 P14
+                         RJ:GFCT5298*                               GFCT5200 P14
+                         RJ:GFCT5296 *                              GFCT5200 P14
+               GFCT5280*  DJ:GFCT5240*                               GFCT5200 P14
+                         RJ:GFCT5296*                               GFCT5200 P14
+                         RJ:GFCT5298*                               GFCT5200 P14
+               GFCT5282 * DJ:GFCT5221*                               GFCT5200 P14
+                         DJ:GFCT5224*                               GFCT5200 P14
+                         DJ:GFCT5222*                               GFCT5200 P14
+                         DJ:GFCT5223*                               GFCT5200 P14
+                         RJ:GFCT5296 *                              GFCT5200 P14
+GFCT5200 N P14 GFCT5282 * RJ:CMODV000                               CMODV000 P11
+               GFCT5284*  DJ:GFCT5228 *                              GFCT5200 P14
+                         DJ:GFCT5225 *                              GFCT5200 P14
+                         DJ:GFCT5227*                               GFCT5200 P14
+                         DJ:GFCT5230 *                              GFCT5200 P14
+                         DJ:GFCT5231 *                              GFCT5200 P14
+                         DJ:GFCT5232 *                              GFCT5200 P14
+                         DJ:GFCT5229 *                              GFCT5200 P14
+                         DJ:GFCT5226 *                              GFCT5200 P14
+                         DJ:GFCT5233*                               GFCT5200 P14
+                         DJ:GFCT5234 *                              GFCT5200 P14
+                         RJ:GFCT5296 *                              GFCT5200 P14
+               GFCT5296*  DJ:GFCT5276*                               GFCT5200 P14
+                         DJ:GFCT5256*                               GFCT5200 P14
+                         DJ:GFCT5253*                               GFCT5200 P14
+                         DJ:GFCT5254*                               GFCT5200 P14
+                         DJ:GFCT5278*                               GFCT5200 P14
+                         DJ:GFCT5258*                               GFCT5200 P14
+GFCT5200 N P14 GFCT5296*  DJ:GFCT5284 *                              GFCT5200 P14
+                         DJ:GFCT5280*                               GFCT5200 P14
+                         DJ:GFCT5252 *                              GFCT5200 P14
+                         DJ:GFCT5282*                               GFCT5200 P14
+                         DJ:GFCT5274*                               GFCT5200 P14
+                         DJ:GFCT5273 *                              GFCT5200 P14
+                         DJ:GFCT5267*                               GFCT5200 P14
+                         DJ:GFCT5269 *                              GFCT5200 P14
+                         DJ:GFCT5266*                               GFCT5200 P14
+                         DJ:GFCT5260 *                              GFCT5200 P14
+                         DJ:GFCT5261*                               GFCT5200 P14
+                         DJ:GFCT5272 *                              GFCT5200 P14
+                         DJ:GFCT5271*                               GFCT5200 P14
+                         DJ:GFCT5262 *                              GFCT5200 P14
+                         DJ:GFCT5265*                               GFCT5200 P14
+                         DJ:GFCT5268 *                              GFCT5200 P14
+                         DJ:GFCT5263*                               GFCT5200 P14
+                         DJ:GFCT5270*                               GFCT5200 P14
+GFCT5200 N P14 GFCT5296*  DJ:GFCT5264 *                              GFCT5200 P14
+                         RJ:GFCT5297                               GFCT5200 P14
+               GFCT5297  DJ:GFCT5296*                               GFCT5200 P14
+               GFCT5298*  DJ:GFCT5278*                               GFCT5200 P14
+                         DJ:GFCT5252 *                              GFCT5200 P14
+                         DJ:GFCT5258*                               GFCT5200 P14
+                         DJ:GFCT5274*                               GFCT5200 P14
+                         DJ:GFCT5276 *                              GFCT5200 P14
+                         DJ:GFCT5280 *                              GFCT5200 P14
+                         DJ:GFCT5253*                               GFCT5200 P14
+                         DJ:GFCT5260 *                              GFCT5200 P14
+                         DJ:GFCT5266*                               GFCT5200 P14
+                         DJ:GFCT5261 *                              GFCT5200 P14
+                         DJ:GFCT5264*                               GFCT5200 P14
+                         DJ:GFCT5262*                               GFCT5200 P14
+                         DJ:GFCT5265 *                              GFCT5200 P14
+                         DJ:GFCT5263 *                              GFCT5200 P14
+                         DJ:GFCT5270*                               GFCT5200 P14
+GFCT5200 N P14 GFCT5298*  DJ:GFCT5271*                               GFCT5200 P14
+                         DJ:GFCT5267*                               GFCT5200 P14
+                         DJ:GFCT5272*                               GFCT5200 P14
+                         DJ:GFCT5268 *                              GFCT5200 P14
+                         DJ:GFCT5269 *                              GFCT5200 P14
+                         DJ:GFCT5256 *                              GFCT5200 P14
+                         DJ:GFCT5254 *                              GFCT5200 P14
+                         DJ:GFCT5273*                               GFCT5200 P14
+                         RJ:GFCT5299                               GFCT5200 P14
+               GFCT5299  DJ:GFCT5298*                               GFCT5200 P14
+                                                                               
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002960   TICKET-56429
+==========================================================
+
+job GFCT5208 - NAO HA IMPACTO
+
+job GFCT5216 - NAO HA IMPACTO
+   EXEC PGM=GFCT1805 (não) - NAO HA IMPACTO
+   
+job GFCT5218 - NAO HA IMPACTO
+   EXEC PGM=GFCT1814 (não) - NAO HA IMPACTO
+
+job GFCT5224 - NAO HA IMPACTO
+   EXEC PGM=GFCT1816(não) - NAO HA IMPACTO
+
+job GFCT5220 - NAO HA IMPACTO
+   EXEC PGM=GFCT1816(não) - NAO HA IMPACTO
+
+job GFCT5221 - NAO HA IMPACTO
+   EXEC PGM=GFCT1816(não) - NAO HA IMPACTO
+
+job GFCT5222 - NAO HA IMPACTO
+   EXEC PGM=GFCT1816(não) - NAO HA IMPACTO
+
+job GFCT5225 - NAO HA IMPACTO
+  EXEC PGM=GFCT1817(não) - NAO HA IMPACTO
+
+job GFCT5226 - NAO HA IMPACTO
+  EXEC PGM=GFCT1817(não) - NAO HA IMPACTO
+
+job GFCT5233 - NAO HA IMPACTO
+  EXEC PGM=GFCT1817(não) - NAO HA IMPACTO
+
+job GFCT5230 - NAO HA IMPACTO
+   EXEC PGM=GFCT1817(não) - NAO HA IMPACTO
+
+job GFCT5227 - NAO HA IMPACTO
+   EXEC PGM=GFCT1817(não) - NAO HA IMPACTO
+
+job GFCT5231 - NAO HA IMPACTO
+   EXEC PGM=GFCT1817(não) - NAO HA IMPACTO
+
+job GFCT5228 - NAO HA IMPACTO
+   EXEC PGM=GFCT1817(não) - NAO HA IMPACTO
+
+job GFCT5229 - NAO HA IMPACTO
+   EXEC PGM=GFCT1817(não) - NAO HA IMPACTO
+
+job GFCT5232 - NAO HA IMPACTO
+   EXEC PGM=GFCT1817(não) - NAO HA IMPACTO
+
+job GFCT5234 - NAO HA IMPACTO
+   EXEC PGM=GFCT1817(não) - NAO HA IMPACTO
+
+job GFCT5236 - NAO HA IMPACTO
+   EXEC PGM=GFCT1818(não) - NAO HA IMPACTO
+
+job GFCT5238 - NAO HA IMPACTO
+   EXEC PGM=GFCT1819(não) - NAO HA IMPACTO
+
+job GFCT5240 - NAO HA IMPACTO
+   EXEC PGM=GFCT1820(não) - NAO HA IMPACTO
+
+job GFCT5282 - NAO HA IMPACTO
+   EXEC PGM=GFCT1826 - tem cgc - AJUSTADO
+
+job GFCT5223 - NAO HA IMPACTO
+   EXEC PGM=GFCT1816(não) - NAO HA IMPACTO
+
+job GFCT5284 - NAO HA IMPACTO
+   EXEC PGM=GFCT1825 - tem cgc - AJUSTADO
+
+JOB GFCT5250 - NAO HA IMPACTO
+   EXEC PGM=GFCT1821 (NAO) - NAO HA IMPACTO
+
+JOB GFCT5252 - (UTILIZA TABELA GFCTB0L5) - AJUSTADO
+

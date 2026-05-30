@@ -1,0 +1,26 @@
+//GFCTC012 JOB 'GFCT,4220,PR14','D115848',MSGCLASS=Z,SCHENV=BATCH
+//JOBLIB   DD DSN=MX.BIBGERAL,DISP=SHR
+//         DD DSN=SYS1.CEE.SCEERUN,DISP=SHR
+//STEP1    EXEC SORTD
+//*
+//* ***    ------------------------------------------------------------
+//* ***    SELECIONA MOVIMENTO PARA BATIMENTO COM CADASTRO
+//* ***    DE TARIFAS PARCELADAS
+//* ***    BASE BOOK I#GFCTVA (265 BYTES)
+//* ***    UM REGISTRO POR CHAVE (SUM FIELDS= NONE) - TARIFA/DATA
+//* ***    APENAS REGISTROS COM VALOR LIQ. <> ZEROS
+//* ***    ------------------------------------------------------------
+//*
+//SORTIN   DD DSN=MX.GFCT.MSSCALCM(0),
+//       DISP=SHR
+//SORTOUT  DD DSN=MX.GFCT.PARCTARI(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=DISCO,
+//       SPACE=(TRK,(001000,0200),RLSE),
+//       DCB=(MX.A,LRECL=0265,RECFM=FB)
+//SYSIN    DD *
+  INCLUDE COND=(76,6,PD,GT,0)
+  SORT FIELDS=(23,3,A,122,4,A,119,2,A,116,2,A),FORMAT=BI
+  SUM FIELDS=NONE
+  END
+//*

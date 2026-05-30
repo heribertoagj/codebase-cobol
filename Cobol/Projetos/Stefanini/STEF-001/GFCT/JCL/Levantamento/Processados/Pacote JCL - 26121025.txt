@@ -1,0 +1,116 @@
+Heriberto...
+
+Esses são os pacotes batchs que vamos usar para esses programas abaixo.
+Por favor se for desenvolver novos.. jogar na contngencia e no pacote quente. Passar no Hexavision
+
+Se for fazer recomp.. no pacote 3014.
+Por favor se puder me retornar nesse mesmo documento somente me informando a situação, pacote de cada um seria mais fácil para eu atualizar a planilha.
+
+
+
+Book Batch   GFCT003002
+contingencia books Batch GFCT003004
+
+Batch quente 2 GFCT003022  TICKET-69005 
+contingencia 2  Batch GFCT003023
+
+Recomp com CNPJ   GFCT003014  TICKET-68461
+
+
+
+=============================================
+NET GFCT1010
+JOB GFCT1625 / Resp: Necessário ajuste LRECL Arquivos
+   PGM=GFCT1890  - Ajustado 	Resp: Necessário ajustar LRECL dos Arquivos por conta da alteração do book I#GFCTVA
+   PGM=GFCT1119  - Ajustado 	Resp: Necessário ajustar LRECL dos Arquivos por conta da alteração do book I#GFCTVA
+   
+job  GFCT1155 / Resp: Necessário ajuste LRECL Arquivos
+   PGM= GFCT1183 - (RECOMP) ok 	Resp: Não utiliza CNPJ e book I#GFCTVA esta no FD. Necessário apenas RECOMP
+
+job GFCT1540 / Resp: Necessário ajuste LRECL Arquivos
+   PGM= GFCT1630 (Ajustado) - ver hexavision Resp: Necessário ajustar LRECL dos Arquivos por conta da alteração do book I#GFCTVA
+
+
+job GFCT1404 / Resp: Necessário ajuste LRECL Arquivos
+   pgm = GFCT1650 (RECOMP) - ver hexavision
+
+job GFCT1406 / Resp: Necessário ajuste LRECL Arquivos
+   PGM=GFCT1652 (RECOMP)
+
+job GFCTx406 / Resp: Necessário ajuste LRECL Arquivos
+   PGM=GFCT1652 (recomp)
+
+JOB GFCT1410 / Resp: Necessário ajuste LRECL Arquivos
+   PGM=GFCT1654  (recomp)
+
+JOB GFCT1426 / Resp: Necessário ajuste LRECL Arquivos
+   PGM=GFCT1658 (RECOMP)
+
+JOB GFCTX425 / Resp: Necessário ajuste LRECL Arquivos
+    PGM=GFCT1658 (RECOMP)
+
+JOB GFCTX426 / Resp: Necessário ajuste LRECL Arquivos
+    PGM=GFCT1658 (RECOMP)
+
+JOB GFCT1416 / Resp: Necessário ajuste LRECL Arquivos
+    PGM=GFCT1660 (Ajustado)
+    PGM=GFCT1662 (Ajustado)
+
+JOB GFCT1428 / Resp: Necessário ajuste LRECL Arquivos
+    PGM=GFCT1660 (Ajustado)
+    PGM=GFCT1662 (Ajustado)
+
+JOB GFCTX427 / Resp: Necessário ajuste LRECL Arquivos
+    PGM=GFCT1660(RECOMP)
+    PGM=GFCT1662
+
+JOB GFCTX428 / Resp: Necessário ajuste LRECL Arquivos
+    PGM=GFCT1660(RECOMP)
+    PGM=GFCT1662
+
+
+================================================================
+
+job GFCT2246 - NAO HA AJUSTE
+   PGM GFCT1128 (Ajustado) - PACOTE - GFCT003022  TICKET-69005 
+
+ ================================================= 
+JOB GFCT0586  - NAO HA AJUSTE
+      PGM GFCT1151 (RECOMP) - UTILIZA BOOK GFCTWAAQ - verificar se tem ajuste ou colocar no pacote recomp
+
+    BOOK GFCTWAAQ - pacotes GFCT003002 / GFCT003004(contin)
+
+PROGRAMAS QUE UTILIZAM O BOOK
+
+job GFCT0586  - NAO HA AJUSTE
+    STEP1  PGM = GFCT1151 (RECOMP)   - UTILIZA BOOK GFCTWAAQ - verificar se tem ajuste ou colocar no pacote recomp
+    STEP4  PGM = GFCT1153 (Ajustado) - UTILIZA BOOK GFCTWAAQ- verificar se tem ajuste ou colocar no pacote recomp
+    STEP7  PGM = GFCT1155 (Ajustado) - UTILIZA BOOK GFCTWAAQ- verificar se tem ajuste ou colocar no pacote recomp
+
+JOB GFCT0588  - NAO HA AJUSTE
+   STEP3  PGM = GFCT1156 (Ajustado) - UTILIZA BOOK GFCTWAAQ- verificar se tem ajuste ou colocar no pacote recomp
+   STEP6  PGM = GFCT1157 (Ajustado) - UTILIZA BOOK GFCTWAAQ- verificar se tem ajuste ou colocar no pacote recomp
+
+==================================================
+JOB GFCT0570  - NAO HA AJUSTE
+   STEP1    EXEC PGM=GFCT1152 (RECOMP) - BOOK GFCTWAAQ / I#GFCTMW - verificar se tem ajuste ou colocar no pacote recomp
+   STEP3    EXEC PGM=GFCT1154 (RECOMP) - BOOK GFCTWAAQ- verificar se tem ajuste ou colocar no pacote recomp
+
+job GFCT0518 - NAO HA AJUSTE
+    pgm GFCT1180 (RECOMP) - utiliza book I#GFCTMW -  - verificar se tem ajuste ou colocar no pacote recomp
+
+job GFCT0521 - NAO HA AJUSTE
+    pgm GFCT1181 (RECOMP) - utiliza book I#GFCTMW -  - verificar se tem ajuste ou colocar no pacote recomp
+
+job GFCT0520 - NAO HA AJUSTE
+    pgm GFCT1182 (RECOMP) - utiliza book I#GFCTMW -  - verificar se tem ajuste ou colocar no pacote recomp
+
+job GFCT0523 - NAO HA AJUSTE
+    pgm GFCT1185 (RECOMP) - utiliza book I#GFCTMW -verificar se tem ajuste ou colocar no pacote recomp
+
+job GFCT0516 - NAO HA AJUSTE
+    pgm GFCT1188 (RECOMP) - utiliza book I#GFCTMW - verificar se tem ajuste ou colocar no pacote recomp
+
+não achei nenhum job chamando.
+pgm GFCT9988 - utiliza book I#GFCTMW - verificar se tem ajuste ou colocar no pacote recomp
+

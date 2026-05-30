@@ -1,0 +1,28 @@
+TABELA GFCTN380 - 09/02/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002944   TICKET-52719
+==========================================================
+
+
+
+==================================================================================
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTN380 N P14 GFCTN380* RSI:GFCTA327*                                           
+                         RJ:GFCTN386*                               GFCTN380 P14
+                         RJ:GFCTN382*                               GFCTN380 P14
+                         RJ:GFCTN388*                               GFCTN380 P14
+                         RJ:GFCTN384                               GFCTN380 P14
+                                                                               
+=================================================================================
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002944   TICKET-52719
+==========================================================
+
+job GFCTN380 - NAO HA IMPACTO
+   EXEC PGM=GFCT2607 (UTILIZA BOOK GFCTWAEX) - AJUSTADO
+
+ 

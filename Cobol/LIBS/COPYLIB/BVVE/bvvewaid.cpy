@@ -1,0 +1,41 @@
+      *****************************************************************
+      ****            HXHX - INICIO DO BOOK DFHAID                 ****
+      ****            COPIA DA DFHAID PARA PASSAR NO HEXA          ****
+      *****************************************************************
+000100 01    DFHAID.
+000200****************************************************************
+001100   02  DFHNULL   PIC  X  VALUE IS LOW-VALUE.
+001600   02  DFHENTER  PIC  X  VALUE IS QUOTE.
+001700   02  DFHCLEAR  PIC  X  VALUE IS '_'.
+001800   02  DFHCLRP   PIC  X  VALUE IS '|'.
+001900   02  DFHPEN    PIC  X  VALUE IS '='.
+002000   02  DFHOPID   PIC  X  VALUE IS 'W'.
+002100   02  DFHMSRE   PIC  X  VALUE IS 'X'.
+002200   02  DFHSTRF   PIC  X  VALUE IS 'H'.
+002300   02  DFHTRIG   PIC  X  VALUE IS '"'.
+002400   02  DFHPA1    PIC  X  VALUE IS '%'.
+002500   02  DFHPA2    PIC  X  VALUE IS '>'.
+002600   02  DFHPA3    PIC  X  VALUE IS ','.
+002700   02  DFHPF1    PIC  X  VALUE IS '1'.
+002800   02  DFHPF2    PIC  X  VALUE IS '2'.
+002900   02  DFHPF3    PIC  X  VALUE IS '3'.
+003000   02  DFHPF4    PIC  X  VALUE IS '4'.
+003100   02  DFHPF5    PIC  X  VALUE IS '5'.
+003200   02  DFHPF6    PIC  X  VALUE IS '6'.
+003300   02  DFHPF7    PIC  X  VALUE IS '7'.
+003400   02  DFHPF8    PIC  X  VALUE IS '8'.
+003500   02  DFHPF9    PIC  X  VALUE IS '9'.
+003600   02  DFHPF10   PIC  X  VALUE IS ':'.
+003700   02  DFHPF11   PIC  X  VALUE IS '#'.
+003800   02  DFHPF12   PIC  X  VALUE IS '@'.
+003900   02  DFHPF13   PIC  X  VALUE IS 'A'.
+004000   02  DFHPF14   PIC  X  VALUE IS 'B'.
+004100   02  DFHPF15   PIC  X  VALUE IS 'C'.
+004200   02  DFHPF16   PIC  X  VALUE IS 'D'.
+004300   02  DFHPF17   PIC  X  VALUE IS 'E'.
+004400   02  DFHPF18   PIC  X  VALUE IS 'F'.
+004500   02  DFHPF19   PIC  X  VALUE IS 'G'.
+004600   02  DFHPF20   PIC  X  VALUE IS 'H'.
+004700   02  DFHPF21   PIC  X  VALUE IS 'I'.
+006100   02  DFHPF23   PIC  X  VALUE IS '.'.
+006200   02  DFHPF24   PIC  X  VALUE IS '<'.

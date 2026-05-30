@@ -1,0 +1,1 @@
+Aplicar as correções do prompt no programa GFCT7500 da pasta Projetos/Stefanini/STEF-001/GFCT/ (localizar subpasta Adesao se existir)

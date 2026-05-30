@@ -1,0 +1,88 @@
+      ******************************************************************
+      * DCLGEN TABLE(DB2PRD.TRCBVL_OPER_CONS_CIPAG)                    *
+      *        LIBRARY(AD.DB2.DCLGEN(BVVEB09D))                        *
+      *        ACTION(REPLACE)                                         *
+      *        LANGUAGE(COBOL)                                         *
+      *        STRUCTURE(BVVEB09D)                                     *
+      *        APOST                                                   *
+      *        LABEL(YES)                                              *
+      * ... IS THE DCLGEN COMMAND THAT MADE THE FOLLOWING STATEMENTS   *
+      ******************************************************************
+           EXEC SQL DECLARE DB2PRD.TRCBVL_OPER_CONS_CIPAG TABLE
+           ( NCONS_OPER_CIPAG               DECIMAL(9, 0) NOT NULL,
+             NRCBVL_OPER_CIPAG              DECIMAL(9, 0) NOT NULL,
+             CBCO                           DECIMAL(3, 0) NOT NULL,
+             CAG_BCRIA                      DECIMAL(5, 0) NOT NULL,
+             CCTA_BCRIA_CLI                 DECIMAL(13, 0) NOT NULL,
+             CTPO_VISAO_BANDE               DECIMAL(3, 0) NOT NULL,
+             CBANDE_VISAO                   DECIMAL(3, 0) NOT NULL,
+             CCRDRA_ESTBL_COML              DECIMAL(4, 0),
+             CCNPJ_TTLAR_RCBVL              DECIMAL(9, 0) NOT NULL,
+             CFLIAL_TTLAR_RCBVL             DECIMAL(4, 0) NOT NULL,
+             CCTRL_CNPJ_RCBVL               DECIMAL(2, 0) NOT NULL,
+             CCNPJ_USUAR_FNAL               DECIMAL(9, 0) NOT NULL,
+             CFLIAL_USUAR_RCDOR             DECIMAL(4, 0) NOT NULL,
+             CCTRL_CNPJ_USUAR               DECIMAL(2, 0) NOT NULL,
+             DVCTO_UND_RCBVL                DATE NOT NULL,
+             VUND_RCBVL_UTLZD               DECIMAL(17, 2) NOT NULL,
+             CCNPJ_TTLAR_RCBVL_ST           CHAR(9) NOT NULL,
+             CFLIAL_TTLAR_RCBVL_ST          CHAR(4) NOT NULL,
+             CCTRL_CNPJ_RCBVL_ST            DECIMAL(2, 0) NOT NULL,
+             CCNPJ_USUAR_FNAL_ST            CHAR(9) NOT NULL,
+             CFLIAL_USUAR_RCDOR_ST          CHAR(4) NOT NULL,
+             CCTRL_CNPJ_USUAR_ST            DECIMAL(2, 0) NOT NULL
+           ) END-EXEC.
+      ******************************************************************
+      * COBOL DECLARATION FOR TABLE DB2PRD.TRCBVL_OPER_CONS_CIPAG      *
+      ******************************************************************
+       01  BVVEB09D.
+      *    *************************************************************
+           10 NCONS-OPER-CIPAG     PIC S9(9)V USAGE COMP-3.
+      *    *************************************************************
+           10 NRCBVL-OPER-CIPAG    PIC S9(9)V USAGE COMP-3.
+      *    *************************************************************
+           10 CBCO                 PIC S9(3)V USAGE COMP-3.
+      *    *************************************************************
+           10 CAG-BCRIA            PIC S9(5)V USAGE COMP-3.
+      *    *************************************************************
+           10 CCTA-BCRIA-CLI       PIC S9(13)V USAGE COMP-3.
+      *    *************************************************************
+           10 CTPO-VISAO-BANDE     PIC S9(3)V USAGE COMP-3.
+      *    *************************************************************
+           10 CBANDE-VISAO         PIC S9(3)V USAGE COMP-3.
+      *    *************************************************************
+           10 CCRDRA-ESTBL-COML    PIC S9(4)V USAGE COMP-3.
+      *    *************************************************************
+           10 CCNPJ-TTLAR-RCBVL    PIC S9(9)V USAGE COMP-3.
+      *    *************************************************************
+           10 CFLIAL-TTLAR-RCBVL   PIC S9(4)V USAGE COMP-3.
+      *    *************************************************************
+           10 CCTRL-CNPJ-RCBVL     PIC S9(2)V USAGE COMP-3.
+      *    *************************************************************
+           10 CCNPJ-USUAR-FNAL     PIC S9(9)V USAGE COMP-3.
+      *    *************************************************************
+           10 CFLIAL-USUAR-RCDOR   PIC S9(4)V USAGE COMP-3.
+      *    *************************************************************
+           10 CCTRL-CNPJ-USUAR     PIC S9(2)V USAGE COMP-3.
+      *    *************************************************************
+           10 DVCTO-UND-RCBVL      PIC X(10).
+      *    *************************************************************
+           10 VUND-RCBVL-UTLZD     PIC S9(15)V9(2) USAGE COMP-3.
+      *    *************************************************************
+           10 CCNPJ-TTLAR-RCBVL-ST
+              PIC X(9).
+      *    *************************************************************
+           10 CFLIAL-TTLAR-RCBVL-ST
+              PIC X(4).
+      *    *************************************************************
+           10 CCTRL-CNPJ-RCBVL-ST  PIC S9(2)V USAGE COMP-3.
+      *    *************************************************************
+           10 CCNPJ-USUAR-FNAL-ST  PIC X(9).
+      *    *************************************************************
+           10 CFLIAL-USUAR-RCDOR-ST
+              PIC X(4).
+      *    *************************************************************
+           10 CCTRL-CNPJ-USUAR-ST  PIC S9(2)V USAGE COMP-3.
+      ******************************************************************
+      * THE NUMBER OF COLUMNS DESCRIBED BY THIS DECLARATION IS 22      *
+      ******************************************************************

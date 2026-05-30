@@ -1,0 +1,80 @@
+{
+  "malha": {
+    "id": "liberacao-cor0005-rura",
+    "demanda": "AGROLEG-1239",
+    "titulo": "Liberacao de contratos — COR0005 batch (RUEC)",
+    "descricao": "Fluxo batch de liberacao de contratos credito rural com montagem da mensageria COR0005 para envio SICOR. Exclusao campos descontinuados catalogo 5.12 em RUEC8831 / I#RUECC5.",
+    "atualizado_em": "2026-05-26"
+  },
+  "jobs": [
+    {
+      "id": "JOB-A",
+      "jcl": "RUECJ0895",
+      "nome_job": "RUEC0895",
+      "resumo": "Orquestrador batch de liberacao de contratos. Le base de contratos pendentes, controla restart e dispara processamento downstream.",
+      "dispara": ["JOB-B"],
+      "steps": [
+        {
+          "step": "S010",
+          "programa": "RUEC0895",
+          "resumo": "Batch liberacao — orquestrador principal; sem alteracao prevista na AGROLEG-1239 (validar na analise).",
+          "arquivos": [
+            {
+              "ddname": "CADRURAL",
+              "operacao": "READ",
+              "dataset": "Arquivo entrada contratos (confirmar DSN no JCL)",
+              "lrecl": 400,
+              "blocos": 4000,
+              "observacao": "Entrada do processo de liberacao"
+            },
+            {
+              "ddname": "CTR-RESTART",
+              "operacao": "WRITE",
+              "dataset": "Controle checkpoint/restart",
+              "lrecl": 80,
+              "observacao": "I#CKRS01 — area restart"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "JOB-B",
+      "jcl": "RUECJ8831",
+      "nome_job": "RUEC8831",
+      "resumo": "Montagem da mensagem COR0005 para interface SICOR BACEN.",
+      "chamado_por": "JOB-A",
+      "dispara": [],
+      "steps": [
+        {
+          "step": "S010",
+          "programa": "RUEC8831",
+          "resumo": "Montador COR0005 — exclusao campos certificacao/rastreabilidade e demais campos 5.12 (CAPG05). Copybook I#RUECC5.",
+          "arquivos": [
+            {
+              "ddname": "ENTRADA-CTR",
+              "operacao": "READ",
+              "lrecl": 400,
+              "observacao": "Contratos processados / saida do fluxo upstream"
+            },
+            {
+              "ddname": "COR0005-OUT",
+              "operacao": "WRITE",
+              "lrecl": 32000,
+              "observacao": "Mensagem COR0005 serializada — confirmar LRECL no JCL"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "arquivos_compartilhados": [
+    {
+      "id": "ARQ-CADRURAL",
+      "ddname": "CADRURAL",
+      "lrecl": 400,
+      "usado_por": ["JOB-A", "JOB-B"],
+      "observacao": "Fluxo de contratos entre orquestrador e montador COR0005 — confirmar acoplamento real no JCL"
+    }
+  ]
+}

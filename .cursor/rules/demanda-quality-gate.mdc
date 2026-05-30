@@ -1,0 +1,14 @@
+---
+description: Gate de quality code e padrao de alteracao em fontes COBOL de demandas — referencia cap. 03 e 10
+globs: Cobol/Projetos/**/*.{cbl,cpy}
+alwaysApply: false
+---
+
+# Quality Gate em Demandas COBOL
+
+Ao editar `.cbl` ou `.cpy` em `Cobol/Projetos/`:
+
+- Referencia: `Cobol/Projetos/_indice/referencia-cobol/10-checklist-gate.md`
+- Alteracao: **nao excluir linhas** — comentar com prefixo da demanda + linha nova (cap. 03)
+- Verbos comentados inviaveis: `-IF`, `-MOVE`, `-01`, etc.
+- Pre-subida: skill `demanda-pre-subida`

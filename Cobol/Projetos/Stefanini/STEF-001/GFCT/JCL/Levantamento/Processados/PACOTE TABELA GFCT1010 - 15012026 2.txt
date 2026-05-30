@@ -1,0 +1,331 @@
+PACOTE TABELA GFCT1010 - 15/01/2026
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT1010 N P14          DFJ:GFCT0010*                               GFCT0000 P14
+                        DFJ:GFCT0010*                               GFCT0000 P14
+               GFCT1010*  DJ:GFCT0010*                              GFCT0000 P14
+                         DJ:GFCT2921 ?                              GFCT2100 P14
+                         RJ:GFCT1050*                               GFCT1010 P14
+                        GFJ:                                        T7GF#002 P14
+               GFCT1020*  DJ:GFCT2921 ?                             GFCT2100 P14
+                         DJ:GFCT0010 *                              GFCT0000 P14
+                         RJ:GFCT1050 *                              GFCT1010 P14
+               GFCT1050*  DJ:GFCT1020 *                             GFCT1010 P14
+                         DJ:GFCT1010 *                              GFCT1010 P14
+                         RJ:GFCT1070 *                              GFCT1010 P14
+                         RJ:GFCT1060 *                              GFCT1010 P14
+               GFCT1060 * DJ:GFCT1050 *                             GFCT1010 P14
+                         RJ:GFCT1080 *                              GFCT1010 P14
+                         RJ:GFCT1110 *                              GFCT1010 P14
+               GFCT1070 *  DJ:GFCT1050 *                            GFCT1010 P14
+               GFCT1080 *  DJ:GFCT1060 *                            GFCT1010 P14
+GFCT1010 N P14 GFCT1080 *  RJ:GFCT1082 *                            GFCT1010 P14
+                         RJ:GFCT1083 *                              GFCT1010 P14
+               GFCT1082 *  DJ:GFCT1080 *                            GFCT1010 P14
+                         RJ:GFCT1084  *                             GFCT1010 P14
+               GFCT1083 * DJ:GFCT1080 *                             GFCT1010 P14
+                         RJ:GFCT1084 *                              GFCT1010 P14
+               GFCT1084 *  DJ:GFCT1083  *                           GFCT1010 P14
+                         DJ:GFCT1082 *                              GFCT1010 P14
+                         RJ:GFCT1085 *                              GFCT1010 P14
+               GFCT1085 * DJ:GFCT1084 *                             GFCT1010 P14
+                         RJ:GFCT1090  *                             GFCT1010 P14
+                         RJ:GFCT1086  *                             GFCT1010 P14
+                         RJ:GFCT1910  *                             GFCT1010 P14
+                        GFJ:                                        CMTFA534 P14
+                        GFJ:                                        CMTFA530 P14
+               GFCT1086 *  DJ:	 *                                  GFCT1010 P14
+                         RJ:GFCT1087 *                              GFCT1010 P14
+               GFCT1087 * DJ:GFCT1086 *                             GFCT1010 P14
+GFCT1010* N P14 GFCT1087 * RJ:GFCT1090 *                            GFCT1010 P14
+                         RJ:GFCT1910 *                              GFCT1010 P14
+               GFCT1090 * DJ:GFCT1087 *                             GFCT1010 P14
+                         DJ:GFCT1085 *                              GFCT1010 P14
+                         RJ:GFCT1110 *                              GFCT1010 P14
+               GFCT1110 *  DJ:GFCT1090 *                            GFCT1010 P14
+                         DJ:GFCT1060  *                             GFCT1010 P14
+                         RJ:GFCT1120 *                              GFCT1010 P14
+               GFCT1120 *  DJ:GFCT1110 *                            GFCT1010 P14
+                         RJ:GFCT1121 *                              GFCT1010 P14
+                         RJ:GFCT1123  *                             GFCT1010 P14
+               GFCT1121 *  DJ:GFCT1120 *                            GFCT1010 P14
+                         RJ:GFCT1122 *                              GFCT1010 P14
+               GFCT1122 *  DJ:GFCT1121 *                            GFCT1010 P14
+                         RJ:GFCT1123 *                              GFCT1010 P14
+               GFCT1123 * DJ:GFCT1120 *                             GFCT1010 P14
+                         DJ:GFCT1122 *                              GFCT1010 P14
+                         RJ:GFCT1130 *                              GFCT1010 P14
+GFCT1010 N P14 GFCT1123 * GFJ:                                      CMTFA532 P14
+               GFCT1130 * DJ:GFCT1123 *                             GFCT1010 P14
+                         RJ:GFCT1140 *                              GFCT1010 P14
+               GFCT1140 *  DJ:GFCT1130 *                            GFCT1010 P14
+                         RJ:GFCT1141 *                              GFCT1010 P14
+                        GFJ:                                        CMTFA528 P14
+               GFCT1141 * DJ:GFCT1140 *                             GFCT1010 P14
+                         RJ:GFCT1142 *                              GFCT1010 P14
+               GFCT1142 *  DJ:GFCT1141 *                            GFCT1010 P14
+                         RJ:GFCT1145 *                              GFCT1010 P14
+               GFCT1145 *  DJ:GFCT1142 *                            GFCT1010 P14
+                         RJ:GFCT1150 *                              GFCT1010 P14
+               GFCT1150 *  DJ:GFCT1145 *                            GFCT1010 P14
+                        GFJ:                                        GFCT1400 P14
+               GFCT1155 (AJUSTADO)  DJ:GFCT1300 *                   GFCT1010 P14
+                         DJ:GFCT1498 *                              GFCT1400 P14
+                         RJ:GFCT1510 *                              GFCT1010 P14
+                         RJ:GFCT1535 *                              GFCT1010 P14
+GFCT1010 N P14 GFCT1300 *  DJ:GFCT1498 *                            GFCT1400 P14
+                         DJ:GFCTF550  ?                             PR14FINA P14
+                         DJ:GFCT1915 ?                              GFCTA550 P14
+                         RJ:GFCT1535 *                              GFCT1010 P14
+                         RJ:GFCT1155 *                              GFCT1010 P14
+                         RJ:PM14GFCT ?                              PM14MAD3 P14
+               GFCT1500 *  DJ:GFCT1535 *                            GFCT1010 P14
+                         RJ:	                                    GFCT1010 P14
+               GFCT1505 *  DJ:GFCT1500 *                            GFCT1010 P14
+                         RJ:GFCT1510 *                              GFCT1010 P14
+               GFCT1510 *  DJ:GFCT1505 *                            GFCT1010 P14
+                         DJ:GFCT1155 *                              GFCT1010 P14
+                         RJ:	                                    GFCT1010 P14
+               GFCT1515 *  DJ:GFCT1510 *                            GFCT1010 P14
+                         RJ:GFCT1517 *                              GFCT1010 P14
+               GFCT1517 *  DJ:GFCT1515 *                            GFCT1010 P14
+                         RJ:GFCT1518 *                              GFCT1010 P14
+               GFCT1518 *  DJ:GFCT1517 *                            GFCT1010 P14
+GFCT1010 N P14 GFCT1518 *  RJ:GFCT1520 *                            GFCT1010 P14
+               GFCT1520 *  DJ:GFCT1518 *                            GFCT1010 P14
+                         RJ:GFCT1525 *                              GFCT1010 P14
+                         RJ:GFCT1540 *                              GFCT1010 P14
+               GFCT1525 *  DJ:GFCT1520 *                            GFCT1010 P14
+                         RJ:GFCT1527 *                              GFCT1010 P14
+                         RJ:GFCT1530  *                             GFCT1010 P14
+                         RJ:GFCT1529  *                             GFCT1010 P14
+               GFCT1527 *  DJ:GFCT1525 *                            GFCT1010 P14
+                         RJ:GFCT1528 *                              GFCT1010 P14
+               GFCT1528 * DJ:GFCT1527 *                             GFCT1010 P14
+                         RJ:GFCT1529 *                              GFCT1010 P14
+                         RJ:GFCT1530 *                              GFCT1010 P14
+               GFCT1529 * DJ:GFCT1535 *                             GFCT1010 P14
+                         DJ:GFCT1525 *                              GFCT1010 P14
+                         DJ:GFCT1528 *                              GFCT1010 P14
+                         RJ:GFCT1530 *                              GFCT1010 P14
+                         RJ:GFCT1599 *                              GFCT1010 P14
+GFCT1010 N P14 GFCT1529 * RJ:GFCT1910 *                             GFCT1010 P14
+               GFCT1530 * DJ:GFCT1599 *                             GFCT1010 P14
+                         DJ:GFCT1529 *                              GFCT1010 P14
+                         DJ:GFCT1528 *                              GFCT1010 P14
+                         DJ:GFCT1525 *                              GFCT1010 P14
+                         DJ:GFCT1535 *                              GFCT1010 P14
+                         RJ:GFCT1600 *                              GFCT1010 P14
+                         RJ:GFCT1910 *                              GFCT1010 P14
+               GFCT1535 *  DJ:GFCT1155 *                            GFCT1010 P14
+                         DJ:GFCT1300 *                              GFCT1010 P14
+                         RJ:GFCT1530 *                              GFCT1010 P14
+                         RJ:GFCT1500 *                              GFCT1010 P14
+                         RJ:GFCT1529 *                              GFCT1010 P14
+               GFCT1540 *  DJ:GFCT1520 *                            GFCT1010 P14
+                         RJ:GFCT1560  *                             GFCT1010 P14
+               GFCT1560 * DJ:GFCT1540 *                             GFCT1010 P14
+                         RJ:GFCT1735  *                             GFCT1700 P14
+               GFCT1599 *  DJ:GFCT1529 *                            GFCT1010 P14
+GFCT1010 N P14 GFCT1599 *  RJ:GFCT1530 *                            GFCT1010 P14
+                         RJ:GFCT1910  *                             GFCT1010 P14
+               GFCT1600 *  DJ:GFCT1530 *                            GFCT1010 P14
+                         RJ:GFCT1630 *                              GFCT1010 P14
+                         RJ:GFCT1605  *                             GFCT1010 P14
+               GFCT1605 *  DJ:GFCT1600 *                            GFCT1010 P14
+                         RJ:GFCT1610 *                              GFCT1010 P14
+               GFCT1610 *  DJ:GFCT1605 *                            GFCT1010 P14
+                         RJ:GFCT1615 *                              GFCT1010 P14
+               GFCT1615 *  DJ:GFCT1610 *                            GFCT1010 P14
+                         RJ:GFCT1620 *                              GFCT1010 P14
+               GFCT1620 * DJ:GFCT1615 *                             GFCT1010 P14
+                         RJ:GFCT1625 *                              GFCT1010 P14
+               GFCT1625 *  DJ:GFCT1620  *                           GFCT1010 P14
+                         RJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:EXMZ4520  ?                             EXMZ4500 P11
+                        GFJ:                                        CMTFA550 P14
+               GFCT1630 * DJ:GFCT1600  *                            GFCT1010 P14
+GFCT1010 N P14 GFCT1630 * RJ:GFCT1635 *                             GFCT1010 P14
+               GFCT1635 *  DJ:GFCT1630 *                            GFCT1010 P14
+                         RJ:GFCT1910 *                              GFCT1010 P14
+               GFCT1910 *  DJ:GFCT1599 *                            GFCT1010 P14
+                         DJ:GFCT1530 *                              GFCT1010 P14
+                         DJ:GFCT1635 *                              GFCT1010 P14
+                         DJ:GFCT1529 *                              GFCT1010 P14
+                         DJ:GFCT1087 *                              GFCT1010 P14
+                         DJ:GFCT1085 *                              GFCT1010 P14
+                         RJ:GFCT1911                                GFCT1010 P14
+               GFCT1911  DJ:GFCT1910 *                              GFCT1010 P14
+
+
+
+=========================================================================================
+
+=======================================================================
+JÁ ALTERADO HERIBERTO
+=======================================================================
+job GFCT1060 - VERIFICAR SE TEM AJUSTE
+    EXEC PGM=GFCT1813 (UTILIZA BOOK I#GFCTVA) - se tiver ajuste ou recomp incluir no pacote 3022	
+
+JOB GFCT1080 - VERIFICAR SE TEM AJUSTES
+    EXEC PGM=GFCT1830 (UTILIZA BOOK I#GFCTVA)
+    EXEC PGM=GFCT1832 (UTILIZA BOOK I#GFCTVA)
+    EXEC PGM=GFCT1835 (UTILIZA BOOK I#GFCTVA)
+
+JOB GFCT1082
+    EXEC PGM=GFCT1834 (UTILIZA BOOK I#GFCTVA)
+    EXEC PGM=GFCT1836
+    EXEC PGM=GFCT1837
+
+JOB GFCT1083
+    EXEC PGM=GFCT1834 (UTILIZA BOOK I#GFCTVA)
+    EXEC PGM=GFCT1836
+    EXEC PGM=GFCT1831
+
+JOB GFCT1084
+   EXEC PGM=GFCT1838(UTILIZA BOOK I#GFCTVA)
+
+JOB GFCT1085
+   EXEC PGM=GFCT1838(UTILIZA BOOK I#GFCTVA)
+
+JOB GFCT1110 
+    EXEC PGM=GFCT1676(UTILIZA BOOK I#GFCTVA)
+    EXEC PGM=GFCT1800 (UTILIZA BOOK I#GFCTVA E I#GFCTVE) 
+
+JOB GFCT1120
+   EXEC PGM=GFCT1802(UTILIZA BOOK I#GFCTVA E I#GFCTVE)
+
+JOB GFCT1121
+   EXEC PGM=GFCT1801 (UTILIZA BOOK I#GFCTVA E I#GFCTVE)
+   
+JOB GFCT1140
+   EXEC PGM=GFCT1809(UTILIZA BOOK I#GFCTVA E I#GFCTVE)
+   EXEC PGM=GFCT1698(UTILIZA BOOK I#GFCTWX E I#GFCTVE)
+   EXEC PGM=GFCT1696 (UTILIZA BOOK I#GFCTWX, I#GFCTVE, I#GFCTVA)
+
+JOB GFCT1142
+   EXEC PGM=GFCT1811(UTILIZA BOOK I#GFCTVA E I#GFCTVE)
+   EXEC PGM=GFCT6885(UTILIZA BOOK I#GFCTVA E I#GFCTVE)
+   EXEC PGM=GFCT1812(UTILIZA BOOK I#GFCTVA E I#GFCTVE)
+   
+job  GFCT1155 / Resp: Necessário ajuste LRECL Arquivos 
+   PGM= GFCT1183 - (RECOMP) ok 	Resp: Não utiliza CNPJ e book I#GFCTVA esta no FD. Necessário apenas RECOMP
+
+job GFCT1540 / Resp: Necessário ajuste LRECL Arquivos
+   PGM= GFCT1630 (Ajustado) - ver hexavision Resp: Necessário ajustar LRECL dos Arquivos por conta da alteração do book I#GFCTVA
+
+JOB GFCT1625 OK / Resp: Necessário ajuste LRECL Arquivos
+   PGM=GFCT1890 OK - Ajustado 	Resp: Necessário ajustar LRECL dos Arquivos por conta da alteração do book I#GFCTVA
+   PGM=GFCT1119 OK - Ajustado 	Resp: Necessário ajustar LRECL dos Arquivos por conta da alteração do book I#GFCTVA
+
+
+========================================================================
+COMPLEMENT0 - MARISA
+======================================================================
+
+
+
+
+
+JOB GFCT1086 - AJUSTADO
+   EXEC PGM=GFCT1839 (UTILIZA BOOK I#GFCTVA) - AJUSTADO
+
+JOB GFCT1087 - AJUSTADO
+   EXEC PGM=GFCT1839(UTILIZA BOOK I#GFCTVA) - AJUSTADO
+
+JOB GFCT1090 - AJUSTADO
+   EXEC PGM=GFCT1840 (UTILIZA BOOK I#GFCTVA) - AJUSTADO
+
+
+JOB GFCT1141 - AJUSTADO
+   EXEC PGM=GFCT2480
+   EXEC PGM=GFCT2482(UTILIZA BOOK  I#GFCTVE) - AJUSTADO
+   EXEC PGM=GFCT2484(UTILIZA BOOK I#GFCTVA E I#GFCTVE) - AJUSTADO
+   EXEC PGM=GFCT2486(UTILIZA BOOK  I#GFCTVE) - AJUSTADO
+   
+job GFCT1145 - AJUSTADO
+   EXEC PGM=GFCT4323(UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+
+
+job GFCT1150 - verificar se tem ajuste - AJUSTADO
+
+job GFCT1300 - AJUSTADO
+   EXEC PGM=GFCT1678 (UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+   EXEC PGM=GFCT1892 (UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+   
+job GFCT1498 - verificar se tem ajuste - AJUSTADO
+
+job GFCT1510 - AJUSTADO
+   EXEC PGM=GFCT1874(UTILIZA BOOK  I#GFCTVA) (RECOMP)
+
+job GFCT1535 - AJUSTADO
+   EXEC PGM=GFCT1873(UTILIZA BOOK  I#GFCTVA) (RECOMP)
+
+job GFCT1500 - AJUSTADO
+   EXEC PGM=GFCT1870(UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+   
+job GFCT1505 - AJUSTADO
+   EXEC PGM=GFCT1872(UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+
+job GFCT1515 - AJUSTADO
+   EXEC PGM=GFCT1876(UTILIZA BOOK  I#GFCTVA) (RECOMP)
+
+job GFCT1517 - AJUSTADO
+   EXEC PGM=GFCT1851(UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+
+job GFCT1518 - AJUSTADO 
+   EXEC PGM=GFCT1851(UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+	   
+job GFCT1520 - AJUSTADO
+   EXEC PGM=GFCT1880(UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+   
+job GFCT1525 - AJUSTADO
+   EXEC PGM=GFCT1882(UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+   EXEC PGM=GFCT1884(UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+   
+job GFCT1527 - AJUSTADO
+   EXEC PGM=GFCT1881 (UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+   EXEC PGM=GFCT1851 (UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+
+job GFCT1528 - AJUSTADO
+   EXEC PGM=GFCT1851(UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+
+job GFCT1529 - verificar se tem ajuste - AJUSTADO
+   EXEC PGM=GFCT1879(UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+
+job GFCT1530 - verificar se tem ajuste - AJUSTADO
+
+job GFCT1560 - NAO HA AJUSTE 
+    PGM=GFCT1632
+    EXEC PGM=GFCT1100 - NAO HA AJUSTE 
+    EXEC PGM=GFCT1105 (utiliza book I#MESUM8) - AJUSTADO
+    EXEC PGM=GFCT1120 - NAO HA AJUSTE 
+
+job GFCT1599 - AJUSTADO
+   EXEC PGM=GFCT1888(UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+   
+job GFCT1600 - AJUSTADO
+   EXEC PGM=GFCT1895(UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+   
+job GFCT1605 - AJUSTADO
+   EXEC PGM=GFCT1898 (UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+
+job GFCT1630 - AJUSTADO
+   EXEC PGM=GFCT4780(UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+
+job GFCT1635 - NAO HA ALTERACAO
+
+job GFCT1735 - NAO HA ALTERACAO
+
+job GFCT1610 - AJUSTADO
+   EXEC PGM=GFCT1897 (UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+   
+job GFCT1615 - AJUSTADO
+   EXEC PGM=GFCT1896(UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+
+job GFCT1620 - AJUSTADO
+   EXEC PGM=GFCT1894(UTILIZA BOOK  I#GFCTVA) - AJUSTADO
+   
+job GFCT1700
+   PGM=GFCT4320(UTILIZA BOOK  I#GFCTVA)

@@ -1,0 +1,232 @@
+     PACOTE TABELA GFCT2100 - 03/02/2026
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002972, CASO ESTEJA EM OUTRO PACOTE, MOVER PARA ESSE.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT2100 N P14 GFCT2105 *  DJ:GFCTN010 *                              GFCTN010 P14
+                         RJ:GFCT2110 *                               GFCT2100 P14
+               GFCT2110 *  DJ:GFCT2105 *                              GFCT2100 P14
+                         RJ:GFCT2115 *                               GFCT2100 P14
+               GFCT2115 *  DJ:GFCT2110 *                              GFCT2100 P14
+                         RJ:GFCT2120 *                              GFCT2100 P14
+               GFCT2120 *  DJ:GFCT2115 *                               GFCT2100 P14
+                         RJ:GFCT2127 *                              GFCT2100 P14
+                         RJ:GFCT2140  *                             GFCT2100 P14
+                         RJ:GFCT2145  *                             GFCT2100 P14
+                         RJ:GFCT2135 *                              GFCT2100 P14
+                         RJ:GFCT2155 *                              GFCT2100 P14
+                         RJ:GFCT2130 *                              GFCT2100 P14
+                         RJ:GFCT2160 *                              GFCT2100 P14
+                         RJ:GFCT2125 *                              GFCT2100 P14
+                         RJ:GFCT2150 *                              GFCT2100 P14
+                         RJ:GFCT2162 *                              GFCT2100 P14
+                         RJ:GFCT2165 *                              GFCT2100 P14
+GFCT2100 N P14 GFCT2125*  DJ:GFCT2120 *                               GFCT2100 P14
+                         RJ:GFCT2170  *                             GFCT2100 P14
+                        GFJ:                                       SCCE2450 P11
+               GFCT2127 *  DJ:GFCT2120 *                              GFCT2100 P14
+                         RJ:GFCT2170 *                              GFCT2100 P14
+               GFCT2130 * DJ:GFCT2120 *                              GFCT2100 P14
+                         RJ:GFCT2170  *                             GFCT2100 P14
+               GFCT2135 *  DJ:GFCT2120 *                              GFCT2100 P14
+                         RJ:GFCT2170 *                              GFCT2100 P14
+               GFCT2140 *  DJ:GFCT2120 *                              GFCT2100 P14
+                         RJ:GFCT2170 *                              GFCT2100 P14
+               GFCT2145 * DJ:GFCT2120 *                              GFCT2100 P14
+                         RJ:GFCT2170 *                              GFCT2100 P14
+               GFCT2150 * DJ:GFCT2120 *                              GFCT2100 P14
+                         RJ:GFCT2170  *                             GFCT2100 P14
+               GFCT2155 * DJ:GFCT2120 *                              GFCT2100 P14
+                         RJ:GFCT2170 *                              GFCT2100 P14
+               GFCT2160 * DJ:GFCT2120 *                               GFCT2100 P14
+GFCT2100 N P14 GFCT2160 *  RJ:GFCT2170 *                              GFCT2100 P14
+               GFCT2162*  DJ:GFCT2120 *                              GFCT2100 P14
+                         RJ:GFCT2170  *                             GFCT2100 P14
+               GFCT2165 *  DJ:GFCT2120 *                              GFCT2100 P14
+                         RJ:GFCT2170  *                             GFCT2100 P14
+               GFCT2170 *  DJ:GFCT2165 *                              GFCT2100 P14
+                         DJ:GFCT2125 *                              GFCT2100 P14
+                         DJ:GFCT2145 *                               GFCT2100 P14
+                         DJ:GFCT2130 *                              GFCT2100 P14
+                         DJ:GFCT2150 *                              GFCT2100 P14
+                         DJ:GFCT2155 *                              GFCT2100 P14
+                         DJ:GFCT2160 *                              GFCT2100 P14
+                         DJ:GFCT2162 *                              GFCT2100 P14
+                         DJ:GFCT2140 *                              GFCT2100 P14
+                         DJ:GFCT2127 *                              GFCT2100 P14
+                         DJ:GFCT2135 *                              GFCT2100 P14
+                         RJ:GFCT2175 *                              GFCT2100 P14
+                        GFJ:                                       CMTFN116 P14
+GFCT2100 N P14 GFCT2172 *  DJ:GFCT2175 *                               GFCT2100 P14
+               GFCT2175 *  DJ:GFCT2170 *                               GFCT2100 P14
+                         RJ:GFCT2172 *                               GFCT2100 P14
+                         RJ:GFCT2177 *                              GFCT2100 P14
+                         RJ:GFCT2176 *                              GFCT2100 P14
+                         RJ:GFCT2210 *                               GFCT2210 P14
+                        GFJ:                                       T7YKN550 P14
+                        GFJ:                                       CMTFN144 P14
+                        GFJ:                                       CMTFN550 P14
+               GFCT2176 *  DJ:GFCT2175 *                              GFCT2100 P14
+                         RJ:GFCT2180 *                              GFCT2100 P14
+               GFCT2177 *  DJ:GFCT2175 *                              GFCT2100 P14
+                         RJ:GFCT2178  *                             GFCT2100 P14
+               GFCT2178*  DJ:GFCT2177 *                              GFCT2100 P14
+                         RJ:GFCT2180 *                              GFCT2100 P14
+               GFCT2180 *  DJ:GFCT2176 *                               GFCT2100 P14
+                         DJ:GFCT2178 *                              GFCT2100 P14
+                         RJ:GFCT2185 *                              GFCT2100 P14
+GFCT2100 N P14 GFCT2185 * DJ:GFCT2180 *                               GFCT2100 P14
+                         RJ:GFCT2187 *                              GFCT2100 P14
+               GFCT2187 * DJ:GFCT2185 *                              GFCT2100 P14
+                         RJ:GFCT2920  *                              GFCT2100 P14
+               GFCT2920 *  DJ:GFCT2187  *                             GFCT2100 P14
+                         RJ:GFCT2921  *                             GFCT2100 P14
+                        GFJ:                                       T7GF#025 P14
+               GFCT2921 *  DJ:GFCT2920  *                             GFCT2100 P14
+                         RJ:GFCT2922 *                              GFCT2100 P14
+                         RJ:GFCT1010 *                              GFCT1010 P14
+                         RJ:GFCT2250 *                              GFCT2250 P14
+                         RJ:GFCT1020 *                              GFCT1010 P14
+                         RJ:CMTFN144                               CMTFN144 P14
+                        GFJ:T76OA163                               T76OA100 P11
+                        GFJ:T7GF#044                               T7GF#044 P14
+               GFCT2922 *  DJ:GFCT2921 *                              GFCT2100 P14
+                         RJ:GFCTN060                               GFCTN060 P14
+                        GFJ:                                       GFCTN270 P14
+
+
+======================================================================================
+job GFCT2110 
+     MJ.CLIE.PRP.CADNOVGR ==> falta arquivo novo (ver com a Laura)
+    EXEC PGM=GFCT2100 ok (utiliza books I#CLIE20 / I#GFCTRU / GFCTWANG) - AJUSTADO
+
+job GFCT2105 - NAO HA IMPACTO
+
+job GFCT2115 - NAO HA IMPACTO
+    EXEC PGM=GFCT1844 (não tem) - NAO HA IMPACTO
+    EXEC PGM=GFCT1846 (não tem) - NAO HA IMPACTO
+    EXEC PGM=GFCT1847 (não tem) - NAO HA IMPACTO
+ 
+job GFCT2120 - NAO HA IMPACTO
+    EXEC PGM=GFCT2105 (não tem) - NAO HA IMPACTO
+
+job GFCT2127 - AJUSTADO
+    EXEC PGM=GFCT2117 (UTILIZA BOOK I#GFCTRU)   GFCT002972  TICKET-56437 - AJUSTADO
+    MJ.CLIE.PRP.CADPREDU (I#CHEQ04) ==> MJ.CLIE.PRP.CADPREDU.ALFA(CLIEW05B) - AJUSTADO
+    EXEC PGM=GFCT2118  (UTILIZA BOOKS I#GFCTRU / I#CHEQ04) - PENDENTE AJUSTE BOOK CHEQ04 - AJUSTADO
+    EXEC PGM=GFCT2119 (UTILIZA BOOK I#GFCTRU) - AJUSTADO
+
+JOB GFCT2135 - AJUSTADO
+    EXEC PGM=GFCT2120(UTILIZA BOOKS I#GFCTRU / I#GFCTRY) - AJUSTADO
+    EXEC PGM=GFCT2125(UTILIZA BOOKS I#GFCTRY) - AJUSTADO
+    
+
+ JOB GFCT2140 - NAO HA IMPACTO
+    EXEC PGM=GFCT2130 (NÃO TEM) - NAO HA IMPACTO
+
+JOB GFCT2145 - AJUSTADO
+    EXEC PGM=GFCT2120 (UTILIZA BOOKS I#GFCTRU / I#GFCTRY) - AJUSTADO
+    EXEC PGM=GFCT2140 (UTILIZA BOOK I#GFCTRY) - AJUSTADO
+    
+JOB GFCT2155 - AJUSTADO
+    EXEC PGM=GFCT2135 (UTILIZA BOOKS KCIMW184 / I#GFCTRU) - AJUSTADO
+    EXEC PGM=GFCT2150(UTILIZA BOOK I#GFCTRU) - AJUSTADO
+
+JOB GFCT2130 - AJUSTADO
+    EXEC PGM=GFCT2115(UTILIZA BOOK I#GFCTRU) - AJUSTADO
+
+JOB GFCT2160 - AJUSTADO
+   EXEC PGM=GFCT2135(UTILIZA BOOKS KCIMW184 / I#GFCTRU) - AJUSTADO
+   EXEC PGM=GFCT2155(UTILIZA BOOK I#GFCTRU) - AJUSTADO
+
+JOB GFCT2125 - AJUSTADO
+    EXEC PGM=GFCT2110 (NAO TEM) - NAO HA IMPACTO
+    EXEC PGM=GFCT3216 (NÃO TEM) - NAO HA IMPACTO
+    EXEC PGM=GFCT3205 (NAO TEM) - NAO HA IMPACTO
+    EXEC PGM=GFCT3220  (UTILIZA BOOKS GFCTWANG / GFCTWANH / TABELA CLIEV004) - AJUSTADO
+    EXEC PGM=GFCT3225  (UTILIZA BOOK GFCTWANH) - AJUSTADO
+
+JOB GFCT2150 - AJUSTADO
+    EXEC PGM=GFCT2145(UTILIZA BOOK I#GFCTRU) - AJUSTADO
+    
+JOB GFCT2162 - AJUSTADO
+    EXEC PGM=GFCT2135(UTILIZA BOOKS KCIMW184 / I#GFCTRU) - AJUSTADO
+    EXEC PGM=GFCT2155(UTILIZA BOOK I#GFCTRU) - AJUSTADO 
+
+JOB GFCT2165 - AJUSTADO
+    EXEC PGM=GFCT2160(UTILIZA BOOKS I#GFCTRU / I#GFCTRY) - AJUSTADO
+    EXEC PGM=GFCT2165(UTILIZA BOOK I#GFCTRY) - AJUSTADO
+
+JOB GFCT2170 - NAO HA IMPACTO
+    EXEC PGM=GFCT2167 (UTILIZA BOOK I#GFCTRU) - AJUSTADO
+    EXEC PGM=GFCT2168 (NAO TEM)
+    EXEC PGM=GFCT2170 (NÃO TEM)
+    EXEC PGM=GFCT2175 (NAO TEM) 
+    EXEC PGM=GFCT2180 (NAO TEM)
+    
+JOB GFCT2175 - AJUSTADO
+    EXEC PGM=GFCT2190 (NAO TEM)
+    EXEC PGM=GFCT4761 (NAO TEM)
+    EXEC PGM=GFCT3286 (NAO TEM)
+    EXEC PGM=GFCT2185 (NAO TEM)
+    EXEC PGM=GFCT2188 (UTILIZA BOOK I#GFCTRU) - AJUSTADO NO 3022
+    EXEC PGM=GFCT1833 (NAO TEM)
+     
+JOB GFCT2172 - NAO HA IMPACTO
+    EXEC PGM=GFCT2182 (NAO TEM) - NAO HA IMPACTO
+     
+JOB GFCT2177 - NAO HA IMPACTO
+    EXEC PGM=GFCT2010 (NAO TEM) - NAO HA IMPACTO
+    EXEC PGM=GFCT1110 (NAO TEM) - NAO HA IMPACTO
+    EXEC PGM=GFCT1100 (NAO TEM) - NAO HA IMPACTO
+    EXEC PGM=GFCT1105 (UTILIZA BOOK I#MESUM8) - AJUSTADO NO 3022
+    EXEC PGM=GFCT1120 (NAO TEM)
+    
+JOB GFCT2176 - NAO HA IMPACTO
+    
+JOB GFCT2210 - TEM HPU MAS TEM LRECL NAO DECLARADO - NAO HA IMPACTO
+ 
+JOB GFCT2180 - NAO HA IMPACTO
+     EXEC PGM=GFCT2195 (NAO TEM)
+     EXEC PGM=GFCT2187 (NAO TEM)
+     
+TABELA GFCT2100
+
+JOB GFCT2178 - NAO HA IMPACTO
+    EXEC PGM=GFCT2012 (NAO TEM)
+    EXEC PGM=GFCT2013 (UTILIZA BOOK I#CLIE20) - AJUSTADO    GFCT002972  TICKET-56437
+    EXEC PGM=GFCT2015 (não tem)
+     
+job GFCT2185
+    EXEC PGM=GFCT2198  (não tem)
+
+job GFCT2187 - NAO HA IMPACTO
+    EXEC PGM=GFCT2476 (não tem)
+    EXEC PGM=GFCT2488 (tabela CLIEV004) - AJUSTADO
+    EXEC PGM=GFCT2478 (não tem)
+    
+job GFCT2920 - cofre
+    
+job GFCT1010
+     EXEC PGM=GFCT1804 (não tem)
+     EXEC PGM=GFCT4225 (não tem)   
+
+job GFCT2250
+    EXEC PGM=GFCT1580 (não tem)
+     
+job GFCT1020
+    EXEC PGM=GFCT1807 (não tem)
+    EXEC PGM=GFCT1808 (não tem)
+     
+
+
+
+
+
+
+
+

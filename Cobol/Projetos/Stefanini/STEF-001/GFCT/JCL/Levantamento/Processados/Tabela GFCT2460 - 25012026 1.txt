@@ -1,0 +1,40 @@
+Tabela GFCT2460 - 25012026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002947    TICKET-53638
+==========================================================
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT2460 N P14 GFCT2460*  RJ:GFCT2464 *                              GFCT2460 P14
+                         RJ:GFCT2462 *                              GFCT2460 P14
+               GFCT2462*  DJ:GFCT2460 *                              GFCT2460 P14
+                         RJ:GFCT2466 *                              GFCT2460 P14
+               GFCT2464 * DJ:GFCT2460*                               GFCT2460 P14
+                         RJ:GFCT2466*                               GFCT2460 P14
+               GFCT2466*  DJ:GFCT2464 *                              GFCT2460 P14
+                         DJ:GFCT2462 *                              GFCT2460 P14
+                         RJ:GFCT2460 P14
+               GFCT2926*  DJ:GFCT2466*                               GFCT2460 P14
+                         RJ:GFCT2927 *                              GFCT2460 P14
+               GFCT2927 * DJ:GFCT2926  *                             GFCT2460 P14
+                        GFJ:                                       GFCT2470 P14
+
+
+=======================================================================
+
+JOB GFCT2460 - AJUSTADO
+    UTILIZA MJ.CLIE.PRP.CADNOVGR(0)... PRECISAMOS VER O NOVO ARQUIVO.. VOU VER COM O RUI
+   STEP4    EXEC PGM=GFCT1333 (UTILIZA BOOKS I#GFCTRU) - AJUSTADO NO PACOTE GFCT*2944 - AJUSTADO
+
+JOB GFCT2464 - NAO HA IMPACTO
+   EXEC PGM=GFCT1334 (NÃO) - NAO HA IMPACTO
+
+JOB GFCT2462 - NAO - NAO HA IMPACTO
+
+JOB GFCT2466 - NÃO - NAO HA IMPACTO
+
+JOB GFCT2926 - NAO - NAO HA IMPACTO
+   
+
+   

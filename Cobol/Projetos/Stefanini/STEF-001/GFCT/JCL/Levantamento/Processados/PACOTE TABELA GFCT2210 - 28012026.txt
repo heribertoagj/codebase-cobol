@@ -1,0 +1,115 @@
+   PACOTE TABELA GFCT2210 - 28/01/2026
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+COLOCAR OS PROGRAMAS NO GFCT003022  TICKET-69005 , CASO ESTEJA EM OUTRO PACOTE, MOVER PARA ESSE.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT2210 N P14          DFJ:GFCTN010                               GFCTN010 P14
+               GFCTCARG   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT2210*  DJ:GFCT2175 *                              GFCT2100 P14
+                         RJ:GFCT2222*                               GFCT2210 P14
+               GFCT2212*  RJ:GFCT2222*                               GFCT2210 P14
+               GFCT2214 * RJ:GFCT2222*                               GFCT2210 P14
+               RJ:GFCT2222*                               GFCT2210 P14
+               GFCT2218*  RJ:GFCT2222*                               GFCT2210 P14
+               GFCT2220*  RJ:GFCT2221*                               GFCT2210 P14
+               GFCT2221*  DJ:GFCT2220*                               GFCT2210 P14
+                         RJ:GFCT2222 *                              GFCT2210 P14
+               GFCT2222 * DJ:GFCT2218 *                              GFCT2210 P14
+                         DJ:GFCT2214 *                              GFCT2210 P14
+                         DJ:GFCT2216 *                              GFCT2210 P14
+                         DJ:GFCT2221 *                              GFCT2210 P14
+                         DJ:GFCT2210*                               GFCT2210 P14
+                         DJ:GFCT2212*                               GFCT2210 P14
+                         RJ:GFCT2226*                               GFCT2210 P14
+GFCT2210 N P14 GFCT2222*  RJ:GFCT2224*                               GFCT2210 P14
+               GFCT2224*  DJ:GFCT2222*                               GFCT2210 P14
+                         RJ:GFCT2964*                               GFCT2210 P14
+                         RJ:GFCT2968*                               GFCT2210 P14
+                         RJ:GFCT2962*                               GFCT2210 P14
+                         RJ:GFCT2960*                               GFCT2210 P14
+                         RJ:GFCT2966*                               GFCT2210 P14
+               GFCT2226 * DJ:GFCT2222 *                              GFCT2210 P14
+               GFCT2960*  DJ:GFCT2224*                               GFCT2210 P14
+                         RJ:GFCT2961*                               GFCT2210 P14
+               GFCT2961*  DJ:GFCT2960*                               GFCT2210 P14
+               GFCT2962 * DJ:GFCT2224*                               GFCT2210 P14
+                         RJ:GFCT2963*                               GFCT2210 P14
+               GFCT2963 * DJ:GFCT2962 *                              GFCT2210 P14
+               GFCT2964*  DJ:GFCT2224*                               GFCT2210 P14
+                         RJ:GFCT2965*                               GFCT2210 P14
+               GFCT2965*  DJ:GFCT2964*                               GFCT2210 P14
+               GFCT2966*  DJ:GFCT2224*                               GFCT2210 P14
+GFCT2210 N P14 GFCT2966*  RJ:GFCT2967*                               GFCT2210 P14
+               GFCT2967*  DJ:GFCT2966 *                              GFCT2210 P14
+               GFCT2968*  DJ:GFCT2224*                               GFCT2210 P14
+                         RJ:GFCT2969*                               GFCT2210 P14
+               GFCT2969*  DJ:GFCT2968*                               GFCT2210 P14
+
+
+
+
+
+GFCT003022  TICKET-69005 
+=======================================================================
+
+job GFCT2210 - NAO HA IMPACTO ( JCL POSSUI HPU DE TABELA ALTERADA, POREM O LRECL ESTA OMITIDO NA SYSREC)
+
+job GFCT2175 - AJUSTADO
+   EXEC PGM=GFCT2190 (não) - NAO HA IMPACTO
+   EXEC PGM=GFCT4761 (não) - NAO HA IMPACTO
+   EXEC PGM=GFCT3286 (não) - NAO HA IMPACTO
+   EXEC PGM=GFCT2185 (não) - NAO HA IMPACTO
+   EXEC PGM=GFCT2188 ok (utiliza book I#GFCTRU) - AJUSTADO
+   EXEC PGM=GFCT1833(não)
+      
+job GFCT2222  ============================================================================> AJUSTADO
+   MJ.CLIE.PRP.CADNGERA	I#CLIE20	MJ.CLIE.PRP.CADNAGCT.DSCPAF	CLIEW01B
+   EXEC PGM=GFCT4420 ok (utiliza book GFCTWBD0 e I#CLIE20) - AJUSTADO
+   EXEC PGM=GFCT4422 ok (utiliza book GFCTWBD0) - AJUSTADO
+   EXEC PGM=GFCT4424 ok (utiliza book GFCTWBD0) - AJUSTADO
+   EXEC PGM=GFCT4426 ok (utiliza book GFCTWBD0) - AJUSTADO
+   EXEC PGM=GFCT4428 ok (utiliza book GFCTWBD0) - AJUSTADO
+   EXEC PGM=GFCT4430 ok (utiliza book   e  GFCTWBD0) - ======================================>>> AJUSTADO
+          está no pacote RENC000896 esta no nosso complexo ==>>>> =>> Coloquei o book na working, necessário incluir pacote 
+                                                           no complex                                                            
+   EXEC PGM=GFCT4432 ok (utiliza book PSDCW018 e GFCTWBD0)  -===============================================>>>> AJUSTADO
+               PSDCW018  ====>>>>  PSDCW023
+
+   EXEC PGM=GFCT4434 ok  (utiliza book GFCTWBD0) - AJUSTADO 
+   EXEC PGM=GFCT4438 ok (utiliza book GFCTWBD0) - AJUSTADO
+   EXEC PGM=GFCT4440 ok (utiliza book GFCTWBD0) - AJUSTADO
+   EXEC PGM=GFCT4442 ok (utiliza book GFCTWBD0) - AJUSTADO
+   EXEC PGM=GFCT4444 ok (utiliza book GFCTWBD0) - AJUSTADO
+  
+  
+ job GFCT2212 - NAO HA IMPACTO
+
+job GFCT2214 - AJUSTADO
+(VERIFICAR A ORIGEM MJ.CSAL.PRP.CONTASAL(0))  
+==================>>>> HERIBERTO ALTERAR O TAMANHO DO ARQUIVO. 
+VAMOS TER QUE ALTERAR O BOOK PORQUE TEM UM CAMPO A MAIS NO HPU QUE GERA ESSE ARQUIVO DO CSAL. 
+VERIFICAR OS PROGRAMAS QUE UTILIZAM ESSE BOOK.
+
+
+job GFCT2216 - NAO HA IMPACTO
+
+job GFCT2221 - NAO HA IMPACTO
+   EXEC PGM=GFCT4450 (não) - NAO HA IMPACTO
+   
+job GFCT2218 - NAO HA IMPACTO
+
+job GFCT2220 - NAO HA IMPACTO
+   EXEC PGM=GFCT4436 ok (utiliza book GFCTWBUG) - AJUSTADO
+   
+job GFCT2226 - LOAD DA TABELA N9, NAO HA IMPACTO
+
+job GFCT2224 - NAO HA IMPACTO
+
+job GFCT2226 - LOAD DA TABELA N9, NAO HA IMPACTO
+
+ 
+
+
+  
+   

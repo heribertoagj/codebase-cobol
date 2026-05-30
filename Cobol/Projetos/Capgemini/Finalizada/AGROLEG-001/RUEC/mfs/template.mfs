@@ -1,0 +1,84 @@
+*=====================================================================*
+*                        [empresa centralizada]                       *
+*=====================================================================*
+*      TELA........:   [nome da tela]                                 *
+*      PROGRAMA....:   [nome do programa]                             *
+*      DATA........:   [data]                                         *
+*---------------------------------------------------------------------*
+*      OBJETIVO....: [descricao do objetivo]                          *
+*=====================================================================*
+         PRINT NOGEN
+MQT797   FMT
+         DEV   TYPE=(3270,2),FEAT=IGNORE,SYSMSG=MENSA,DSCA=X'00A0',    X
+               PFK=(PF,01='/RCL          .',02='XXXX7951   *',         X
+               03='XXXX7951      C',04='XXXX7951      *',              X
+               05='XXXX7951      5',06='XXXX7951      6',              X
+               07='XXXX7951      7',08='XXXX7951      8',              X
+               09='XXXX7951      9',10='XXXX7951      *',              X
+               11='XXXX7951      B',12='XXXX7951      *',              X
+               13='XXXX7951      *',14='XXXX7951      *',              X
+               15='XXXX7951      *',16='XXXX7951      *',              X
+               17='XXXX7951      *',18='XXXX7951      *',              X
+               19='XXXX7951      *',20='XXXX7951      *',              X
+               21='XXXX7951      *',22='XXXX7951      *',              X
+               23='XXXX7951      *',24='XXXX7951      *')
+*---------------------------------------------------------------------*
+*                            D I F  /  D O F                          *
+*---------------------------------------------------------------------*
+         DIV  TYPE=INOUT
+         DPAGE CURSOR=((22,79))
+*---------------------------------------------------------------------*
+*                             LINHA 01                                *
+*---------------------------------------------------------------------*
+DATA     DFLD  POS=(01,02),LTH=10,ATTR=(MOD,NUM,PROT)
+HORA     DFLD  POS=(01,73),LTH=08,ATTR=(MOD,NUM,PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 02                                *
+*---------------------------------------------------------------------*
+         DFLD  '[nome da tela]',POS=(02,02),ATTR=(PROT)
+         DFLD  '[nome do programa]',POS=(02,73),ATTR=(PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 05                                *
+*---------------------------------------------------------------------*
+SENHAS   DFLD  POS=(05,02),LTH=37,ATTR=(MOD,PROT,NODISP)
+PRTELA   DFLD  POS=(05,40),LTH=08,ATTR=(MOD,PROT,NODISP)
+CTERM    DFLD  POS=(05,49),LTH=08,ATTR=(MOD,PROT,NODISP)
+ANTELA   DFLD  POS=(05,58),LTH=08,ATTR=(MOD,PROT,NODISP)
+FASE     DFLD  POS=(05,67),LTH=02,ATTR=(MOD,PROT)
+
+*---------------------------------------------------------------------*
+*                             LINHA 22                                *
+*---------------------------------------------------------------------*
+MENSA    DFLD  POS=(22,02),LTH=79,ATTR=(MOD,NUM,PROT,HI)
+***********************************************************************
+*                              M I D                                  *
+***********************************************************************
+XXXXI999 MSG   TYPE=INPUT,SOR=(MQT797,IGNORE),NXT=XXXXT999,OPT=1
+         SEG
+         MFLD  (PF,'[nome do programa]      .'),LTH=015
+         MFLD  SENHAS,LTH=37,FILL=C' ',JUST=L
+         MFLD  NOVOOPC,LTH=02,FILL=C'0',JUST=R
+         MFLD  PRTELA,LTH=08,FILL=C' ',JUST=L
+         MFLD  ANTELA,LTH=08,FILL=C' ',JUST=L
+         MFLD  FASE,LTH=02,FILL=C' ',JUST=L
+         MFLD  CTERM,LTH=08,FILL=C' ',JUST=L
+         MFLD  MENSA,LTH=79,FILL=C' ',JUST=L
+         MSGEND
+***********************************************************************
+*                              M O D                                  *
+***********************************************************************
+XXXXT999 MSG   TYPE=OUTPUT,SOR=(MQT797,IGNORE),NXT=XXXXI999,OPT=1,     X
+               FILL=PT
+         SEG
+         MFLD  (DATA,DATE3Y4)
+         MFLD  (HORA,TIME)
+         MFLD  SENHAS,LTH=37
+         MFLD  NOVOOPC,LTH=02
+         MFLD  PAGINA,LTH=02
+         MFLD  PRTELA,LTH=08
+         MFLD  ANTELA,LTH=08
+         MFLD  FASE,LTH=02
+         MFLD  CTERM,LTH=08
+         MFLD  MENSA,LTH=79
+         MSGEND
+         END

@@ -1,0 +1,63 @@
+TABELA GFCTC030 - 30012026
+
+
+======================================================
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002995  TICKET-66073
+==========================================================
+
+=============================================================
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTC030 N P14 GFCTC030*  DJ:GFCT0277*                               GFCT0250 P14
+                         RJ:GFCTC032 *                              GFCTC030 P14
+                         RJ:GFCTC034 *                               GFCTC030 P14
+               GFCTC032*  DJ:GFCTC030 *                              GFCTC030 P14
+                         RJ:GFCTC036 *                              GFCTC030 P14
+               GFCTC034*  DJ:GFCTC030 *                              GFCTC030 P14
+                         RJ:GFCTC036*                               GFCTC030 P14
+               GFCTC036*  DJ:GFCTC032*                               GFCTC030 P14
+                         DJ:GFCTC034*                               GFCTC030 P14
+                         RJ:GFCTC038*                               GFCTC030 P14
+               GFCTC038*  DJ:GFCTC036 *                              GFCTC030 P14
+                         RJ:GFCTC040 *                              GFCTC030 P14
+               GFCTC040*  DJ:GFCTC038*                               GFCTC030 P14
+                         RJ:GFCTC042 *                              GFCTC030 P14
+               GFCTC042*  DJ:GFCTC040*                               GFCTC030 P14
+                         RJ:GFCTC044 *                              GFCTC030 P14
+               GFCTC044 * DJ:GFCTC042*                               GFCTC030 P14
+                         RJ:GFCTH605*                               GFCTC030 P14
+GFCTC030 N P14 GFCTH605*  DJ:GFCTC044*                               GFCTC030 P14
+                         RJ:GFCTH606*                               GFCTC030 P14
+               GFCTH606*  DJ:GFCTH605*                               GFCTC030 P14
+
+
+=============================================================
+GFCT002995  TICKET-66073
+=============================================================
+
+
+job GFCTC030 - NAO HA IMPACTO
+   EXEC PGM=GFCT4301 (utiliza book GFCTWAOT) - AJUSTADO
+
+job GFCT0277 - NAO HA IMPACTO
+  
+job GFCTC032 - NAO HA IMPACTO
+   EXEC PGM=GFCT4302 (utiliza book GFCTWAOT) - AJUSTADO
+   
+job GFCTC034 - NAO HA IMPACTO
+
+job GFCTC036 - NAO HA IMPACTO
+   EXEC PGM=GFCT4303  (utiliza book GFCTWAOT) - AJUSTADO
+ 
+job GFCTC038 - NAO HA IMPACTO
+   EXEC PGM=GFCT4304  (utiliza book GFCTWAOT) - AJUSTADO
+
+job GFCTC040 - NAO HA IMPACTO
+   EXEC PGM=GFCT4306 (utiliza books GFCTWAOT e I#CLIE20) - AJUSTADO 
+
+job GFCTC042 - NAO HA IMPACTO 
+   EXEC PGM=GFCT4308 (utiliza book GFCTWAOT) - AJUSTADO
+
+job GFCTC044 - NAO HA IMPACTO
+   EXEC PGM=GFCT4305  (utiliza book GFCTWAOT) - AJUSTADO
+
+

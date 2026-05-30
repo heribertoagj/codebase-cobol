@@ -1,0 +1,228 @@
+PACOTE TABELA GFCT1400 - 15/01/2026
+
+COLOCAR OS PROGRAMAS NO PACOTE GFCT003024, CASO ESTEJA EM OUTRO PACOTE, MOVER PARA ESSE.
+
+=============================================================================================
+
+GFCT1400 N P14          DFJ:GFCT1150                               GFCT1010 P14
+               GFCTDOCT   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTH400 *  DJ:GFCT1405 *                           GFCT1400 P14
+                         RJ:GFCTH401 *                             GFCT1400 P14
+               GFCTH401 *  DJ:GFCTH400 *                           GFCT1400 P14
+               GFCT1401 * RJ:GFCT1402  *                           GFCT1400 P14
+               GFCT1402 * DJ:GFCT1401 *                            GFCT1400 P14
+                         RJ:GFCT1403   *                           GFCT1400 P14
+               GFCT1403 *  DJ:GFCT1402 *                           GFCT1400 P14
+                         RJ:GFCT1404 *                             GFCT1400 P14
+               GFCT1404 *  DJ:GFCT1403 *                           GFCT1400 P14
+                         RJ:GFCT1405 *                             GFCT1400 P14
+               GFCT1405 *  DJ:GFCT1404 *                           GFCT1400 P14
+                         RJ:GFCT1406 *                             GFCT1400 P14
+                         RJ:GFCT1990 *                             GFCT1400 P14
+                         RJ:GFCTH400 *                             GFCT1400 P14
+               GFCT1406 *  DJ:GFCT1405   *                         GFCT1400 P14
+                         RJ:GFCT1424 *                             GFCT1400 P14
+GFCT1400 N P14 GFCT1410 *  DJ:GFCT1424 *                           GFCT1400 P14
+                         RJ:GFCT1412 *                             GFCT1400 P14
+               GFCT1412 *  DJ:GFCT1410 *                           GFCT1400 P14
+                         RJ:GFCT1414 *                             GFCT1400 P14
+               GFCT1414 *  DJ:GFCT1412  *                          GFCT1400 P14
+                         RJ:GFCT1416*                              GFCT1400 P14
+               GFCT1416*  DJ:GFCT1414 *                            GFCT1400 P14
+                         RJ:GFCT1418 *                             GFCT1400 P14
+               GFCT1418 *  DJ:GFCT1416*                            GFCT1400 P14
+                         RJ:GFCT1420 *                             GFCT1400 P14
+               GFCT1420 *  DJ:GFCT1418 *                           GFCT1400 P14
+                         RJ:GFCT1422 *                             GFCT1400 P14
+                         RJ:GFCT1990 *                             GFCT1400 P14
+               GFCT1422 *  DJ:GFCT1420 *                           GFCT1400 P14
+                         RJ:GFCT1426*                              GFCT1400 P14
+               GFCT1424 *  DJ:GFCT1406 *                           GFCT1400 P14
+                         RJ:GFCT1410 *                             GFCT1400 P14
+               GFCT1426*  DJ:GFCT1422 *                            GFCT1400 P14
+GFCT1400 N P14 GFCT1426*  RJ:GFCT1428 *                            GFCT1400 P14
+               GFCT1428 *  DJ:GFCT1426 *                           GFCT1400 P14
+                         RJ:GFCT1430 *                             GFCT1400 P14
+               GFCT1430 *  DJ:GFCT1428 *                           GFCT1400 P14
+                         RJ:GFCT1440 *                             GFCT1400 P14
+               GFCT1440 * DJ:GFCT1430 *                            GFCT1400 P14
+                         RJ:GFCT1442 *                             GFCT1400 P14
+                         RJ:GFCT1990 *                             GFCT1400 P14
+               GFCT1442 *  DJ:GFCT1440 *                           GFCT1400 P14
+                         RJ:GFCT1444 *                             GFCT1400 P14
+               GFCT1444 * DJ:GFCT1442 *                            GFCT1400 P14
+                         RJ:GFCT1446  *                            GFCT1400 P14
+               GFCT1446 *  DJ:GFCT1444 *                           GFCT1400 P14
+                         RJ:GFCT1448 *                             GFCT1400 P14
+               GFCT1448 * DJ:GFCT1446 *                            GFCT1400 P14
+                         RJ:GFCT1450  *                            GFCT1400 P14
+               GFCT1450 *  DJ:GFCT1448 *                           GFCT1400 P14
+                         RJ:GFCT1452  *                            GFCT1400 P14
+GFCT1400 N P14 GFCT1452 * DJ:GFCT1450  *                           GFCT1400 P14
+                         RJ:GFCT1498  *                            GFCT1400 P14
+               GFCT1498 * DJ:GFCT1452 *                            GFCT1400 P14
+                         RJ:GFCT1300 *                             GFCT1010 P14
+                         RJ:GFCT1155  *                            GFCT1010 P14
+               GFCT1990 *  DJ:GFCT1420 *                           GFCT1400 P14
+                         DJ:GFCT1440 *                             GFCT1400 P14
+                         DJ:GFCT1405 *                             GFCT1400 P14
+                         RJ:GFCT1991                               GFCT1400 P14
+               GFCT1991  DJ:GFCT1990 *                             GFCT1400 P14
+
+
+
+
+
+
+=======================================================================
+JÁ ALTERADO HERIBERTO
+=======================================================================
+job GFCT1404 / Resp: Necessário ajuste LRECL Arquivos
+   pgm = GFCT1650 (RECOMP) - ver hexavision - PACOTE 3024
+
+job GFCT1406 / Resp: Necessário ajuste LRECL Arquivos
+   PGM=GFCT1652 (RECOMP)- PACOTE 3024
+
+JOB GFCT1410 / Resp: Necessário ajuste LRECL Arquivos
+   PGM=GFCT1654  (recomp) - PACOTE 3024
+
+JOB GFCT1416 / Resp: Necessário ajuste LRECL Arquivos
+    PGM=GFCT1660 (Ajustado) - PACOTE 3022
+    PGM=GFCT1662 (Ajustado) - PACOTE 3022
+
+JOB GFCT1420  - VERIFICAR SE TEM AJUSTE
+    PGM=GFCT1664 (RECOMP) - PACOTE 3022
+
+JOB GFCT1422  - VERIFICAR SE TEM AJUSTE
+    PGM=GFCT1668 (RECOMP) - PACOTE 3022
+    PGM=GFCT1670 (RECOMP) - PACOTE 3022
+    
+job GFCT1424 - VERIFICAR SE TEM AJUSTE
+    PGM=GFCT1672 - RECOMP - PACOTE 3022
+    PGM=GFCT1674 - RECOMP - PACOTE 3022
+    PGM=GFCT1662 - RECOMP - PACOTE 3022
+
+JOB GFCT1426 / Resp: Necessário ajuste LRECL Arquivos
+   PGM=GFCT1658 (RECOMP) - PACOTE 3022
+
+JOB GFCT1428 / Resp: Necessário ajuste LRECL Arquivos
+    PGM=GFCT1660 (Ajustado) - PACOTE 3022
+    PGM=GFCT1662 (Ajustado) - PACOTE 3022
+
+========================================================================
+COMPLEMENT0 - MARISA
+======================================================================
+JOB GFCTH400 - NÃO TEM AJUSTE
+
+JOB GFCT1155
+    EXEC PGM=GFCT1183 (UTILIZA BOOK I#GFCTVA)
+
+JOB GFCT1300 - AJUSTADO
+    EXEC PGM=GFCT1678 (UTILIZA BOOK I#GFCTVA) - AJUSTADO
+    EXEC PGM=GFCT1892 (UTILIZA BOOKS I#GFCTVA / I#MESUM8) - AJUSTADO NO PACOTE 3022
+    EXEC PGM=GFCT1878 (UTILIZA BOOKS I#GFCTVA) - AJUSTADO
+    EXEC PGM=GFCT1849 (UTILIZA BOOK I#GFCTVA) - AJUSTADO
+    EXEC PGM=GFCT1848 (UTILIZA BOOK I#GFCTVA) - AJUSTADO
+
+JOB GFCT1401 - NAO HA IMPACTO
+
+JOB GFCT1402 - AJUSTADO   
+
+JOB GFCT1403  - AJUSTADO
+    EXEC PGM=GFCT4876 (UTILIZA BOOKS GFCTWKX4 / GFCTWKX5 / I#GFCTVA) - AJUSTADO
+
+    
+JOB GFCT1405 - AJUSTADO
+    EXEC PGM=GFCT4220  (UTILIZA BOOK I#GFCTVA) - AJUSTADO
+
+JOB GFCT1412 - AJUSTADO
+    EXEC PGM=GFCT4452 (UTILIZA BOOKS I#GFCTZY / GFCTWBBE / I#GFCTVA / I#CLIE20) - AJUSTADO
+        TROCAR MJ.CLIE.PRP.CADNGERA (I#CLIE20) ==> MJ.CLIE.PRP.CADNGERA.ALFA (CLIEW01B)
+    EXEC PGM=GFCT4454 (UTILIZA BOOKS GFCTWBBE / GFCTWBBD / I#GFCTVA) - AJUSTADO
+    
+JOB GFCT1414
+    EXEC PGM=GFCT4456 (UTILIZA BOOKS GFCTWBBE / I#GFCTVA / GFCTWBBF) - AJUSTADO
+    EXEC PGM=GFCT4458 (UTILIZA BOOKS GFCTWBBF / GFCTWBBD) - AJUSTADO
+    EXEC PGM=GFCT4468 (UTILIZA BOOKS GFCTWBBF) - AJUSTADO
+
+JOB GFCT1418 - VERIFICAR SE TEM AJUSTES - AJUSTADO
+    
+JOB GFCT1430 - VERIFICAR SE TEM AJUSTE - AJUSTADO
+
+JOB GFCT1440 - NAO HA IMPACTO
+    EXEC PGM=GFCT3450 (NÃO TEM AJUSTE) - NAO HA IMPACTO
+    EXEC PGM=GFCT3452 (UTILIZA BOOK I#GFCTVA) - AJUSTADO
+
+JOB GFCT1442 - NAO HA IMPACTO
+   EXEC PGM=GFCT3454 (NÃO TEM AJUSTE) - NAO HA IMPACTO
+
+JOB GFCT1444 - NAO HA IMPACTO
+   EXEC PGM=GFCT3456 (NÃO TEM AJUSTE) - NAO HA IMPACTO
+   
+JOB GFCT1446 - VERIFICAR SE TEM AJUSTE - NAO HA IMPACTO
+
+JOB GFCT1448 - NAO HA IMPACTO
+    EXEC PGM=GFCT3462 (NÃO TEM AJUSTE) - NAO HA IMPACTO
+    
+JOB GFCT1450 - AJUSTADO
+    EXEC PGM=GFCT3464 (UTILIZA BOOK I#GFCTVA) - AJUSTADO
+
+JOB GFCT1452 - AJUSTADO
+    EXEC PGM=GFCT3458 (UTILIZA BOOK I#GFCTVA) - AJUSTADO
+
+JOB GFCT1498 - VERIFICAR SE TEM AJUSTES
+
+
+JOB GFCT1990 (NAO TEM AJUSTE) - NA HA IMPACTO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

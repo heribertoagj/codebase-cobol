@@ -1,0 +1,94 @@
+TABELA GFCTA352 - 09/02/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002944   TICKET-52719
+==========================================================
+
+
+
+TABELA GFCTA352
+JOB GFCTA360  ==> PGM GFCT2613
+JOB GFCTA362 ==> PGM = GFCT2615
+GFCTA366 
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTA352 N P14          DFJ:GFCTA351 *                              GFCTA351 P14
+               GFCTA352*  RJ:GFCTA354*                               GFCTA352 P14
+               GFCTA354*  DJ:GFCTA352*                               GFCTA352 P14
+                         RJ:GFCTA356*                               GFCTA352 P14
+               GFCTA356*  DJ:GFCTA354 *                              GFCTA352 P14
+                         RJ:GFCTA357*                               GFCTA352 P14
+               GFCTA357*  DJ:GFCTA356*                               GFCTA352 P14
+                         RJ:GFCTA360 *                              GFCTA352 P14
+                         RJ:GFCTH350*                               GFCTA352 P14
+               GFCTA360*  DJ:GFCTA357 *                              GFCTA352 P14
+                         RJ:GFCTA362 *                              GFCTA352 P14
+                         RJ:GFCTA364*                               GFCTA352 P14
+               GFCTA362*  DJ:GFCTA360*                               GFCTA352 P14
+                         RJ:GFCTA366*                               GFCTA352 P14
+                         RJ:GFCTA364 *                              GFCTA352 P14
+               GFCTA364*  DJ:GFCTA360 *                              GFCTA352 P14
+                         DJ:GFCTA362*                               GFCTA352 P14
+                         RJ:GFCTA368 *                              GFCTA352 P14
+GFCTA352 N P14 GFCTA366*  DJ:GFCTA362 *                              GFCTA352 P14
+                         RJ:GFCTA368*                               GFCTA352 P14
+               GFCTA368*  DJ:GFCTA364*                               GFCTA352 P14
+                         DJ:GFCTA366*                               GFCTA352 P14
+                         RJ:GFCTH370*                               GFCTA352 P14
+               GFCTA374*  DJ:GFCTH371*                               GFCTA352 P14
+                         RJ:GFCTH350*                               GFCTA352 P14
+                         RJ:GFCTH374*                               GFCTA352 P14
+               GFCTCARG*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTH350*  DJ:GFCTA357*                               GFCTA352 P14
+                         DJ:GFCTA374*                               GFCTA352 P14
+                         RJ:GFCTH351*                               GFCTA352 P14
+               GFCTH351*  DJ:GFCTH350*                               GFCTA352 P14
+               GFCTH370 * DJ:GFCTA368*                               GFCTA352 P14
+                         RJ:GFCTH371*                               GFCTA352 P14
+                         RJ:GFCTH372*                               GFCTA352 P14
+               GFCTH371*  DJ:GFCTH370*                               GFCTA352 P14
+                         RJ:GFCTA374*                               GFCTA352 P14
+GFCTA352 N P14 GFCTH372*  DJ:GFCTH370 *                              GFCTA352 P14
+                         RJ:GFCTH373*                               GFCTA352 P14
+               GFCTH373*  DJ:GFCTH372 *                              GFCTA352 P14
+               GFCTH374*  DJ:GFCTA374*                               GFCTA352 P14
+                         RJ:GFCTH375*                               GFCTA352 P14
+               GFCTH375*  DJ:GFCTH374*                               GFCTA352 P14
+                                                                               
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002944   TICKET-52719
+==========================================================
+
+job GFCTA351 - NAO HA IMPACTO
+    EXEC PGM=GFCT2611 (utiliza book GFCTWAEX) - AJUSTADO
+
+job GFCTA352 - NAO HA IMPACTO
+     EXEC PGM=GFCT2769(utiliza book GFCTWAEX) - AJUSTADO
+
+job GFCTA354 - (FAZ HPU DA TABELA K6) - NAO HA IMPACTO
+
+job GFCTA356 - (TRATA ARQUIVO HPU K6) - NAO HA IMPACTO
+
+job GFCTA360
+   EXEC PGM=GFCT2613 (utiliza book GFCTWAEX, GFCTWADJ, GFCTWADK) - AJUSTADO
+
+job GFCTA362
+   EXEC PGM=GFCT2615 (utiliza book GFCTWAEX, GFCTWADJ, GFCTWADK) - AJUSTADO
+
+job GFCTA364
+   EXEC PGM=GFCT2609  (utiliza book GFCTWADJ) - AJUSTADO
+   EXEC PGM=GFCT2617 (utiliza book GFCTWAEX) - AJUSTADO
+   EXEC PGM=GFCT2612  (utiliza book GFCTWAEX) - AJUSTADO
+
+job GFCTA366
+   EXEC PGM=GFCT2606(utiliza book GFCTWADM) - AJUSTADO
+
+job GFCTA368 - FAZ TRANSMISSAO DE ARQUIVOS - NAO HA IMPACTO
+
+job GFCTA374 - FAZ CARGA DO ARQUIVO K6 - NAO HA IMPACTO
+
+
+
+
+

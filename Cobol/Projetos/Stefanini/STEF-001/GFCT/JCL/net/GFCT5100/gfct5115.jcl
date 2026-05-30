@@ -1,0 +1,27 @@
+//GFCT5115 JOB 'GFCT,4220,PR14','D336356',MSGCLASS=Z,SCHENV=BATCH
+//JOBLIB   DD DSN=MX.BIBGERAL,DISP=SHR
+//         DD DSN=DB2M1.R2.DSNLOAD,DISP=SHR
+//         DD DSN=SYS1.CEE.SCEERUN,DISP=SHR
+//STEP1    EXEC PGM=GFCT2648
+//*
+//* ***    ------------------------------------------------------------
+//* ***    TRATA ARQUIVO DE AUTORIZADOS.
+//* ***    ------------------------------------------------------------
+//*
+//AUTORCLA DD DSN=MX.GFCT.AUTORIBX(0),
+//       DISP=SHR
+//EXPREVIA DD DSN=MX.GFCT.EXTPREVI.CLASS(0),
+//       DISP=SHR
+//EXTMAUOK DD DSN=MX.GFCT.EXTMAUOK(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=DISCO,
+//       SPACE=(TRK,(020000,4000),RLSE),
+//       DCB=(MX.A,LRECL=0095,RECFM=FB)
+//EXMSTCLI DD DSN=MX.GFCT.EXMSTCLI(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=DISCO,
+//       SPACE=(TRK,(020000,4000),RLSE),
+//       DCB=(MX.A,LRECL=0095,RECFM=FB)
+//SYSOUT   DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=Y
+//*

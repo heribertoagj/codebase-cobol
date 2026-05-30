@@ -1,0 +1,144 @@
+PACOTE TABELA GFCT1200 - 21/01/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002954 TICKET-56441
+==========================================================
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT1200 N P14          DFJ:GFCT0932 *                              GFCT0400 P14
+               GFCTFINA  DJ:GFCT1955*                               GFCT1200 P14
+                         DJ:GFCT1236 *                              GFCT1200 P14
+                         DJ:GFCT1249 *                              GFCT1200 P14
+                         RJ:GFCT3400 *                              GFCT3400 P14
+                         RJ:GFCT3676 *                              GFCT3600 P14
+                         RJ:GFCTDELL*                               GFCT3600 P14
+                         RJ:GFCTD008  *                             GFCT3400 P14
+               GFCT1205*  DJ:GFCT0932*                               GFCT0400 P14
+                         DJ:GFCT0656 *                              GFCT0650 P14
+                         RJ:GFCT1220 *                              GFCT1200 P14
+                         RJ:GFCT1240*                               GFCT1200 P14
+                         RJ:GFCT1206 *                              GFCT1200 P14
+                         RJ:GFCT1235 *                              GFCT1200 P14
+                         RJ:GFCT1200 *P14
+                         RJ:GFCT1245 *                              GFCT1200 P14
+               GFCT1206*  DJ:GFCT1205 *                              GFCT1200 P14
+                         RJ:GFCT1207 *                              GFCT1200 P14
+GFCT1200* N P14 GFCT1207*  DJ:GFCT1206 *                              GFCT1200 P14
+                         RJ:GFCT1208 *                              GFCT1200 P14
+               GFCT1208*  DJ:GFCT1207 *                              GFCT1200 P14
+                         RJ:GFCT1210 *                              GFCT1200 P14
+                         RJ:GFCT1954*                               GFCT1200 P14
+               GFCT1210*  DJ:GFCT1959                               GFCT1190 P14
+                         DJ:GFCT1208*                               GFCT1200 P14
+                         RJ:GFCT1954*                               GFCT1200 P14
+                         RJ:GFCTDEL2 *                              GFCTDELE P14
+                         RJ:GFCTN220 *                              GFCTN220 P14
+                         RJ:GFCT1249*                               GFCT1200 P14
+                         RJ:GFCT1235 *                              GFCT1200 P14
+                        GFJ:                                       CMTFA520 P14
+               GFCT1215*  DJ:GFCT1205 *                              GFCT1200 P14
+                         RJ:GFCT1249*                               GFCT1200 P14
+               GFCT1220*  DJ:GFCT1205 *                              GFCT1200 P14
+                         RJ:GFCT1249*                               GFCT1200 P14
+                         RJ:GFCT1230 *                              GFCT1200 P14
+GFCT1200 N P14 GFCT1230*  DJ:GFCT1220 *                              GFCT1200 P14
+                         RJ:GFCT1954*                               GFCT1200 P14
+               GFCT1235 * DJ:GFCT1205 *                              GFCT1200 P14
+                         DJ:GFCT1210 *                              GFCT1200 P14
+                         RJ:GFCT1236*                               GFCT1200 P14
+                         RJ:GFCT1249 *                              GFCT1200 P14
+                         RJ:PM142130                               PM14NOIT P14
+               GFCT1236*  DJ:GFCT1235*                               GFCT1200 P14
+                         RJ:GFCTFINA                               GFCT1200 P14
+               GFCT1240*  DJ:GFCT1205*                               GFCT1200 P14
+                         RJ:GFCT1249 *                              GFCT1200 P14
+               GFCT1245*  DJ:GFCT1205 *                              GFCT1200 P14
+                         RJ:GFCT1249 *                              GFCT1200 P14
+                         RJ:PM142100                               PM14NOIT P14
+                         RJ:PM142100                               PM14NOIT P14
+               GFCT1249*  DJ:GFCT1240*                               GFCT1200 P14
+                         DJ:GFCT1220 *                              GFCT1200 P14
+                         DJ:GFCT1210*                               GFCT1200 P14
+GFCT1200 N P14 GFCT1249*  DJ:GFCT1215 *                              GFCT1200 P14
+                         DJ:GFCT1245 *                              GFCT1200 P14
+                         DJ:GFCT1235 *                              GFCT1200 P14
+                         RJ:GFCTFINA                               GFCT1200 P14
+                        GFJ:                                       GFCT0850 P14
+               GFCT1954*  DJ:GFCT1230 *                              GFCT1200 P14
+                         DJ:GFCT1210 *                              GFCT1200 P14
+                         DJ:GFCT1208*                               GFCT1200 P14
+                         DJ:CMTFA520                               CMTFA520 P14
+                         RJ:GFCT1955 *                              GFCT1200 P14
+               GFCT1955*  DJ:GFCT1954 *                              GFCT1200 P14
+                         RJ:GFCTFINA                               GFCT1200 P14
+
+==================================================================================================
+
+JOB GFCT1236 - NAO HA IMPACTO
+   EXEC PGM=GFCT4196 (NAO)
+  
+JOB GFCT3676 - NAO HA IMPACTO
+   EXEC PGM=GFCT1993 (NAO)
+
+JOB GFCTD008 - NAO HA IMPACTO
+   EXEC PGM=GFCT9208 (NAO)
+   EXEC PGM=GFCT9209 (NAO_)  
+
+JOB GFCT1205 - NAO HA IMPACTO
+   EXEC PGM=GFCT4273 (NAO)
+
+JOB GFCT0656 - NAO HA IMPACTO
+   EXEC PGM=GFCT1614(NAO)
+   EXEC PGM=GFCT1616 (NAO)
+
+JOB GFCT1220 - NAO HA IMPACTO
+   EXEC PGM=GFCT1920(NAO)
+   EXEC PGM=GFCT1921 (NAO)
+
+JOB GFCT1240 - NAO HA IMPACTO
+   EXEC PGM=GFCT1945(NAO)
+   EXEC PGM=GFCT1946(NAO)
+
+JOB GFCT1206 - NAO HA IMPACTO
+   EXEC PGM=GFCT3624(NAO)
+   EXEC PGM=GFCT3662(NAO) 
+
+job GFCT1235 - NAO HA IMPACTO
+   EXEC PGM=GFCT1935 (não)
+   EXEC PGM=GFCT1936(não)
+
+job GFCT1215 - NAO HA IMPACTO
+   EXEC PGM=GFCT1915(não)
+   EXEC PGM=GFCT1916 - NAO HA IMPACTO
+
+job GFCT1230 - NAO HA IMPACTO
+
+job GFCT1245 - NAO HA IMPACTO
+    EXEC PGM=GFCT1950 (não)
+    EXEC PGM=GFCT1951 (não)
+
+job GFCT1207 - NAO HA IMPACTO
+   EXEC PGM=GFCT3622 (utiliza tabela cliev004 e GFCTB0I0) - AJUSTADO
+   EXEC PGM=GFCT3662(não) 
+   EXEC PGM=GFCT3672(não)
+   
+job GFCT1208 - NAO HA IMPACTO
+   EXEC PGM=GFCT3630(utiliza tabela cliev004) - AJUSTADO
+   EXEC PGM=GFCT3662(não)
+   EXEC PGM=GFCT3674(não)
+   EXEC PGM=GFCT3682(não)
+   
+job GFCT1210 - NAO HA IMPACTO
+   EXEC PGM=GFCT1910(não)
+   EXEC PGM=GFCT1911(não)
+    EXEC PGM=GFCT4275(não)
+   EXEC PGM=GFCT1400 (não)
+   EXEC PGM=GFCT4276(não)
+   
+job GFCTN220 - NAO HA IMPACTO
+   EXEC PGM=GFCT2451(nao)
+
+
+
+

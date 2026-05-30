@@ -1,0 +1,53 @@
+PACOTE TABELA GFCT2402 - 23/01/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002995  TICKET-66073
+==========================================================
+OBS... ESSA NET É TRATADA DENTRO DA DIARIA GFCT0400.
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT2402 N P14 GFCTD004*  DJ:GFCTD003*                               GFCT0400 P14
+               GFCT2402*  DJ:GFCTD003 *                              GFCT0400 P14
+                         RJ:GFCT2405*                               GFCT2402 P14
+               GFCT2405*  DJ:GFCT2402 *                              GFCT2402 P14
+                         RJ:GFCT2408 *                              GFCT2402 P14
+               GFCT2408 * DJ:GFCT2405 *                              GFCT2402 P14
+                         RJ:GFCT2411*                               GFCT2402 P14
+               GFCT2411*  DJ:GFCT2408 *                              GFCT2402 P14
+                         RJ:GFCT2414*                               GFCT2402 P14
+               GFCT2414*  DJ:GFCT2411 *                              GFCT2402 P14
+
+================================================================
+
+JOB GFCTD004 - NAO HA IMPACTO
+   EXEC PGM=GFCT9208 (NAO) - NAO HA IMPACTO
+   EXEC PGM=GFCT9209 (NAO) - NAO HA IMPACTO
+  
+JOB GFCTD003 - NAO HA IMPACTO
+   EXEC PGM=GFCT9208 (NAO) - NAO HA IMPACTO
+   EXEC PGM=GFCT9209 (NAO) - NAO HA IMPACTO
+
+JOB GFCT2402 - NAO HA IMPACTO
+   EXEC PGM=GFCT1750 (UTILIZA BOOK I#GFCTT9)  - ESTÁ NA TABELA 0400 - AJUSTADO
+   EXEC PGM=GFCT1755  (UTILIZA BOOK I#GFCTT9) - ESTÁ NA TABELA 0400 - AJUSTADO
+
+JOB GFCT2405 - NAO HA IMPACTO
+   EXEC PGM=GFCT1760  (UTILIZA BOOK I#GFCTT9) - RECOMP
+   EXEC PGM=GFCT1765  (UTILIZA BOOK I#GFCTT9) - RECOMP
+
+JOB GFCT2408 - NAO HA IMPACTO
+   EXEC PGM=GFCT1770   (UTILIZA BOOK I#GFCTT9) - RECOMP
+   EXEC PGM=GFCT1775   (UTILIZA BOOK I#GFCTT9) - RECOMP
+
+JOB GFCT2411 - NAO HA IMPACTO
+   EXEC PGM=GFCT1780 (UTILIZA TABELA GFCTB050 E BOOK  I#GFCTT9) - AJUSTADO
+   EXEC PGM=GFCT1785 (UTILIZA TABELA GFCTB0B3 E BOOK  I#GFCTT9) - AJUSTADO
+   EXEC PGM=GFCT1787 (UTILIZA BOOK I#GFCTT9) - RECOMP
+   
+JOB GFCT2414 - NAO HA IMPACTO
+   EXEC PGM=GFCT1790 (UTILIZA BOOK I#GFCTT9) - RECOMP
+ 
+
+

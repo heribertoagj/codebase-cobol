@@ -1,0 +1,55 @@
+TABELA GFCTA405 - 29/01/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002997 TICKET-68279
+==========================================================
+
+
+
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTA405 N P14          DFJ:GFCTA400*                               GFCTA400 P14
+               GFCTA405*  RJ:GFCTA410 *                              GFCTA405 P14
+               GFCTA410 * DJ:GFCTA405*                               GFCTA405 P14
+                         RJ:GFCTA415 *                              GFCTA405 P14
+               GFCTA415 * DJ:GFCTA410 *                              GFCTA405 P14
+                        RSI:GFCTN300*                                           
+                         RJ:GFCTH420 *                              GFCTA405 P14
+                         RJ:GFCTH425*                               GFCTA405 P14
+               GFCTCARG   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTDOCT   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTH420*  DJ:GFCTA415*                               GFCTA405 P14
+                         RJ:GFCTH421 *                              GFCTA405 P14
+               GFCTH421 * DJ:GFCTH420*                               GFCTA405 P14
+               GFCTH425*  DJ:GFCTA415 *                              GFCTA405 P14
+                         RJ:GFCTH426 *                               GFCTA405 P14
+               GFCTH426 * DJ:GFCTH425 *                              GFCTA405 P14
+
+
+
+
+job GFCTA400 - verificar - NAO HA IMPACTO
+
+ job GFCTA405
+    EXEC PGM=GFCT3238 (não)
+    EXEC PGM=GFCT3242(não)
+    EXEC PGM=GFCT3246 (não)
+    
+job GFCTA410
+   EXEC PGM=GFCT3250 (não)
+
+job GFCTA415 - AJUSTADO
+   EXEC PGM=GFCT3254 (não)
+   EXEC PGM=GFCT4200(não)
+   EXEC PGM=GFCT4208 (utiliza book I#CLIE20) - AJUSTADO
+
+job GFCTN300 - AJUSTADO
+   EXEC PGM=GFCT4202 (não)
+   EXEC PGM=GFCT3408 (utiliza book I#CLIE20) - AJUSTADO
+   EXEC PGM=GFCT3412 (não)
+   EXEC PGM=GFCT3720(não)
+   
+ 
+

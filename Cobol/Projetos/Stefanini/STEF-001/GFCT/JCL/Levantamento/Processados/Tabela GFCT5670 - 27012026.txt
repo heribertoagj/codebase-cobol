@@ -1,0 +1,31 @@
+Tabela GFCT5670 - 27012026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002968   TICKET-56435
+==========================================================
+EXECUTA O PROGRAMA GFCT3602  
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT5670 N P14 GFCT5670* DED:SBAT0250 MX.ISDB.GFCT.GFCT5670         SBATESPE P11
+                        DED:SBAT0250 MX.ISDB.GFCT.GFCT5670         SBAT0250 P11
+                        GFJ:GFCT5672 *                              GFCT5670 P14
+               GFCT5672* DFJ:GFCT5670*                               GFCT5670 P14
+                        GFJ:GFCT5978*                               GFCT5670 P14
+                        GFJ:GFCT5979 *                              GFCT5670 P14
+               GFCT5978* DFJ:GFCT5672 *                              GFCT5670 P14
+                         RJ:GFCT5979 *                              GFCT5670 P14
+               GFCT5979*  DJ:GFCT5978 *                              GFCT5670 P14
+                        DFJ:GFCT5672 *                              GFCT5670 P14
+
+
+================================================================================
+
+   
+job GFCT5670 - NAO HA IMPACTO
+
+job GFCT5672 - NAO HA IMPACTO
+    EXEC PGM=GFCT3602 (utiliza tabela cliev004 e GFCTB0I0) - AJUSTADO
+    EXEC PGM=GFCT3660 (não) - NAO HA IMPACTO
+     
+job GFCT5978 - NAO HA IMPACTO
+ 

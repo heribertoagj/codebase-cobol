@@ -1,0 +1,178 @@
+*=====================================================================*
+*                             7 C O M M                               *
+*=====================================================================*
+*      TELA........:   RUCAT797                                       *
+*      PROGRAMA....:   RUCA7951                                       *
+*      ANALISTA....:   HERIBERTO GIANNASI       - 7COMM               *
+*      DATA........:   01/2026                                        *
+*---------------------------------------------------------------------*
+*      OBJETIVO....: LISTA CONTRATO PARA RENEGOCIACAO                 *
+*=====================================================================*
+         PRINT NOGEN
+QUT797   FMT
+         DEV   TYPE=(3270,2),FEAT=IGNORE,SYSMSG=MENSA,DSCA=X'00A0',    X
+               PFK=(PF,01='/RCL          .',02='RUCA7951   *',         X
+               03='RUCA7951      C',04='RUCA7951      4',              X
+               05='RUCA7951      *',06='RUCA7951      *',              X
+               07='RUCA7951      7',08='RUCA7951      8',              X
+               09='RUCA7951      *',10='RUCA7951      *',              X
+               11='RUCA7951      *',12='RUCA7951      *',              X
+               13='RUCA7951      *',14='RUCA7951      *',              X
+               15='RUCA7951      *',16='RUCA7951      *',              X
+               17='RUCA7951      *',18='RUCA7951      *',              X
+               19='RUCA7951      *',20='RUCA7951      *',              X
+               21='RUCA7951      *',22='RUCA7951      *',              X
+               23='RUCA7951      *',24='RUCA7951      *')
+*---------------------------------------------------------------------*
+*                            D I F  /  D O F                          *
+*---------------------------------------------------------------------*
+         DIV  TYPE=INOUT
+         DPAGE CURSOR=((22,79))
+*---------------------------------------------------------------------*
+*                             LINHA 01                                *
+*---------------------------------------------------------------------*
+DATA     DFLD  POS=(01,02),LTH=10,ATTR=(MOD,NUM,PROT)
+         DFLD  'SISTEMA DE CREDITO RURAL',POS=(01,30),ATTR=(PROT,HI)
+HORA     DFLD  POS=(01,73),LTH=08,ATTR=(MOD,NUM,PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 02                                *
+*---------------------------------------------------------------------*
+         DFLD  'RUCAT797',POS=(02,02),ATTR=(PROT)
+         DFLD  'REORGANIZACAO RURAL',POS=(02,32),ATTR=(PROT,HI)
+         DFLD  'RUCA7951',POS=(02,73),ATTR=(PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 03                                *
+*---------------------------------------------------------------------*
+SENHAS   DFLD  POS=(03,01),LTH=37,ATTR=(MOD,PROT,NODISP)
+PRTELA   DFLD  POS=(03,39),LTH=08,ATTR=(MOD,PROT,NODISP)
+CTERM    DFLD  POS=(03,48),LTH=08,ATTR=(MOD,PROT)
+ANTELA   DFLD  POS=(03,57),LTH=08,ATTR=(MOD,PROT,NODISP)
+PROXPAG  DFLD  POS=(03,66),LTH=01,ATTR=(MOD,PROT,NODISP)
+         DFLD  'PAG.',POS=(03,73),ATTR=(PROT)
+PAGINA   DFLD  POS=(03,78),LTH=02,ATTR=(MOD,PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 04                                *
+*---------------------------------------------------------------------*
+         DFLD  'CHAVE DA OPERACAO:',POS=(04,02),ATTR=(PROT)
+CCONTR   DFLD  POS=(04,21),LTH=09,ATTR=(MOD,NUM,PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 06                                *
+*---------------------------------------------------------------------*
+         DFLD  'AGENCIA:',POS=(06,02),ATTR=(PROT)
+AGENCIA  DFLD  POS=(06,11),LTH=05,ATTR=(MOD,NUM,PROT)
+         DFLD  'C/C:',POS=(06,18),ATTR=(PROT)
+CONTA    DFLD  POS=(06,23),LTH=08,ATTR=(MOD,NUM,PROT)
+         DFLD  'CPF/CNPJ:',POS=(06,43),ATTR=(PROT)
+CNPJCPF  DFLD  POS=(06,53),LTH=18,ATTR=(MOD,PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 08                                *
+*---------------------------------------------------------------------*
+         DFLD  '----------------------------------------',             X
+               POS=(08,02),ATTR=(PROT)
+
+         DFLD  '--------------------------------------',               X
+               POS=(08,42),ATTR=(PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 09                                *
+*---------------------------------------------------------------------*
+         DFLD  'SALDO DEVEDOR',POS=(09,28),ATTR=(PROT)
+         DFLD  'SALDO DEVEDOR',POS=(09,43),ATTR=(PROT)
+         DFLD  'COD.',POS=(09,58),ATTR=(PROT)
+         DFLD  'VALOR',POS=(09,75),ATTR=(PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 10                                *
+*---------------------------------------------------------------------*
+         DFLD  'REFBACEN',POS=(10,02),ATTR=(PROT)
+         DFLD  'CHV OPER',POS=(10,14),ATTR=(PROT)
+         DFLD  'PRINCIPAL',POS=(10,32),ATTR=(PROT)
+         DFLD  'ENCARGOS',POS=(10,48),ATTR=(PROT)
+         DFLD  'BASE',POS=(10,58),ATTR=(PROT)
+         DFLD  'RENEGOCIADO',POS=(10,69),ATTR=(PROT)
+*---------------------------------------------------------------------*
+*                             LINHAS 11                               *
+*---------------------------------------------------------------------*
+         DO 8
+REFBAC   DFLD  POS=(11,02),LTH=11,ATTR=(MOD)
+CHVOPE   DFLD  POS=(11,14),LTH=09,ATTR=(MOD)
+SLDPRI   DFLD  POS=(11,24),LTH=17,ATTR=(MOD,NUM)
+SLDENC   DFLD  POS=(11,42),LTH=14,ATTR=(MOD,NUM)
+CODBAS   DFLD  POS=(11,58),LTH=04,ATTR=(MOD,NUM)
+SLDREN   DFLD  POS=(11,64),LTH=16,ATTR=(MOD,NUM)
+         ENDDO
+*---------------------------------------------------------------------*
+*                             LINHA 20                                *
+*---------------------------------------------------------------------*
+         DFLD  'VALOR TOTAL RENEGOCIADO:',POS=(20,02),ATTR=(PROT,HI)
+SLDTOT   DFLD  POS=(20,27),LTH=18,ATTR=(MOD,PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 22                                *
+*---------------------------------------------------------------------*
+MENSA    DFLD  POS=(22,02),LTH=79,ATTR=(MOD,NUM,PROT,HI)
+*---------------------------------------------------------------------*
+*                             LINHA 23                                *
+*---------------------------------------------------------------------*
+         DFLD  'F1=AJU',POS=(23,02),ATTR=(PROT,HI)
+         DFLD  'F2=DESC',POS=(23,09),ATTR=(PROT,HI)
+         DFLD  'F3=MENU',POS=(23,17),ATTR=(PROT,HI)
+         DFLD  'F7=ANTERIOR',POS=(23,25),ATTR=(PROT,HI)
+         DFLD  'F8=PROXIMA',POS=(23,37),ATTR=(PROT,HI)
+         FMTEND
+***********************************************************************
+*                              M I D                                  *
+***********************************************************************
+RUCAI797 MSG   TYPE=INPUT,SOR=(QUT797,IGNORE),NXT=RUCAT797,OPT=1
+         SEG
+         MFLD  (PF,'RUCA7951      .'),LTH=015
+         MFLD  NOVOOPC,LTH=02,FILL=C'0',JUST=R
+         MFLD  SENHAS,LTH=37,FILL=C' ',JUST=L
+         MFLD  PRTELA,LTH=08,FILL=C' ',JUST=L
+         MFLD  CTERM,LTH=08,FILL=C' ',JUST=L
+         MFLD  ANTELA,LTH=08,FILL=C' ',JUST=L
+         MFLD  PROXPAG,LTH=01,FILL=C' ',JUST=L
+         MFLD  PAGINA,LTH=02,FILL=C'0',JUST=R
+         MFLD  CCONTR,LTH=09,FILL=C'0',JUST=R
+         MFLD  AGENCIA,LTH=05,FILL=C' ',JUST=R
+         MFLD  CONTA,LTH=08,FILL=C' ',JUST=R
+         DO 8
+         MFLD  REFBAC,LTH=11,FILL=C' ',JUST=L
+         MFLD  CHVOPE,LTH=09,FILL=C' ',JUST=R
+         MFLD  SLDPRI,LTH=17,FILL=C' ',JUST=R
+         MFLD  SLDENC,LTH=14,FILL=C' ',JUST=R
+         MFLD  CODBAS,LTH=04,FILL=C' ',JUST=R
+         MFLD  SLDREN,LTH=16,FILL=C' ',JUST=R
+         ENDDO
+         MFLD  CNPJCPF,LTH=18,FILL=C' ',JUST=L
+         MFLD  SLDTOT,LTH=18,FILL=C' ',JUST=R
+         MFLD  MENSA,LTH=79,FILL=C' ',JUST=L
+         MSGEND
+***********************************************************************
+*                              M O D                                  *
+***********************************************************************
+RUCAT797 MSG   TYPE=OUTPUT,SOR=(QUT797,IGNORE),NXT=RUCAI797,OPT=1,     X
+               FILL=PT
+         SEG
+         MFLD  (DATA,DATE3Y4)
+         MFLD  (HORA,TIME)
+         MFLD  NOVOOPC,LTH=02
+         MFLD  SENHAS,LTH=37
+         MFLD  PRTELA,LTH=08
+         MFLD  CTERM,LTH=08
+         MFLD  ANTELA,LTH=08
+         MFLD  PROXPAG,LTH=01
+         MFLD  PAGINA,LTH=02
+         MFLD  CCONTR,LTH=09
+         MFLD  AGENCIA,LTH=05
+         MFLD  CONTA,LTH=08
+         DO 8
+         MFLD  REFBAC,LTH=13,ATTR=YES
+         MFLD  CHVOPE,LTH=11,ATTR=YES
+         MFLD  SLDPRI,LTH=19,ATTR=YES
+         MFLD  SLDENC,LTH=16,ATTR=YES
+         MFLD  CODBAS,LTH=06,ATTR=YES
+         MFLD  SLDREN,LTH=18,ATTR=YES
+         ENDDO
+         MFLD  CNPJCPF,LTH=18
+         MFLD  SLDTOT,LTH=20,ATTR=YES
+         MFLD  MENSA,LTH=79
+         MSGEND
+         END

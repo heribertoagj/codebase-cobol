@@ -1,0 +1,420 @@
+***********************************************************************
+*                         C P M  -  S I S T E M A S                   *
+***********************************************************************
+*              TELA...................RUECT700                        *
+*              PROGRAMADOR............RODNEI M. KRYWOJ - C P M        *
+*              ANALISTA...............RODNEI MARTOS    - GP 82        *
+*              DATA...................25/06/1998                      *
+*              OBJETIVO...............VALIDAR ACESSOS A PROGRAMAS     *
+*              PERMITIDOS PELO USUARIO,VALIDAR A AGENCIA ENVIADA PELO *
+*              SENHAS (COD. DEPTO), INSERT NAS TABELAS RUECV080,      *
+*              RUECV081, RUECV082 E RUECV008.                         *
+***********************************************************************
+         PRINT NOGEN
+MQT700   FMT
+         DEV   TYPE=(3270,2),FEAT=IGNORE,SYSMSG=MENSAG,DSCA=X'00A0',   X
+               PFK=(PF,1='/RCL          .',2='RUEC7000      *',        X
+               03='RUEC7000      3',04='RUEC7000      *',              X
+               05='RUEC7000      5',06='RUEC7000      6',              X
+               07='RUEC7000      *',08='RUEC7000      *',              X
+               09='RUEC7000      9',10='RUEC7000      Z',              X
+               11='RUEC7000      A',12='RUEC7000      *',              X
+               13='RUEC7000      *',14='RUEC7000      *',              X
+               15='RUEC7000      *',16='RUEC7000      *',              X
+               17='RUEC7000      *',18='RUEC7000      *',              X
+               19='RUEC7000      *',20='RUEC7000      *',              X
+               21='RUEC7000      *',22='RUEC7000      *',              X
+               23='RUEC7000      *',24='RUEC7000      *')
+*---------------------------------------------------------------------*
+*                            D I F  /  D O F                          *
+*---------------------------------------------------------------------*
+         DIV   TYPE=INOUT
+         DPAGE CURSOR=((04,19,POSI))
+*---------------------------------------------------------------------*
+*                             LINHA 01                                *
+*---------------------------------------------------------------------*
+DATA     DFLD  POS=(01,02),LTH=10,ATTR=(PROT)
+OCULT01  DFLD  POS=(01,13),LTH=16,ATTR=(MOD,NODISP,PROT)
+         DFLD  'SISTEMA DE CREDITO RURAL',POS=(01,30),ATTR=(PROT,HI)
+OCULT02  DFLD  POS=(01,55),LTH=17,ATTR=(MOD,NODISP,PROT)
+HORA     DFLD  POS=(01,73),LTH=08,ATTR=(PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 02                                *
+*---------------------------------------------------------------------*
+         DFLD  'RUECT700',POS=(02,02),ATTR=(PROT,HI)
+OCULT03  DFLD  POS=(02,11),LTH=24,ATTR=(MOD,NODISP,PROT)
+         DFLD  'MENU CEDULA',POS=(02,36),ATTR=HI
+OCULT04  DFLD  POS=(02,48),LTH=24,ATTR=(MOD,NODISP,PROT)
+         DFLD  'RUEC7000',POS=(02,73),ATTR=(PROT,HI)
+*---------------------------------------------------------------------*
+*                             LINHA 03                                *
+*---------------------------------------------------------------------*
+OCULT09  DFLD  POS=(03,02),LTH=79,ATTR=(MOD,NODISP,PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 04                                *
+*---------------------------------------------------------------------*
+         DFLD  'AGENCIA / CONTA:',POS=(04,02),ATTR=PROT
+AGENC    DFLD  POS=(04,19),LTH=05,ATTR=(NUM,MOD)
+         DFLD  '/',POS=(04,25),ATTR=PROT
+CONTA    DFLD  POS=(04,27),LTH=07,ATTR=(NUM,MOD)
+OCULT05  DFLD  POS=(04,35),LTH=13,ATTR=(MOD,NODISP,PROT)
+         DFLD  'CNPJ/CPF:',POS=(04,49),ATTR=PROT
+CGCNUM   DFLD  POS=(04,59),LTH=09,ATTR=(MOD)
+         DFLD  '/',POS=(04,69),ATTR=PROT
+CGCFIL   DFLD  POS=(04,71),LTH=04,ATTR=(MOD)
+         DFLD  '-',POS=(04,76),ATTR=PROT
+CTRL     DFLD  POS=(04,78),LTH=02,ATTR=(NUM,MOD)
+*---------------------------------------------------------------------*
+*                             LINHA 05                                *
+*---------------------------------------------------------------------*
+         DFLD  'NOME:',POS=(05,02),ATTR=PROT
+NOME     DFLD  POS=(05,08),LTH=40,ATTR=(MOD)
+         DFLD  'SITUACAO:',POS=(05,49),ATTR=PROT
+SITUAC   DFLD  POS=(05,59),LTH=11,ATTR=(MOD,PROT)
+OCULT06  DFLD  POS=(05,71),LTH=10,ATTR=(MOD,NODISP,PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 06                                *
+*---------------------------------------------------------------------*
+SENHAS   DFLD  POS=(06,02),LTH=37,ATTR=(MOD,NODISP,PROT)
+OCULT07  DFLD  POS=(06,40),LTH=22,ATTR=(MOD,NODISP,PROT)
+CTIPCE   DFLD  POS=(06,64),LTH=01,ATTR=(MOD)
+DTIPCE   DFLD  POS=(06,66),LTH=15,ATTR=(MOD,PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 07                                *
+*---------------------------------------------------------------------*
+         DFLD  'NOME PRODUTO:',POS=(07,02),ATTR=PROT
+NPROD1   DFLD  POS=(07,16),LTH=40,ATTR=(MOD)
+HIFEN    DFLD  POS=(07,57),LTH=01,ATTR=(MOD,PROT,NUM)
+NPROD2   DFLD  POS=(07,59),LTH=22,ATTR=(MOD,PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 08                                *
+*---------------------------------------------------------------------*
+         DFLD  'ORIGEM RECURSO:',POS=(08,02),ATTR=PROT
+ORIGCD   DFLD  POS=(08,18),LTH=03,ATTR=(MOD,NUM)
+ORIGDS   DFLD  POS=(08,22),LTH=20,ATTR=(MOD,PROT,NUM)
+         DFLD  'ATIVIDADE:',POS=(08,43),ATTR=PROT
+ATIVCD   DFLD  POS=(08,54),LTH=03,ATTR=(MOD,NUM)
+ATIVDS   DFLD  POS=(08,58),LTH=16,ATTR=(MOD,PROT,NUM)
+OCULT08  DFLD  POS=(08,75),LTH=06,ATTR=(MOD,NODISP,PROT)
+*---------------------------------------------------------------------*
+*   ** NOVO RECOR **          LINHA 09                                *
+*---------------------------------------------------------------------*
+         DFLD  'MODALIDADE....:',POS=(09,02),ATTR=PROT
+CODMOD   DFLD  POS=(09,18),LTH=03,ATTR=(MOD,NUM)
+DESMOD   DFLD  POS=(09,22),LTH=20,ATTR=(MOD,PROT,NUM)
+         DFLD  'VARIEDADE.:',POS=(09,43),ATTR=PROT
+CODVAR   DFLD  POS=(09,55),LTH=03,ATTR=(MOD,NUM)
+DESVAR   DFLD  POS=(09,59),LTH=22,ATTR=(MOD,PROT,NUM)
+*---------------------------------------------------------------------*
+*   ** NOVO RECOR **          LINHA 10                                *
+*---------------------------------------------------------------------*
+         DFLD  'CESTA.........:',POS=(10,02),ATTR=PROT
+CODCES   DFLD  POS=(10,18),LTH=03,ATTR=(MOD,NUM)
+DESCES   DFLD  POS=(10,22),LTH=20,ATTR=(MOD,PROT,NUM)
+         DFLD  'ZONEAMTO(S/N/A):',POS=(10,43),ATTR=PROT
+ZONEAM   DFLD  POS=(10,60),LTH=01,ATTR=(MOD)
+         DFLD  'CONSORC(S/N/A):',POS=(10,62),ATTR=PROT
+CONSOR   DFLD  POS=(10,78),LTH=01,ATTR=(MOD)
+*---------------------------------------------------------------------*
+*   ** NOVO RECOR **          LINHA 11                                *
+*---------------------------------------------------------------------*
+         DFLD  'SIST.PRODUCAO: AGROPECUARIA:',POS=(11,02),ATTR=PROT
+CODAGR   DFLD  POS=(11,31),LTH=03,ATTR=(MOD,NUM)
+DESAGR   DFLD  POS=(11,35),LTH=15,ATTR=(MOD,PROT,NUM)
+         DFLD  'INTEGRACAO:',POS=(11,51),ATTR=PROT
+CODINT   DFLD  POS=(11,63),LTH=03,ATTR=(MOD,NUM)
+DESINT   DFLD  POS=(11,67),LTH=14,ATTR=(MOD,PROT,NUM)
+*---------------------------------------------------------------------*
+*   ** NOVO RECOR **          LINHA 12                                *
+*---------------------------------------------------------------------*
+OCULT10  DFLD  POS=(12,02),LTH=14,ATTR=(MOD,NODISP,PROT)
+         DFLD  'GRAO/SEMENTE:',POS=(12,17),ATTR=PROT
+CODGRS   DFLD  POS=(12,31),LTH=01,ATTR=(MOD,NUM)
+DESGRS   DFLD  POS=(12,34),LTH=15,ATTR=(MOD,PROT,NUM)
+         DFLD  'IRRIGACAO.:',POS=(12,51),ATTR=PROT
+CODIRR   DFLD  POS=(12,63),LTH=03,ATTR=(MOD,NUM)
+DESIRR   DFLD  POS=(12,67),LTH=14,ATTR=(MOD,PROT,NUM)
+*---------------------------------------------------------------------*
+*   ** NOVO RECOR **          LINHA 13                                *
+*---------------------------------------------------------------------*
+         DFLD  'CULTIVO:',POS=(13,17),ATTR=PROT
+CODCUL   DFLD  POS=(13,31),LTH=03,ATTR=(MOD,NUM)
+DESCUL   DFLD  POS=(13,35),LTH=13,ATTR=(MOD,PROT,NUM)
+         DFLD  'CICLO PROD:',POS=(13,51),ATTR=PROT
+CODCIC   DFLD  POS=(13,63),LTH=03,ATTR=(MOD,NUM)
+DESCIC   DFLD  POS=(13,67),LTH=12,ATTR=(MOD,PROT,NUM)
+*---------------------------------------------------------------------*
+*   ** NOVO RECOR **          LINHA 14                                *
+*---------------------------------------------------------------------*
+         DFLD  'CLIMA:',POS=(14,17),ATTR=PROT
+CODCLI   DFLD  POS=(14,31),LTH=02,ATTR=(MOD,NUM)
+DESCLI   DFLD  POS=(14,34),LTH=12,ATTR=(MOD,PROT,NUM)
+         DFLD  'PRAT/MANEJO:',POS=(14,51),ATTR=PROT
+CODMAN   DFLD  POS=(14,64),LTH=02,ATTR=(MOD,NUM)
+DESMAN   DFLD  POS=(14,67),LTH=12,ATTR=(MOD,PROT,NUM)
+*---------------------------------------------------------------------*
+*                             LINHA 15                                *
+*---------------------------------------------------------------------*
+         DFLD  'AREA FINANCIADA (HA):',POS=(15,02),ATTR=PROT
+AREAF    DFLD  POS=(15,24),LTH=14,ATTR=(PROT,MOD)
+         DFLD  'E/OU QTDE FINANCIADA:',POS=(15,43),ATTR=PROT
+QTDEF    DFLD  POS=(15,65),LTH=14,ATTR=(PROT,MOD)
+*---------------------------------------------------------------------*
+*                             LINHA 16                                *
+*---------------------------------------------------------------------*
+LITERAL  DFLD  POS=(16,02),LTH=21,ATTR=(PROT,MOD,NUM)
+CAMPO    DFLD  POS=(16,24),LTH=14,ATTR=(PROT,MOD)
+OCULT14  DFLD  POS=(16,39),LTH=03,ATTR=(MOD,NODISP,PROT)
+LITER2   DFLD  POS=(16,43),LTH=15,ATTR=(PROT,MOD)
+GRUPO    DFLD  POS=(16,59),LTH=01,ATTR=(PROT,MOD,NODISP)
+LITER3   DFLD  POS=(16,62),LTH=06,ATTR=(PROT,MOD)
+PORTE    DFLD  POS=(16,69),LTH=07,ATTR=(PROT,MOD,NODISP)
+OCULT15  DFLD  POS=(16,77),LTH=04,ATTR=(MOD,NODISP,PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 17                                *
+*---------------------------------------------------------------------*
+LPRDTTL  DFLD  POS=(17,02),LTH=21,ATTR=(PROT,MOD,NUM)
+CPRDTTL  DFLD  POS=(17,24),LTH=14,ATTR=(PROT,MOD)
+         DFLD  'RECEITA BRUTA:',POS=(17,43),ATTR=PROT
+RECBR    DFLD  POS=(17,58),LTH=18,ATTR=(PROT,MOD)
+OCULT16  DFLD  POS=(17,77),LTH=02,ATTR=(MOD,NODISP,PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 18                                *
+*---------------------------------------------------------------------*
+         DFLD  'TIPO DE BENEFICIARIO:',POS=(18,02),ATTR=PROT
+TPOBEN   DFLD  POS=(18,24),LTH=03,ATTR=(MOD,NUM)
+DESCBE   DFLD  POS=(18,28),LTH=50,ATTR=(MOD,PROT,NUM)
+*---------------------------------------------------------------------*
+*                             LINHA 19                                *
+*---------------------------------------------------------------------*
+         DFLD  'TIPO DE EXPLORACAO:',POS=(19,02),ATTR=PROT
+TPEXP    DFLD  POS=(19,22),LTH=20,ATTR=(PROT,MOD)
+OCULT17  DFLD  POS=(19,43),LTH=03,ATTR=(MOD,NODISP,PROT)
+MENSIT   DFLD  POS=(19,54),LTH=27,ATTR=(MOD,PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 20                                *
+*---------------------------------------------------------------------*
+         DFLD  'DENOM. DO IMOVEL RURAL:',POS=(20,02),ATTR=PROT
+IMOVEL   DFLD  POS=(20,26),LTH=25,ATTR=(PROT,MOD)
+OCULT11  DFLD  POS=(20,52),LTH=14,ATTR=(MOD,NODISP,PROT)
+OCULT12  DFLD  POS=(20,67),LTH=14,ATTR=(MOD,NODISP,PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 21                               *
+*---------------------------------------------------------------------*
+         DFLD  'DAP/CAF:',POS=(21,02),ATTR=PROT
+NRODAP   DFLD  POS=(21,11),LTH=25,ATTR=(PROT,MOD)
+         DFLD  'GRUPO:',POS=(21,37),ATTR=PROT
+GPPRONA  DFLD  POS=(21,44),LTH=03,ATTR=(PROT,MOD)
+         DFLD  'VAL:',POS=(21,48),ATTR=PROT
+VALDTD   DFLD  POS=(21,53),LTH=02,ATTR=(PROT,MOD)
+VALDTM   DFLD  POS=(21,56),LTH=02,ATTR=(PROT,MOD)
+VALDTA   DFLD  POS=(21,59),LTH=04,ATTR=(PROT,MOD)
+OCULT13  DFLD  POS=(21,65),LTH=14,ATTR=(MOD,NODISP,PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 22                                *
+*---------------------------------------------------------------------*
+         DFLD  'PREENCHA OS CAMPOS ACIMA E TECLE <ENTER> PARA ABERTURA X
+               DE CEDULA',POS=(22,02),ATTR=(PROT,HI)
+         DFLD  'NOVA OPCAO:',POS=(22,67),ATTR=(PROT,HI)
+NOPCAO   DFLD  POS=(22,79),LTH=02,ATTR=(NUM,MOD)
+*---------------------------------------------------------------------*
+*                             LINHA 23                                *
+*---------------------------------------------------------------------*
+         DFLD  'PF:',POS=(23,02),ATTR=(PROT,HI)
+         DFLD  '1-',POS=(23,06),ATTR=(PROT,HI)
+         DFLD  'DESC',POS=(23,09),ATTR=(PROT)
+         DFLD  '3-',POS=(23,14),ATTR=(PROT,HI)
+         DFLD  'MENU RUEC',POS=(23,17),ATTR=(PROT)
+         DFLD  '5-',POS=(23,27),ATTR=(PROT,HI)
+         DFLD  'MENU ROTINAS',POS=(23,30),ATTR=(PROT)
+         DFLD  '9-',POS=(23,43),ATTR=(PROT,HI)
+         DFLD  'CONSULTA',POS=(23,46),ATTR=(PROT)
+         DFLD  '10-',POS=(23,55),ATTR=(PROT,HI)
+         DFLD  'LIMPA',POS=(23,59),ATTR=(PROT)
+         DFLD  '11-',POS=(23,65),ATTR=(PROT,HI)
+         DFLD  'PROX. TELA',POS=(23,69),ATTR=(PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 24                                *
+*---------------------------------------------------------------------*
+MENSAG   DFLD  POS=(24,02),LTH=79,ATTR=(PROT,MOD,HI)
+         FMTEND
+***********************************************************************
+*                              M I D                                  *
+***********************************************************************
+RUECI700 MSG   TYPE=INPUT,SOR=(MQT700,IGNORE),NXT=RUECT700,OPT=1
+         SEG
+         MFLD  (PF,'RUEC7000      .'),LTH=015
+         MFLD  SENHAS,LTH=37
+         MFLD  NOPCAO,LTH=02,FILL=C'0',JUST=R
+         MFLD  POSI,LTH=04,FILL=C'0',JUST=R
+         MFLD  OCULT01,LTH=16
+         MFLD  OCULT02,LTH=17
+         MFLD  OCULT03,LTH=24
+         MFLD  OCULT04,LTH=24
+         MFLD  OCULT05,LTH=13
+         MFLD  OCULT06,LTH=10
+         MFLD  OCULT07,LTH=22
+         MFLD  OCULT08,LTH=06
+         MFLD  OCULT09,LTH=79
+         MFLD  OCULT10,LTH=14
+         MFLD  OCULT11,LTH=14
+         MFLD  OCULT12,LTH=14
+         MFLD  OCULT13,LTH=14
+         MFLD  OCULT14,LTH=03
+         MFLD  OCULT15,LTH=04
+         MFLD  OCULT16,LTH=02
+         MFLD  OCULT17,LTH=03
+         MFLD  AGENC,LTH=05,FILL=C' ',JUST=R
+         MFLD  CONTA,LTH=07,FILL=C' ',JUST=R
+         MFLD  CGCNUM,LTH=09,FILL=C' ',JUST=R
+         MFLD  CGCFIL,LTH=04,FILL=C' ',JUST=R
+         MFLD  CTRL,LTH=02,FILL=C' ',JUST=R
+         MFLD  NOME,LTH=40,FILL=C' ',JUST=L
+         MFLD  SITUAC,LTH=11,FILL=C' ',JUST=L
+         MFLD  MENSIT,LTH=27,FILL=C' ',JUST=L
+         MFLD  NPROD1,LTH=40,FILL=C' ',JUST=L
+         MFLD  HIFEN,LTH=01,FILL=C' ',JUST=L
+         MFLD  NPROD2,LTH=22,FILL=C' ',JUST=L
+         MFLD  ORIGCD,LTH=03,FILL=C' ',JUST=R
+         MFLD  ORIGDS,LTH=20,FILL=C' ',JUST=L
+         MFLD  ATIVCD,LTH=03,FILL=C' ',JUST=R
+         MFLD  ATIVDS,LTH=16,FILL=C' ',JUST=L
+         MFLD  CODMOD,LTH=03,FILL=C' ',JUST=R
+         MFLD  DESMOD,LTH=20,FILL=C' ',JUST=L
+         MFLD  CODVAR,LTH=03,FILL=C' ',JUST=R
+         MFLD  DESVAR,LTH=22,FILL=C' ',JUST=L
+         MFLD  CODCES,LTH=03,FILL=C' ',JUST=R
+         MFLD  DESCES,LTH=20,FILL=C' ',JUST=L
+         MFLD  ZONEAM,LTH=01,FILL=C' ',JUST=L
+         MFLD  CONSOR,LTH=01,FILL=C' ',JUST=L
+         MFLD  CODAGR,LTH=03,FILL=C' ',JUST=R
+         MFLD  DESAGR,LTH=15,FILL=C' ',JUST=L
+         MFLD  CODINT,LTH=03,FILL=C' ',JUST=R
+         MFLD  DESINT,LTH=14,FILL=C' ',JUST=L
+         MFLD  CODGRS,LTH=01,FILL=C' ',JUST=R
+         MFLD  DESGRS,LTH=15,FILL=C' ',JUST=L
+         MFLD  CODIRR,LTH=03,FILL=C' ',JUST=R
+         MFLD  DESIRR,LTH=14,FILL=C' ',JUST=L
+         MFLD  CODCUL,LTH=03,FILL=C' ',JUST=R
+         MFLD  DESCUL,LTH=13,FILL=C' ',JUST=L
+         MFLD  CODCIC,LTH=03,FILL=C' ',JUST=R
+         MFLD  DESCIC,LTH=12,FILL=C' ',JUST=L
+         MFLD  CODCLI,LTH=02,FILL=C' ',JUST=R
+         MFLD  DESCLI,LTH=12,FILL=C' ',JUST=L
+         MFLD  CODMAN,LTH=02,FILL=C' ',JUST=R
+         MFLD  DESMAN,LTH=12,FILL=C' ',JUST=L
+         MFLD  AREAF,LTH=14,FILL=C' ',JUST=R
+         MFLD  QTDEF,LTH=14,FILL=C' ',JUST=R
+         MFLD  LITERAL,LTH=21,FILL=C' ',JUST=L
+         MFLD  CAMPO,LTH=14,FILL=C' ',JUST=R
+         MFLD  LPRDTTL,LTH=21,FILL=C' ',JUST=L
+         MFLD  CPRDTTL,LTH=14,FILL=C' ',JUST=R
+         MFLD  LITER2,LTH=15,FILL=C' ',JUST=L
+         MFLD  GRUPO,LTH=01,FILL=C' ',JUST=R
+         MFLD  LITER3,LTH=06,FILL=C' ',JUST=L
+         MFLD  PORTE,LTH=07,FILL=C' ',JUST=L
+         MFLD  TPEXP,LTH=20,FILL=C' ',JUST=L
+         MFLD  IMOVEL,LTH=25,FILL=C' ',JUST=L
+         MFLD  CTIPCE,LTH=01,FILL=C' ',JUST=R
+         MFLD  DTIPCE,LTH=15,FILL=C' ',JUST=R
+         MFLD  RECBR,LTH=18,FILL=C' ',JUST=R
+         MFLD  TPOBEN,LTH=03,FILL=C' ',JUST=R
+         MFLD  DESCBE,LTH=50,FILL=C' ',JUST=L
+         MFLD  NRODAP,LTH=25,FILL=C' ',JUST=L
+         MFLD  GPPRONA,LTH=03,FILL=C' ',JUST=L
+         MFLD  VALDTD,LTH=02,FILL=C' ',JUST=R
+         MFLD  VALDTM,LTH=02,FILL=C' ',JUST=R
+         MFLD  VALDTA,LTH=04,FILL=C' ',JUST=R
+         MFLD  MENSAG,LTH=79,FILL=C' ',JUST=L
+         MSGEND
+***********************************************************************
+*                              M O D                                  *
+***********************************************************************
+RUECT700 MSG   TYPE=OUTPUT,SOR=(MQT700,IGNORE),NXT=RUECI700,OPT=1,     X
+               FILL=PT
+         SEG
+         MFLD  (HORA,TIME)
+         MFLD  SENHAS,LTH=37
+         MFLD  NOPCAO,LTH=04,ATTR=YES
+         MFLD  DATA,LTH=10
+         MFLD  OCULT01,LTH=16
+         MFLD  OCULT02,LTH=17
+         MFLD  OCULT03,LTH=24
+         MFLD  OCULT04,LTH=24
+         MFLD  OCULT05,LTH=13
+         MFLD  OCULT06,LTH=10
+         MFLD  OCULT07,LTH=22
+         MFLD  OCULT08,LTH=06
+         MFLD  OCULT09,LTH=79
+         MFLD  OCULT10,LTH=14
+         MFLD  OCULT11,LTH=14
+         MFLD  OCULT12,LTH=14
+         MFLD  OCULT13,LTH=14
+         MFLD  OCULT14,LTH=03
+         MFLD  OCULT15,LTH=04
+         MFLD  OCULT16,LTH=02
+         MFLD  OCULT17,LTH=03
+         MFLD  AGENC,LTH=07,ATTR=YES
+         MFLD  CONTA,LTH=09,ATTR=YES
+         MFLD  CGCNUM,LTH=11,ATTR=YES
+         MFLD  CGCFIL,LTH=06,ATTR=YES
+         MFLD  CTRL,LTH=04,ATTR=YES
+         MFLD  NOME,LTH=42,ATTR=YES
+         MFLD  SITUAC,LTH=11
+         MFLD  MENSIT,LTH=27
+         MFLD  NPROD1,LTH=42,ATTR=YES
+         MFLD  HIFEN,LTH=01
+         MFLD  NPROD2,LTH=22
+         MFLD  ORIGCD,LTH=05,ATTR=YES
+         MFLD  ORIGDS,LTH=20
+         MFLD  ATIVCD,LTH=05,ATTR=YES
+         MFLD  ATIVDS,LTH=16
+         MFLD  CODMOD,LTH=05,ATTR=YES
+         MFLD  DESMOD,LTH=20
+         MFLD  CODVAR,LTH=05,ATTR=YES
+         MFLD  DESVAR,LTH=22
+         MFLD  CODCES,LTH=05,ATTR=YES
+         MFLD  DESCES,LTH=20
+         MFLD  ZONEAM,LTH=03,ATTR=YES
+         MFLD  CONSOR,LTH=03,ATTR=YES
+         MFLD  CODAGR,LTH=05,ATTR=YES
+         MFLD  DESAGR,LTH=15
+         MFLD  CODINT,LTH=05,ATTR=YES
+         MFLD  DESINT,LTH=14
+         MFLD  CODGRS,LTH=03,ATTR=YES
+         MFLD  DESGRS,LTH=15
+         MFLD  CODIRR,LTH=05,ATTR=YES
+         MFLD  DESIRR,LTH=14
+         MFLD  CODCUL,LTH=05,ATTR=YES
+         MFLD  DESCUL,LTH=13
+         MFLD  CODCIC,LTH=05,ATTR=YES
+         MFLD  DESCIC,LTH=12
+         MFLD  CODCLI,LTH=04,ATTR=YES
+         MFLD  DESCLI,LTH=12
+         MFLD  CODMAN,LTH=04,ATTR=YES
+         MFLD  DESMAN,LTH=12
+         MFLD  AREAF,LTH=16,ATTR=YES
+         MFLD  QTDEF,LTH=16,ATTR=YES
+         MFLD  LITERAL,LTH=21
+         MFLD  CAMPO,LTH=16,ATTR=YES
+         MFLD  LPRDTTL,LTH=21
+         MFLD  CPRDTTL,LTH=16,ATTR=YES
+         MFLD  LITER2,LTH=15
+         MFLD  GRUPO,LTH=03,ATTR=YES
+         MFLD  LITER3,LTH=06
+         MFLD  PORTE,LTH=09,ATTR=YES
+         MFLD  TPEXP,LTH=22,ATTR=YES
+         MFLD  IMOVEL,LTH=27,ATTR=YES
+         MFLD  CTIPCE,LTH=03,ATTR=YES
+         MFLD  DTIPCE,LTH=15
+         MFLD  RECBR,LTH=20,ATTR=YES
+         MFLD  TPOBEN,LTH=05,ATTR=YES
+         MFLD  DESCBE,LTH=50
+         MFLD  NRODAP,LTH=27,ATTR=YES
+         MFLD  GPPRONA,LTH=05,ATTR=YES
+         MFLD  VALDTD,LTH=04,ATTR=YES
+         MFLD  VALDTM,LTH=04,ATTR=YES
+         MFLD  VALDTA,LTH=06,ATTR=YES
+         MFLD  MENSAG,LTH=79
+         MSGEND
+         END

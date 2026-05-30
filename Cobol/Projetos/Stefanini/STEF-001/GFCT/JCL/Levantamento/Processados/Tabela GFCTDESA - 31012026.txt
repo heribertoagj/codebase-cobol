@@ -1,0 +1,24 @@
+Tabela GFCTDESA - 31012026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002960   TICKET-56429
+==========================================================
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTDESA N P14 GFCTQ335*   NAO HA DEPENDENCIAS/RELEASES                         
+               *GFCTQ340*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTQ395*   NAO HA DEPENDENCIAS/RELEASES                         
+
+job GFCTQ335
+   EXEC PGM=GFCT4751 (não)
+   EXEC PGM=GFCT4752 (não)
+   
+job GFCTQ340 - AJUSTADO arquivo mas tem problema preexistente no relatorio
+   EXEC PGM=GFCT4722 (utiliza book GFCTWF25) - AJUSTADO
+
+job GFCTQ395 - NAO HA IMPACTO
+   EXEC PGM=GFCT4739 (não)
+   EXEC PGM=GFCT4740 (utiliza book GFCTWF40) - AJUSTADO
+   EXEC PGM=GFCT4741 (utiliza tabela CLIEV004 e book GFCTWF40) - AJUSTADO
+   EXEC PGM=GFCT4742 (utiliza book GFCTWF40) - AJUSTADO
+ 

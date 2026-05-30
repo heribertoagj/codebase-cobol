@@ -1,0 +1,286 @@
+Tabela GFCTX610 - 26012026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002968   TICKET-56435
+==========================================================
+EXECUTA O PROGRAMA GFCT1947  
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTX610 N P14          DFJ:GFCT0014 *                               GFCT0005 P14
+               GFCTCLIB  RJ:GFCTX810 *                              GFCTX610 P14
+                         RJ:GFCTX872 *                               GFCTX610 P14
+                         RJ:GFCTX929*                               GFCTX610 P14
+                         RJ:GFCTX870*                               GFCTX610 P14
+                         RJ:GFCTX871*                               GFCTX610 P14
+                         RJ:GFCT9993 *                              GFCTX610 P14
+                         RJ:GFCT9992 *                              GFCTX610 P14
+                         RJ:GFCT9986*                               GFCTX610 P14
+                         RJ:GFCT9994 *                              GFCTX610 P14
+                         RJ:GFCTX806 *                              GFCTX610 P14
+                         RJ:GFCT9297*                               GFCTX610 P14
+                         RJ:GFCTX808 *                              GFCTX610 P14
+                         RJ:GFCT0111 *                              GFCTX610 P14
+                         RJ:GFCT5331 *                              GFCTX610 P14
+                         RJ:GFCT5332 *                               GFCTX610 P14
+                         RJ:GFCT5331 *                              GFCTX610 P14
+                         RJ:GFCT5332 *                              GFCTX610 P14
+GFCTX610 N P14 GFCTCLIB  RJ:GFCT5930*                               GFCTX610 P14
+                         RJ:GFCT5931 *                              GFCTX610 P14
+                         RJ:GFCT5931 *                              GFCTX610 P14
+                         RJ:GFCT5923 *                              GFCTX610 P14
+                         RJ:GFCT5922 *                              GFCTX610 P14
+                         RJ:GFCT5930 *                              GFCTX610 P14
+                         RJ:GFCT5025 *                              GFCTX610 P14
+                         RJ:GFCT0015 *                              GFCTX610 P14
+                         RJ:GFCT5024 *                              GFCTX610 P14
+               GFCTDOCT*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTFINA * DJ:GFCT5024 *                              GFCTX610 P14
+                         DJ:GFCT5025 *                              GFCTX610 P14
+                         DJ:GFCT0015 *                              GFCTX610 P14
+                         DJ:GFCT5331 *                              GFCTX610 P14
+                         DJ:GFCTX810 *                              GFCTX610 P14
+                         DJ:GFCTX871 *                              GFCTX610 P14
+                         DJ:GFCT5332 *                              GFCTX610 P14
+                         DJ:GFCTX929 *                              GFCTX610 P14
+GFCTX610 N P14 GFCTFINA*  DJ:GFCTX872 *                              GFCTX610 P14
+                         DJ:GFCTX870 *                              GFCTX610 P14
+                         DJ:GFCT5331 *                              GFCTX610 P14
+                         DJ:GFCT9993 *                              GFCTX610 P14
+                         DJ:GFCT5332 *                              GFCTX610 P14
+                         DJ:GFCT9986 *                              GFCTX610 P14
+                         DJ:GFCT0111*                               GFCTX610 P14
+                         DJ:GFCT9992*                               GFCTX610 P14
+                         DJ:GFCT5922*                               GFCTX610 P14
+                         DJ:GFCTZERA*                               GFCTX610 P14
+                         DJ:GFCT5923 *                              GFCTX610 P14
+                         DJ:GFCT5930*                               GFCTX610 P14
+                         DJ:GFCT5931*                               GFCTX610 P14
+                         DJ:GFCT5931 *                              GFCTX610 P14
+                         DJ:GFCT5930 *                              GFCTX610 P14
+                         DJ:GFCTX806 *                              GFCTX610 P14
+                         DJ:GFCTX808*                               GFCTX610 P14
+                         DJ:GFCT9994 *                              GFCTX610 P14
+GFCTX610 N P14 GFCTFINA*  DJ:GFCT9297 *                              GFCTX610 P14
+                         RJ:GFCT0111*                               GFCT0111 P14
+                         RJ:GFCT0015*                               GFCT0005 P14
+                         RJ:GFCT0401*                               GFCT0400 P14
+                         RJ:GFCTX111*                               GFCTX111 P14
+                         RJ:GFCT1190*                               GFCT1190 P14
+               GFCTGEST *  NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTW070*  DJ:GFCT9994 *                              GFCTX610 P14
+                         RJ:GFCTW071*                               GFCTX610 P14
+               GFCTW071*  DJ:GFCTW070 *                              GFCTX610 P14
+               GFCTX806 * DJ:GFCT5332 *                              GFCTX610 P14
+                         DJ:GFCTCLIB *                              GFCTX610 P14
+                         RJ:GFCTFINA *                              GFCTX610 P14
+                         RJ:GFCTZERA *                              GFCTX610 P14
+                         RJ:GFCTX810 *                              GFCTX610 P14
+               GFCTX808 * DJ:GFCT5332 *                              GFCTX610 P14
+                         DJ:GFCTCLIB *                              GFCTX610 P14
+                         RJ:GFCTFINA *                              GFCTX610 P14
+GFCTX610 N P14 GFCTX808*  RJ:GFCTX870  *                             GFCTX610 P14
+                         RJ:GFCTZERA *                              GFCTX610 P14
+               GFCTX810*  DJ:GFCTX806 *                              GFCTX610 P14
+                         DJ:GFCTCLIB *                              GFCTX610 P14
+                         RJ:GFCTFINA*                               GFCTX610 P14
+                         RJ:GFCTZERA *                              GFCTX610 P14
+                         RJ:GFCT5331*                               GFCTX610 P14
+               GFCTX870*  DJ:GFCTX808 *                              GFCTX610 P14
+                         DJ:GFCTCLIB *                              GFCTX610 P14
+                         RJ:GFCTFINA*                               GFCTX610 P14
+                         RJ:GFCTZERA*                               GFCTX610 P14
+                         RJ:GFCT9992*                               GFCTX610 P14
+               GFCTX871*  DJ:GFCT0111*                               GFCTX610 P14
+                         DJ:GFCTCLIB*                               GFCTX610 P14
+                         RJ:GFCTFINA*                               GFCTX610 P14
+                         RJ:GFCT9986*                               GFCTX610 P14
+                         RJ:GFCTZERA *                              GFCTX610 P14
+               GFCTX872*  DJ:GFCT9986*                               GFCTX610 P14
+GFCTX610 N P14 GFCTX872*  DJ:GFCTCLIB*                               GFCTX610 P14
+                         RJ:GFCTFINA*                               GFCTX610 P14
+                         RJ:GFCTZERA*                               GFCTX610 P14
+                         RJ:GFCT5331*                               GFCTX610 P14
+               GFCTX929 * DJ:GFCT9297 *                              GFCTX610 P14
+                         DJ:GFCTCLIB *                              GFCTX610 P14
+                         RJ:GFCTFINA *                              GFCTX610 P14
+                         RJ:GFCT5930 *                              GFCTX610 P14
+                         RJ:GFCTZERA*                               GFCTX610 P14
+               GFCTZERA*  DJ:GFCT5930 *                              GFCTX610 P14
+                         DJ:GFCT9993*                               GFCTX610 P14
+                         DJ:GFCT9986*                               GFCTX610 P14
+                         DJ:GFCT5931 *                              GFCTX610 P14
+                         DJ:GFCT5930 *                              GFCTX610 P14
+                         DJ:GFCT5931 *                              GFCTX610 P14
+                         DJ:GFCT9992*                               GFCTX610 P14
+                         DJ:GFCTX872*                               GFCTX610 P14
+                         DJ:GFCTX871 *                              GFCTX610 P14
+GFCTX610 N P14 GFCTZERA*  DJ:GFCTX929 *                              GFCTX610 P14
+                         DJ:GFCTX810 *                              GFCTX610 P14
+                         DJ:GFCTX870*                               GFCTX610 P14
+                         DJ:GFCT5025 *                              GFCTX610 P14
+                         DJ:GFCT5024*                               GFCTX610 P14
+                         DJ:GFCT9297*                               GFCTX610 P14
+                         DJ:GFCT0111*                               GFCTX610 P14
+                         DJ:GFCT5332 *                              GFCTX610 P14
+                         DJ:GFCT5331*                               GFCTX610 P14
+                         DJ:GFCT5332 *                              GFCTX610 P14
+                         DJ:GFCT5923 *                              GFCTX610 P14
+                         DJ:GFCT5922 *                              GFCTX610 P14
+                         DJ:GFCT5331 *                              GFCTX610 P14
+                         DJ:GFCT0015 *                              GFCTX610 P14
+                         DJ:GFCTX806 *                              GFCTX610 P14
+                         DJ:GFCTX808*                               GFCTX610 P14
+                         DJ:GFCT9994*                               GFCTX610 P14
+                         RJ:GFCTFINA *                              GFCTX610 P14
+GFCTX610 N P14 GFCT0015 * DJ:GFCTCLIB *                              GFCTX610 P14
+                         RJ:GFCTFINA *                              GFCTX610 P14
+                         RJ:GFCT0111 *                              GFCTX610 P14
+                         RJ:GFCTZERA*                               GFCTX610 P14
+               GFCT0111*  DJ:GFCT0015*                               GFCTX610 P14
+                         DJ:GFCTCLIB*                               GFCTX610 P14
+                         RJ:GFCTFINA*                               GFCTX610 P14
+                         RJ:GFCTZERA *                              GFCTX610 P14
+                         RJ:GFCTX871 *                              GFCTX610 P14
+               GFCT5024*  DJ:GFCT5931 *                              GFCTX610 P14
+                         DJ:GFCTCLIB *                              GFCTX610 P14
+                         DJ:GFCTX612*                               GFCTX612 P14
+                         RJ:GFCT5025 *                              GFCTX610 P14
+                         RJ:GFCTZERA*                               GFCTX610 P14
+                         RJ:GFCTFINA*                               GFCTX610 P14
+                        GFJ:                                       BGDTM449 P21
+               GFCT5025*  DJ:GFCTCLIB*                               GFCTX610 P14
+                         DJ:GFCT5024 *                              GFCTX610 P14
+GFCTX610 N P14 GFCT5025*  RJ:GFCTZERA *                              GFCTX610 P14
+                         RJ:GFCT5922*                               GFCTX610 P14
+                         RJ:GFCTFINA *                              GFCTX610 P14
+               GFCT5331 * DJ:GFCTCLIB *                              GFCTX610 P14
+                         DJ:GFCTCLIB *                              GFCTX610 P14
+                         DJ:GFCTX810 *                              GFCTX610 P14
+                         DJ:GFCTX872 *                              GFCTX610 P14
+                         RJ:GFCT5332 *                              GFCTX610 P14
+                         RJ:GFCTZERA *                              GFCTX610 P14
+                         RJ:GFCTZERA *                              GFCTX610 P14
+                         RJ:GFCTFINA*                               GFCTX610 P14
+                         RJ:GFCT5332*                               GFCTANAT P14
+                         RJ:GFCT5332 *                              GFCTPR14 P14
+                         RJ:GFCT5332*                               GFCT5325 P14
+                         RJ:GFCTFINA *                              GFCTX610 P14
+                         RJ:GFCT5332 *                              GFCTANAT P14
+                         RJ:GFCT5332 *                               GFCTPR14 P14
+                         RJ:GFCT5332*                               GFCTX610 P14
+GFCTX610 N P14 GFCT5332*  DJ:GFCT5331*                               GFCTANAT P14
+                         DJ:GFCT5331 *                              GFCTX610 P14
+                         DJ:GFCT5331 *                              GFCTPR14 P14
+                         DJ:GFCT5331*                               GFCTPR14 P14
+                         DJ:GFCT5331 *                              GFCTX610 P14
+                         DJ:GFCT5331 *                              GFCT5325 P14
+                         DJ:GFCTCLIB*                               GFCTX610 P14
+                         DJ:GFCTCLIB *                              GFCTX610 P14
+                         DJ:GFCT5331*                               GFCTANAT P14
+                         RJ:GFCTZERA *                              GFCTX610 P14
+                         RJ:GFCTZERA *                              GFCTX610 P14
+                         RJ:GFCTX806 *                              GFCTX610 P14
+                         RJ:GFCTX808*                               GFCTX610 P14
+                         RJ:GFCTFINA *                              GFCTX610 P14
+                         RJ:GFCTFINA *                              GFCTX610 P14
+               GFCT5922*  DJ:GFCTCLIB*                               GFCTX610 P14
+                         DJ:GFCT5025*                               GFCTX610 P14
+                         RJ:GFCT5923*                               GFCTX610 P14
+GFCTX610 N P14 GFCT5922*  RJ:GFCTZERA *                              GFCTX610 P14
+                         RJ:GFCTFINA *                              GFCTX610 P14
+               GFCT5923*  DJ:GFCTCLIB *                              GFCTX610 P14
+                         DJ:GFCT5922*                               GFCTX610 P14
+                         RJ:GFCTZERA *                              GFCTX610 P14
+                         RJ:GFCT5930 *                              GFCTX610 P14
+                         RJ:GFCTFINA *                              GFCTX610 P14
+               GFCT5930*  DJ:GFCTCLIB *                              GFCTX610 P14
+                         DJ:GFCTCLIB*                               GFCTX610 P14
+                         DJ:GFCT5923 *                              GFCTX610 P14
+                         DJ:GFCTX929 *                              GFCTX610 P14
+                         RJ:GFCT5931 *                              GFCTX610 P14
+                         RJ:GFCTFINA *                              GFCTX610 P14
+                         RJ:GFCT5931 *                              GFCTX610 P14
+                         RJ:GFCTZERA *                              GFCTX610 P14
+                         RJ:GFCTZERA *                              GFCTX610 P14
+                         RJ:GFCTFINA*                               GFCTX610 P14
+               GFCT5931*  DJ:GFCTCLIB*                               GFCTX610 P14
+GFCTX610 N P14 GFCT5931*  DJ:GFCTCLIB*                               GFCTX610 P14
+                         DJ:GFCT5930*                               GFCTX610 P14
+                         DJ:GFCT5930*                               GFCTX610 P14
+                         RJ:GFCTZERA*                               GFCTX610 P14
+                         RJ:GFCTZERA*                               GFCTX610 P14
+                         RJ:GFCT5024*                               GFCTX610 P14
+                         RJ:GFCTFINA*                               GFCTX610 P14
+                         RJ:GFCTFINA*                               GFCTX610 P14
+               GFCT9297*  DJ:GFCTCLIB*                               GFCTX610 P14
+                         DJ:GFCT9994*                               GFCTX610 P14
+                         RJ:GFCTX929*                               GFCTX610 P14
+                         RJ:GFCTFINA*                               GFCTX610 P14
+                         RJ:GFCTZERA *                              GFCTX610 P14
+               GFCT9986*  DJ:GFCTX871*                               GFCTX610 P14
+                         DJ:GFCTCLIB *                              GFCTX610 P14
+                         RJ:GFCTFINA *                              GFCTX610 P14
+                         RJ:GFCTX872 *                              GFCTX610 P14
+                         RJ:GFCTZERA*                               GFCTX610 P14
+GFCTX610 N P14 GFCT9986* GFJ:                                       CMTFX404 P14
+               GFCT9992*  DJ:GFCTX870 *                              GFCTX610 P14
+                         DJ:GFCTCLIB*                               GFCTX610 P14
+                         DJ:GFCTX614*                               GFCTX614 P14
+                         RJ:GFCTZERA *                              GFCTX610 P14
+                         RJ:GFCTFINA *                              GFCTX610 P14
+                         RJ:GFCT9993*                               GFCTX610 P14
+               GFCT9993*  DJ:GFCT9992*                               GFCTX610 P14
+                         DJ:GFCTCLIB *                              GFCTX610 P14
+                         RJ:GFCTFINA *                              GFCTX610 P14
+                         RJ:GFCTZERA*                               GFCTX610 P14
+                         RJ:GFCT9994*                               GFCTX610 P14
+               GFCT9994*  DJ:GFCT9993*                               GFCTX610 P14
+                         DJ:GFCTCLIB*                               GFCTX610 P14
+                         RJ:GFCTFINA *                              GFCTX610 P14
+                         RJ:GFCTW070 *                              GFCTX610 P14
+                         RJ:GFCTZERA*                               GFCTX610 P14
+                         RJ:GFCT9297*                               GFCTX610 P14
+
+
+================================================================================
+
+job GFCT9992
+      EXEC PGM=GFCT9295 (não)
+   
+job GFCT9986
+   EXEC PGM=GFCT2109 (não)
+
+job GFCT9994
+   EXEC PGM=GFCT9296 (não)
+
+job GFCTX806
+    EXEC PGM=GFCT1947 (utiliza tabela CLIEV004 e GFCTB0I0_) - AJUSTADO
+
+JOB GFCT9297
+   EXEC PGM=GFCT9297 (NAO)
+   
+JOB GFCTX808 - NAO HA IMPACTO
+
+JOB GFCT0111
+   EXEC PGM=GFCT1866 (NAO)
+   EXEC PGM=GFCT1868 (NAO)
+    
+JOB GFCT0015
+   EXEC PGM=GFCT1005 (NAO)
+    EXEC PGM=GFCT4300(NA0)
+   EXEC PGM=GFCT3615(NAO)
+   
+JOB GFCT5024
+   EXEC PGM=GFCT1963 (NAO)
+   EXEC PGM=GFCT1964 (não)
+   EXEC PGM=GFCT9017(não)
+   
+job GFCT0401
+  EXEC PGM=GFCT3638(não)
+   EXEC PGM=GFCT3648 (não)
+   EXEC PGM=GFCT3695 (não)
+      
+job GFCT1190 - NAO HA IMPACTO
+
+job GFCTX612 - NAO HA IMPACTO
+

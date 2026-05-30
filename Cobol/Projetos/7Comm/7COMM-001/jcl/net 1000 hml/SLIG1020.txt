@@ -1,0 +1,50 @@
+//SLIG1020 JOB 'SLIG,4975,PR11','B849364',MSGCLASS=Z,REGION=4M,         
+//       SCHENV=BATCH                                                   
+//JOBLIB   DD DSN=MX.BIBGERAL,DISP=SHR                                  
+//         DD DSN=MJ.BIBGERAL,DISP=SHR                                  
+//         DD DSN=SYS1.CEE.SCEERUN,DISP=SHR                             
+//STEP1    EXEC PGM=POOL0261                                            
+//*                                                                     
+//* ***    CLASSIFICA ARQUIVO COMPRIMIDO POR ORDEM ASCENDENTE           
+//* ***    DE CGC-CPF/FILIAL/CONTROLE DO CLIENTE                        
+//* ***    CGC-CPF/FILIAL/CONTROLE DO SACADO E TP-CART.                 
+//*                                                                     
+//SORTIN   DD DSN=MX.SLIG.REDPEND2(0),                                  
+//       DISP=(OLD,DELETE,KEEP)                                         
+//SORTOUT  DD DSN=MX.SLIG.REDUDEC2.CLASS(+1),                           
+//       DISP=(,CATLG,DELETE),                                          
+//       UNIT=(DISCO,08),                                               
+//       SPACE=(TRK,(010533,02107),RLSE),                               
+//       DCB=(MX.A,LRECL=0182,RECFM=FB,BUFNO=20)                        
+//SORTLIB  DD DSN=SYS1.SORTLIB,                                         
+//       DISP=SHR                                                       
+//SORTWK01 DD UNIT=DISCO,                                               
+//       SPACE=(CYL,(00270))                                            
+//SORTWK02 DD UNIT=DISCO,                                               
+//       SPACE=(CYL,(00270))                                            
+//SORTWK03 DD UNIT=DISCO,                                               
+//       SPACE=(CYL,(00270))                                            
+//SORTWK04 DD UNIT=DISCO,                                               
+//       SPACE=(CYL,(00270))                                            
+//SORTWK05 DD UNIT=DISCO,                                               
+//       SPACE=(CYL,(00270))                                            
+//SORTWK06 DD UNIT=DISCO,                                               
+//       SPACE=(CYL,(00270))                                            
+//SORTWK07 DD UNIT=DISCO,                                               
+//       SPACE=(CYL,(00270))                                            
+//SORTWK08 DD UNIT=DISCO,                                               
+//       SPACE=(CYL,(00270))                                            
+//SORTWK09 DD UNIT=DISCO,                                               
+//       SPACE=(CYL,(00270))                                            
+//SORTWK10 DD UNIT=DISCO,                                               
+//       SPACE=(CYL,(00270))                                            
+//SORTWK11 DD UNIT=DISCO,                                               
+//       SPACE=(CYL,(00270))                                            
+//SORTWK12 DD UNIT=DISCO,                                               
+//       SPACE=(CYL,(00270))                                            
+//SYSIN    DD *                                                         
+ SORT FIELDS=(143,16,A,159,16,A,13,2,A),FORMAT=BI                       
+ END                                                                    
+//SYSOUT   DD SYSOUT=*                                                  
+//SYSUDUMP DD SYSOUT=Y                                                  
+//*                                                                     

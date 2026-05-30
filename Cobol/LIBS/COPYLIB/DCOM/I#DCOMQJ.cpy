@@ -1,0 +1,66 @@
+      ******************************************************************
+      * SISTEMA : DCOM - I#DCOMQJ                                      *
+BSI001* TAMANHO : 0298 BYTES                                           *
+      * ARQUIVO : HISTORICO BAIXA PARCELA DESCONTO COMERCIAL           *
+      * INCLUDE DA TABELA DCOMB0A8 - DB2PRD.THIST_BAIXA_PCELA          *
+      ******************************************************************
+BSI001*                    ALTERACAO - BSI TECNOLOGIA                  *
+BSI001*----------------------------------------------------------------*
+BSI001*  ANALISTA BSI:   FERNANDO LUIZ DE SANTI  -  BSI TECNOLOGIA     *
+BSI001*  DATA........:   28/04/2017                                    *
+BSI001*----------------------------------------------------------------*
+BSI001*  OBJETIVO....:   INCLUIR CAMPOS DE ENCARGOS MORATORIOS.        *
+BSI001******************************************************************
+BRQ001*                    ALTERACAO - BRQ INFORMATICA                *
+BRQ001*---------------------------------------------------------------*
+BRQ001*  ANALISTA BRQ:   FABIO AUGUSTO FINK      -  BRQ INFORMATICA   *
+BRQ001*  DATA........:   08/02/2018                                   *
+BRQ001*---------------------------------------------------------------*
+BRQ001*  OBJETIVO....:   PROJETO BRQ 17/0418 - TROCAR O CAMPO:        *
+BRQ001*            DE: 'CFORMA-PGTO-TITLO' / PARA: 'CORIGE-PGTO-DESC' *
+BRQ001*****************************************************************
+       01  QJ-A8-REGISTRO.
+ 01 03     05 QJ-A8-DANO-OPER-DESC       PIC S9(4)V USAGE COMP-3.
+ 04 05     05 QJ-A8-NSEQ-OPER-DESC       PIC S9(9)V USAGE COMP-3.
+ 09 03     05 QJ-A8-NPCELA-DESC-COML     PIC S9(5)V USAGE COMP-3.
+ 12 26     05 QJ-A8-HBAIXA-PCELA-DESC    PIC X(26).
+ 38 26     05 QJ-A8-HULT-ATULZ           PIC X(26).
+ 64 02     05 QJ-A8-DMES-BAIXA-PTCAO     PIC S9(2)V USAGE COMP-3.
+ 66 02     05 QJ-A8-CSIT-DESC-COML       PIC S9(3)V USAGE COMP-3.
+ 68 26     05 QJ-A8-HSIT-DESC-COML       PIC X(26).
+ 94 01     05 QJ-A8-CTPO-BAIXA-PCELA     PIC X(1).
+ 95 02     05 QJ-A8-CMEIO-PGTO-DESC      PIC S9(3)V USAGE COMP-3.
+ 97 10     05 QJ-A8-DEFETV-BAIXA-PCELA   PIC X(10).
+107 09     05 QJ-A8-VSDO-DVDOR-PCELA     PIC S9(15)V9(2) USAGE COMP-3.
+116 09     05 QJ-A8-VPRINC-BAIXA-PCELA   PIC S9(15)V9(2) USAGE COMP-3.
+125 09     05 QJ-A8-VJURO-BAIXA-PCELA    PIC S9(15)V9(2) USAGE COMP-3.
+134 09     05 QJ-A8-VIOF-BAIXA-PCELA     PIC S9(15)V9(2) USAGE COMP-3.
+143 09     05 QJ-A8-VMULTA-BAIXA-PCELA   PIC S9(15)V9(2) USAGE COMP-3.
+152 09     05 QJ-A8-VABTMT-BAIXA-PCELA   PIC S9(15)V9(2) USAGE COMP-3.
+161 09     05 QJ-A8-VDESC-BAIXA-PCELA    PIC S9(15)V9(2) USAGE COMP-3.
+170 09     05 QJ-A8-VEFETV-BAIXA-PCELA   PIC S9(15)V9(2) USAGE COMP-3.
+179 09     05 QJ-A8-VJURO-CUSTO-BAIXA    PIC S9(15)V9(2) USAGE COMP-3.
+188 09     05 QJ-A8-VMORA-LEGAL-BAIXA    PIC S9(15)V9(2) USAGE COMP-3.
+197 01     05 QJ-A8-CINDCD-LOC-DEB       PIC X(1).
+198 01     05 QJ-A8-CINDCD-BAIXA-COBR    PIC X(1).
+199 01     05 QJ-A8-CINDCD-CONSL-EXTRT   PIC X(1).
+200 02     05 QJ-A8-CORIGE-PGTO-DESC     PIC S9(3)V USAGE COMP-3.
+202 03     05 QJ-A8-CMIDIA-PGTO-TITLO    PIC S9(5)V USAGE COMP-3.
+205 02     05 QJ-A8-CBCO                 PIC S9(3)V USAGE COMP-3.
+207 03     05 QJ-A8-CAG-BCRIA            PIC S9(5)V USAGE COMP-3.
+210 07     05 QJ-A8-CCTA-BCRIA-CLI       PIC S9(13)V USAGE COMP-3.
+217 02     05 QJ-A8-CDIG-CTA-EXTER       PIC X(2).
+219 04     05 QJ-A8-CCTRO-CUSTO          PIC X(4).
+223 05     05 QJ-A8-CFUNC-BDSCO          PIC S9(9)V USAGE COMP-3.
+228 08     05 QJ-A8-CTERM                PIC X(8).
+236 01     05 QJ-A8-CTPO-BAIXA-CONTR     PIC X(1).
+237 01     05 QJ-A8-CTPO-BAIXA-COMPL     PIC X(1).
+238 09     05 QJ-A8-VDEVLC-BAIXA-EXCED   PIC S9(15)V9(2) USAGE COMP-3.
+247 09     05 QJ-A8-VRECTA-BAIXA-EXCED   PIC S9(15)V9(2) USAGE COMP-3.
+256 02     05 QJ-A8-CBCO-CHEQC           PIC S9(3)V USAGE COMP-3.
+258 03     05 QJ-A8-CAG-BCRIA-CHEQC      PIC S9(5)V USAGE COMP-3.
+261 07     05 QJ-A8-CCCORR-CHEQC         PIC S9(13)V USAGE COMP-3.
+268 04     05 QJ-A8-CCHEQ-CHEQC          PIC S9(7)V USAGE COMP-3.
+272 09     05 QJ-A8-VJURO-REMUN-VENCD    PIC S9(15)V9(2) USAGE COMP-3.
+281 09     05 QJ-A8-VMORA-VENCD-DESC     PIC S9(15)V9(2) USAGE COMP-3.
+290 09     05 QJ-A8-VMULTA-VENCD-DESC    PIC S9(15)V9(2) USAGE COMP-3.

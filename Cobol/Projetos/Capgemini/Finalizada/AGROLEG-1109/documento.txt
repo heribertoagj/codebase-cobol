@@ -1,0 +1,29 @@
+AGROLEG-1109 - INDICE DE ANALISES POR SISTEMA
+
+OBJETIVO
+- Organizar as analises de impacto do SICOR 5.12 por sistema.
+- Manter rastreabilidade das mensagens COR avaliadas.
+
+DOCUMENTOS POR SISTEMA
+- RUCA: documento-RUCA.txt
+- CRUR: documento-CRUR.txt
+- RUEC: documento-RUEC.txt
+
+COBERTURA DE CADA DOCUMENTO
+- documento-RUCA.txt
+  - Analise da COR0001 no RUCA (RUCA8810, I#RUCA66 e interface com RUEC8800/I#RUEC58).
+- documento-CRUR.txt
+  - Analise da COR0001 no CRUR (CRUR3CY1 e copybook de montagem da COR0001).
+- documento-RUEC.txt
+  - Analise da COR0001 no RUEC (RUEC8810 e I#RUEC66).
+
+MENSAGENS COR EM EVOLUCAO (PROXIMAS ETAPAS)
+- COR0003R1
+- COR0006R1
+- COR0005
+
+BASE DE REFERENCIA GERAL
+- AGROLEG-1109.xml
+- COR0001.XSD v5.12
+- COR0006.XSD v5.12
+- COR0006E.XSD v5.12

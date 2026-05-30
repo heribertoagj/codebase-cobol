@@ -1,0 +1,89 @@
+
+
+
+PACOTE TABELA GFCT0250 - 18/01/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002995  TICKET-66073
+==========================================================
+
+RETIRAR OS RECOMPS DO PACOTE 
+GFCT2096
+GFCT2098
+GFCT2101
+GFCT2102
+GFCT2104
+GFCT2112
+GFCT2135
+GFCT2155
+GFCT4220
+GFCT4323
+
+===============================================================
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT0250 N P14          DFJ:GFCT0114 *                              GFCT0100 P14
+               GFCT0255*  RJ:GFCT0260 *                              GFCT0250 P14
+               GFCT0260*  DJ:GFCT0255*                               GFCT0250 P14
+                         RJ:GFCT0265 *                              GFCT0250 P14
+               GFCT0265 *  DJ:GFCT0260*                               GFCT0250 P14
+                         RJ:GFCT0270 *                              GFCT0250 P14
+                         RJ:PM142100                               PM14NOIT P14
+                         RJ:PM142100                               PM14NOIT P14
+               GFCT0270 *  DJ:GFCT0265 *                              GFCT0250 P14
+                         RJ:GFCT0275 *                              GFCT0250 P14
+               GFCT0275*  DJ:GFCT0270 *                               GFCT0250 P14
+                         RJ:GFCT0276 *                               GFCT0250 P14
+               GFCT0276 *  DJ:GFCT0275*                               GFCT0250 P14
+                         RJ:GFCT0277 *                              GFCT0250 P14
+                         RJ:GFCTDLIB *                              GFCT0005 P14
+                         RJ:GFCT0001 *                               GFCT0000 P14
+                         RJ:GFCT0001 *                               GFCT0000 P14
+                         RJ:GFCT0015 *                              GFCT0005 P14
+GFCT0250 N P14 GFCT0277 *  DJ:GFCT0276 *                               GFCT0250 P14
+                         RJ:GFCTC030 *                               GFCTC030 P14
+                        GFJ:                                       GFCT0650 P14
+                                                                               
+
+
+job GFCT0255 - NAO HA IMPACTO
+   EXEC PGM=GFCT1132	(não tem) - NAO HA IMPACTO
+   EXEC PGM=GFCT1133 (não tem) - NAO HA IMPACTO
+ 
+job GFCT0260 - NAO HA IMPACTO
+
+job GFCT0265
+   EXEC PGM=GFCT1135 (não tem) - NAO HA IMPACTO
+   EXEC PGM=GFCT1140 (não tem) - NAO HA IMPACTO
+   
+ job GFCT0270
+    EXEC PGM=GFCT1145 (não tem) - NAO HA IMPACTO
+    EXEC PGM=GFCT1150 (não tem) - NAO HA IMPACTO
+         
+job GFCT0001
+   EXEC PGM=GFCT1000 (não tem) - NAO HA IMPACTO
+   EXEC PGM=GFCT1477 (não tem) - NAO HA IMPACTO
+   EXEC PGM=GFCT4300 (não tem) - NAO HA IMPACTO
+   
+job GFCT0015
+   EXEC PGM=GFCT1005 (não tem) - NAO HA IMPACTO
+   EXEC PGM=GFCT4300 (não tem) - NAO HA IMPACTO
+   EXEC PGM=GFCT3615 (não tem) - NAO HA IMPACTO
+
+job GFCTC030 - NAO HA IMPACTO
+      EXEC PGM=GFCT4301 (UTILIZA BOOK GFCTWAOT) - AJUSTADO 
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+

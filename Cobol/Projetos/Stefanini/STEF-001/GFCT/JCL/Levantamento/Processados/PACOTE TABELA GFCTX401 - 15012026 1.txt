@@ -1,0 +1,104 @@
+PACOTE TABELA GFCTX401 - 15/01/2026
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002966, CASO ESTEJA EM OUTRO PACOTE, MOVER PARA ESSE.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTX401 N P14 GFCTW400 *  DJ:GFCTX429 *                            GFCTX401 P14
+                         DJ:GFCTX430 *                              GFCTX401 P14
+                         RJ:GFCTW401 *                              GFCTX401 P14
+               GFCTW401 * DJ:GFCTW400 *                             GFCTX401 P14
+               GFCTX401 *  RJ:GFCTX402 *                            GFCTX401 P14
+               GFCTX402 * DJ:GFCTX401 *                             GFCTX401 P14
+                         RJ:GFCTX404  *                             GFCTX401 P14
+               GFCTX404 * DJ:GFCTX402 *                             GFCTX401 P14
+                         RJ:GFCTX405 *                              GFCTX401 P14
+               GFCTX405 *  DJ:GFCTX404 *                            GFCTX401 P14
+                         RJ:GFCTX406 *                              GFCTX401 P14
+               GFCTX406 *  DJ:GFCTX405 *                            GFCTX401 P14
+                         RJ:GFCTX420 *                              GFCTX401 P14
+               GFCTX420 *  DJ:GFCTX406*                             GFCTX401 P14
+                         RJ:GFCTX421 *                              GFCTX401 P14
+                         RJ:GFCTX422 *                              GFCTX401 P14
+               GFCTX421 *  DJ:GFCTX420 *                            GFCTX401 P14
+                         RJ:GFCTX425 *                              GFCTX401 P14
+GFCTX401 N P14 GFCTX422 *  DJ:GFCTX420 *                            GFCTX401 P14
+                         RJ:GFCTX426*                               GFCTX401 P14
+               GFCTX425*  DJ:GFCTX421 *                             GFCTX401 P14
+                         RJ:GFCTX427 *                              GFCTX401 P14
+               GFCTX426*  DJ:GFCTX422 *                             GFCTX401 P14
+                         RJ:GFCTX428 *                              GFCTX401 P14
+               GFCTX427*  DJ:GFCTX425*                              GFCTX401 P14
+                         RJ:GFCTX429 *                              GFCTX401 P14
+               GFCTX428*  DJ:GFCTX426*                              GFCTX401 P14
+                         RJ:GFCTX430 *                              GFCTX401 P14
+               GFCTX429 * DJ:GFCTX427*                              GFCTX401 P14
+                         RJ:GFCTW400  *                             GFCTX401 P14
+               GFCTX430 *  DJ:GFCTX428 *                            GFCTX401 P14
+                         RJ:GFCTW400 *                              GFCTX401 P14
+
+
+=======================================================================
+JÁ ALTERADO HERIBERTO
+=======================================================================
+
+job GFCTx406 / Resp: Necessário ajuste LRECL Arquivos
+   PGM=GFCT1652 (recomp)
+
+JOB GFCTX420
+     EXEC PGM=GFCT1664 (UTILIZA BOOKS I#GFCT51 / I#GFCTZY / I#GFCTVA) 
+
+JOB GFCTX421
+     EXEC PGM=GFCT1666 (UTILIZA BOOK I#GFCT51)
+     EXEC PGM=GFCT1668 (UTILIZA BOOK I#GFCT51)
+     EXEC PGM=GFCT1670(UTILIZA BOOKS I#GFCT51 / I#GFCTZY)
+
+JOB GFCTX422
+      EXEC PGM=GFCT1666 (UTILIZA BOOK I#GFCT51)
+     EXEC PGM=GFCT1668 (UTILIZA BOOK I#GFCT51)
+     EXEC PGM=GFCT1670(UTILIZA BOOKS I#GFCT51 / I#GFCTZY)
+
+
+JOB GFCTX425 / Resp: Necessário ajuste LRECL Arquivos
+    PGM=GFCT1658 (RECOMP)
+
+JOB GFCTX426 / Resp: Necessário ajuste LRECL Arquivos
+    PGM=GFCT1658 (RECOMP)
+
+JOB GFCTX427 / Resp: Necessário ajuste LRECL Arquivos
+    PGM=GFCT1660(RECOMP)
+    PGM=GFCT1662
+
+JOB GFCTX428 / Resp: Necessário ajuste LRECL Arquivos
+    PGM=GFCT1660(RECOMP)
+    PGM=GFCT1662
+
+========================================================================
+COMPLEMENT0 - MARISA
+======================================================================
+
+job GFCTW400 - não tem ajuste - NAO HA IMPACTO
+
+job GFCTX401 - verificar se tem ajustes - NAO HA IMPACTO
+
+job GFCTX402 - verificar se tem ajustes - NAO HA IMPACTO
+
+job GFCTX404 - AJUSTADO
+    EXEC PGM=GFCT1650  (UTILIZA BOOK I#GFCTVA) - AJUSTADO
+
+job GFCTX405  - AJUSTADO
+    PGM=GFCT4220 (utiliza book I#GFCTVA) - AJUSTADO
+   
+job GFCTX429 - verificar se tem ajuste - AJUSTADO
+
+job GFCTX430 - verificar se tem ajuste
+
+
+    
+
+
+
+
+
+

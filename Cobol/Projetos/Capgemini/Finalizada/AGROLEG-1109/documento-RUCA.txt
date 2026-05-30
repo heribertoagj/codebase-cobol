@@ -1,0 +1,279 @@
+AGROLEG-1109 - ANALISE DE IMPACTO E ROTEIRO DE ALTERACOES (RUCA)
+
+INDICE
+- 1) Identificacao e objetivo
+- 2) Escopo da etapa
+- 3) Resumo executivo
+- 4) Premissas, baseline e referencias de contrato
+- 5) Analise detalhada - COR0001
+- 6) Analise detalhada - COR0003R1
+- 7) Analise detalhada - COR0006R1
+- 8) Consolidado de impacto por objeto
+- 9) Riscos, mitigacoes e dependencias
+- 10) Roteiro consolidado de implementacao
+- 11) Base de referencia
+
+================================================================================
+1) IDENTIFICACAO E OBJETIVO
+================================================================================
+- Demanda: AGROLEG-1109
+- Fluxo: RUCA
+- Versao alvo: SICOR 5.12
+
+OBJETIVO DA ETAPA
+- Adequar as mensagens impactadas (COR0001, COR0003R1 e COR0006R1) ao SICOR 5.12 no fluxo RUCA.
+- Substituir CodSistProdc (13 posicoes) por Grupo_COR0001_SistProdc (8 campos).
+
+================================================================================
+2) ESCOPO DA ETAPA
+================================================================================
+NO ESCOPO
+- Mensagem COR0001 no fluxo RUCA.
+- Programa RUCA8810.
+- Copy I#RUCA66.
+- Interface de entrada via I#RUEC58/RUEC8800 (somente impacto no RUCA).
+
+FORA DO ESCOPO
+- Analise completa de CRUR.
+- Analise completa de RUEC.
+- Analise completa de RCOR.
+- Adequacao funcional completa de COR0003R1 e COR0006R1 no RUCA.
+
+================================================================================
+3) RESUMO EXECUTIVO
+================================================================================
+- O contrato XSD da COR0001 ja esta em 5.12 e contem Grupo_COR0001_SistProdc.
+- O fluxo RUCA ainda usa modelo legado com CodSistProdc em campo unico.
+- O impacto principal e de montagem/serializacao da mensagem no RUCA8810 e no copy I#RUCA66.
+- Sem ajuste RUCA, ha risco de rejeicao da COR0001 por nao aderencia ao layout 5.12.
+
+================================================================================
+4) PREMISSAS, BASELINE E REFERENCIAS DE CONTRATO
+================================================================================
+- Baseline de contrato: COR0001.XSD versao 5.12.
+- Sistema de producao em 8 campos:
+  - TpAgrctur (1)
+  - TpIntgcConsc (1)
+  - TpGraoSemte (1)
+  - TpIrrgc (2)
+  - TpCultvExplc (2)
+  - TpFaseCicloProdc (2)
+  - TpClima (2)
+  - TpOtrPratcManj (2)
+- Origem de dados ja existente em RUEC8800:
+  - RUEC58-TIPO-AGROP, RUEC58-TIPO-INTEG, RUEC58-GRAO-SEMENTE, RUEC58-TIPO-IRRIG,
+    RUEC58-TIPO-CULTIVO, RUEC58-CICLO-PROD, RUEC58-CLIMA-PROD, RUEC58-COUTRO-TRATO-SOLO.
+
+================================================================================
+5) ANALISE DETALHADA - COR0001
+================================================================================
+DIAGNOSTICO TECNICO
+- RUCA8810 ainda move retorno consolidado para campo legado:
+  - RUEC58-SIST-PROD -> RUCA66-COD-SIST-PRODC.
+- I#RUCA66 ainda possui definicao do campo legado no bloco da COR0001.
+- O fluxo de serializacao ainda contem blocos a reconciliar com a 5.12
+  (ex.: certificacao/rastreabilidade/energia).
+
+IMPACTO EM COPY/PROGRAMA
+- RUCA8810 (ALTO IMPACTO):
+  - remover uso de RUCA66-COD-SIST-PRODC para envio da COR0001;
+  - preencher os 8 campos do Grupo_COR0001_SistProdc;
+  - ajustar ordem de serializacao da WRK-MSGEM-RURAL conforme COR0001.XSD 5.12.
+- I#RUCA66 (ALTO IMPACTO):
+  - retirar campo legado CodSistProdc;
+  - incluir estrutura do Grupo_COR0001_SistProdc (8 campos / 13 posicoes), composta por:
+    - TpAgrctur PIC X(001)
+    - TpIntgcConsc PIC X(001)
+    - TpGraoSemte PIC X(001)
+    - TpIrrgc PIC X(002)
+    - TpCultvExplc PIC X(002)
+    - TpFaseCicloProdc PIC X(002)
+    - TpClima PIC X(002)
+    - TpOtrPratcManj PIC X(002).
+
+================================================================================
+6) ANALISE DETALHADA - COR0003R1
+================================================================================
+- Fora do escopo funcional desta etapa RUCA-only.
+- Impacto esperado nesta fase: baixo, restrito a controle de integridade de payload quando houver repasse.
+- Caso a etapa evolua para consumo funcional de COR0003R1 no RUCA, aplicar o mesmo padrao:
+  - eliminar dependencia de consolidado X(013);
+  - mapear grupo de 8 campos de sistema de producao;
+  - revisar persistencia associada.
+
+================================================================================
+7) ANALISE DETALHADA - COR0006R1
+================================================================================
+- Fora do escopo funcional desta etapa RUCA-only.
+- Impacto esperado nesta fase: baixo, sem parser funcional dedicado no RUCA nesta entrega.
+- Dependencia futura: alinhamento com adequacoes de RUEC/CRUR para consumo consistente do modelo decomposto.
+
+================================================================================
+8) CONSOLIDADO DE IMPACTO POR OBJETO
+================================================================================
+- RUCA8810 | COR0001 | PROGRAMA | ALTO | Ajustar montagem e serializacao para 8 campos.
+- I#RUCA66 | COR0001 | COPY     | ALTO | Substituir CodSistProdc por Grupo_COR0001_SistProdc.
+- I#RUEC58/RUEC8800 | COR0001 | INTERFACE | MEDIO | Garantir insumo consistente para montagem RUCA.
+
+================================================================================
+9) RISCOS, MITIGACOES E DEPENDENCIAS
+================================================================================
+- Risco: rejeicao da COR0001 por ordem incorreta de tags.
+  - Mitigacao: teste de serializacao com comparativo de sequencia.
+- Risco: envio de tags removidas no catalogo 5.12.
+  - Mitigacao: checklist de remocao de campos excluidos.
+- Risco: divergencia entre RUCA e fluxos CRUR/RUEC ainda nao adequados.
+  - Mitigacao: registrar entrega como parcial RUCA-only e planejar fase integrada.
+
+================================================================================
+10) ROTEIRO CONSOLIDADO DE IMPLEMENTACAO
+================================================================================
+ETAPA 1 - BASELINE
+- Congelar COR0001.XSD 5.12 como contrato de referencia.
+- Confirmar cardinalidade e sequencia do Grupo_COR0001_SistProdc.
+
+ETAPA 2 - COPY DE MONTAGEM
+- Atualizar I#RUCA66 para novo grupo.
+- Remover elementos legados nao aderentes ao 5.12.
+
+ETAPA 3 - LOGICA DE MONTAGEM NO RUCA8810
+- Substituir ponto de preenchimento legado por 8 campos.
+- Ajustar serializacao da mensagem para ordem da 5.12.
+
+ETAPA 4 - SANEAMENTO
+- Revisar blocos excluidos na 5.12 ainda serializados.
+- Eliminar envio de tags descontinuadas.
+
+================================================================================
+11) BASE DE REFERENCIA
+================================================================================
+- AGROLEG-1109.xml
+- COR0001.XSD v5.12
+- Analise de codigo: RUCA8810 e RUEC8800
+AGROLEG-1109 - ANALISE DE IMPACTO E ROTEIRO DE ALTERACOES (RUCA)
+
+OBJETIVO DA DEMANDA
+- Adequar a geracao da COR0001 ao SICOR 5.12.
+- Substituir CodSistProdc (13 posicoes) por Grupo_COR0001_SistProdc (8 campos).
+
+ESCOPO DESTA ETAPA
+- Somente RUCA.
+- Objetos analisados:
+  - RUCA8810
+  - I#RUCA66
+  - Interface de entrada via I#RUEC58/RUEC8800 (somente impacto no RUCA)
+  - COR0001.XSD versao 5.12 como baseline de contrato
+
+FORA DO ESCOPO DESTA ETAPA
+- Analise completa de CRUR.
+- Analise completa de RUEC.
+- Analise completa de RCOR.
+
+RESUMO EXECUTIVO (RUCA)
+- O contrato XSD da COR0001 ja esta em 5.12 e contem Grupo_COR0001_SistProdc.
+- O fluxo RUCA ainda usa modelo legado com CodSistProdc em campo unico.
+- O impacto principal e de montagem/serializacao da mensagem no RUCA8810 e no copy I#RUCA66.
+- Sem ajuste RUCA, ha risco de rejeicao da COR0001 por nao aderencia ao layout 5.12.
+
+DIAGNOSTICO TECNICO RUCA
+
+1) SITUACAO ATUAL ENCONTRADA
+- RUCA8810 ainda move retorno consolidado para campo legado:
+  - RUEC58-SIST-PROD -> RUCA66-COD-SIST-PRODC.
+- I#RUCA66 ainda possui definicao do campo legado no bloco da COR0001.
+- O fluxo de serializacao ainda contem blocos que precisam ser reconciliados com a 5.12
+  (ex.: certificacao/rastreabilidade/energia, conforme mapeamento de alteracoes).
+
+2) ESTRUTURA EXIGIDA NO SICOR 5.12
+- Grupo_COR0001_SistProdc composto por:
+  - TpAgrctur (1)
+  - TpIntgcConsc (1)
+  - TpGraoSemte (1)
+  - TpIrrgc (2)
+  - TpCultvExplc (2)
+  - TpFaseCicloProdc (2)
+  - TpClima (2)
+  - TpOtrPratcManj (2)
+
+3) ORIGEM DOS DADOS (JA DISPONIVEL)
+- RUEC8800 ja trabalha os componentes que formam o sistema de producao:
+  - RUEC58-TIPO-AGROP
+  - RUEC58-TIPO-INTEG
+  - RUEC58-GRAO-SEMENTE
+  - RUEC58-TIPO-IRRIG
+  - RUEC58-TIPO-CULTIVO
+  - RUEC58-CICLO-PROD
+  - RUEC58-CLIMA-PROD
+  - RUEC58-COUTRO-TRATO-SOLO
+- Ponto de atencao: retorno consolidado ainda e enviado em RUEC58-SIST-PROD.
+
+IMPACTO POR OBJETO (RUCA)
+
+RUCA8810 (ALTO IMPACTO)
+- Ajustar ponto de carga de sistema de producao:
+  - remover uso de RUCA66-COD-SIST-PRODC para envio da COR0001.
+  - preencher os 8 campos do Grupo_COR0001_SistProdc.
+- Ajustar ordem de serializacao da WRK-MSGEM-RURAL conforme COR0001.XSD 5.12.
+- Revisar e remover serializacao de tags excluidas no catalogo 5.12 (quando ainda presentes).
+
+I#RUCA66 (ALTO IMPACTO)
+- Refatorar layout de montagem da COR0001:
+  - retirar campo legado CodSistProdc.
+  - incluir estrutura do Grupo_COR0001_SistProdc com 8 campos.
+- Garantir tamanhos aderentes ao XSD:
+  - 1/1/1/2/2/2/2/2.
+
+INTERFACE I#RUEC58 / RUEC8800 (MEDIO IMPACTO NO RUCA)
+- Estrategia recomendada para etapa RUCA-only:
+  - quebrar localmente no RUCA o sistema consolidado (se necessario) e mapear para o grupo de 8 campos.
+- Evolucao ideal futura (fora desta etapa):
+  - RUEC devolver os 8 campos separados.
+
+ROTEIRO DE ALTERACOES (EXECUCAO RUCA)
+
+ETAPA 1 - BASELINE
+- Congelar COR0001.XSD 5.12 como contrato de referencia.
+- Confirmar cardinalidade e sequencia do Grupo_COR0001_SistProdc.
+
+ETAPA 2 - COPY DE MONTAGEM
+- Atualizar I#RUCA66 para novo grupo.
+- Remover elementos legados nao aderentes ao 5.12.
+
+ETAPA 3 - LOGICA DE MONTAGEM NO RUCA8810
+- Substituir ponto de preenchimento legado por 8 campos.
+- Ajustar a serializacao da mensagem para ordem da 5.12.
+
+ETAPA 4 - SANEAMENTO DE LEGADO
+- Revisar blocos excluidos na 5.12 ainda serializados.
+- Eliminar envio de tags descontinuadas.
+
+ETAPA 5 - TESTES E EVIDENCIAS
+- Positivo:
+  - gerar COR0001 com grupo completo e validar aceite.
+- Negativo:
+  - omissao de campo obrigatorio do grupo.
+  - tamanho invalido em campo (ex.: TpIrrgc com 1 digito).
+- Regressivo:
+  - fluxos principais RUCA de formalizacao e continuidade.
+- Evidencias:
+  - payload antes/depois.
+  - validacao estrutural contra XSD 5.12.
+
+RISCOS E MITIGACOES
+- Risco: rejeicao da COR0001 por ordem incorreta de tags.
+  - Mitigacao: teste de serializacao com comparativo de sequencia.
+- Risco: envio de tags removidas no catalogo 5.12.
+  - Mitigacao: checklist de remocao de campos excluidos.
+- Risco: divergencia entre RUCA e fluxos CRUR/RUEC ainda nao adequados.
+  - Mitigacao: registrar esta entrega como parcial RUCA-only e planejar fase 2.
+
+CRITERIOS DE ACEITE DA ETAPA RUCA
+- Nao enviar CodSistProdc na COR0001.
+- Enviar Grupo_COR0001_SistProdc com 8 campos validos.
+- Mensagem aderente ao COR0001.XSD versao 5.12.
+- Evidencias de testes positivo/negativo/regressivo documentadas.
+
+BASE DE REFERENCIA
+- AGROLEG-1109.xml
+- COR0001.XSD v5.12
+- Analise de codigo: RUCA8810 e RUEC8800

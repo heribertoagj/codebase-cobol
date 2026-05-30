@@ -1,0 +1,27 @@
+Tabela GFCTN375 - 31012026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002960   TICKET-56429
+==========================================================
+
+JOB GFCTN375 - TABELA GFCTN375  
+  PROGRAMA GFCT5709
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTN375 N P14          DED:SBAT0250 MX.ISDB.GFCT.GFCTN375         SBATESPE P11
+                        DED:SBAT0250 MX.ISDB.GFCT.GFCTN375         SBAT0250 P11
+               *GFCTN375*  DJ:GFCTW911*                               GFCTN375 P14
+                         RJ:GFCTW910*                               GFCTN375 P14
+               GFCTW910*  DJ:GFCTN375*                              GFCTN375 P14
+                         RJ:GFCTW911*                               GFCTN375 P14
+               GFCTW911*  DJ:GFCTW910 *                              GFCTN375 P14
+                         RJ:GFCTN375 *                              GFCTN375 P14
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002960   TICKET-56429
+==========================================================
+
+job GFCTN375
+   EXEC PGM=GFCT5709 (utliza book GFCTWF21 e GFCTWF25) - AJUSTADO
+

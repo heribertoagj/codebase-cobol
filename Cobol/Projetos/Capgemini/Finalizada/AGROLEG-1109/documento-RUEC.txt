@@ -1,0 +1,171 @@
+AGROLEG-1109 - ANALISE DE IMPACTO E ROTEIRO DE ALTERACOES (RUEC)
+
+INDICE
+- 1) Identificacao e objetivo
+- 2) Escopo da etapa
+- 3) Resumo executivo
+- 4) Premissas, baseline e referencias de contrato
+- 5) Analise detalhada - COR0001
+- 6) Analise detalhada - COR0003R1
+- 7) Analise detalhada - COR0006R1
+- 8) Consolidado de impacto por objeto
+- 9) Riscos, mitigacoes e dependencias
+- 10) Roteiro consolidado de implementacao
+- 11) Base de referencia
+
+================================================================================
+1) IDENTIFICACAO E OBJETIVO
+================================================================================
+- Demanda: AGROLEG-1109
+- Fluxo: RUEC
+- Versao alvo: SICOR 5.12
+
+OBJETIVO DA ETAPA
+- Adequar as mensagens impactadas (COR0001, COR0003R1 e COR0006R1) ao SICOR 5.12 no fluxo RUEC.
+- Adequar consumo/parse dos retornos COR0003R1 e COR0006R1 no eixo de sistema de producao.
+- Substituir CodSistProdc consolidado pelo modelo decomposto (8 campos), conforme aplicacao por mensagem.
+
+================================================================================
+2) ESCOPO DA ETAPA
+================================================================================
+NO ESCOPO
+- COR0001: geracao e serializacao no RUEC.
+- COR0003R1: analise de impacto no roteamento/parse/persistencia onde houver consumo funcional.
+- COR0006R1: parse funcional e persistencia.
+- Objetos principais: RUEC8810, I#RUEC66, I#RUEC86, RUEC8850, RUEC8820, RUEC8804 e programas consumidores de CSIST_PROD.
+
+FORA DO ESCOPO
+- Implementacao em CRUR e RUCA (tratada em documentos especificos).
+
+================================================================================
+3) RESUMO
+================================================================================
+- O RUEC possui legado em campo consolidado X(013) para sistema de producao.
+- A COR0001 exige ajuste de montagem (RUEC8810/I#RUEC66) para grupo de 8 campos.
+- A COR0006R1 concentra maior impacto tecnico em I#RUEC86 + RUEC8850 + persistencia DB2.
+- A COR0003R1 requer validacao do consumo funcional para eliminar dependencias do consolidado onde aplicavel.
+
+================================================================================
+4) PREMISSAS, BASELINE E REFERENCIAS DE CONTRATO
+================================================================================
+- Baseline: catalogo SICOR 5.12.
+- Estrutura alvo de sistema de producao:
+  - TpAgrctur (1), TpIntgcConsc (1), TpGraoSemte (1), TpIrrgc (2),
+    TpCultvExplc (2), TpFaseCicloProdc (2), TpClima (2), TpOtrPratcManj (2).
+- Diretriz de persistencia: nao manter apenas consolidado quando a mensagem exigir modelo decomposto.
+
+================================================================================
+5) ANALISE DETALHADA - COR0001
+================================================================================
+DIAGNOSTICO TECNICO
+- RUEC8810 move CSIST-PROD para RUEC66-COD-SIST-PRODC.
+- Ha regras legadas por substring (10:02 e 12:02).
+- I#RUEC66 confirma definicao atual com campo unico X(013).
+
+IMPACTO EM COPY/PROGRAMA
+- RUEC8810 (ALTO IMPACTO):
+  - remover formatacao baseada em substring de campo consolidado;
+  - popular explicitamente os 8 campos no bloco COR0001.
+- I#RUEC66 (ALTO IMPACTO):
+  - substituir `RUEC66-COD-SIST-PRODC PIC X(013)` por `Grupo_COR0001_SistProdc` (8 campos / 13 posicoes), composto por:
+    - `TpAgrctur       PIC X(001)`
+    - `TpIntgcConsc    PIC X(001)`
+    - `TpGraoSemte     PIC X(001)`
+    - `TpIrrgc         PIC X(002)`
+    - `TpCultvExplc    PIC X(002)`
+    - `TpFaseCicloProdc PIC X(002)`
+    - `TpClima         PIC X(002)`
+    - `TpOtrPratcManj  PIC X(002)`
+  - sugestao de mudanca no copy: criar `01 RUEC66-COR0001-SIST-PRODC.` com essa estrutura e substituir os `MOVE`/referencias ao consolidado para o novo grupo;
+  - ajustar grupo COR0001-9 para o novo modelo.
+
+================================================================================
+6) ANALISE DETALHADA - COR0003R1
+================================================================================
+DIAGNOSTICO TECNICO
+- Validar no RUEC8804 o tratamento do COD-MSG = 'COR0003R1' e encaminhamento para modulo consumidor.
+- Identificar book(s) de parse usados para COR0003R1 e verificar existencia de COD-SIST-PRODC consolidado.
+- Revisar includes/tabelas impactadas para evitar dependencia exclusiva de CSIST_PROD.
+
+IMPACTO POR OBJETO
+- RUEC8804 (BAIXO/MEDIO IMPACTO):
+  - confirmar roteamento sem alteracao indevida de contrato;
+  - validar integridade da SISMSG.
+- Book de parse COR0003R1 (ALTO IMPACTO):
+  - book identificado no RUEC: I#RUEC90;
+  - substituir eventual COD-SIST-PRODC PIC X(013) no I#RUEC90 por grupo de 8 campos.
+- Programas de tratamento/persistencia (MEDIO/ALTO IMPACTO):
+  - revisar MOVE/STRING/UNSTRING e substring (10:02/12:02);
+  - ajustar mapeamento para campos decompostos quando aplicavel.
+
+================================================================================
+7) ANALISE DETALHADA - COR0006R1
+================================================================================
+DIAGNOSTICO TECNICO
+- I#RUEC86 contem campo consolidado RUEC86-COD-SIST-PRODC PIC X(013).
+- RUEC8850 faz parse funcional da COR0006R1 e move consolidado para CSIST_PROD.
+- Tabelas impactadas: DB2PRD.RESP_CONTR_RURAL e DB2PRD.TCONTR_ENVIO_RECOR.
+
+IMPACTO EM BOOK/TABELAS/PROGRAMAS
+- I#RUEC86 (ALTO IMPACTO):
+  - trocar COD-SIST-PRODC por 8 campos (mantendo total de 13 posicoes).
+- RUEC8850 (ALTO IMPACTO - CRITICO):
+  - ajustar parse para grupo de 8 campos;
+  - substituir mapeamento para colunas decompostas;
+  - ajustar INSERT para gravacao explicita dos 8 campos.
+- RUEC8820 (MEDIO/ALTO IMPACTO):
+  - revisar include e SQL de insercao para substituir persistencia consolidada.
+- RUEC8804 (MEDIO IMPACTO):
+  - validar contrato de chamada apos ajuste do RUEC8850.
+- Programas com legado substring (ALTO/MEDIO IMPACTO):
+  - RUEC1550, RUEC1590, RUEC1595, RUEC7170, RUEC8808, RUEC8810.
+- Programas com uso passivo/referencial (BAIXO IMPACTO):
+  - RUECC890, RUEC0890, RUEC1450, RUEC8818, RUEC8830, RUEC8831.
+
+================================================================================
+8) CONSOLIDADO DE IMPACTO POR OBJETO
+================================================================================
+- I#RUEC66 | COR0001  | COPY     | ALTO        | Substituir X(013) por grupo 8 campos.
+- RUEC8810 | COR0001  | PROGRAMA | ALTO        | Ajustar montagem/serializacao sem substring legado.
+- I#RUEC86 | COR0006R1| COPY     | ALTO        | Substituir X(013) por grupo 8 campos.
+- RUEC8850 | COR0006R1| PROGRAMA | ALTO/CRITICO| Ajustar parse e persistencia decomposta.
+- RUEC8820 | COR0006R1| PROGRAMA | MEDIO/ALTO  | Ajustar SQL/include para modelo decomposto.
+- RUEC8804 | COR0003R1/COR0006R1 | PROGRAMA | MEDIO | Validar roteamento e integridade de payload.
+
+================================================================================
+9) RISCOS, MITIGACOES E DEPENDENCIAS
+================================================================================
+- Risco de incompatibilidade com consumidores legados.
+  - Mitigacao: validar consumidores por fluxo e regressivo funcional.
+- Risco de quebra por ordem de serializacao.
+  - Mitigacao: comparativo de payload antes/depois e aderencia ao contrato.
+- Risco de legado residual de substring sobre consolidado.
+  - Mitigacao: checklist de remocao por programa.
+
+================================================================================
+10) ROTEIRO CONSOLIDADO DE IMPLEMENTACAO
+================================================================================
+ETAPA 1 - BASELINE
+- Confirmar contrato 5.12 e sequencia das tags.
+
+ETAPA 2 - BOOK/COPY
+- Alterar I#RUEC66 e I#RUEC86 para estrutura de 8 campos.
+
+ETAPA 3 - PROGRAMAS
+- Refatorar RUEC8810 e RUEC8850.
+- Ajustar RUEC8820 e revisar RUEC8804.
+
+ETAPA 4 - PERSISTENCIA
+- Evoluir includes/tabelas que usam CSIST_PROD para modelo decomposto.
+- Ajustar SQL (INSERT/SELECT/UPDATE) dos fluxos impactados.
+
+ETAPA 5 - REGRESSIVO TECNICO
+- Revisar programas com substring legado e programas referenciais.
+
+================================================================================
+11) BASE DE REFERENCIA
+================================================================================
+- AGROLEG-1109.xml
+- Analise de codigo: RUEC7200, RUEC8200, RUEC8804, RUEC8850, RUEC9160, RUECC890,
+  RUEC0890, RUEC1450, RUEC1550, RUEC1590, RUEC1595, RUEC7170, RUEC8808, RUEC8810,
+  RUEC8818, RUEC8820, RUEC8830, RUEC8831, I#RUEC66 e I#RUEC86

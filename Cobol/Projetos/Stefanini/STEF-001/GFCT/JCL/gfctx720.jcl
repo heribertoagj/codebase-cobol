@@ -1,0 +1,86 @@
+//GFCTX720 JOB 'GFCT,4008,PR14','D336356',MSGCLASS=Z,SCHENV=BATCH
+//JOBLIB   DD DSN=MX.BIBGERAL,DISP=SHR
+//         DD DSN=DB2M1.R2.DSNLOAD,DISP=SHR
+//         DD DSN=SYS1.CEE.SCEERUN,DISP=SHR
+//STEP01   EXEC DB2M1HPU,
+//       UID='GFCTX720'
+//*
+//* ***    ------------------------------------------------------------
+//* ***    HPU - DESCARREGA A TABELA GFCTB092 EM ARQ.SEQUENCIAL.
+//* ***    PARA GERACAO DE ARQUIVO PARA A ROTINA BSPI
+//* ***    BASE HISTORICA : JAN-21 A JUL-21
+//* ***    ------------------------------------------------------------
+//*
+//SYSPUNCH DD DSN=MX.GFCT.JX720S01.SYSPUNCH(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=DISCO,
+//       SPACE=(TRK,(100,10),RLSE),
+//       DCB=(MX.A),
+//       DATACLAS=PRODX37
+//SYSREC00 DD DSN=MX.GFCT.JX720S01.SYSREC00(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=(DISCO),
+//       SPACE=(TRK,(099900,19980),RLSE),
+//       DCB=(MX.A),
+//       DATACLAS=PRODX37
+//SYSIN    DD *
+ UNLOAD TABLESPACE GFCTD000.GFCTS092
+ DB2 NO
+ QUIESCE YES
+ SELECT CROTNA_ORIGE_MOVTO,
+        DENVIO_MOVTO_TARIF,
+        CNRO_ARQ_MOVTO,
+        CSEQ_MOVTO,
+        CAG_DSTNO_MOVTO,
+        CCTA_DSTNO_MOVTO,
+        CSERVC_TARIF,
+        DOCOR_EVNTO,
+        DEFETV_DEB_MOVTO,
+        VTARIF_BRUTO_MOVTO,
+        VTARIF_LIQ_MOVTO,
+        VTARIF_DEB_MOVTO,
+        CSIT_EVNTO_RECBD
+ FROM DB2PRD.MOVTO_EVNTO_CRRTT
+ WHERE CROTNA_ORIGE_MOVTO = 'BSPI'
+ AND CSIT_EVNTO_RECBD = 5
+ AND DEFETV_DEB_MOVTO BETWEEN '01.01.2021' AND '31.07.2021'
+ OUTDDN (SYSREC00)
+ FORMAT DSNTIAUL
+ LOADDDN SYSPUNCH
+//*
+//* ***    ------------------------------------------------------------
+//* ***    FORMATA ARQUIVO NO LAYOUT DE ENVIO PARA O BSPI
+//* ***    ------------------------------------------------------------
+//*
+//*
+//STEP02   EXEC PGM=GFCT2504
+//EVENTO92 DD DSN=*.STEP01.HPU.SYSREC00,
+//       DISP=SHR
+//ARQUBSPI DD DSN=MX.GFCT.JX720S02.ARQUBSPI(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=DISCO,
+//       SPACE=(TRK,(080000,8000),RLSE),
+//       DCB=(MX.A,LRECL=0212,RECFM=FB),
+//       DATACLAS=PRODX37
+//SYSOUT   DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=Y
+//*
+//STEP03   EXEC PGM=PLAN1010,
+//       PARM='SIM'
+//*
+//* ***    ------------------------------------------------------------
+//* ***    - COPIA ARQUIVO PRIVATIZADO
+//* ***    ------------------------------------------------------------
+//*
+//SYSUT1   DD DSN=*.STEP02.ARQUBSPI,
+//       DISP=SHR
+//SYSUT2   DD DSN=MX.GFCT.PRV.TARIFPIX.ACUM(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=DISCO,
+//       SPACE=(TRK,(080000,8000),RLSE),
+//       DCB=(MX.A,LRECL=0212,RECFM=FB),
+//       DATACLAS=PRODX37
+//SYSOUT   DD SYSOUT=*
+//PRINTER  DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=Y
+//*

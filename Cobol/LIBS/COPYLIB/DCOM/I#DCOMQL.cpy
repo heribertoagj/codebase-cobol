@@ -1,0 +1,31 @@
+      ******************************************************************
+      * SISTEMA : DCOM - I#DCOMQL                                      *
+      * TAMANHO : 0164 BYTES                                           *
+      * ARQUIVO : HISTORICO FORNECEDOR DESCONTO COMERCIAL              *
+      * INCLUDE DA TABELA DCOMB0B1 - DB2PRD.THIST_FORNC_DESC           *
+      ******************************************************************
+       01   QL-B1-REGISTRO.
+  1  3      05 QL-B1-DANO-OPER-DESC       PIC S9(4)V USAGE COMP-3.
+  4  5      05 QL-B1-NSEQ-OPER-DESC       PIC S9(9)V USAGE COMP-3.
+  9  3      05 QL-B1-NFORNC-DESC-COML     PIC S9(4)V USAGE COMP-3.
+ 12 26      05 QL-B1-HULT-ATULZ           PIC X(26).
+ 38 20      05 QL-B1-CDOCTO-FSCAL-DESC    PIC X(20).
+ 58  5      05 QL-B1-CSERIE-DOCTO-FSCAL   PIC X(5).
+ 63 10      05 QL-B1-DEMIS-DOCTO-FSCAL    PIC X(10).
+ 73 10      05 QL-B1-DVCTO-DOCTO-FSCAL    PIC X(10).
+ 83  9      05 QL-B1-VDOCTO-FSCAL         PIC S9(15)V9(2) USAGE COMP-3.
+ 92  3      05 QL-B1-NPCELA-DESC-COML     PIC S9(5)V USAGE COMP-3.
+ 95  3      05 QL-B1-CCONDC-PGTO-FORNC    PIC S9(5)V USAGE COMP-3.
+ 98 16      05 QL-B1-CIDTFD-SEQ-PGTO      PIC X(16).
+114  1      05 QL-B1-CORIGE-PGTO-FORNC    PIC S9(1)V USAGE COMP-3.
+115  5      05 QL-B1-CCNPJ-CPF            PIC S9(9)V USAGE COMP-3.
+120  3      05 QL-B1-CFLIAL-CNPJ          PIC S9(5)V USAGE COMP-3.
+123  2      05 QL-B1-CCTRL-CNPJ-CPF       PIC S9(2)V USAGE COMP-3.
+125  1      05 QL-B1-CINDCD-CONF-UTILZ    PIC X(1).
+126  2      05 QL-B1-CBCO-PRODT-COBR      PIC S9(3)V USAGE COMP-3.
+128  2      05 QL-B1-CIDTFD-PRODT-COBR    PIC S9(2)V USAGE COMP-3.
+130 10      05 QL-B1-CNEGOC-COBR          PIC S9(18)V USAGE COMP-3.
+140 10      05 QL-B1-CTITLO-COBR-BCO      PIC S9(18)V USAGE COMP-3.
+150  2      05 QL-B1-CNRO-SEQ-TITLO       PIC S9(3)V USAGE COMP-3.
+152  5      05 QL-B1-CFUNC-BDSCO          PIC S9(9)V USAGE COMP-3.
+157  8      05 QL-B1-CTERM                PIC X(8).

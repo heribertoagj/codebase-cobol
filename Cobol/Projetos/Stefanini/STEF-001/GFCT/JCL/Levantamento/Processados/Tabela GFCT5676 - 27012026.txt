@@ -1,0 +1,37 @@
+Tabela GFCT5676 - 27012026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002968   TICKET-56435
+==========================================================
+EXECUTA O PROGRAMA GFCT3610  
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT5676 N P14 GFCT5676* DED:SBAT0250 MX.ISDB.GFCT.GFCT5676         SBATESPE P11
+                        DED:SBAT0250 MX.ISDB.GFCT.GFCT5676         SBAT0250 P11
+                        GFJ:GFCT5678 *                              GFCT5676 P14
+               GFCT5678* DFJ:GFCT5676 *                              GFCT5676 P14
+                        GFJ:GFCT5974 *                              GFCT5676 P14
+                        GFJ:GFCT5975*                               GFCT5676 P14
+               GFCT5974* DFJ:GFCT5678 *                              GFCT5676 P14
+                         RJ:GFCT5975*                               GFCT5676 P14
+               GFCT5975*  DJ:GFCT5974*                               GFCT5676 P14
+                        DFJ:GFCT5678*                               GFCT5676 P14
+
+
+
+================================================================================
+
+
+JOB GFCT5676 - NAO HA IMPACTO
+
+JOB GFCT5678 - NAO HA IMPACTO
+   EXEC PGM=GFCT3610(UTILIZA TABELA CLIEV004 e GFCTB0I0) - AJUSTADO
+   EXEC PGM=GFCT3660 (NAO) - NAO HA IMPACTO
+
+ 
+
+   
+   
+
+

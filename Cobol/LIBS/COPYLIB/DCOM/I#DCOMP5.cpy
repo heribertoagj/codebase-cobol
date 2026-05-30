@@ -1,0 +1,30 @@
+      ******************************************************************
+      * SISTEMA : DCOM - I#DCOMP5                                      *
+      * TAMANHO : 0168 BYTES                                           *
+      * ARQUIVO : SIMULACAO FORNECEDOR DESCONTO COMERCIAL              *
+      * INCLUDE DA TABELA DCOMB0E3 - DB2PRD.TSMULA_FORNC_DESC          *
+      ******************************************************************
+       01  P5-E3-REGISTRO.
+  1  5     05 P5-E3-NSMULA-OPER-DESC     PIC S9(9)V USAGE COMP-3.
+  6  3     05 P5-E3-NFORNC-DESC-COML     PIC S9(4)V USAGE COMP-3.
+  9 20     05 P5-E3-CDOCTO-FSCAL-DESC    PIC X(20).
+ 29  5     05 P5-E3-CSERIE-DOCTO-FSCAL   PIC X(5).
+ 34 10     05 P5-E3-DEMIS-DOCTO-FSCAL    PIC X(10).
+ 44 10     05 P5-E3-DVCTO-DOCTO-FSCAL    PIC X(10).
+ 54  9     05 P5-E3-VDOCTO-FSCAL         PIC S9(15)V9(2) USAGE COMP-3.
+ 63  3     05 P5-E3-CCONDC-PGTO-FORNC    PIC S9(5)V USAGE COMP-3.
+ 66 16     05 P5-E3-CIDTFD-SEQ-PGTO      PIC X(16).
+ 82  1     05 P5-E3-CORIGE-PGTO-FORNC    PIC S9(1)V USAGE COMP-3.
+ 83  5     05 P5-E3-CCNPJ-CPF            PIC S9(9)V USAGE COMP-3.
+ 88  3     05 P5-E3-CFLIAL-CNPJ          PIC S9(5)V USAGE COMP-3.
+ 91  2     05 P5-E3-CCTRL-CNPJ-CPF       PIC S9(2)V USAGE COMP-3.
+ 93  2     05 P5-E3-CBCO-PRODT-COBR      PIC S9(3)V USAGE COMP-3.
+ 95  2     05 P5-E3-CIDTFD-PRODT-COBR    PIC S9(2)V USAGE COMP-3.
+ 97 10     05 P5-E3-CNEGOC-COBR          PIC S9(18)V USAGE COMP-3.
+107 10     05 P5-E3-CTITLO-COBR-BCO      PIC S9(18)V USAGE COMP-3.
+117  2     05 P5-E3-CNRO-SEQ-TITLO       PIC S9(3)V USAGE COMP-3.
+119  1     05 P5-E3-CINDCD-SELEC-DESC    PIC X(1).
+120 26     05 P5-E3-HULT-ATULZ           PIC X(26).
+146  5     05 P5-E3-CFUNC-BDSCO          PIC S9(9)V USAGE COMP-3.
+151  8     05 P5-E3-CTERM                PIC X(8).
+159 10     05 P5-E3-DINCL-REG            PIC X(10).

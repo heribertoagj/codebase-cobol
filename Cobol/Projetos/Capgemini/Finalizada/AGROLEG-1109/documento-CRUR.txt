@@ -1,0 +1,170 @@
+AGROLEG-1109 - ANALISE DE IMPACTO E ROTEIRO DE ALTERACOES (CRUR)
+
+INDICE
+- 1) Identificacao e objetivo
+- 2) Escopo da etapa
+- 3) Resumo executivo
+- 4) Premissas, baseline e referencias de contrato
+- 5) Analise detalhada - COR0001
+- 6) Analise detalhada - COR0003R1
+- 7) Analise detalhada - COR0006R1
+- 8) Consolidado de impacto por objeto
+- 9) Riscos, mitigacoes e dependencias
+- 10) Roteiro consolidado de implementacao
+- 11) Base de referencia
+
+================================================================================
+1) IDENTIFICACAO E OBJETIVO
+================================================================================
+- Demanda: AGROLEG-1109
+- Fluxo: CRUR
+- Versao alvo: SICOR 5.12
+
+OBJETIVO DA ETAPA
+- Adequar as mensagens impactadas (COR0001, COR0003R1 e COR0006R1) ao SICOR 5.12 no fluxo CRUR.
+- Substituir CodSistProdc (13 posicoes) por Grupo_COR0001_SistProdc (8 campos).
+- Avaliar impactos de COR0003R1 e COR0006R1 no fluxo de retorno.
+
+================================================================================
+2) ESCOPO DA ETAPA
+================================================================================
+NO ESCOPO
+- COR0001: montagem e serializacao no CRUR.
+- COR0003R1: tratamento de controle/roteamento e trilha.
+- COR0006R1: parse funcional e adequacao de copy/programa principal.
+- Objetos analisados: CRUR3CY1, CRUR1O11, CRUR3C6I, CRURWW21 e CRUR/cpy/crurw6r1.cpy.
+
+FORA DO ESCOPO
+- Implementacao detalhada dos fluxos RUCA e RUEC (tratados em documentos proprios).
+
+================================================================================
+3) RESUMO
+================================================================================
+- O CRUR ainda usa consolidacao legado para sistema de producao na COR0001.
+- Para COR0003R1, o fluxo identificado e majoritariamente de controle/armazenamento da SISMSG.
+- Para COR0006R1, o maior impacto esta no CRUR3C6I e no copy de parse funcional.
+- Aderencia plena ao SICOR 5.12 exige substituir consumo baseado em X(013) por grupo de 8 campos quando houver parse funcional.
+
+================================================================================
+4) PREMISSAS, BASELINE E REFERENCIAS DE CONTRATO
+================================================================================
+- Baseline: SICOR 5.12.
+- Contratos de referencia: COR0001.XSD e COR0006.XSD (referencia de contrato).
+- Estrutura alvo de sistema de producao:
+  - TpAgrctur (1), TpIntgcConsc (1), TpGraoSemte (1), TpIrrgc (2),
+    TpCultvExplc (2), TpFaseCicloProdc (2), TpClima (2), TpOtrPratcManj (2).
+
+================================================================================
+5) ANALISE DETALHADA - COR0001
+================================================================================
+DIAGNOSTICO TECNICO
+- No CRUR3CY1, o sistema de producao e obtido na rotina 6300-OBTER-SIST-PROD.
+- Componentes de dominio sao consultados em tabelas BACEN (TAGROP/TINTGC/TIGCAO/TCULTR/TCICLO).
+- O programa consolida componentes em campo unico e move para CRURY1-COD-SIST-PRODC.
+
+IMPACTO POR OBJETO
+- CRUR3CY1 (ALTO IMPACTO):
+  - remover dependencia de CRURY1-COD-SIST-PRODC;
+  - preencher explicitamente os 8 campos no layout de COR0001;
+  - ajustar serializacao para ordem e cardinalidade 5.12.
+- Copybook de COR0001 no CRUR (ALTO IMPACTO):
+  - substituir CodSistProdc por Grupo_COR0001_SistProdc (8 campos / 13 posicoes), composto por:
+    - TpAgrctur PIC X(001)
+    - TpIntgcConsc PIC X(001)
+    - TpGraoSemte PIC X(001)
+    - TpIrrgc PIC X(002)
+    - TpCultvExplc PIC X(002)
+    - TpFaseCicloProdc PIC X(002)
+    - TpClima PIC X(002)
+    - TpOtrPratcManj PIC X(002).
+- Dominios/validacoes (MEDIO/ALTO IMPACTO):
+  - manter validacoes BACEN e reorientar preenchimento para saida individualizada.
+
+================================================================================
+6) ANALISE DETALHADA - COR0003R1
+================================================================================
+DIAGNOSTICO TECNICO
+- No CRUR, a COR0003R1 e tratada no CRUR1O11 pela rotina 2390-TRATA-COR0003R1-E.
+- O fluxo e predominantemente de controle/armazenamento da mensagem recebida (SISMSG).
+- O book CRURWW21 contem cabecalho/controle, sem parse funcional detalhado da COR0003R1.
+
+IMPACTO POR OBJETO
+- CRUR1O11 (BAIXO/MEDIO IMPACTO):
+  - manter roteamento e controle da COR0003R1;
+  - validar compatibilidade de tamanho da SISMSG para gravacao/trilha.
+- CRURWW21 (BAIXO IMPACTO):
+  - sem necessidade de evolucao funcional nesta etapa, exceto monitoracao adicional.
+
+PONTO DE ATENCAO
+- Se houver decisao futura de consumo funcional da COR0003R1 no CRUR, sera necessario
+  copybook especifico de payload completo e rotina de parse dedicada.
+
+================================================================================
+7) ANALISE DETALHADA - COR0006R1
+================================================================================
+DIAGNOSTICO TECNICO
+- CRUR1O11 identifica COR0006R1, roteia trilha e aciona CRUR3C6I.
+- CRUR3C6I concentra parse e validacoes de negocio da COR0006R1.
+- O copy CRUR/cpy/crurw6r1.cpy ainda define COR6R1-COD-SIST-PRODC PIC X(013).
+
+IMPACTO POR OBJETO
+- CRUR1O11 (BAIXO/MEDIO IMPACTO):
+  - manter roteamento/trilha e garantir integridade do SISMSG.
+- CRUR3C6I (ALTO IMPACTO):
+  - migrar tratamento funcional para estrutura explicita de 8 campos.
+- CRUR/cpy/crurw6r1.cpy (ALTO IMPACTO):
+  - substituir consolidado por:
+    - COR6R1-TP-AGRCTUR PIC X(001)
+    - COR6R1-TP-INTGC-CONSC PIC X(001)
+    - COR6R1-TP-GRAO-SEMTE PIC X(001)
+    - COR6R1-TP-IRRGC PIC X(002)
+    - COR6R1-TP-CULTV-EXPLC PIC X(002)
+    - COR6R1-TP-FASE-CICLO-PRODC PIC X(002)
+    - COR6R1-TP-CLIMA PIC X(002)
+    - COR6R1-TP-OTR-PRATC-MANJ PIC X(002)
+
+================================================================================
+8) CONSOLIDADO DE IMPACTO POR OBJETO
+================================================================================
+- CRUR3CY1 | COR0001  | PROGRAMA | ALTO        | Ajustar montagem para grupo de 8 campos.
+- Copy COR0001 CRUR | COR0001 | COPY | ALTO | Substituir CodSistProdc por grupo estruturado.
+- CRUR1O11 | COR0003R1 | PROGRAMA | BAIXO/MEDIO | Manter controle e validar integridade SISMSG.
+- CRURWW21 | COR0003R1 | COPY | BAIXO | Sem parse funcional detalhado nesta etapa.
+- CRUR3C6I | COR0006R1 | PROGRAMA | ALTO | Migrar parse/validacao para modelo decomposto.
+- CRUR/cpy/crurw6r1.cpy | COR0006R1 | COPY | ALTO | Trocar X(013) por 8 campos.
+
+================================================================================
+9) RISCOS, MITIGACOES E DEPENDENCIAS
+================================================================================
+- Risco de quebra de serializacao por ordem de tags.
+  - Mitigacao: validar payload contra contrato 5.12.
+- Risco de divergencia entre dominio interno e BACEN.
+  - Mitigacao: manter validacao por tabelas de dominio.
+- Risco de aderencia parcial em COR0006R1 por legado consolidado.
+  - Mitigacao: ajustar copy + CRUR3C6I de forma conjunta.
+
+================================================================================
+10) ROTEIRO CONSOLIDADO DE IMPLEMENTACAO
+================================================================================
+ETAPA 1 - BASELINE
+- Fixar contratos de referencia e sequencia de tags.
+
+ETAPA 2 - COPYBOOKS
+- Atualizar copybook de COR0001 no CRUR.
+- Atualizar CRUR/cpy/crurw6r1.cpy para 8 campos em COR0006R1.
+
+ETAPA 3 - PROGRAMAS
+- Refatorar CRUR3CY1 (COR0001).
+- Ajustar CRUR3C6I (COR0006R1).
+- Validar CRUR1O11 para roteamento/trilha.
+
+ETAPA 4 - VALIDACAO TECNICA
+- Executar validacao de tamanho/ordem/campos obrigatorios e regressivo de fluxo.
+
+================================================================================
+11) BASE DE REFERENCIA
+================================================================================
+- AGROLEG-1109.xml
+- COR0001.XSD v5.12
+- COR0006.XSD v5.12 (somente referencia de contrato)
+- Analise de codigo: CRUR3CY1, CRUR1O11, CRUR3C6I e CRURWW21

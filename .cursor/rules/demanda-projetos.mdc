@@ -1,0 +1,21 @@
+---
+description: Contexto de demandas AGROLEG em Projetos — fluxo de 7 fases, README, acervo e referencia COBOL
+globs: Cobol/Projetos/**/*
+alwaysApply: false
+---
+
+# Demandas AGROLEG (Projetos)
+
+Ao trabalhar em arquivos sob `Cobol/Projetos/`:
+
+1. Seguir skill `demanda-workflow` (7 fases com gates).
+2. Capgemini: `Implementar AGROLEG-nnn.xml`. Stefanini/7Comm: `Iniciar demanda` (skill `demanda-intake-reuniao`).
+3. Implementacao COBOL: **somente** apos `Implementar plano <ID>`.
+4. Desenvolvimento e gate: `Cobol/Projetos/_indice/referencia-cobol/` (caps. 01–10).
+5. Alteracoes: comentar linha antiga + criar linha nova (cap. 03); **nao excluir linhas**.
+6. Pre-subida: skill `demanda-pre-subida` + cap. 10.
+7. Encerramento: `Finalizar <ID>` apos homologacao implantada.
+8. Pastas por componente: `pgm/`, `cpy/`, `jcl/`, `net/`; analise em `<componente>/analise/`. **Nao alterar** arquivos em `*/analise/`.
+
+Guia: `Cobol/Projetos/_indice/guia-fluxo-agroleg.md`
+Organizacao: `Cobol/Projetos/_indice/guia-organizacao-seguranca.md`

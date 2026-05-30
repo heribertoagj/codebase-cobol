@@ -1,0 +1,34 @@
+Tabela GFCTN215 - 29012026 
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002995  TICKET-66073
+==========================================================
+
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTN215 N P14 GFCTD215*  DJ:GFCT0015 *                              GFCT0005 P14
+               GFCTN215*  DJ:GFCT0015 *                              GFCT0005 P14
+                         RJ:GFCTN216 *                              GFCTN215 P14
+               GFCTN216*  DJ:GFCTN215*                               GFCTN215 P14
+                         RJ:GFCTN217                               GFCTN215 P14
+               GFCTN217  DJ:GFCTN216*                               GFCTN215 P14
+                        GFJ:                                       SIGB2188 P14
+                                                                               
+                                                                               
+
+job GFCT0015
+   EXEC PGM=GFCT1005 (não)
+   EXEC PGM=GFCT4300(não)
+   EXEC PGM=GFCT3615(não)
+    
+job GFCTN215 - verificar
+
+job GFCTN216 - AJUSTADO
+   EXEC PGM=GFCT3330 (utiliza book I#SIGB05) ====>> I#SIGB05 --> SIGBW105 (está em produção) - AJUSTADO
+
+
+job GFCTN217 - AJUSTADO
+   EXEC PGM=GFCT3335(utiliza book I#GFCTRU e I#SIGB05) ====>> --> SIGBW105 (está em produção) - AJUSTADO
+
+

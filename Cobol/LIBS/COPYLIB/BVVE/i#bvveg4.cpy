@@ -1,0 +1,127 @@
+      *----------------------------------------------------------------*
+      *  SISTEMA : BVVE - CARTAO DE CREDITO / VENDEDOR                 *
+      *  ARQUIVO : MOVIMENTO DE ENVIO/RETORNO DE SOLICITACOES DE       *
+      *            TRAVA/DESTRAVA DE DOMICILIO BANCARIO                *
+      *  LRECL   : 200 (FB)                                            *
+      *  NOME INC: I#BVVEG4                                            *
+      *  DATA    : 19/07/2008                                          *
+      *----------------------------------------------------------------*
+       01  BVVEG4-REG-HEADER.
+           05  BVVEG4H-TIPO-REG-X.
+               10  BVVEG4H-TIPO-REG           PIC 9(001).
+           05  BVVEG4H-BANCO-ENVIO-X.
+               10  BVVEG4H-BANCO-ENVIO        PIC 9(003).
+           05  BVVEG4H-DATA-PROCES-X.
+               10  BVVEG4H-DATA-PROCES        PIC 9(008).
+           05  BVVEG4H-HORA-PROCES-X.
+               10  BVVEG4H-HORA-PROCES        PIC 9(006).
+           05  BVVEG4H-VERSAO-BANCO-X.
+               10  BVVEG4H-VERSAO-BANCO       PIC 9(009).
+           05  BVVEG4H-VERSAO-REDECARD-X.
+               10  BVVEG4H-VERSAO-REDECARD    PIC 9(009).
+           05  BVVEG4H-RESERVADO              PIC X(164).
+       01  BVVEG4-REG-DETALHE.
+           05  BVVEG4D-TIPO-REG-X.
+               10  BVVEG4D-TIPO-REG           PIC 9(001).
+           05  BVVEG4D-BANCO-ENVIO-X.
+               10  BVVEG4D-BANCO-ENVIO        PIC 9(003).
+           05  BVVEG4D-DATA-PROCES-X.
+               10  BVVEG4D-DATA-PROCES        PIC 9(008).
+           05  BVVEG4D-PONTO-VENDA-X.
+               10  BVVEG4D-PONTO-VENDA        PIC 9(009).
+           05  BVVEG4D-CNPJ-ESTAB.
+               10  BVVEG4D-ECNPJ-NRO          PIC 9(008).
+               10  BVVEG4D-ECNPJ-FILIAL       PIC 9(004).
+               10  BVVEG4D-ECNPJ-CTRL         PIC 9(002).
+           05  BVVEG4D-CPF-ESTAB REDEFINES BVVEG4D-CNPJ-ESTAB.
+               10  BVVEG4D-ECPF-ZEROS         PIC 9(003).
+               10  BVVEG4D-ECPF-NRO           PIC 9(009).
+               10  BVVEG4D-ECPF-CTRL          PIC 9(002).
+           05  BVVEG4D-TIPO-OPER              PIC X(001).
+           05  BVVEG4D-BANCO-X.
+               10  BVVEG4D-BANCO              PIC 9(003).
+           05  BVVEG4D-AGENCIA-X.
+               10  BVVEG4D-AGENCIA            PIC 9(005).
+           05  BVVEG4D-CONTA-NRO-X.
+               10  BVVEG4D-CONTA-NRO          PIC 9(014).
+           05  BVVEG4D-CONTA-DIG-X.
+               10  BVVEG4D-CONTA-DIG          PIC 9(001).
+           05  BVVEG4D-IND-TRAVA              PIC X(001).
+           05  BVVEG4D-TIPO-PROCES-X.
+               10  BVVEG4D-TIPO-PROCES        PIC 9(001).
+           05  BVVEG4D-SIT-PROCES             PIC X(001).
+           05  BVVEG4D-DTINIC-TRAVA-X.
+               10  BVVEG4D-DTINIC-TRAVA       PIC 9(008).
+           05  BVVEG4D-DTFIM-TRAVA-X.
+               10  BVVEG4D-DTFIM-TRAVA        PIC 9(008).
+           05  BVVEG4D-DTENVIO-BANCO-X.
+               10  BVVEG4D-DTENVIO-BANCO      PIC 9(008).
+           05  BVVEG4D-CNPJ-REDECARD.
+               10  BVVEG4D-RCNPJ-NRO          PIC 9(008).
+               10  BVVEG4D-RCNPJ-FILIAL       PIC 9(004).
+               10  BVVEG4D-RCNPJ-CTRL         PIC 9(002).
+           05  BVVEG4D-CPF-REDECARD REDEFINES BVVEG4D-CNPJ-REDECARD.
+               10  BVVEG4D-RCPF-ZEROS         PIC 9(003).
+               10  BVVEG4D-RCPF-NRO           PIC 9(009).
+               10  BVVEG4D-RCPF-CTRL          PIC 9(002).
+           05  BVVEG4D-DTTRAVA-REDECARD-X.
+               10  BVVEG4D-DTTRAVA-REDECARD   PIC 9(008).
+           05  BVVEG4D-COD-RETORNO-X.
+               10  BVVEG4D-COD-RETORNO        PIC 9(005).
+           05  BVVEG4D-MSG-ERRO               PIC X(060).
+           05  BVVEG4D-PERFIL-ESTAB           PIC X(001).
+           05  BVVEG4D-TPO-BANDEIRA           PIC X(002).
+           05  BVVEG4D-RESERVADO              PIC X(024).
+       01  BVVEG4-REG-TRAILER.
+           05  BVVEG4T-TIPO-REG-X.
+               10  BVVEG4T-TIPO-REG           PIC 9(001).
+           05  BVVEG4T-BANCO-ENVIO-X.
+               10  BVVEG4T-BANCO-ENVIO        PIC 9(003).
+           05  BVVEG4T-DATA-PROCES-X.
+               10  BVVEG4T-DATA-PROCES        PIC 9(008).
+           05  BVVEG4T-QTDE-REG-X.
+               10  BVVEG4T-QTDE-REG           PIC 9(009).
+           05  BVVEG4T-RESERVADO              PIC X(179).
+      *----------------------------------------------------------------*
+      * HEADER
+      * 001-001 TIPO DE REGISTRO = 0 (ZERO)
+      * 002-004 CODIGO DO BANCO QUE ESTA ENVIANDO ARQUIVOS
+      * 005-012 DATA PROCESSAM.REDECARD OU DO ENVIO PELO BANCO AAAAMMDD
+      * 013-018 HORA PROCESSAM.REDECARD OU DO ENVIO PELO BANCO HHMMSS
+      * 019-027 VERSAO DO ARQUIVO DO BANCO
+      * 028-036 VERSAO DO ARQUIVO DA REDECARD
+      * 037-200 RESERVA PARA USO FUTURO
+      *----------------------------------------------------------------*
+      * DETALHE
+      * 001-001 TIPO DE REGISTRO = 1
+      * 002-004 CODIGO DO BANCO QUE ESTA ENVIANDO ARQUIVOS
+      * 005-012 DATA PROCESSAM.REDECARD OU DO ENVIO PELO BANCO AAAAMMDD
+      * 013-021 NUMERO DO PONTO DE VENDA=CODIGO DO ESTABELECIMENTO COML
+      * 022-029 NUMERO DO CNPJ/CPF DO ESTABELECIMENTO
+      * 030-033 FILIAL DO CNPJ DO ESTABELECIMENTO
+      * 034-035 CONTROLE DO CNPJ/CPF DO ESTABELECIMENTO
+      * 036-036 TIPO DE OPERACAO C=CREDITO D=DEBITO
+      * 037-039 BANCO DA CONTA CORRENTE DO ESTABELECIMENTO
+      * 040-044 AGENCIA DA CONTA CORRENTE DO ESTABELECIMENTO
+      * 045-058 NUMERO DA CONTA CORRENTE DO ESTABELECIMENTO
+      * 059-059 DIGITO DA CONTA CORRENTE DO ESTABELECIMENTO
+      * 060-060 INDICADOR DE TRAVA T=TRAVA D=DESTRAVA
+      * 061-061 TIPO DE PROCESSAMENTO = 1 (TRAVA;DESTRAVA)
+      * 062-062 STATUS DO PROCESSAMENTO P=PROCESSAMENTO A=AVISO
+      * 063-070 DATA DE INICIO DE TRAVA SOLICITADO PELO BANCO AAAAMMDD
+      * 071-078 DATA DE TERMINO DE TRAVA SOLICITADO PELO BANCO AAAAMMDD
+      * 079-086 DATA DO REGISTRO ENVIADO PELO BANCO AAAAMMDD
+      * 087-100 CNPJ/CPF DO ESTABELECIMENTO NA REDECARD
+      * 101-108 DATA DE FIM DE TRAVA ACATADA PELA REDECARD AAAAMMDD
+      * 109-113 CODIGO DE ERRO OU AVISO DEPENDENDO DA SIT DO PROCESSAM.
+      * 114-173 MENSAG DE ERRO OU AVISO DEPENDENDO DA SIT DO PROCESSAM.
+      * 174-174 PERFIL DO ESTABELECIMENTO (V=VAREJO)
+      * 175-176 TIPO DE BANDEIRA: VISA OU MASTERCARD
+      * 177-200 RESERVA PARA USO FUTURO
+      *----------------------------------------------------------------*
+      * TRAILER
+      * 001-001 TIPO DE REGISTRO = 9
+      * 002-004 CODIGO DO BANCO QUE ESTA ENVIANDO ARQUIVOS
+      * 005-012 DATA PROCESSAM.REDECARD OU DO ENVIO PELO BANCO AAAAMMDD
+      * 013-021 QUANTIDADE DE REGISTROS (INCLUSIVE HEADER E TRAILER)
+      * 020-200 RESERVA PARA USO FUTURO

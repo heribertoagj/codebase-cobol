@@ -1,0 +1,21 @@
+Tabela GFCTX085 - 03022026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002952  TICKET-56438
+==========================================================
+
+
+
+job GFCTX085
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTX085 N P14 GFCTW084*  DJ:GFCTX085*                               GFCTX085 P14
+                         RJ:GFCTW085*                               GFCTX085 P14
+               GFCTW085*  DJ:GFCTW084 *                              GFCTX085 P14
+               GFCTX085*  RJ:GFCTW084 *                              GFCTX085 P14
+         
+
+job GFCTX085
+       EXEC PGM=GFCT2780 - tem ajustes - AJUSTADO
+                                                                

@@ -1,0 +1,24 @@
+TABELA GFCTC622 - 09/02/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002944   TICKET-52719
+==========================================================
+
+job GFCTC622
+   GFCT1367  
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTC622 N P14 GFCTC622*  RJ:GFCTH628*                               GFCTC622 P14
+               GFCTH628 * DJ:GFCTC622*                               GFCTC622 P14
+                         RJ:GFCTH629*                               GFCTC622 P14
+               GFCTH629*  DJ:GFCTH628*                               GFCTC622 P14
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002944   TICKET-52719
+==========================================================
+
+
+job GFCTC622
+   EXEC PGM=GFCT1367 (utiliza book I#GFCTIL) - AJUSTADO

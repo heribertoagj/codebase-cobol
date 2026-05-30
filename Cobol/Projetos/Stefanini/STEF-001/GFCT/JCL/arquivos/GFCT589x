@@ -1,0 +1,23 @@
+STEPOC
+
+
+
+
+
+//STEP2    EXEC PGM=GFCT4268                               
+//*                                                        
+//* ***    CONFRONTO RETORNO DO MORA/POUP COM CONTROLE PRP 
+//*                                                        
+//COBRANAC DD DSN=MX.GFCT.GFCT00.#096104.D250226.H052901,                   
+//       DISP=SHR                                          
+//CFRNENTR DD DSN=MX.GFCT.GFCT00.#096129.D250226.H084651,                   
+//       DISP=SHR                                          
+//CFRSAIDA DD DSN=MX.GFCT.J0589S02.CFRSAIZN(+1),           
+//       DISP=(,CATLG,DELETE),                             
+//       UNIT=DISCO,                                       
+//       SPACE=(TRK,(0120000,040000),RLSE),                
+//       DCB=(MX.A,LRECL=0123,RECFM=FB),                   
+//       DATACLAS=PRODX37                                  
+//SYSOUT   DD SYSOUT=*                                     
+//SYSUDUMP DD SYSOUT=*                                     
+//*                                                        

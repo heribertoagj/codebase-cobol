@@ -1,0 +1,83 @@
+PACOTE TABELA GFCT1800 - 22/01/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002964   TICKET-56433
+==========================================================
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT1800 N P14 GFCTDOCT*   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT1800*  DJ:GFCT1822 *                              GFCT1800 P14
+                         RJ:GFCT1802*                               GFCT1800 P14
+                         RJ:GFCT1824 *                              GFCT1800 P14
+                        GFJ:                                       CMTFA524 P14
+               GFCT1802*  DJ:GFCT1800 *                              GFCT1800 P14
+                         RJ:GFCT1804 *                              GFCT1800 P14
+               GFCT1804*  DJ:GFCT1802 *                              GFCT1800 P14
+                         RJ:GFCT1806 *                              GFCT1800 P14
+               GFCT1806*  DJ:GFCT1804 *                              GFCT1800 P14
+                         RJ:GFCT1808 *                              GFCT1800 P14
+                         RJ:GFCT1824 *                              GFCT1800 P14
+                        GFJ:                                       CMTFA538 P14
+               GFCT1808 * DJ:GFCT1806 *                              GFCT1800 P14
+                         RJ:GFCT1810 *                              GFCT1800 P14
+               GFCT1810*  DJ:GFCT1808 *                              GFCT1800 P14
+                         RJ:GFCT1812 *                              GFCT1800 P14
+               GFCT1812*  DJ:GFCT1810 *                              GFCT1800 P14
+GFCT1800 N P14 GFCT1812*  RJ:GFCT1813 *                              GFCT1800 P14
+               GFCT1813*  DJ:GFCT1812*                               GFCT1800 P14
+                         RJ:GFCT1814 *                              GFCT1800 P14
+                         RJ:GFCT1950 *                              GFCT1800 P14
+               GFCT1814 * DJ:GFCT1813 *                              GFCT1800 P14
+               GFCT1815 * DJ:GFCT1951 *                              GFCT1800 P14
+               GFCT1820*  RJ:GFCT1822 *                              GFCT1800 P14
+               GFCT1822*  DJ:GFCT1820 *                              GFCT1800 P14
+                         RJ:GFCT1800 *                              GFCT1800 P14
+                         RJ:GFCT1824 *                              GFCT1800 P14
+               GFCT1824 * DJ:GFCT1822 *                              GFCT1800 P14
+                         DJ:GFCT1806 *                              GFCT1800 P14
+                         DJ:GFCT1800*                               GFCT1800 P14
+                        GFJ:                                       CMTFA536 P14
+               GFCT1950*  DJ:GFCT1813 *                              GFCT1800 P14
+                         RJ:GFCT1951 *                              GFCT1800 P14
+               GFCT1951*  DJ:GFCT1950*                               GFCT1800 P14
+                         RJ:GFCT1815*                               GFCT1800 P14
+GFCT1800 N P14 GFCT1812*  RJ:GFCT1813 *                              GFCT1800 P14
+               GFCT1813*  DJ:GFCT1812 *                              GFCT1800 P14
+                         RJ:GFCT1814 *                              GFCT1800 P14
+                         RJ:GFCT1950 *                              GFCT1800 P14
+               GFCT1814*  DJ:GFCT1813 *                              GFCT1800 P14
+               GFCT1815*  DJ:GFCT1951 *                              GFCT1800 P14
+               GFCT1820 * RJ:GFCT1822  *                             GFCT1800 P14
+               GFCT1822*  DJ:GFCT1820 *                              GFCT1800 P14
+                         RJ:GFCT1800*                               GFCT1800 P14
+                         RJ:GFCT1824 *                              GFCT1800 P14
+               GFCT1824*  DJ:GFCT1822 *                              GFCT1800 P14
+                         DJ:GFCT1806 *                              GFCT1800 P14
+                         DJ:GFCT1800 *                              GFCT1800 P14
+                        GFJ:                                       CMTFA536 P14
+               GFCT1950 * DJ:GFCT1813 *                              GFCT1800 P14
+                         RJ:GFCT1951 *                              GFCT1800 P14
+               GFCT1951 * DJ:GFCT1950 *                              GFCT1800 P14
+                         RJ:GFCT1815 *                              GFCT1800 P14
+
+
+JOB GFCT1800 - NAO HA IMPACTO
+    EXEC PGM=GFCT1947 (UTILIZA TABELA CLIEV004 e GFCTB0I0) - AJUSTADO
+
+JOB GFCT1822 - NAO HA IMPACTO
+   EXEC PGM=GFCT1372(NÃO) - NAO HA IMPACTO
+
+JOB GFCT1824 - NAO HA IMPACTO
+   EXEC PGM=GFCT1374 (UTILIZA TABELA CLIEV004) - AJUSTADO
+
+JOB GFCT1806 - NAO HA IMPACTO
+   EXEC PGM=GFCT1947 (UTILIZA TABELA CLIEV004 E GFCTB0I0) - AJUSTADO
+
+JOB GFCT1808 - VERIFICAR - NAO HA IMPACTO
+
+JOB GFCT1815 - NAO HA IMPACTO
+   EXEC PGM=GFCT4300 (NAO) - NAO HA IMPACTO
+   
+JOB GFCT1820 (VERIFICAR) - NAO HA IMPACTO
+

@@ -1,0 +1,64 @@
+Hexa
+m493684
+[CREDENCIAL - consultar cofre]
+
+Usuario RURAL TU CICS
+I939640
+[CREDENCIAL - consultar cofre]
+
+Usuario RURAL TU IMS 
+A
+[CREDENCIAL - consultar cofre]
+
+Usuario RUCA TI
+IMSA68
+a440016
+[CREDENCIAL - consultar cofre]
+
+Usuario RCOR TI
+a440005
+[CREDENCIAL - consultar cofre]
+
+m375582 - Akio
+Senha: [consultar cofre]
+
+9100390
+9197700
+Obter contratos
+
+SELECT A.CCONTR
+FROM DB2PRD.CONTRATO_RURAL AS A
+INNER JOIN DB2PRD.MATR_CONTR_RURAL AS B
+ON A.CCONTR = B.CCONTR
+ORDER BY 1 DESC
+
+COntrato RCOR TR20
+SELECT * 
+FROM DB2PRD.TLOG_ARQ_CTBIL                         
+WHERE CSIST        = 'RURA'
+AND   IARQ_CTBIL  LIKE 'TR2%'
+
+
+CRUR002596
+CRUR002605
+
+CRURWAY1
+CRUR3CY1
+
+
+Change correção COR0001E
+
+000821883
+
+RUEC0030
+
+RUEC7530 
+RUECT730
+
+
+8 <Grupo_COR0005_DestcFincmnt> Grupo Destinação Financiamento
+
+9 <NumOrdemDestcOr> Número Ordem Destinação Original 
+
+procurar como estes campos são tratados
+Verificar o impacto do CNPJ

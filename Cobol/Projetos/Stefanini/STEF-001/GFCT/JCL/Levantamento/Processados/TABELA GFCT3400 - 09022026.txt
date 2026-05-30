@@ -1,0 +1,239 @@
+
+TABELA GFCT3400 - 09/02/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002944   TICKET-52719
+==========================================================
+
+
+GFCT3429 / GFCT3461 tabela 3400
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT3400 N P14 GFCTD008*  DJ:GFCTA069*                               GFCTA050 P14
+                         DJ:GFCT0951*                               GFCT0115 P14
+                         DJ:GFCTFINA*                               GFCT1200 P14
+                         RJ:GFCT0510 *                              GFCT0500 P14
+               GFCTD011*  DJ:GFCT3935 *                               GFCT3400 P14
+                         DJ:GFCT3937*                               GFCT3400 P14
+                         DJ:GFCT3931*                               GFCT3400 P14
+                         DJ:GFCT3933*                               GFCT3400 P14
+                         DJ:GFCT3939*                               GFCT3400 P14
+                        RSI:GFCTD012*                                           
+                         RJ:GFCTD420 *                               GFCTN420 P14
+                         RJ:GFCT0510*                               GFCT0500 P14
+                         RJ:GFCTD405*                               GFCTN405 P14
+                         RJ:GFCTN405 *                               GFCTN405 P14
+                         RJ:GFCT3600 *                               GFCT3600 P14
+                         RJ:GFCTN420 *                              GFCTN420 P14
+                         RJ:PM140700                               PM14SABD P14
+               GFCTH430*  DJ:GFCT3428*                               GFCT3400 P14
+GFCT3400 N P14 GFCTH430 * DJ:GFCT3464 *                              GFCT3400 P14
+                         RJ:GFCTH431*                               GFCT3400 P14
+               GFCTH431*  DJ:GFCTH430*                               GFCT3400 P14
+               GFCT3400  DJ:GFCTA069*                               GFCTA050 P14
+                         DJ:GFCT2059*                               GFCT2000 P14
+                         DJ:GFCTFINA *                              GFCT1200 P14
+                         DJ:GFCTD002 *                              GFCT2000 P14
+                         DJ:GFCTD002*                               GFCT2000 P14
+                         DJ:GFCT0951*                               GFCT0115 P14
+                         RJ:GFCT3401*                               GFCT3400 P14
+                         RJ:PM142030                               PM14NOIT P14
+               GFCT3401*  DJ:GFCT3400*                               GFCT3400 P14
+                         RJ:GFCT3408 *                               GFCT3400 P14
+                         RJ:GFCT3429**                               GFCT3400 P14
+                         RJ:GFCT3416 *                              GFCT3400 P14
+                         RJ:GFCT3418*                               GFCT3400 P14
+                         RJ:GFCT3424*                               GFCT3400 P14
+                         RJ:GFCT3420*                               GFCT3400 P14
+GFCT3400 N P14 GFCT3401*  RJ:GFCT3406*                               GFCT3400 P14
+                         RJ:GFCT3430*                               GFCT3400 P14
+                         RJ:GFCT3414*                               GFCT3400 P14
+                         RJ:GFCT3410*                               GFCT3400 P14
+                         RJ:GFCT3404*                               GFCT3400 P14
+                         RJ:GFCT3422*                               GFCT3400 P14
+                         RJ:GFCT3428 *                              GFCT3400 P14
+                         RJ:GFCT3412*                               GFCT3400 P14
+                         RJ:GFCT3402*                               GFCT3400 P14
+                         RJ:GFCT3426*                               GFCT3400 P14
+                         RJ:GFCT3431*                               GFCT3400 P14
+               GFCT3402*  DJ:GFCT3401 *                              GFCT3400 P14
+                         RJ:GFCT3432*                               GFCT3400 P14
+               GFCT3404*  DJ:GFCT3401 *                              GFCT3400 P14
+                         RJ:GFCT3432*                               GFCT3400 P14
+               GFCT3406*  DJ:GFCT3401 *                              GFCT3400 P14
+                         RJ:GFCT3432*                               GFCT3400 P14
+               GFCT3408*  DJ:GFCT3401*                               GFCT3400 P14
+GFCT3400 N P14 GFCT3408*  RJ:GFCT3432 *                              GFCT3400 P14
+               GFCT3410*  DJ:GFCT3401*                               GFCT3400 P14
+                         RJ:GFCT3432 *                              GFCT3400 P14
+               GFCT3412*  DJ:GFCT3401*                               GFCT3400 P14
+                         RJ:GFCT3432 *                              GFCT3400 P14
+               GFCT3414*  DJ:GFCT3401 *                              GFCT3400 P14
+                         RJ:GFCT3432 *                              GFCT3400 P14
+               GFCT3416*  DJ:GFCT3401*                               GFCT3400 P14
+                         RJ:GFCT3432 *                              GFCT3400 P14
+               GFCT3418*  DJ:GFCT3401 *                              GFCT3400 P14
+                         RJ:GFCT3419*                               GFCT3400 P14
+                         RJ:GFCT3432*                               GFCT3400 P14
+               GFCT3419 * DJ:GFCT3418 *                              GFCT3400 P14
+                         RJ:GFCT3460*                               GFCT3400 P14
+               GFCT3420*  DJ:GFCT3401*                               GFCT3400 P14
+                         RJ:GFCT3432 *                              GFCT3400 P14
+               GFCT3422*  DJ:GFCT3401 *                              GFCT3400 P14
+                         RJ:GFCT3432 *                              GFCT3400 P14
+GFCT3400 N P14 GFCT3424*  DJ:GFCT3401 *                              GFCT3400 P14
+                         RJ:GFCT3432 *                              GFCT3400 P14
+               GFCT3426*  DJ:GFCT3401*                               GFCT3400 P14
+                         RJ:GFCT3432 *                              GFCT3400 P14
+               GFCT3428*  DJ:GFCT3401 *                              GFCT3400 P14
+                         RJ:GFCT3432 *                              GFCT3400 P14
+                         RJ:GFCTH430*                               GFCT3400 P14
+               GFCT3429 * DJ:GFCT3401*                               GFCT3400 P14
+                         RJ:GFCT3461*                               GFCT3400 P14
+               GFCT3430*  DJ:GFCT3401 *                              GFCT3400 P14
+                         RJ:GFCT3432 *                              GFCT3400 P14
+               GFCT3431*  DJ:GFCT3401*                               GFCT3400 P14
+                         RJ:GFCT3432 *                              GFCT3400 P14
+               GFCT3432*  DJ:GFCT3420*                               GFCT3400 P14
+                         DJ:GFCT3431 *                              GFCT3400 P14
+                         DJ:GFCT3416 *                              GFCT3400 P14
+                         DJ:GFCT3408*                               GFCT3400 P14
+                         DJ:GFCT3414 *                              GFCT3400 P14
+GFCT3400 N P14 GFCT3432*  DJ:GFCT3410 *                              GFCT3400 P14
+                         DJ:GFCT3404*                               GFCT3400 P14
+                         DJ:GFCT3412*                               GFCT3400 P14
+                         DJ:GFCT3402 *                              GFCT3400 P14
+                         DJ:GFCT3422 *                              GFCT3400 P14
+                         DJ:GFCT3430*                               GFCT3400 P14
+                         DJ:GFCT3426 *                              GFCT3400 P14
+                         DJ:GFCT3418*                               GFCT3400 P14
+                         DJ:GFCT3428*                               GFCT3400 P14
+                         DJ:GFCT3406 *                              GFCT3400 P14
+                         DJ:GFCT3424 *                              GFCT3400 P14
+                         RJ:GFCT3434*                               GFCT3400 P14
+               GFCT3434*  DJ:GFCT3432*                               GFCT3400 P14
+                         RJ:GFCT3436*                               GFCT3400 P14
+               GFCT3436*  DJ:GFCT3434*                               GFCT3400 P14
+                         RJ:GFCT3438*                               GFCT3400 P14
+               GFCT3438 * DJ:GFCT3436 *                              GFCT3400 P14
+                         RJ:GFCT3440*                               GFCT3400 P14
+GFCT3400 N P14 GFCT3438 * RJ:GFCT3462*                               GFCT3400 P14
+               GFCT3440*  DJ:GFCT3438*                               GFCT3400 P14
+                         RJ:GFCT3442*                               GFCT3400 P14
+               GFCT3442*  DJ:GFCT3440*                               GFCT3400 P14
+                         RJ:GFCT3444*                               GFCT3400 P14
+               GFCT3444*  DJ:GFCT3442 *                              GFCT3400 P14
+                         RJ:GFCT3446*                               GFCT3400 P14
+               GFCT3446*  DJ:GFCT3444 *                              GFCT3400 P14
+                         RJ:GFCT3448*                               GFCT3400 P14
+                         RJ:GFCT3450*                               GFCT3400 P14
+                         RJ:GFCT3930*                               GFCT3400 P14
+               GFCT3448*  DJ:GFCT3446*                               GFCT3400 P14
+                         RJ:GFCT3930 *                              GFCT3400 P14
+               GFCT3450*  DJ:GFCT3446 *                              GFCT3400 P14
+                         DJ:GOTRA020*                               GOTRA020 P14
+                         RJ:GFCT3456 *                              GFCT3400 P14
+                         RJ:GFCT3452*                               GFCT3400 P14
+                         RJ:GFCT3936*                               GFCT3400 P14
+GFCT3400 N P14 GFCT3450*  RJ:GFCT3460*                               GFCT3400 P14
+                         RJ:GFCT3454*                               GFCT3400 P14
+               GFCT3452*  DJ:GFCT3450*                               GFCT3400 P14
+                         RJ:GFCT3930*                               GFCT3400 P14
+               GFCT3454 * DJ:GFCT3450*                               GFCT3400 P14
+                         RJ:GFCT3930*                               GFCT3400 P14
+               GFCT3456*  DJ:GFCT3450 *                              GFCT3400 P14
+                         RJ:GFCT3458*                               GFCT3400 P14
+                         RJ:GFCT3934*                               GFCT3400 P14
+               GFCT3458*  DJ:GFCT3456 *                              GFCT3400 P14
+                         RJ:GFCT3930 *                              GFCT3400 P14
+               GFCT3460 * DJ:GFCT3450 *                              GFCT3400 P14
+                         DJ:GFCT3419 *                              GFCT3400 P14
+                         RJ:GFCT3932*                               GFCT3400 P14
+                         RJ:GFCT3468*                               GFCT3400 P14
+                         RJ:GFCT3464*                               GFCT3400 P14
+                         RJ:GFCT3461 *                              GFCT3400 P14
+                         RJ:GFCT3469*                               GFCT3400 P14
+GFCT3400 N P14 GFCT3460*  RJ:GFCT3470*                               GFCT3400 P14
+                         RJ:GFCT3466*                               GFCT3400 P14
+                         RJ:GFCT3472*                               GFCT3400 P14
+                         RJ:GFCTM004*                               GFCTM001 P14
+                         RJ:GFCT3474*                               GFCT3400 P14
+               GFCT3461 * DJ:GFCT3429*                               GFCT3400 P14
+                         DJ:GFCT3460*                               GFCT3400 P14
+                         RJ:GFCT3940                               GFCT3400 P14
+                         RJ:GFCT3932*                               GFCT3400 P14
+               GFCT3462*  DJ:GFCT3438*                               GFCT3400 P14
+                         RJ:GFCT3938*                               GFCT3400 P14
+                         RJ:GFCT3464 *                              GFCT3400 P14
+               GFCT3464*  DJ:GFCT3462 *                              GFCT3400 P14
+                         DJ:GFCT3460*                               GFCT3400 P14
+                         RJ:GFCT3466*                               GFCT3400 P14
+                         RJ:GFCT3930*                               GFCT3400 P14
+                         RJ:GFCTH430*                               GFCT3400 P14
+               GFCT3466*  DJ:GFCT3464*                               GFCT3400 P14
+GFCT3400 N P14 GFCT3466*  DJ:GFCT3460 *                              GFCT3400 P14
+                         RJ:GFCT3930*                               GFCT3400 P14
+               GFCT3468*  DJ:GFCT3460 *                              GFCT3400 P14
+                         RJ:GFCT3930 *                              GFCT3400 P14
+               GFCT3469*  DJ:GFCT3460  *                             GFCT3400 P14
+                         RJ:GFCT3930 *                              GFCT3400 P14
+               GFCT3470 * DJ:GFCT3460 *                              GFCT3400 P14
+                         RJ:GFCT3930 *                              GFCT3400 P14
+                         RJ:GFCTM003*                               GFCTM001 P14
+               GFCT3472*  DJ:GFCT3460 *                              GFCT3400 P14
+                         RJ:GFCT3930 *                              GFCT3400 P14
+               GFCT3474*  DJ:GFCT3460 *                              GFCT3400 P14
+                         RJ:GFCT3930 *                              GFCT3400 P14
+                         RJ:GFCT3940*                               GFCT3400 P14
+               GFCT3930*  DJ:GFCT3458*                               GFCT3400 P14
+                         DJ:GFCT3446*                               GFCT3400 P14
+                         DJ:GFCT3452*                               GFCT3400 P14
+                         DJ:GFCT3464*                               GFCT3400 P14
+GFCT3400 N P14 GFCT3930*  DJ:GFCT3466 *                              GFCT3400 P14
+                         DJ:GFCT3468*                               GFCT3400 P14
+                         DJ:GFCT3474 *                              GFCT3400 P14
+                         DJ:GFCT3472*                               GFCT3400 P14
+                         DJ:GFCT3469*                               GFCT3400 P14
+                         DJ:GFCT3470*                               GFCT3400 P14
+                         DJ:GFCT3448*                               GFCT3400 P14
+                         DJ:GFCT3454*                               GFCT3400 P14
+                         RJ:GFCT3931*                               GFCT3400 P14
+               GFCT3931*  DJ:GFCT3930*                               GFCT3400 P14
+                         RJ:GFCTD011 *                              GFCT3400 P14
+               GFCT3932*  DJ:GFCT3460*                               GFCT3400 P14
+                         DJ:GFCT3461*                               GFCT3400 P14
+                         RJ:GFCT3933*                               GFCT3400 P14
+               GFCT3933*  DJ:GFCT3932*                               GFCT3400 P14
+                         RJ:GFCTD011*                               GFCT3400 P14
+               GFCT3934 * DJ:GFCT3456*                               GFCT3400 P14
+                         RJ:GFCT3935 *                              GFCT3400 P14
+GFCT3400 N P14 GFCT3935 * DJ:GFCT3934*                               GFCT3400 P14
+                         RJ:GFCTD011*                               GFCT3400 P14
+               GFCT3936 * DJ:GFCT3450*                               GFCT3400 P14
+                         RJ:GFCT3937 *                              GFCT3400 P14
+               GFCT3937*  DJ:GFCT3936 *                              GFCT3400 P14
+                         RJ:GFCTD011*                               GFCT3400 P14
+               GFCT3938 * DJ:GFCT3462 *                              GFCT3400 P14
+                         RJ:GFCT3939 *                              GFCT3400 P14
+               GFCT3939*  DJ:GFCT3938 *                              GFCT3400 P14
+                         RJ:GFCTD011*                               GFCT3400 P14
+               GFCT3940*  DJ:GFCT3461*                               GFCT3400 P14
+                         DJ:GFCT3474 *                              GFCT3400 P14
+                         RJ:GFCT3941*                               GFCT3400 P14
+               GFCT3941*  DJ:GFCT3940*                               GFCT3400 P14
+                                                                               
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002944   TICKET-52719
+==========================================================
+
+
+
+job  GFCT0510
+   EXEC PGM=GFCT1184 (utiliza book I#GFCTIL) - AJUSTADO PACOTE 3022
+   
+job GFCT3429 - ajuste
+
+job GFCT3461
+   EXEC PGM=GFCT3022 - AJUSTADO

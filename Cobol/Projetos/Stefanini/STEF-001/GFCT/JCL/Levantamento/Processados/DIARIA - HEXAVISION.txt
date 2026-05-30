@@ -1,0 +1,84 @@
+
+=================================
+GFCT002954 - HEXAVISION
+=================================
+
+GFCT1641 - OK
+GFCT1643 - RITM CLIE
+GFCT1645 - OK
+GFCT3622 - RITM CLIE
+GFCT3630 - RITM CLIE
+
+=================================
+Pacote GFCT002964 - HEXAVISION
+=================================
+
+GFCT1374 - OK
+GFCT1947 - BY PASS CLAUSULA IN (JÁ SOLICITEI)  E DEPOIS RITM CLIEV004
+
+=================================
+Pacote GFCT002970 - HEXAVISION
+=================================
+GFCT1170 - HEXA E VOLUMETRIA (GFCTS031) - AJUSTADO
+
+
+=================================
+Pacote GFCT002972 - HEXAVISION
+=================================
+GFCT2100 - ok
+GFCT2118 - hexa - AJUSTADO
+GFCT2125  - apto mas com volumetria(GFCTS004 )
+GFCT2140  - apto mas com volumetria(GFCTS008 )
+GFCT2145 - hexa - AJUSTADO
+GFCT2150 - apto mas com volumetria(GFCTS005 )
+GFCT2165 - apto mas com volumetria(GFCTS007 )
+GFCT2488 - hexa (Apontou CLIEV004)
+GFCT9308 - apto mas com volumetria(GFCTS008)
+GFCT9309 - hexa - AJUSTADO
+GFCT9310 - apto mas com volumetria(GFCTS005 ) 
+GFCT9312 - apto mas com volumetria (GFCTS007 )
+
+
+=================================
+Pacote GFCT002995 - hexavision
+=================================
+GFCT1284 - AJUSTAR HEXA - AJUSTADO
+GFCT1350 - RITM CLIE
+GFCT1515 - ajuste hexa e ritm clie - AJUSTADO
+GFCT1535 - ajustar hexa - AJUSTADO
+GFCT1700 - ajuste hexa - AJUSTADO
+GFCT1705 - ajuste hexa - AJUSTADO HEXA / POSSUI CERTIFICACAO DB2 PENDENTE
+GFCT1710 - ajuste hexa - AJUSTADO
+GFCT1780 - ajuste hexa - AJUSTADO
+GFCT1785 - ajuste hexa - AJUSTADO 
+GFCT4304 - volumetria (GFCTS0N6)
+
+=================================
+Pacote GFCT003022 - hexavision
+=================================
+GFCT1105 - hexa / ritm (recurso proibido) / volumetria (GFCTS0G8 )
+GFCT1128 - ritm (clie e recurso proibido)
+GFCT1355 - ritm (clie)
+GFCT1882 - volumetria (GFCTS080)
+GFCT1884 - arrumar o book i#GFCTVA e ajustar hexa - AJUSTADO
+GFCT1888 - arrumar o book i#GFCTVA e ajustar hexa - AJUSTADO
+GFCT1894 - arrumar o book i#GFCTVA e ajustar hexa - AJUSTADO
+GFCT1896 - volumetria (GFCTS0I1 )
+GFCT1897-  volumetria (GFCTS0E5 )
+GFCT1898 - volumetria (GFCTS0E6 )
+GFCT2482 - ritm CLIE
+GFCT2484 - arrumar o book i#GFCTVA e ajustar hexa - AJUSTADO
+GFCT2486 - arrumar o book i#GFCTVA e ajustar hexa - AJUSTADO
+GFCT4323 - ajustar hexa - AJUSTADO
+GFCT4430 - ajustar hexa - AJUSTADO
+GFCT4432 - ajustar hexa - AJUSTADO
+
+=================================
+PACOTE GFCT003024 - HEXAVISION
+=================================
+GFCT4452 - HEXA - AJUSTADO
+GFCT4456 - HEXA - AJUSTADO
+GFCT4468 - HEXA - AJUSTADO
+
+
+

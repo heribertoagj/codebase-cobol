@@ -1,0 +1,205 @@
+*=====================================================================*
+*                       B  R  A  D  E  S  C  O                        *
+*=====================================================================*
+*      TELA........:   RUCAT690                                       *
+*      PROGRAMA....:   RUCA6690                                       *
+*      ANALISTA....:   RODRIGO KONSTANTINOVAS - BRADESCO              *
+*      DATA........:   28/02/2024                                     *
+*---------------------------------------------------------------------*
+*      OBJETIVO....:   CONSULTAR DESCRITIVO DE CREDITO DA OPERACAO    *
+*=====================================================================*
+         PRINT NOGEN
+RCT690   FMT
+         DEV   TYPE=(3270,2),FEAT=IGNORE,SYSMSG=MENSA,DSCA=X'00A0',    X
+               PFK=(PF,1='HELP6100 6690  ',2='/RCL          .',        X
+               03='RUCA6690      C',04='RUCA6690      4',              X
+               05='RUCA6690      5',06='RUCA6690      *',              X
+               07='RUCA6690      7',08='RUCA6690      8',              X
+               09='RUCA6690      *',10='RUCA6690      *',              X
+               11='RUCA6690      *',12='RUCA6690      *',              X
+               13='RUCA6690      *',14='RUCA6690      *',              X
+               15='RUCA6690      *',16='RUCA6690      *',              X
+               17='RUCA6690      *',18='RUCA6690      *',              X
+               19='RUCA6690      *',20='RUCA6690      *',              X
+               21='RUCA6690      *',22='RUCA6690      *',              X
+               23='RUCA6690      *',24='RUCA6690      *')
+*---------------------------------------------------------------------*
+*                            D I F  /  D O F                          *
+*---------------------------------------------------------------------*
+         DIV  TYPE=INOUT
+         DPAGE CURSOR=((22,78))
+*---------------------------------------------------------------------*
+*                             LINHA 01                                *
+*---------------------------------------------------------------------*
+DATA     DFLD POS=(01,02),LTH=10,ATTR=(MOD,NUM,PROT)
+         DFLD 'SISTEMA DE CREDITO RURAL',POS=(01,32),ATTR=(PROT,HI)
+HORA     DFLD POS=(01,73),LTH=08,ATTR=(MOD,NUM,PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 02                                *
+*---------------------------------------------------------------------*
+         DFLD 'RUCAT690',POS=(02,02),ATTR=(PROT)
+         DFLD 'CONSULTA DE DESCRITIVO DE CREDITO DA OPERACAO',         X
+               POS=(02,21),ATTR=(PROT,HI)
+         DFLD 'RUCA6690',POS=(02,73),ATTR=(PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 03                                *
+*---------------------------------------------------------------------*
+SENHAS   DFLD  POS=(03,02),LTH=37,ATTR=(MOD,PROT,NODISP)
+FASE     DFLD  POS=(03,40),LTH=01,ATTR=(MOD,PROT,NODISP)
+PAGIMP   DFLD  POS=(03,42),LTH=03,ATTR=(MOD,PROT,NODISP)
+FIM      DFLD  POS=(03,70),LTH=01,ATTR=(MOD,PROT,NODISP)
+         DFLD 'PAG.:',POS=(03,72),ATTR=(PROT,HI)
+PAGINA   DFLD POS=(03,78),LTH=03,ATTR=(MOD,NUM,PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 04                                *
+*---------------------------------------------------------------------*
+         DFLD  '-------------------------------------------------------X
+               ----------------------',POS=(04,02),ATTR=(PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 05                                *
+*---------------------------------------------------------------------*
+         DFLD 'DATA-BASE:',POS=(05,03),ATTR=(PROT,HI)
+DTBASE   DFLD POS=(05,14),LTH=10,ATTR=(PROT,NUM,MOD)
+         DFLD 'N.CONTRATO:',POS=(05,44),ATTR=(PROT,HI)
+NROPER   DFLD POS=(05,56),LTH=09,ATTR=(PROT,NUM,MOD)
+*---------------------------------------------------------------------*
+*                             LINHA 06                                *
+*---------------------------------------------------------------------*
+         DFLD 'MODALIDADE DA OPERACAO:',POS=(06,03),ATTR=(PROT,HI)
+MDOPER   DFLD POS=(06,27),LTH=40,ATTR=(PROT,NUM,MOD)
+*---------------------------------------------------------------------*
+*                             LINHA 07                                *
+*---------------------------------------------------------------------*
+         DFLD 'S.DEVEDOR ATUAL:',POS=(07,03),ATTR=(PROT,HI)
+SDVATU   DFLD POS=(07,20),LTH=22,ATTR=(PROT,NUM,MOD)
+         DFLD 'TAXA DE JUROS ANUAL:',POS=(07,44),ATTR=(PROT,HI)
+TXJANU   DFLD POS=(07,65),LTH=08,ATTR=(PROT,NUM,MOD)
+*---------------------------------------------------------------------*
+*                             LINHA 08                                *
+*---------------------------------------------------------------------*
+         DFLD 'N.TOTAL DE PARCELAS:',POS=(08,03),ATTR=(PROT,HI)
+TPCELA   DFLD POS=(08,24),LTH=03,ATTR=(PROT,NUM,MOD)
+         DFLD 'TAXA DE JUROS NOMINAL ANUAL:',POS=(08,44),ATTR=(PROT,HI)
+TXJNOM   DFLD POS=(08,73),LTH=08,ATTR=(PROT,NUM,MOD)
+*---------------------------------------------------------------------*
+*                             LINHA 09                                *
+*---------------------------------------------------------------------*
+         DFLD 'N.TOTAL DE PARCELAS REMANESCENTES:',                    X
+               POS=(09,03),ATTR=(PROT,HI)
+TPCREM   DFLD POS=(09,38),LTH=03,ATTR=(PROT,NUM,MOD)
+         DFLD 'TAXA DE JUROS EFETIVA ANUAL:',POS=(09,44),ATTR=(PROT,HI)
+TXJEFE   DFLD POS=(09,73),LTH=08,ATTR=(PROT,NUM,MOD)
+*---------------------------------------------------------------------*
+*                             LINHA 10                                *
+*---------------------------------------------------------------------*
+         DFLD 'SISTEMA DE PAGAMENTO:',POS=(10,03),ATTR=(PROT,HI)
+SIPGTO   DFLD POS=(10,25),LTH=18,ATTR=(PROT,NUM,MOD)
+         DFLD 'DATA DO ULTIMO VENCIMENTO:',POS=(10,44),ATTR=(PROT,HI)
+DTULVE   DFLD POS=(10,71),LTH=10,ATTR=(PROT,NUM,MOD)
+*---------------------------------------------------------------------*
+*                             LINHA 11                                *
+*---------------------------------------------------------------------*
+         DFLD  '------------------------------FLUXO DAS PARCELAS-------X
+               ----------------------',POS=(11,03),ATTR=(PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 12                                *
+*---------------------------------------------------------------------*
+         DFLD  'N.PARCELA  VENCIMENTO     VALOR DE PRINCIPAL      VALORX
+                DOS ENCARGOS SITUACAO',POS=(12,03),ATTR=(PROT,HI)
+*---------------------------------------------------------------------*
+*                             LINHA 13 - OCORRENCIAS DE PAGINACAO     *
+*---------------------------------------------------------------------*
+         DO 09
+PCELA    DFLD  LTH=07,POS=(13,05),ATTR=(MOD,NUM,PROT)
+DVCTO    DFLD  LTH=10,POS=(13,14),ATTR=(MOD,NUM,PROT)
+VLPRI    DFLD  LTH=22,POS=(13,25),ATTR=(MOD,NUM,PROT)
+VLENC    DFLD  LTH=22,POS=(13,49),ATTR=(MOD,NUM,PROT)
+SITUA    DFLD  LTH=09,POS=(13,72),ATTR=(MOD,NUM,PROT)
+         ENDDO
+*---------------------------------------------------------------------*
+*                             LINHA 22                                *
+*---------------------------------------------------------------------*
+         DFLD 'NOVA OPCAO:',POS=(22,66),ATTR=(PROT)
+NOVOOPC  DFLD POS=(22,78),LTH=02,ATTR=(MOD,NUM)
+*---------------------------------------------------------------------*
+*                             LINHA 23                                *
+*---------------------------------------------------------------------*
+         DFLD 'PF:',POS=(23,02),ATTR=(PROT,HI)
+         DFLD '1=AJUDA',POS=(23,06),ATTR=(PROT)
+         DFLD '2=DESCONEXAO',POS=(23,14),ATTR=(PROT)
+         DFLD '3=MENU ANT',POS=(23,27),ATTR=(PROT)
+         DFLD '4=IMPRIME',POS=(23,38),ATTR=(PROT)
+         DFLD '5=MENU ROTINAS',POS=(23,48),ATTR=(PROT)
+         DFLD '7=VOLTA',POS=(23,63),ATTR=(PROT)
+         DFLD '8=AVANCA',POS=(23,71),ATTR=(PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 24                                *
+*---------------------------------------------------------------------*
+MENSA    DFLD POS=(24,02),LTH=79,ATTR=(MOD,NUM,PROT,HI)
+         FMTEND
+***********************************************************************
+*                              M I D                                  *
+***********************************************************************
+RUCAI690 MSG   TYPE=INPUT,SOR=(RCT690,IGNORE),NXT=RUCAT690,OPT=1
+         SEG
+         MFLD  (PF,'RUCA6690      .'),LTH=015
+         MFLD  SENHAS,LTH=37,FILL=C' ',JUST=L
+         MFLD  NOVOOPC,LTH=02,FILL=C'0',JUST=R
+         MFLD  FASE,LTH=01,FILL=C' ',JUST=L
+         MFLD  PAGIMP,LTH=03,FILL=C' ',JUST=R
+         MFLD  PAGINA,LTH=03,FILL=C'0',JUST=R
+         MFLD  FIM,LTH=01,FILL=C' ',JUST=L
+         MFLD  DTBASE,LTH=10,FILL=C' ',JUST=L
+         MFLD  NROPER,LTH=09,FILL=C' ',JUST=R
+         MFLD  MDOPER,LTH=40,FILL=C' ',JUST=L
+         MFLD  SDVATU,LTH=22,FILL=C'0',JUST=R
+         MFLD  TXJANU,LTH=08,FILL=C'0',JUST=R
+         MFLD  TPCELA,LTH=03,FILL=C'0',JUST=R
+         MFLD  TXJNOM,LTH=08,FILL=C'0',JUST=R
+         MFLD  TPCREM,LTH=03,FILL=C'0',JUST=R
+         MFLD  TXJEFE,LTH=08,FILL=C'0',JUST=R
+         MFLD  SIPGTO,LTH=18,FILL=C' ',JUST=L
+         MFLD  DTULVE,LTH=10,FILL=C' ',JUST=L
+         DO    09
+         MFLD  PCELA,LTH=07,FILL=C' ',JUST=R
+         MFLD  DVCTO,LTH=10,FILL=C' ',JUST=L
+         MFLD  VLPRI,LTH=22,FILL=C' ',JUST=R
+         MFLD  VLENC,LTH=22,FILL=C' ',JUST=R
+         MFLD  SITUA,LTH=09,FILL=C' ',JUST=L
+         ENDDO
+         MSGEND
+***********************************************************************
+*                              M O D                                  *
+***********************************************************************
+RUCAT690 MSG   TYPE=OUTPUT,SOR=(RCT690,IGNORE),NXT=RUCAI690,OPT=1,     X
+               FILL=PT
+         SEG
+         MFLD  (DATA,DATE3Y4)
+         MFLD  (HORA,TIME)
+         MFLD  SENHAS,LTH=37
+         MFLD  NOVOOPC,LTH=02
+         MFLD  FASE,LTH=01
+         MFLD  PAGIMP,LTH=03
+         MFLD  PAGINA,LTH=03
+         MFLD  FIM,LTH=01
+         MFLD  DTBASE,LTH=10
+         MFLD  NROPER,LTH=09
+         MFLD  MDOPER,LTH=40
+         MFLD  SDVATU,LTH=22
+         MFLD  TXJANU,LTH=08
+         MFLD  TPCELA,LTH=03
+         MFLD  TXJNOM,LTH=08
+         MFLD  TPCREM,LTH=03
+         MFLD  TXJEFE,LTH=08
+         MFLD  SIPGTO,LTH=18
+         MFLD  DTULVE,LTH=10
+         DO    09
+         MFLD  PCELA,LTH=07
+         MFLD  DVCTO,LTH=10
+         MFLD  VLPRI,LTH=22
+         MFLD  VLENC,LTH=22
+         MFLD  SITUA,LTH=09
+         ENDDO
+         MFLD  MENSA,LTH=79
+         MSGEND
+         END

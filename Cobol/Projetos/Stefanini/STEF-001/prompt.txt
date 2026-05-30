@@ -1,0 +1,125 @@
+PROMPT TRAE – ALTERAÇÃO CAMPOS CNPJ E FILIAL NOS PROGRAMAS GFCT
+
+1. INSTRUÇÕES DE FORMATAÇÃO COBOL
+- Colunas 1 a 6: prefixo do programa (ex: ST25X6)
+- Coluna 7: * comenta a linha
+- Procedure Division: instruções iniciam na coluna 20
+- Working-Storage Section:
+  - Nível 01 → iniciar na coluna 8
+  - Níveis inferiores → iniciar na coluna 20
+
+2. ESCOPO DAS ALTERAÇÕES
+- Ajuste de formato das variáveis
+- Consistência dos campos CNPJ e FILIAL
+- Movimentação das variáveis
+- Alterações nos acessos DB2
+
+3. REGRAS DE FORMATAÇÃO DE VARIÁVEIS
+- Variáveis com nomes contendo "CPF-CNPJ", "CGC", "CNPJ" → alterar de PIC 9(09) para PIC X(09)
+- Variáveis com nomes contendo "FILIAL" → alterar de PIC 9(05) para PIC X(04)
+- Em arquivos FD:
+  - Ajustar formato conforme acima
+  - Se houver campo FILIAL, adicionar FILLER X(1) ao final para manter o tamanho
+
+4. REGRAS DE CONSISTÊNCIA DE CAMPOS
+- Substituir chamadas à POOL0110 por BRAD2000
+- Consistência dos campos CNPJ/FILIAL deve ser feita com:
+  IF campo EQUAL SPACES OR campo EQUAL LOW-VALUES
+- Manter tratamento para campos inconsistentes
+- Exemplo de substituição:
+
+BRAD2000 - TEM COMO OBJETIVO CALCULAR O DIGITO DO CNPJ INFORMADO 
+EXEMPLO WORKING-STORAGE SECTION (BRAD2000)
+ST25X6 01 WRK-BRAD2000                 PIC  X(08)  VALUE 'BRAD2000'.
+ST25X6 01 WRK-AREA-BRAD2000.
+ST25X6    05 WRK-CAD-CPFCGC.
+ST25X6       10 WRK-CAD-NUMERO         PIC X(09)           VALUE SPACES.
+ST25X6       10 WRK-CAD-FILIAL         PIC X(04)           VALUE SPACES.
+ST25X6 77  WRK-CAD-CONTROLE            PIC 9(02)           VALUE ZEROS.
+
+EXEMPLO PROCEDURE DIVISION(BRAD2000)
+
+ST2506*    MOVIMENTAÇÕES PARA OS CAMPOS DA BRAD2000
+ST2506     MOVE ZEROS          TO WRK-CAD-CONTROLE. 
+ST2506     MOVE GFCTLH-CGC-CPF TO WRK-CAD-NUMERO.
+ST2506     MOVE GFCTLH-FILIAL  TO WRK-CAD-FILIAL.
+
+ST2506*    CHAMADA DA BRAD2000
+ST2506     CALL WRK-BRAD2000     USING WRK-CAD-CPFCGC
+ST2506                                 WRK-CAD-CONTROLE.
+
+ST2506* VALIDACAO DO RETORNO DA CHAMADA
+           IF RETURN-CODE NOT EQUAL ZEROS
+ST2506* CASO OCORRA ALGUM ERRO UTILIZAR O TRATAMENTO DE ERRO PADRAO DO PROGRAMA  
+           END-IF.
+
+ST2506* VALIDA SE O CODIGO INFORMADO AO PROGRAMA É IGUAL AO CALCULADO
+ST2506     MOVE WRK-CAD-CONTROLE TO WRK-9-02
+           IF GFCTLH-CONTROLE NOT EQUAL WRK-9-02-X 
+ST2506* CASO OCORRA ALGUM ERRO UTILIZAR O TRATAMENTO DE ERRO PADRAO DO PROGRAMA  
+           END-IF.
+
+
+5. MOVIMENTAÇÃO DE VARIÁVEIS
+
+Substituições de nomes:
+
+| Campo Original         | Campo Novo             |
+|------------------------|------------------------|
+| CCGC-CPF               | CCGC-CPF-ST            |
+| CFLIAL-CGC             | CFLIAL-CGC-ST          |
+| CCTRL-CPF-CGC          | CCTRL-CPF-CGC-ST       |
+| CCNPJ-CPF              | CCNPJ-CPF-ST           |
+| CFLIAL-CNPJ            | CFLIAL-CNPJ-ST         |
+| CCTRL-CNPJ             | CCTRL-CNPJ-ST          |
+| CCNPJ-CPF-DEB          | CCNPJ-CPF-DEB-ST       |
+| CFLIAL-CNPJ-DEB        | CFLIAL-CNPJ-DEB-ST     |
+| CCTRL-CNPJ-CPF-DEB     | CCTRL-CNPJ-CPF-DEB-ST  |
+| CCPF-CNPJ              | CCPF-CNPJ-ST           |
+| CFLIAL-CPF-CNPJ        | CFLIAL-CPF-CNPJ-ST     |
+| CCTRL-CPF-CNPJ         | CCTRL-CPF-CNPJ-ST      |
+
+6. ALTERAÇÕES EM ACESSOS DB2
+
+Tabelas alteradas:
+PDIDO_ESTRN_CLI
+PDIDO_FLEXZ_CLI
+SUSP_GRP_CLI
+TDEB_UNFCA_CLI
+TADSAO_GRP_CLI
+TPRMSS_GRP_CLI
+TCANCT_ADSAO_FORNC
+TAUTRZ_ENVIO_CLI
+TCTRL_NGTVC_CLI
+TCLI_SEM_CESTA
+FLEXZ_GRP_CLI
+GSTAO_CLI_DESC
+GSTAO_CLI_ESTRN
+GSTAO_CLI_SERVC
+V01CLIENTE_AGENCIA
+V0OBJE_CLIENTES
+
+Regras:
+- SELECT, INSERT, UPDATE: adicionar campos com sufixo -ST, sem remover atributos existentes
+- WHERE: comentar campos antigos e incluir os novos com -ST
+- DELETE: ajustar cláusula WHERE conforme acima
+- FETCH: ajustar cláusula INTO conforme SELECT
+
+7. RECOMENDAÇÕES E RESTRIÇÕES
+
+- Comentar código antigo e incluir novo com prefixo ST25X6. Caso ja exista um prefixo voce deve substituir o prefixo
+- Aplicar alterações apenas nos campos com nomes contendo "CPF-CNPJ", "CGC", "CNPJ", "FILIAL"
+
+É PROIBIDO:
+- Alterar qualquer linha fora dos padrões acima
+- Importante!Aplicar refatorações, melhorias ou boas práticas não descritas
+- Acessar ou modificar arquivos fora da pasta indicada
+- Importante!Alterar acesso DB2 em tabelas que não estão listadas na pasta  C:\Users\herib\OneDrive\Documents\Workspace\Cobol\Stefanini\GFCT\02.tabelas alteradas
+
+8. RESUMO FINAL
+
+✔ Alterar apenas campos CNPJ e FILIAL conforme descrito  
+✔ Comentar código antigo e incluir novo com prefixo ST25X6  
+✔ Aplicar alterações apenas nas tabelas listadas  
+❌ Não alterar campos fora dos padrões indicados  
+❌ Não aplicar refatorações ou melhorias não descritas

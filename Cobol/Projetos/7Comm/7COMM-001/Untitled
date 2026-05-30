@@ -1,0 +1,101 @@
+SORT FIELDS=(
+    1,3,A, -> SLIG84-CEMPR-INC
+    24,3,D, -                               
+    50,3,D,
+    53,1,D,
+    46,3,D,
+    49,1,D,
+    42,3,D,
+    45,1,D,  
+    114,9,A,
+    23,1,A),FORMAT=BI                   
+
+
+JOB SLIG1195
+De: 
+//STEP3    EXEC SORTD                                   
+//*                                                     
+//* ***    ---------------------------------------------
+//* ***    SORT DO ARQ. DE CLIENTES TABLE05             
+//* ***    ---------------------------------------------
+//*                                                     
+//SORTIN   DD DSN=*.STEP1.SYSREC00,                     
+//       DISP=(OLD,DELETE,KEEP)                         
+//SORTOUT  DD DSN=MX.SLIG.RISCO.TABLE05.SORT(+1),       
+//       DISP=(,CATLG,DELETE),                          
+//       UNIT=DISCO,                                    
+//       SPACE=(TRK,(000216,00043),RLSE),               
+//       DCB=(MX.A,LRECL=0136,RECFM=FB)                 
+//SYSIN    DD *                                         
+ SUM FIELDS=(56,8,PD,65,8,PD,74,8,PD,83,8,PD,92,8,PD,   
+         101,8,PD,110,8,PD,119,8,PD,128,8,PD)           
+ SORT FIELDS=(7,5,A,12,1,A,13,2,A),FORMAT=BI            
+ END                                                    
+//SYSOUT   DD SYSOUT=*                                  
+//SYSUDUMP DD SYSOUT=Y    
+
+//STEP4    EXEC SORTD                                    
+//*                                                      
+//* ***    --------------------------------------------- 
+//* ***    SORT DO ARQ. DE SACADOS TABLE32               
+//* ***    --------------------------------------------- 
+//*                                                      
+//SORTIN   DD DSN=*.STEP2.SYSREC00,                      
+//       DISP=(OLD,DELETE,KEEP)                          
+//SORTOUT  DD DSN=MX.SLIG.RISCO.TABLE32.SORT1(+1),       
+//       DISP=(,CATLG,DELETE),                           
+//       UNIT=(DISCO,16),                                
+//       SPACE=(TRK,(019650,3932),RLSE),                 
+//       DCB=(MX.A,LRECL=0101,RECFM=FB)                  
+//SYSIN    DD *                                          
+ SUM FIELDS=(21,8,PD,30,8,PD,39,8,PD,48,8,PD,57,8,PD,    
+         66,8,PD,75,8,PD,84,8,PD,93,8,PD)                
+ SORT FIELDS=(7,5,A,12,1,A,13,2,A),FORMAT=BI             
+ END                                                     
+//SYSOUT   DD SYSOUT=*                                   
+//SYSUDUMP DD SYSOUT=Y                                   
+
+
+Para:
+
+//STEP3    EXEC SORTD                                   
+//*                                                     
+//* ***    ---------------------------------------------
+//* ***    SORT DO ARQ. DE CLIENTES TABLE05             
+//* ***    ---------------------------------------------
+//*                                                     
+//SORTIN   DD DSN=*.STEP1.SYSREC00,                     
+//       DISP=(OLD,DELETE,KEEP)                         
+//SORTOUT  DD DSN=MX.SLIG.RISCO.TABLE05.SORT(+1),       
+//       DISP=(,CATLG,DELETE),                          
+//       UNIT=DISCO,                                    
+//       SPACE=(TRK,(000216,00043),RLSE),               
+//       DCB=(MX.A,LRECL=0145,RECFM=FB)                 
+//SYSIN    DD *                                         
+ SUM FIELDS=(56,8,PD,65,8,PD,74,8,PD,83,8,PD,92,8,PD,   
+         101,8,PD,110,8,PD,119,8,PD,128,8,PD)           
+ SORT FIELDS=(7,5,A,12,1,A,13,2,A),FORMAT=BI            
+ END                                                    
+//SYSOUT   DD SYSOUT=*                                  
+//SYSUDUMP DD SYSOUT=Y                                  
+
+//STEP4    EXEC SORTD                                    
+//*                                                      
+//* ***    --------------------------------------------- 
+//* ***    SORT DO ARQ. DE SACADOS TABLE32               
+//* ***    --------------------------------------------- 
+//*                                                      
+//SORTIN   DD DSN=*.STEP2.SYSREC00,                      
+//       DISP=(OLD,DELETE,KEEP)                          
+//SORTOUT  DD DSN=MX.SLIG.RISCO.TABLE32.SORT1(+1),       
+//       DISP=(,CATLG,DELETE),                           
+//       UNIT=(DISCO,16),                                
+//       SPACE=(TRK,(019650,3932),RLSE),                 
+//       DCB=(MX.A,LRECL=0110,RECFM=FB)                  
+//SYSIN    DD *                                          
+ SUM FIELDS=(21,8,PD,30,8,PD,39,8,PD,48,8,PD,57,8,PD,    
+         66,8,PD,75,8,PD,84,8,PD,93,8,PD)                
+ SORT FIELDS=(7,5,A,12,1,A,13,2,A),FORMAT=BI             
+ END                                                     
+//SYSOUT   DD SYSOUT=*                                   
+//SYSUDUMP DD SYSOUT=Y                                   

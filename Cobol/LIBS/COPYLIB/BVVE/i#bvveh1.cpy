@@ -1,0 +1,161 @@
+      *----------------------------------------------------------------*
+      *  SISTEMA : BVVE - CARTAO DE CREDITO / VENDEDOR                 *
+      *  ARQUIVO : RETORNO DE SOLICITACOES DE TRAVA/DESTRAVA COM ERRO  *
+      *            DE CONSISTENCIA FISICA                              *
+      *  LRECL   : 240 (FB)                                            *
+      *  NOME INC: I#BVVEH1                                            *
+      *  DATA    : 07/08/2008                                          *
+      *----------------------------------------------------------------*
+       01  BVVEH1-REG.
+           05  BVVEH1-HEADER.
+               10  BVVEH1H-TIPO-REG-X.
+                   15  BVVEH1H-TIPO-REG           PIC 9(001).
+               10  BVVEH1H-BANCO-ENVIO-X.
+                   15  BVVEH1H-BANCO-ENVIO        PIC 9(003).
+               10  BVVEH1H-DATA-PROCES-X.
+                   15  BVVEH1H-DATA-PROCES        PIC 9(008).
+               10  BVVEH1H-HORA-PROCES-X.
+                   15  BVVEH1H-HORA-PROCES        PIC 9(006).
+               10  BVVEH1H-VERSAO-BANCO-X.
+                   15  BVVEH1H-VERSAO-BANCO       PIC 9(009).
+               10  BVVEH1H-VERSAO-REDECARD-X.
+                   15  BVVEH1H-VERSAO-REDECARD    PIC 9(009).
+               10  FILLER                         PIC X(164).
+           05  BVVEH1-DETALHE  REDEFINES  BVVEH1-HEADER.
+               10  BVVEH1D-TIPO-REG-X.
+                   15  BVVEH1D-TIPO-REG           PIC 9(001).
+               10  BVVEH1D-BANCO-ENVIO-X.
+                   15  BVVEH1D-BANCO-ENVIO        PIC 9(003).
+               10  BVVEH1D-DATA-PROCES-X.
+                   15  BVVEH1D-DATA-PROCES        PIC 9(008).
+               10  BVVEH1D-PONTO-VENDA-X.
+                   15  BVVEH1D-PONTO-VENDA        PIC 9(009).
+               10  BVVEH1D-CNPJ-ESTAB.
+                   15  BVVEH1D-ECNPJ-NRO          PIC 9(008).
+                   15  BVVEH1D-ECNPJ-FILIAL       PIC 9(004).
+                   15  BVVEH1D-ECNPJ-CTRL         PIC 9(002).
+               10  BVVEH1D-CPF-ESTAB REDEFINES BVVEH1D-CNPJ-ESTAB.
+                   15  BVVEH1D-ECPF-ZEROS         PIC 9(003).
+                   15  BVVEH1D-ECPF-NRO           PIC 9(009).
+                   15  BVVEH1D-ECPF-CTRL          PIC 9(002).
+               10  BVVEH1D-TIPO-OPER              PIC X(001).
+               10  BVVEH1D-BANCO-X.
+                   15  BVVEH1D-BANCO              PIC 9(003).
+               10  BVVEH1D-AGENCIA-X.
+                   15  BVVEH1D-AGENCIA            PIC 9(005).
+               10  BVVEH1D-CONTA-NRO-X.
+                   15  BVVEH1D-CONTA-NRO          PIC 9(014).
+               10  BVVEH1D-CONTA-DIG-X.
+                   15  BVVEH1D-CONTA-DIG          PIC 9(001).
+               10  BVVEH1D-IND-TRAVA              PIC X(001).
+               10  BVVEH1D-TIPO-PROCES-X.
+                   15  BVVEH1D-TIPO-PROCES        PIC 9(001).
+               10  BVVEH1D-SIT-PROCES             PIC X(001).
+               10  BVVEH1D-DTINIC-TRAVA-X.
+                   15  BVVEH1D-DTINIC-TRAVA       PIC 9(008).
+               10  BVVEH1D-DTFIM-TRAVA-X.
+                   15  BVVEH1D-DTFIM-TRAVA        PIC 9(008).
+               10  BVVEH1D-DTENVIO-BANCO-X.
+                   15  BVVEH1D-DTENVIO-BANCO      PIC 9(008).
+               10  BVVEH1D-CNPJ-REDECARD.
+                   15  BVVEH1D-RCNPJ-NRO          PIC 9(008).
+                   15  BVVEH1D-RCNPJ-FILIAL       PIC 9(004).
+                   15  BVVEH1D-RCNPJ-CTRL         PIC 9(002).
+               10  BVVEH1D-CPF-REDECARD REDEFINES BVVEH1D-CNPJ-REDECARD.
+                   15  BVVEH1D-RCPF-ZEROS         PIC 9(003).
+                   15  BVVEH1D-RCPF-NRO           PIC 9(009).
+                   15  BVVEH1D-RCPF-CTRL          PIC 9(002).
+               10  BVVEH1D-DTTRAVA-REDECARD-X.
+                   15  BVVEH1D-DTTRAVA-REDECARD   PIC 9(008).
+               10  BVVEH1D-COD-RETORNO-X.
+                   15  BVVEH1D-COD-RETORNO        PIC 9(005).
+               10  BVVEH1D-MSG-ERRO               PIC X(060).
+               10  BVVEH1D-PERFIL-ESTAB           PIC X(001).
+               10  BVVEH1D-TPO-BANDEIRA           PIC X(002).
+               10  FILLER                         PIC X(024).
+           05  BVVEH1-TRAILER  REDEFINES  BVVEH1-HEADER.
+               10  BVVEH1T-TIPO-REG-X.
+                   15  BVVEH1T-TIPO-REG           PIC 9(001).
+               10  BVVEH1T-BANCO-ENVIO-X.
+                   15  BVVEH1T-BANCO-ENVIO        PIC 9(003).
+               10  BVVEH1T-DATA-PROCES-X.
+                   15  BVVEH1T-DATA-PROCES        PIC 9(008).
+               10  BVVEH1T-QTDE-REG-X.
+                   15  BVVEH1T-QTDE-REG           PIC 9(009).
+               10  FILLER                         PIC X(179).
+           05  BVVEH1-TAB-ERRO                    PIC 9(001) OCCURS 25.
+           05  BVVEH1-QTDE-ERROS                  PIC 9(003) COMP-3.
+           05  FILLER                             PIC X(013).
+      *----------------------------------------------------------------*
+      * HEADER
+      * 001-001 TIPO DE REGISTRO = 0 (ZERO)
+      * 002-004 CODIGO DO BANCO QUE ESTA ENVIANDO ARQUIVOS
+      * 005-012 DATA PROCESSAM.REDECARD OU DO ENVIO PELO BANCO AAAAMMDD
+      * 013-018 HORA PROCESSAM.REDECARD OU DO ENVIO PELO BANCO HHMMSS
+      * 019-027 VERSAO DO ARQUIVO DO BANCO
+      * 028-036 VERSAO DO ARQUIVO DA REDECARD
+      * 037-200 RESERVA PARA USO FUTURO
+      *----------------------------------------------------------------*
+      * DETALHE
+      * 001-001 TIPO DE REGISTRO = 1
+      * 002-004 CODIGO DO BANCO QUE ESTA ENVIANDO ARQUIVOS
+      * 005-012 DATA PROCESSAM.REDECARD OU DO ENVIO PELO BANCO AAAAMMDD
+      * 013-021 NUMERO DO PONTO DE VENDA=CODIGO DO ESTABELECIMENTO COML
+      * 022-029 NUMERO DO CNPJ/CPF DO ESTABELECIMENTO
+      * 030-033 FILIAL DO CNPJ DO ESTABELECIMENTO
+      * 034-035 CONTROLE DO CNPJ/CPF DO ESTABELECIMENTO
+      * 036-036 TIPO DE OPERACAO C=CREDITO D=DEBITO
+      * 037-039 BANCO DA CONTA CORRENTE DO ESTABELECIMENTO
+      * 040-044 AGENCIA DA CONTA CORRENTE DO ESTABELECIMENTO
+      * 045-058 NUMERO DA CONTA CORRENTE DO ESTABELECIMENTO
+      * 059-059 DIGITO DA CONTA CORRENTE DO ESTABELECIMENTO
+      * 060-060 INDICADOR DE TRAVA T=TRAVA D=DESTRAVA
+      * 061-061 TIPO DE PROCESSAMENTO = 1 (TRAVA;DESTRAVA)
+      * 062-062 STATUS DO PROCESSAMENTO P=PROCESSAMENTO A=AVISO
+      * 063-070 DATA DE INICIO DE TRAVA SOLICITADO PELO BANCO AAAAMMDD
+      * 071-078 DATA DE TERMINO DE TRAVA SOLICITADO PELO BANCO AAAAMMDD
+      * 079-086 DATA DO REGISTRO ENVIADO PELO BANCO AAAAMMDD
+      * 087-100 CNPJ/CPF DO ESTABELECIMENTO NA REDECARD
+      * 101-108 DATA DE FIM DE TRAVA ACATADA PELA REDECARD AAAAMMDD
+      * 109-113 CODIGO DE ERRO OU AVISO DEPENDENDO DA SIT DO PROCESSAM.
+      * 114-173 MENSAG DE ERRO OU AVISO DEPENDENDO DA SIT DO PROCESSAM.
+      * 174-174 PERFIL DO ESTABELECIMENTO (V=VAREJO)
+      * 175-176 TIPO DE BANDEIRA VISA OU MASTERCARD
+      * 177-200 RESERVA PARA USO FUTURO
+      *----------------------------------------------------------------*
+      * TRAILER
+      * 001-001 TIPO DE REGISTRO = 9
+      * 002-004 CODIGO DO BANCO QUE ESTA ENVIANDO ARQUIVOS
+      * 005-012 DATA PROCESSAM.REDECARD OU DO ENVIO PELO BANCO AAAAMMDD
+      * 013-021 QUANTIDADE DE REGISTROS (INCLUSIVE HEADER E TRAILER)
+      * 020-200 RESERVA PARA USO FUTURO
+      *----------------------------------------------------------------*
+      * 201-224 IDENTIFICADORES DE ERROS POR CAMPO   0=OK  1=COM ERRO
+      * 201-201 OCOR-01 = TIPO DE REGISTRO INVALIDO
+      * 202-202 OCOR-02 = BANCO DE ENVIO DIFERENTE DE 237
+      * 203-203 OCOR-03 = DATA DE PROCESSAMENTO INVALIDA
+      * 204-204 OCOR-04 = HORARIO DE PROCESSAMENTO INVALIDO
+      * 205-205 OCOR-05 = VERSAO BRADESCO NAO NUMERICA OU ZERADA
+      * 206-206 OCOR-06 = VERSAO REDECARD NAO NUMERICA OU ZERADA
+      * 207-207 OCOR-07 = PONTO DE VENDA NAO NUMERICO OU ZERADO
+      * 208-208 OCOR-08 = CNPJ/CPF DO ESTAB. NAO NUMERICO OU ZERADO
+      * 209-209 OCOR-09 = OPERACAO DIFERENTE DE 'C' E 'D'
+      * 210-210 OCOR-10 = BANCO DA CONTA CORRENTE DIFERENTE DE 237
+      * 211-211 OCOR-11 = AGENCIA DA CONTA CORRENTE NAO NUMERICA/ZERADA
+      * 212-212 OCOR-12 = NUMERO DA CONTA CORRENTE NAO NUMERICO/ZERADO
+      * 213-213 OCOR-13 = DIGITO DA CONTA CORRENTE NAO NUMERICO
+      * 214-214 OCOR-14 = INDICADOR DE TRAVA DIFERENTE DE 'T' E 'D'
+      * 215-215 OCOR-15 = TIPO DE PROCESSO DIFERENTE DE '1'
+      * 216-216 OCOR-16 = SITUACAO DO PROCESSO DIFERENTE DE 'P' E 'A'
+      * 217-217 OCOR-17 = DATA DE INICIO DE TRAVA INVALIDA
+      * 218-218 OCOR-18 = DATA DE TERMINO DE TRAVA INVALIDA
+      * 219-219 OCOR-19 = DATA DE ENVIO PELO BANCO INVALIDA
+      * 220-220 OCOR-20 = CNPJ DO ESTAB NA REDECARD INVALIDO
+      * 221-221 OCOR-21 = DATA FINAL DE TRAVA REDECARD INVALIDA
+      * 222-222 OCOR-22 = CODIGO DE RETORNO NAO NUMERICO
+      * 223-223 OCOR-23 = MENSAGEM DE ERRO INVALIDA P/ COD.RETORNO > 0
+      * 224-224 OCOR-24 = TOTAL DE REGISTROS DO TRAILER NAO BATE
+      * 225-225 OCOR-25 = TIPO DE BANDEIRA (DOMICILIO) INVALIDO
+      * 226-227 QUANTIDADE DE CAMPOS COM ERRO
+      * 228-240 RESERVA PARA USO FUTURO
+      *----------------------------------------------------------------*

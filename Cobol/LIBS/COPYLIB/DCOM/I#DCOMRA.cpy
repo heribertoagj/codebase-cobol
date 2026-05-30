@@ -1,0 +1,65 @@
+      ******************************************************************
+      * SISTEMA : DCOM - I#DCOMRA                                      *
+      * TAMANHO : 0500 BYTES                                           *
+      * ARQUIVO : ARQUIVO DE INTERFACE DCOM/RESC-RESPONSABILIADE DIRETA*
+      ******************************************************************
+       01  RA-REGISTRO-RESC.
+  1 11     05  RA-CD-CNPJ-CPF              PIC  9(011).
+ 12  5     05  RA-CD-FILIAL-CNPJ           PIC  9(005).
+ 17  2     05  RA-CTRL-CNPJCPF             PIC  9(002).
+ 19 10     05  RA-CD-CLUB                  PIC  9(010).
+ 29 40     05  RA-NOME                     PIC  X(040).
+ 69  4     05  RA-CTRO-CUSTO               PIC  X(004).
+ 73  8     05  RA-CD-PRODT                 PIC  9(008).
+ 81  3     05  RA-CD-CART-PRINC            PIC  X(003).
+ 84  2     05  RA-SQ-CART-PRINC            PIC  X(002).
+ 86  3     05  RA-CD-GARNT-1               PIC  9(003).
+ 89  5     05  RA-PERC-GARNT-1             PIC  9(003)V99.
+ 94  3     05  RA-CD-GARNT-2               PIC  9(003).
+ 97  5     05  RA-PERC-GARNT-2             PIC  9(003)V99.
+102  3     05  RA-CD-GARNT-3               PIC  9(003).
+105  5     05  RA-PERC-GARNT-3             PIC  9(003)V99.
+110  3     05  RA-CD-GARNT-4               PIC  9(003).
+113  5     05  RA-PERC-GARNT-4             PIC  9(003)V99.
+118  3     05  RA-CD-GARNT-5               PIC  9(003).
+121  5     05  RA-PERC-GARNT-5             PIC  9(003)V99.
+126  5     05  RA-CD-DEPDC                 PIC  9(005).
+131 10     05  RA-CD-EMPR-CONTR            PIC  9(010).
+141  3     05  RA-TP-CONTR                 PIC  9(003).
+144 17     05  RA-NR-CONTR                 PIC  9(017).
+161  2     05  RA-CD-SIT-CTBIL             PIC  X(002).
+163  5     05  RA-CD-AG-BCRIA              PIC  9(005).
+168  7     05  RA-NR-CTA-CORR              PIC  9(007).
+175  3     05  RA-CD-CART-MORA             PIC  X(003).
+178  2     05  RA-SQ-CART-MORA             PIC  X(002).
+180  8     05  RA-DT-INIC-CTR              PIC  9(008).
+188  8     05  RA-DT-VCTO-CTR              PIC  9(008).
+196  8     05  RA-DT-TRNSF-PERDA           PIC  9(008).
+204  8     05  RA-DT-VCTO-PCELA-VENCD      PIC  9(008).
+212  8     05  RA-DT-VCTO-PROX-PCELA       PIC  9(008).
+220  6     05  RA-PZ-OPER                  PIC  9(006).
+226 13     05  RA-TX-OPER                  PIC  9(008)V99999.
+239 17     05  RA-SDO-DVDOR                PIC  9(015)V99.
+256 17     05  RA-SDO-VENCIDO              PIC  9(015)V99.
+273 17     05  RA-SDO-UTLZD                PIC  9(015)V99.
+290 17     05  RA-SDO-PRINC                PIC  9(015)V99.
+307 17     05  RA-SDO-DISPN                PIC  9(015)V99.
+324 17     05  RA-SDO-PCELA-AVNCER         PIC  9(015)V99.
+341 13     05  RA-VL-PCELA                 PIC  9(011)V99.
+354  6     05  RA-TOT-PCELAS               PIC  9(006).
+360  3     05  RA-NR-PREST                 PIC  9(003).
+363  6     05  RA-QT-PCELA-PAGA            PIC  9(006).
+369  6     05  RA-QT-PCELA-VENCD           PIC  9(006).
+375  6     05  RA-QT-PCELA-AVNCER          PIC  9(006).
+381 17     05  RA-VL-ENCAR                 PIC  9(015)V99.
+398 18     05  RA-NR-PPSTA-CONE            PIC  9(018).
+416  1     05  RA-ID-SDO                   PIC  9(001).
+417  1     05  RA-TP-GARNT                 PIC  9(001).
+418  3     05  RA-CD-FIRMA                 PIC  X(003).
+421  1     05  RA-DIG-CONTR                PIC  X(001).
+422 10     05  RA-CPSSOA-ANLSE             PIC  9(010).
+432  4     05  RA-DANO-SOLTC-ANLSE         PIC  9(004).
+436 10     05  RA-NSOLTC-ANLSE             PIC  9(010).
+446  3     05  RA-NSEQ-SOLTC-ANLSE         PIC  9(003).
+449  1     05  RA-IDTFD-PRE-APROV          PIC  X(001).
+450 51     05  FILLER                      PIC  X(051).

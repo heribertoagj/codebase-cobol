@@ -1,0 +1,37 @@
+Tabela GFCTN310 - 30012026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002966   TICKET-56434
+==========================================================
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTN310 N P14          DFJ:GFCT0001*                               GFCT0000 P14
+                        DFJ:GFCT0001 *                              GFCT0000 P14
+               GFCTN310*  RJ:GFCTN312*                               GFCTN310 P14
+               GFCTN312*  DJ:GFCTN310*                               GFCTN310 P14
+                         RJ:GFCTN940 *                               GFCTN310 P14
+               GFCTN940*  DJ:GFCTN312*                               GFCTN310 P14
+                         RJ:GFCTN941*                               GFCTN310 P14
+               GFCTN941*  DJ:GFCTN940*                               GFCTN310 P14
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002966   TICKET-56434
+==========================================================
+
+
+JOB GFCT0001
+   EXEC PGM=GFCT1000 (NAO)
+   EXEC PGM=GFCT1477 (NAO)
+   EXEC PGM=GFCT4300 (NAO)
+
+ JOB GFCTN310
+   EXEC PGM=GFCT4309 (NAO)
+
+JOB GFCTN312
+   EXEC PGM=GFCT4310 (UTILIZA BOOK GFCTWAOT) - AJUSTADO
+   EXEC PGM=GFCT4311 (UTILIZA BOOK GFCTWAOT) - AJUSTADO
+
+   

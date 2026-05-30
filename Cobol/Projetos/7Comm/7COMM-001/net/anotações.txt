@@ -1,0 +1,105 @@
+JOB SLIG1010 / PGM SLIG6010 layout do CBON01 desatualizado comprometendo a cadeia do SLIG1067
+
+
+SLIG6130 -> não foi alterado
+SLIG6160 -> não foi alterado
+SLIG5000 -> não foi alterado
+
+PERIDECE  
+    ARQDATAS GERADO NO JOB SLIG0505 PROGRAMA SLIG5000
+
+CLIENDUP
+    -> NO JOB SLIG1067 CLASSIFICADO NO STEP3A,
+    -> NO JOB SLIG1066 CLASSIFICADO NO STEP3
+    -> NO JOB SLIG1065 O PROGRAMA SLIG6170, FAZ O BALANCE LINE DOS ARQUIVOS 
+       ARQDATAS DD DSN=MX.SLIG.PRV.PERTITLO(0),    
+              DISP=SHR  
+
+       TITPENDE DD DSN=MX.SLIG.D0PRVMZ.INIPERTO(0),
+              DISP=SHR                             
+              INIPER01 QUANDO SLIG1005 EMITIR COND = 1 JOB (SLIG1006)
+              INIPER02 QUANDO SLIG1005 EMITIR COND = 2 JOB (SLIG1007)
+              INIPER03 QUANDO SLIG1005 EMITIR COND = 3 JOB (SLIG1008)
+              INIPER04 QUANDO SLIG1005 EMITIR COND = 4 JOB (SLIG1009)
+              INIPER05 QUANDO SLIG1005 EMITIR COND = 5 JOB (SLIG1011)
+              INIPER06 QUANDO SLIG1005 EMITIR COND = 6 JOB (SLIG1013)
+              INIPER07 QUANDO SLIG1005 EMITIR COND = 7 JOB (SLIG1014)
+              INIPER08 QUANDO SLIG1005 EMITIR COND = 8 JOB (SLIG1016)
+              INIPER09 QUANDO SLIG1005 EMITIR COND = 9 JOB (SLIG1017)
+              INIPER10 QUANDO SLIG1005 EMITIR COND = 10 JOB (SLIG1018)
+
+       MOVTREDE DD DSN=MX.SLIG.CLITIT1C(0),        
+              DISP=(OLD,DELETE,KEEP)               
+              -> CLASSIFICADO NO JOB SLIG1077
+              -> OBTEM DADOS DO SACADO NO CADCLIE NO JOB SLIG1075 PELO PROGRAMA SLIG6150
+                 COM OS ARQUIVOS
+                 MVTOTIT  DD DSN=MX.SLIG.CLITITCL(0),       
+                        DISP=SHR                 
+                        -> ARQUIVO CLASSIFICADO NO JOB SLIG1063
+                        -> NO JOB SLIG1062 FAZ O MERGE DE DOIS ARQUIVOS NO PROGRAMA SLIG6092
+                                ENTRA001 DD DSN=MX.SLIG.REDECTOT(0),                                 
+                                    DISP=SHR                      
+                                    -> ARQUIVO GERADO NO JOB SLIB1060 NO PROGRAMA SLIG6050
+                                       ATRAVES DO MERGE DOS ARQUIVOS
+                                       ENTRA001 DD DSN=MX.SLIG.REDUDEC1.CLASS(0)
+                                              DISP=SHR           
+                                            -> ARQUIVO GERADO NO JOB SLIG1015 CLASSIFICANDO PELA POOL0261
+                                            -> ARQUIVO GERADO NO JOB SLIG1010 PELO PROGRAMA SLIG5042
+                                                ARQUREDU DD DSN=*.STEP3A.MOVTOOKS,     
+                                                       DISP=OLD                        
+                                                QTDREGIN DD DSN=*.STEP2.QTREGOUT,      
+                                                       DISP=OLD                        
+                                                ARQNEGOC DD DSN=MX.SLIG.PRV.NEGOCLIC(0)
+                                                       DISP=SHR                        
+                                                ARQPRODU DD DSN=MX.SLIG.PRV.CBGE001C(0)
+                                                       DISP=SHR                      
+
+                                       ENTRA002 DD DSN=MX.SLIG.REDUDEC2.CLASS(0)
+                                              DISP=SHR                          
+                                       ENTRA003 DD DSN=MX.SLIG.REDUDEC3.CLASS(0)
+                                              DISP=SHR                          
+                                       ENTRA004 DD DSN=MX.SLIG.REDUDEC4.CLASS(0)
+                                              DISP=SHR                          
+                                       ENTRA005 DD DSN=MX.SLIG.REDUDEC5.CLASS(0)
+                                              DISP=SHR                          
+                                       ENTRA006 DD DSN=MX.SLIG.DESCDECE.CLASS(0)
+                                              DISP=SHR                          
+
+
+                                ENTRA002 DD DSN=MX.SLIG.MOVATUAL(0), 
+                                    DISP=SHR                      
+
+
+
+                 CADCLIE  DD DSN=MX.SLIG.PRV.CADACLIE(0),   
+                        DISP=SHR                            
+                 NMSACDO  DD DSN=MX.SLIG.NMSACDO(0),        
+                        DISP=SHR                            
+                 
+
+       MOVTREDS DD DSN=MX.SLIG.PIPES.CLITIT02,     
+              SUBSYS=BP01,                         
+              DCB=(MX.A,LRECL=200,RECFM=FB)        
+              
+
+SLIG1067
+    STEP3A   EXEC PGM=BRAD0002               
+    ENTRA    DD DSN=MX.SLIG.CLIENDCL.SORT(0),
+           DISP=SHR                          
+    SAI      DD DSN=MX.SLIG.CLIENDCL(+1),    
+           DISP=(,CATLG,DELETE),             
+           UNIT=DISCO,                       
+           SPACE=(TRK,(060000,19800),RLSE),  
+           DCB=(MX.A,LRECL=0200,RECFM=FB),   
+           DATACLAS=PRODX37                  
+
+
+    STEP4    EXEC PGM=SLIG6102
+    PERIDECE DD DSN=MX.SLIG.PRV.PERTITLO(0), 
+           DISP=SHR                          
+    CLIENDUP DD DSN=*.STEP3A.SAI,            
+           DISP=OLD                          
+    CADACLIE DD DSN=MX.SLIG.PRV.CADACLIE(0), 
+           DISP=SHR                          
+    CADACBCL DD DSN=MX.SLIG.CADCBCL(0),      
+           DISP=SHR                          

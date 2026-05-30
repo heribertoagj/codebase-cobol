@@ -1,0 +1,35 @@
+PACOTE TABELA GFCTA525 - 29/01/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002997 TICKET-68279
+==========================================================
+
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTA525 N P14 GFCTA525*  DJ:GFCT0610 *                              GFCT0600 P14
+                         RJ:GFCTA530*                               GFCTA525 P14
+               GFCTA530*  DJ:GFCTA525*                               GFCTA525 P14
+                         RJ:GFCTH650*                               GFCTA525 P14
+                        GFJ:                                       RESTD870 P41
+               GFCTCARG   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTH650*  DJ:GFCTA530 *                              GFCTA525 P14
+                         RJ:GFCTH651*                               GFCTA525 P14
+               GFCTH651*  DJ:GFCTH650*                               GFCTA525 P14
+
+
+==============================
+GFCT002997 TICKET-68279
+============================
+
+JOB GFCTA525 - NAO HA IMPACTO
+   EXEC PGM=GFCT4110 (AJUSTES) - AJUSTADO
+   EXEC PGM=GFCT4112 (UTILIZA BOOK GFCTWAOU) - AJUSTADO     
+
+JOB GFCT0610 - NAO HA IMPACTO
+  EXEC PGM=GFCT1178 (NAO) - NAO HA IMPACTO
+   
+JOB GFCTA530 - NAO HA IMPACTO
+
+

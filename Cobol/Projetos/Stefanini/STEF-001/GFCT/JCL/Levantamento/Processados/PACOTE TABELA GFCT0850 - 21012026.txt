@@ -1,0 +1,50 @@
+PACOTE TABELA GFCT0850 - 21/01/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002954 TICKET-56441
+==========================================================
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT0850 N P14          DFJ:GFCT1249 *                              GFCT1200 P14
+               GFCT0850*  RJ:GFCT0852 *                              GFCT0850 P14
+                         RJ:PM142130                               PM14NOIT P14
+                         RJ:PM142130                               PM14NOIT P14
+               GFCT0852*  DJ:GFCT0850*                               GFCT0850 P14
+                         RJ:GFCT0854 *                              GFCT0850 P14
+               GFCT0854*  DJ:GFCT0852*                               GFCT0850 P14
+                         RJ:GFCT0856 *                              GFCT0850 P14
+               GFCT0856 * DJ:GFCT0854 *                              GFCT0850 P14
+                         RJ:GFCT0858 *                              GFCT0850 P14
+               GFCT0858 * DJ:GFCT0856 *                              GFCT0850 P14
+                         RJ:GFCT0860 *                              GFCT0850 P14
+               GFCT0860*  DJ:GFCT0858 *                              GFCT0850 P14
+                         RJ:GFCT0990*                               GFCT0850 P14
+                        GFJ:                                       GFCT0740 P14
+                        GFJ:                                       GFCT0800 P14
+               GFCT0990*  DJ:GFCT0860 *                              GFCT0850 P14
+                         RJ:GFCT0991 *                              GFCT0850 P14
+GFCT0850 N P14 GFCT0991*  DJ:GFCT0990 *                              GFCT0850 P14
+                                                                               
+
+
+==============================================================================
+JOB GFCT0850 - NAO HA IMPACTO
+   EXEC PGM=GFCT1635 (NAO TEM) - NAO HA IMPACTO
+  
+JOB GFCT0852 - NAO HA IMPACTO
+   EXEC PGM=GFCT1637 (NAO) - NAO HA IMPACTO
+
+JOB GFCT0854 - NAO HA IMPACTO
+   EXEC PGM=GFCT1639 (NAO) - NAO HA IMPACTO
+
+JOB GFCT0856 - AJUSTADO
+   EXEC PGM=GFCT1641(UTILIZA TABELA GFCTB0E3 E BOOK I#GFCTYK) - AJUSTADO
+
+JOB GFCT0858 - AJUSTADO
+   EXEC PGM=GFCT1643 (UTILIZA TABELA CLIEV004 E BOOK I#GFCTYL)  - AJUSTADO
+   EXEC PGM=GFCT1645(UTILIZA TABELA GFCTB0E3 E BOOKS I#GFCTYK, I#GFCTYL) - AJUSTADO
+
+JOB GFCT0860 - AJUSTADO NA NET 0800
+   EXEC PGM=GFCT1647(UTILIZA BOOK I#GFCTYK) 
+
+

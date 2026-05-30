@@ -1,0 +1,21 @@
+     *** BOOK DE COMUNICACAO ENTRE PROGRAMA CHAMADOR E MODULOS
+
+
+       01  AREA-NAVEGA.
+
+
+           03  AREA-ENTRADA.
+
+               05  LK-CODIGO-TERMINAL    PIC X(08).
+
+           03  AREA-SAIDA.
+
+               05  LK-STATUS-RETORNO     PIC X(02).
+     ***       "  " ====> QUANDO TUDO OCORREU CONFORME PLANEJADO
+     ***       "ER" ====> QUANDO OCORREU ALGUM ERRO NO PROCESSO
+     ***       "DB" ====> QUANDO OCORREU ALGUM ERRO NO DB2
+     ***       "BL" ====> QUANDO ALGO "BLOQUEADO" FOI SELECIONADO
+
+               05  LK-MENSAGEM           PIC X(79).
+     ***   SPACES ==============> QUANDO TUDO OCORREU CONFORME PLANEJADO
+

@@ -1,0 +1,60 @@
+TABELA GFCT2065 - 30/01/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002966   TICKET-56434
+==========================================================
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT2065 N P14 GFCTD013* DNS:GFCT0024*                                           
+               GFCT2065* DNS:GFCT0024*                                           
+                        DNS:GFCT2200*                                           
+                         RJ:GFCT2066*                               GFCT2065 P14
+               GFCT2066* DNS:CCEX0025                                           
+                         DJ:GFCT2065 *                              GFCT2065 P14
+                         RJ:GFCT2067*                               GFCT2065 P14
+                        GFJ:                                       CMTFN140 P14
+               GFCT2067*  DJ:GFCT2066*                               GFCT2065 P14
+                         RJ:GFCT2068 *                              GFCT2065 P14
+               GFCT2068*  DJ:GFCT2067*                               GFCT2065 P14
+                        RSI:GFCT2070 *                                          
+                         RJ:GFCT2952*                               GFCT2065 P14
+                         RJ:GFCT2950*                               GFCT2065 P14
+               GFCT2950*  DJ:GFCT2068*                               GFCT2065 P14
+                         RJ:GFCT2951*                               GFCT2065 P14
+               GFCT2951 * DJ:GFCT2950*                               GFCT2065 P14
+               GFCT2952*  DJ:GFCT2068*                               GFCT2065 P14
+GFCT2065 N P14 GFCT2952*  RJ:GFCT2953*                               GFCT2065 P14
+               GFCT2953 * DJ:GFCT2952*                               GFCT2065 P14
+                        RSI:GFCT2080 *                                          
+
+=================================================================================
+GFCT002966   TICKET-56434
+=================================================================================
+
+job GFCTD013 - NAO HA IMPACTO
+   EXEC PGM=GFCT9208 (não) - NAO HA IMPACTO
+   EXEC PGM=GFCT9209 (não) - NAO HA IMPACTO
+ 
+job GFCT0024 - NAO HA IMPACTO
+    EXEC PGM=GFCT1011(não) - NAO HA IMPACTO
+ 
+job GFCT2065 - AJUSTADO
+    EXEC PGM=GFCT9065 (utiliza book I#CLIE20) - AJUSTADO
+    EXEC PGM=GFCT9067 (não) - NAO HA IMPACTO
+      
+ job GFCT2200 - NAO HA IMPACTO
+    EXEC PGM=GFCT1575 (não) - NAO HA IMPACTO
+    
+ job GFCT2066 - NAO HA IMPACTO
+    EXEC PGM=GFCT9076 (utiliza tabela OBJEB000 , OBJEB010 e CLIEV004) - AJUSTADO
+    
+job GFCT2067 - NAO HA IMPACTO
+
+job GFCT2070 - NAO HA IMPACTO
+   EXEC PGM=GFCT2106 (não) - NAO HA IMPACTO
+   
+job GFCT2080- NAO HA IMPACTO
+   EXEC PGM=GFCT2108 (não)- NAO HA IMPACTO
+  

@@ -1,0 +1,168 @@
+Tabela GFCT4750 - 03022026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002952  TICKET-56438
+==========================================================
+
+
+
+job GFCT4750
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT4750 N P14          DFJ:GFCT4545 *                              GFCT4545 P14
+               GFCT4750 * RJ:GFCT4760 *                              GFCT4750 P14
+                         RJ:GFCT4751 *                              GFCT4750 P14
+               GFCT4751*  DJ:GFCT4750*                               GFCT4750 P14
+               GFCT4755*  RJ:GFCT4760 *                              GFCT4750 P14
+               GFCT4760*  DJ:GFCT4750*                               GFCT4750 P14
+                         DJ:GFCT4755*                               GFCT4750 P14
+                         RJ:GFCT4765 *                              GFCT4750 P14
+               GFCT4765*  DJ:GFCT4760*                               GFCT4750 P14
+                         RJ:GFCT4770 *                              GFCT4750 P14
+               GFCT4770 * DJ:GFCT4765 *                              GFCT4750 P14
+                         RJ:GFCT4773*                               GFCT4750 P14
+                         RJ:GFCT4771*                               GFCT4750 P14
+                         RJ:GFCT4775 *                              GFCT4750 P14
+               GFCT4771*  DJ:GFCT4770 *                              GFCT4750 P14
+               GFCT4773*  DJ:GFCT4770*                               GFCT4750 P14
+                         RJ:GFCT4774*                               GFCT4750 P14
+                         RJ:GFCT4780 *                              GFCT4750 P14
+GFCT4750 N P14 GFCT4774*  DJ:GFCT4773*                               GFCT4750 P14
+                         RJ:GFCT4778 *                              GFCT4750 P14
+               GFCT4775 * DJ:GFCT4770 *                              GFCT4750 P14
+                         RJ:GFCT4776*                               GFCT4750 P14
+                         RJ:GFCT4780*                               GFCT4750 P14
+               GFCT4776*  DJ:GFCT4775*                               GFCT4750 P14
+                         RJ:GFCT4778 *                              GFCT4750 P14
+               GFCT4778*  DJ:GFCT4776*                               GFCT4750 P14
+                         DJ:GFCT4774*                               GFCT4750 P14
+                        RSI:GFCT4955*                                           
+               GFCT4780*  DJ:GFCT4773*                               GFCT4750 P14
+                         DJ:GFCT4775*                               GFCT4750 P14
+                         RJ:GFCT4782*                               GFCT4750 P14
+                         RJ:GFCT4784*                               GFCT4750 P14
+               GFCT4782*  DJ:GFCT4780*                               GFCT4750 P14
+                         RJ:GFCT4786*                               GFCT4750 P14
+               GFCT4784*  DJ:GFCT4780*                               GFCT4750 P14
+                         RJ:GFCT4790 *                              GFCT4750 P14
+GFCT4750 N P14 GFCT4784*  RJ:GFCT4795*                               GFCT4750 P14
+               GFCT4786*  DJ:GFCT4782*                               GFCT4750 P14
+                         RJ:GFCT4788*                               GFCT4750 P14
+               GFCT4788*  DJ:GFCT4786*                               GFCT4750 P14
+                         RJ:GFCT4790*                               GFCT4750 P14
+                         RJ:GFCT4795 *                              GFCT4750 P14
+               GFCT4790*  DJ:GFCT4784 *                              GFCT4750 P14
+                         DJ:GFCT4788 *                              GFCT4750 P14
+                         RJ:GFCT4793 *                              GFCT4750 P14
+                         RJ:GFCT4792*                               GFCT4750 P14
+                         RJ:GFCT4791*                               GFCT4750 P14
+                         RJ:GFCT4794*                               GFCT4750 P14
+               GFCT4791*  DJ:GFCT4790*                               GFCT4750 P14
+                         RJ:GFCT4975*                               GFCT4750 P14
+                         RJ:GFCT4977*                               GFCT4750 P14
+               GFCT4792*  DJ:GFCT4790 *                              GFCT4750 P14
+                         RJ:GFCT4977*                               GFCT4750 P14
+                         RJ:GFCT4975 *                              GFCT4750 P14
+GFCT4750 N P14 GFCT4793*  DJ:GFCT4790*                               GFCT4750 P14
+                         RJ:GFCT4975 *                              GFCT4750 P14
+                         RJ:GFCT4977 *                              GFCT4750 P14
+               GFCT4794*  DJ:GFCT4790*                               GFCT4750 P14
+                         RJ:GFCT4977*                               GFCT4750 P14
+                         RJ:GFCT4975*                               GFCT4750 P14
+               GFCT4795*  DJ:GFCT4788*                               GFCT4750 P14
+                         DJ:GFCT4784*                               GFCT4750 P14
+                         RJ:GFCT4797*                               GFCT4750 P14
+                         RJ:GFCT4796*                               GFCT4750 P14
+                         RJ:GFCT4799*                               GFCT4750 P14
+                         RJ:GFCT4798*                               GFCT4750 P14
+               GFCT4796*  DJ:GFCT4795*                               GFCT4750 P14
+                         RJ:GFCT4975 *                              GFCT4750 P14
+                         RJ:GFCT4977 *                              GFCT4750 P14
+               GFCT4797*  DJ:GFCT4795 *                              GFCT4750 P14
+                         RJ:GFCT4977 *                              GFCT4750 P14
+                         RJ:GFCT4975 *                              GFCT4750 P14
+GFCT4750 N P14 GFCT4798*  DJ:GFCT4795 *                              GFCT4750 P14
+                         RJ:GFCT4975 *                              GFCT4750 P14
+                         RJ:GFCT4977 *                              GFCT4750 P14
+               GFCT4799*  DJ:GFCT4795*                               GFCT4750 P14
+                         RJ:GFCT4977*                               GFCT4750 P14
+                         RJ:GFCT4975 *                              GFCT4750 P14
+               GFCT4975*  DJ:GFCT4799*                               GFCT4750 P14
+                         DJ:GFCT4798*                               GFCT4750 P14
+                         DJ:GFCT4796 *                              GFCT4750 P14
+                         DJ:GFCT4797 *                              GFCT4750 P14
+                         DJ:GFCT4793*                               GFCT4750 P14
+                         DJ:GFCT4791*                               GFCT4750 P14
+                         DJ:GFCT4792*                               GFCT4750 P14
+                         DJ:GFCT4794*                               GFCT4750 P14
+                         RJ:GFCT4976*                               GFCT4750 P14
+               GFCT4976*  DJ:GFCT4975*                               GFCT4750 P14
+               GFCT4977* DNS:GFCT4794*                                           
+                         DJ:GFCT4791 *                              GFCT4750 P14
+GFCT4750 N P14 GFCT4977 * DJ:GFCT4797 *                              GFCT4750 P14
+                         DJ:GFCT4794*                               GFCT4750 P14
+                         DJ:GFCT4796*                               GFCT4750 P14
+                         DJ:GFCT4799*                               GFCT4750 P14
+                         DJ:GFCT4792*                               GFCT4750 P14
+                         DJ:GFCT4798*                               GFCT4750 P14
+                         DJ:GFCT4793*                               GFCT4750 P14
+                         RJ:GFCT4978*                               GFCT4750 P14
+               GFCT4978*  DJ:GFCT4977 *                              GFCT4750 P14
+                       
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002952  TICKET-56438
+==========================================================
+
+job GFCT4545
+   EXEC PGM=GFCT2800 (não)
+   EXEC PGM=GFCT2805 (não)
+   EXEC PGM=GFCT2815(não)
+   EXEC PGM=GFCT2820 (não)
+    
+  job GFCT4750 - NAO USA ARQUIVO CLIE
+   EXEC PGM=GFCT2825 (utiliza book I#CHEQBN ------AJUSTADO 
+          I#CHEQBN  ==> substituir por CLIEW04B
+          pacote participativo CLIE004613  ------AJUSTADO
+   EXEC PGM=GFCT2830 (não)
+   EXEC PGM=GFCT2835 - tem cgc - TRATA CPF, AJUSTADO PARA NOVO TAMANHO DE ARQUIVO
+   EXEC PGM=GFCT2840 (não)
+     
+job GFCT4760 - verificar
+
+job GFCT4751
+   EXEC PGM=GFCT2880 (não)
+   
+job GFCT4755
+   EXEC PGM=GFCT2845 (não)
+   EXEC PGM=GFCT2895 - tem alteração - AJUSTADO
+   
+job GFCT4765
+   EXEC PGM=GFCT2850 (não)
+
+job GFCT4770
+   EXEC PGM=GFCT2855 (não)
+    
+job GFCT4773
+   EXEC PGM=GFCT2860 (não)
+   
+job GFCT4775
+   EXEC PGM=GFCT2865 (não)
+
+job GFCT4780
+   EXEC PGM=GFCT2870 (não)
+
+job GFCT4778
+   EXEC PGM=GFCT2910 (não)
+
+job GFCT4782
+   EXEC PGM=GFCT2875 (não)
+
+job GFCT4786
+   EXEC PGM=GFCT2950(não) 
+
+job GFCT4790
+   EXEC PGM=GFCT2925(não)
+
+job GFCT4793
+   EXEC PGM=GFCT2905(não)
+   EXEC PGM=GFCT2960(não)

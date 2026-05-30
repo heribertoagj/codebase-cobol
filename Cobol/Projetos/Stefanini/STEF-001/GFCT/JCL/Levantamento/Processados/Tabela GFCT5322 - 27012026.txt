@@ -1,0 +1,23 @@
+Tabela GFCT5322 - 27012026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002968   TICKET-56435
+==========================================================
+EXECUTA O PROGRAMA GFCT1948  
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT5322 N P14          DFJ:GFCT5320 *                              GFCT5320 P14
+               NAO HA DEPENDENCIAS/RELEASES                         
+                        GFJ:                                       CMTFX408 P14
+
+
+
+
+================================================================================
+
+   JOB GFCT5320 - NAO HA IMPACTO
+
+   job GFCT5322 - NAO HA IMPACTO
+       EXEC PGM=GFCT1948 (acessa tabela cliev004 e GFCTB0I0) - AJUSTADO
+
+

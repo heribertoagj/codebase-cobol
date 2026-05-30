@@ -1,0 +1,47 @@
+      ******************************************************************
+      * SISTEMA : DCOM - I#DCOMQK                                      *
+BSI001* TAMANHO : 0462 BYTES                                           *
+      * ARQUIVO : HISTORICO CHEQUE MODIFICACAO PARCELA                 *
+      * INCLUDE DA TABELA DCOMB0A9 - DB2PRD.THIST_CHEQC_PCELA          *
+      ******************************************************************
+BSI001*                    ALTERACAO - BSI TECNOLOGIA                  *
+BSI001*----------------------------------------------------------------*
+BSI001*  ANALISTA BSI:   FERNANDO LUIZ DE SANTI  -  BSI TECNOLOGIA     *
+BSI001*  DATA........:   28/04/2017                                    *
+BSI001*----------------------------------------------------------------*
+BSI001*  OBJETIVO....:   INCLUIR CAMPOS DE ENCARGOS MORATORIOS.        *
+BSI001******************************************************************
+       01  QK-A9-REGISTRO.
+01  03     05 QK-A9-DANO-OPER-DESC       PIC S9(4)V USAGE COMP-3.
+04  05     05 QK-A9-NSEQ-OPER-DESC       PIC S9(9)V USAGE COMP-3.
+09  03     05 QK-A9-NPCELA-DESC-COML     PIC S9(5)V USAGE COMP-3.
+12  02     05 QK-A9-CBCO                 PIC S9(3)V USAGE COMP-3.
+14  03     05 QK-A9-CAG-BCRIA            PIC S9(5)V USAGE COMP-3.
+17  06     05 QK-A9-CCTA-CORR-BCRIA      PIC S9(11)V USAGE COMP-3.
+23  04     05 QK-A9-CCHEQ                PIC S9(7)V USAGE COMP-3.
+27  26     05 QK-A9-HULT-ATULZ           PIC X(26).
+53  03     05 QK-A9-CDEPDC               PIC S9(5)V USAGE COMP-3.
+56  07     05 QK-A9-CCTA-BCRIA-CLI       PIC S9(13)V USAGE COMP-3.
+63  03     05 QK-A9-CFLIAL-EMPR-CHEQC    PIC S9(5)V USAGE COMP-3.
+66  10     05 QK-A9-DVCTO-CHEQ-CTDIA     PIC X(10).
+76  08     05 QK-A9-VCHEQC               PIC S9(13)V9(2) USAGE COMP-3.
+84  10     05 QK-A9-DMODIF-CHEQC-PCELA   PIC X(10).
+94 252     05 QK-A9-RMOTVO-DEVLC-CHEQC.
+94  02        49 RMOTVO-DEVLC-CHEQC-LEN  PIC S9(4) USAGE COMP.
+96 250        49 RMOTVO-DEVLC-CHEQC-TEXT  PIC X(250).
+346 01     05 QK-A9-CINDCD-REAP-CHEQC    PIC S9(1)V USAGE COMP-3.
+347 10     05 QK-A9-DREAP-CHEQC          PIC X(10).
+357 01     05 QK-A9-CINDCD-MODLD-PROCM   PIC X(1).
+358 01     05 QK-A9-CINDCD-MOTVO-MODIF   PIC X(1).
+359 09     05 QK-A9-VSDO-DVDOR-PRINC     PIC S9(15)V9(2) USAGE COMP-3.
+368 09     05 QK-A9-VJURO-MORA-LEGAL     PIC S9(15)V9(2) USAGE COMP-3.
+377 09     05 QK-A9-VJURO-MORA-GERC      PIC S9(15)V9(2) USAGE COMP-3.
+386 09     05 QK-A9-VIOF-PCELA-VENCD     PIC S9(15)V9(2) USAGE COMP-3.
+395 09     05 QK-A9-VCUSTO-PCELA-VENCD   PIC S9(15)V9(2) USAGE COMP-3.
+404 09     05 QK-A9-VJURO-TRNSF-CRATS    PIC S9(15)V9(2) USAGE COMP-3.
+413 09     05 QK-A9-VCUSTO-TRNSF-CRATS   PIC S9(15)V9(2) USAGE COMP-3.
+422 04     05 QK-A9-CCONTR-CORP-CHEQC    PIC S9(7)V USAGE COMP-3.
+426 10     05 QK-A9-DVNCLO-REAP-CHEQC    PIC X(10).
+436 09     05 QK-A9-VJURO-REMUN-VENCD    PIC S9(15)V9(2) USAGE COMP-3.
+445 09     05 QK-A9-VMORA-VENCD-DESC     PIC S9(15)V9(2) USAGE COMP-3.
+454 09     05 QK-A9-VMULTA-VENCD-DESC    PIC S9(15)V9(2) USAGE COMP-3.

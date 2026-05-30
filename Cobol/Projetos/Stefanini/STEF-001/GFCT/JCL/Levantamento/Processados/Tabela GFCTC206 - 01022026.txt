@@ -1,0 +1,23 @@
+Tabela GFCTC206 - 01022026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002962   TICKET-56431
+==========================================================
+
+job GFCTC206 
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTC206 N P14 GFCTC206*  RJ:GFCTH206*                               GFCTC206 P14
+               GFCTH206 * DJ:GFCTC206 *                              GFCTC206 P14
+                         RJ:GFCTH207*                               GFCTC206 P14
+               GFCTH207 * DJ:GFCTH206*                               GFCTC206 P14
+                                                                               
+
+JOB GFCTC206
+   EXEC PGM=GFCT6850 (UTILIZA BOOK GFCTW003 E i#CLIE20) -AJUSTADO
+   EXEC PGM=GFCT6855 (UTILIZA BOOK GFCTW003) -AJUSTADO
+   EXEC PGM=GFCT6865 (UTILIZA BOOK GFCTW003) -AJUSTADO
+   EXEC PGM=GFCT6875 (UTILIZA BOOK GFCTW003) -AJUSTADO
+   
+
+

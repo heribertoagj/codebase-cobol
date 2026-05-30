@@ -1,0 +1,67 @@
+      ******************************************************************
+      * SISTEMA : DCOM - I#DCOMPZ                                      *
+BSI001* TAMANHO : 0299 BYTES                                           *
+      * ARQUIVO : BAIXA PARCELA DESCONTO COMERCIAL                     *
+      * INCLUDE DA TABELA DCOMB094 - DB2PRD.TBAIXA_PCELA_DESC          *
+      ******************************************************************
+BSI001*                    ALTERACAO - BSI TECNOLOGIA                  *
+BSI001*----------------------------------------------------------------*
+BSI001*  ANALISTA BSI:   FERNANDO LUIZ DE SANTI  -  BSI TECNOLOGIA     *
+BSI001*  DATA........:   28/04/2017                                    *
+BSI001*----------------------------------------------------------------*
+BSI001*  OBJETIVO....:   INCLUIR CAMPOS DE ENCARGOS MORATORIOS.        *
+BSI001******************************************************************
+BRQ001*                    ALTERACAO - BRQ INFORMATICA                *
+BRQ001*---------------------------------------------------------------*
+BRQ001*  ANALISTA BRQ:   FABIO AUGUSTO FINK      -  BRQ INFORMATICA   *
+BRQ001*  DATA........:   08/02/2018                                   *
+BRQ001*---------------------------------------------------------------*
+BRQ001*  OBJETIVO....:   PROJETO BRQ 17/0418 - TROCAR O CAMPO:        *
+BRQ001*            DE: 'CFORMA-PGTO-TITLO' / PARA: 'CORIGE-PGTO-DESC' *
+BRQ001*****************************************************************
+       01  PZ-94-REGISTRO.
+ 01 03     05 PZ-94-DANO-OPER-DESC       PIC S9(4)V USAGE COMP-3.
+ 04 05     05 PZ-94-NSEQ-OPER-DESC       PIC S9(9)V USAGE COMP-3.
+ 09 03     05 PZ-94-NPCELA-DESC-COML     PIC S9(5)V USAGE COMP-3.
+ 12 26     05 PZ-94-HBAIXA-PCELA-DESC    PIC X(26).
+ 38 02     05 PZ-94-DMES-BAIXA-PTCAO     PIC S9(2)V USAGE COMP-3.
+ 40 02     05 PZ-94-CSIT-DESC-COML       PIC S9(3)V USAGE COMP-3.
+ 42 26     05 PZ-94-HSIT-DESC-COML       PIC X(26).
+ 68 01     05 PZ-94-CTPO-BAIXA-PCELA     PIC X(1).
+ 69 02     05 PZ-94-CMEIO-PGTO-DESC      PIC S9(3)V USAGE COMP-3.
+ 71 10     05 PZ-94-DEFETV-BAIXA-PCELA   PIC X(10).
+ 81 09     05 PZ-94-VSDO-DVDOR-PCELA     PIC S9(15)V9(2) USAGE COMP-3.
+ 90 09     05 PZ-94-VPRINC-BAIXA-PCELA   PIC S9(15)V9(2) USAGE COMP-3.
+ 99 09     05 PZ-94-VJURO-BAIXA-PCELA    PIC S9(15)V9(2) USAGE COMP-3.
+108 09     05 PZ-94-VIOF-BAIXA-PCELA     PIC S9(15)V9(2) USAGE COMP-3.
+117 09     05 PZ-94-VMULTA-BAIXA-PCELA   PIC S9(15)V9(2) USAGE COMP-3.
+126 09     05 PZ-94-VABTMT-BAIXA-PCELA   PIC S9(15)V9(2) USAGE COMP-3.
+135 09     05 PZ-94-VDESC-BAIXA-PCELA    PIC S9(15)V9(2) USAGE COMP-3.
+144 09     05 PZ-94-VEFETV-BAIXA-PCELA   PIC S9(15)V9(2) USAGE COMP-3.
+153 09     05 PZ-94-VJURO-CUSTO-BAIXA    PIC S9(15)V9(2) USAGE COMP-3.
+162 09     05 PZ-94-VMORA-LEGAL-BAIXA    PIC S9(15)V9(2) USAGE COMP-3.
+171 01     05 PZ-94-CINDCD-LOC-DEB       PIC X(1).
+172 01     05 PZ-94-CINDCD-BAIXA-COBR    PIC X(1).
+173 01     05 PZ-94-CINDCD-CONSL-EXTRT   PIC X(1).
+174 02     05 PZ-94-CORIGE-PGTO-DESC     PIC S9(3)V USAGE COMP-3.
+176 03     05 PZ-94-CMIDIA-PGTO-TITLO    PIC S9(5)V USAGE COMP-3.
+179 02     05 PZ-94-CBCO                 PIC S9(3)V USAGE COMP-3.
+181 03     05 PZ-94-CAG-BCRIA            PIC S9(5)V USAGE COMP-3.
+184 07     05 PZ-94-CCTA-BCRIA-CLI       PIC S9(13)V USAGE COMP-3.
+191 02     05 PZ-94-CDIG-CTA-EXTER       PIC X(2).
+193 04     05 PZ-94-CCTRO-CUSTO          PIC X(4).
+197 26     05 PZ-94-HULT-ATULZ           PIC X(26).
+223 05     05 PZ-94-CFUNC-BDSCO          PIC S9(9)V USAGE COMP-3.
+228 08     05 PZ-94-CTERM                PIC X(8).
+236 01     05 PZ-94-CTPO-BAIXA-CONTR     PIC X(1).
+237 01     05 PZ-94-CTPO-BAIXA-COMPL     PIC X(1).
+238 09     05 PZ-94-VDEVLC-BAIXA-EXCED   PIC S9(15)V9(2) USAGE COMP-3.
+247 09     05 PZ-94-VRECTA-BAIXA-EXCED   PIC S9(15)V9(2) USAGE COMP-3.
+256 02     05 PZ-94-CBCO-CHEQC           PIC S9(3)V USAGE COMP-3.
+256 01     05 PZ-94-CBCO-CHEQC-NULL      PIC X(01).
+259 03     05 PZ-94-CAG-BCRIA-CHEQC      PIC S9(5)V USAGE COMP-3.
+262 07     05 PZ-94-CCCORR-CHEQC         PIC S9(13)V USAGE COMP-3.
+269 04     05 PZ-94-CCHEQ-CHEQC          PIC S9(7)V USAGE COMP-3.
+273 09     05 PZ-94-VJURO-REMUN-VENCD    PIC S9(15)V9(2) USAGE COMP-3.
+282 09     05 PZ-94-VMORA-VENCD-DESC     PIC S9(15)V9(2) USAGE COMP-3.
+291 09     05 PZ-94-VMULTA-VENCD-DESC    PIC S9(15)V9(2) USAGE COMP-3.

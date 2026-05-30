@@ -1,0 +1,175 @@
+====================================================
+ALTERAR NO PACOTE GFCT002972  TICKET-56437
+=================================================
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT9400 N P14 GFCT9401*  RJ:GFCT9403 *                              GFCT9400 P14
+               GFCT9403 * DJ:GFCT9401 *                              GFCT9400 P14
+                         RJ:GFCT9405 *                              GFCT9400 P14
+               GFCT9405*  DJ:GFCT9403*                               GFCT9400 P14
+                         RJ:GFCT9406*                               GFCT9400 P14
+               GFCT9406*  DJ:GFCT9405*                               GFCT9400 P14
+                         RJ:GFCT9407 *                              GFCT9400 P14
+               GFCT9407*  DJ:GFCT9406*                               GFCT9400 P14
+                         RJ:GFCT9408*                               GFCT9400 P14
+               GFCT9408 * DJ:GFCT9407 *                              GFCT9400 P14
+                         RJ:GFCT9409 *                              GFCT9400 P14
+               GFCT9409 * DJ:GFCT9408*                               GFCT9400 P14
+                         RJ:GFCT9410 *                              GFCT9400 P14
+               GFCT9410 * DJ:GFCT9409*                               GFCT9400 P14
+                         RJ:GFCT9411 *                              GFCT9400 P14
+               GFCT9411*  DJ:GFCT9410 *                              GFCT9400 P14
+                         RJ:GFCT9412 *                              GFCT9400 P14
+               GFCT9412*  DJ:GFCT9411*                               GFCT9400 P14
+GFCT9400 N P14 GFCT9412 * RJ:GFCT9413*                               GFCT9400 P14
+               GFCT9413*  DJ:GFCT9412*                               GFCT9400 P14
+                         RJ:GFCT9414*                               GFCT9400 P14
+               GFCT9414*  DJ:GFCT9413*                               GFCT9400 P14
+                         RJ:GFCT9415*                               GFCT9400 P14
+               GFCT9415*  DJ:GFCT9414*                               GFCT9400 P14
+                         RJ:GFCT9416 *                              GFCT9400 P14
+               GFCT9416*  DJ:GFCT9415*                               GFCT9400 P14
+                         RJ:GFCT9417 *                              GFCT9400 P14
+               GFCT9417*  DJ:GFCT9416*                               GFCT9400 P14
+                         RJ:GFCT9418*                               GFCT9400 P14
+               GFCT9418*  DJ:GFCT9417*                               GFCT9400 P14
+                         RJ:GFCT9419 *                              GFCT9400 P14
+               GFCT9419*  DJ:GFCT9418 *                              GFCT9400 P14
+                         RJ:GFCT9420 *                              GFCT9400 P14
+               GFCT9420*  DJ:GFCT9419 *                              GFCT9400 P14
+                         RJ:GFCT9421 *                              GFCT9400 P14
+               GFCT9421*  DJ:GFCT9420 *                              GFCT9400 P14
+GFCT9400 N P14 GFCT9421 * RJ:GFCT9422*                               GFCT9400 P14
+               GFCT9422*  DJ:GFCT9421 *                              GFCT9400 P14
+                         RJ:GFCT9423 *                              GFCT9400 P14
+               GFCT9423*  DJ:GFCT9422 *                              GFCT9400 P14
+                         RJ:GFCT9424 *                              GFCT9400 P14
+               GFCT9424*  DJ:GFCT9423*                               GFCT9400 P14
+                         RJ:GFCT9425 *                              GFCT9400 P14
+               GFCT9425*  DJ:GFCT9424 *                              GFCT9400 P14
+                         RJ:GFCT9426*                               GFCT9400 P14
+               GFCT9426*  DJ:GFCT9425 *                              GFCT9400 P14
+                         RJ:GFCT9427*                               GFCT9400 P14
+               GFCT9427*  DJ:GFCT9426 *                              GFCT9400 P14
+                         RJ:GFCT9428*                               GFCT9400 P14
+               GFCT9428*  DJ:GFCT9427*                               GFCT9400 P14
+                         RJ:GFCT9429*                               GFCT9400 P14
+               GFCT9429*  DJ:GFCT9428*                               GFCT9400 P14
+                         RJ:GFCT9430 *                              GFCT9400 P14
+               GFCT9430*  DJ:GFCT9429*                               GFCT9400 P14
+GFCT9400 N P14 GFCT9430 * RJ:GFCT9431 *                              GFCT9400 P14
+               GFCT9431*  DJ:GFCT9430 *                              GFCT9400 P14
+                         RJ:GFCT9435*                               GFCT9400 P14
+               GFCT9435*  DJ:GFCT9431*                               GFCT9400 P14
+                         RJ:GFCT9445 *                              GFCT9400 P14
+               GFCT9439 * DJ:GFCT9471*                               GFCT9400 P14
+                         RJ:GFCT9440*                               GFCT9400 P14
+               GFCT9440*  DJ:GFCT9439 *                              GFCT9400 P14
+               GFCT9445*  DJ:GFCT9435*                               GFCT9400 P14
+                         RJ:GFCT9446 *                              GFCT9400 P14
+               GFCT9446*  DJ:GFCT9445 *                              GFCT9400 P14
+                         RJ:GFCT9447*                               GFCT9400 P14
+               GFCT9447*  DJ:GFCT9446 *                              GFCT9400 P14
+                         RJ:GFCT9471*                               GFCT9400 P14
+               GFCT9471*  DJ:GFCT9447*                               GFCT9400 P14
+                         RJ:GFCT9439 *                              GFCT9400 P14
+
+
+
+
+
+
+====================================================
+ALTERAR NO PACOTE GFCT002972  TICKET-56437
+=================================================
+
+JOB GFCT9401 - NAO HA IMPACTO
+  
+JOB GFCT9403 - ALTERAR 
+    MJ.CLIE.PRP.CADNOVGR(0)  - AJUSTADO
+        MJ.CLIE.PRP.CADNOVGR	I#CLIE20  ==>	MJ.CLIE.PRP.CADNOVGR.ALFA	 CLIEW01B 
+
+ 
+  
+JOB GFCT9405 - NAO HA IMPACTO
+   EXEC PGM=GFCT1844 (NAO) - NAO HA IMPACTO
+   EXEC PGM=GFCT1846 (NAO) - NAO HA IMPACTO
+   EXEC PGM=GFCT9302 (NAO) - NAO HA IMPACTO
+    
+JOB GFCT9406 - NAO HA IMPACTO
+
+JOB GFCT9407 - NAO HA IMPACTO 
+   EXEC PGM=GFCT9303 (NAO) - NAO HA IMPACTO
+   
+JOB GFCT9408  = TEM AJUSTE ================================================================>> HERIBERTO AJUSTAR E VERIFICAR OS PROGRAMAS
+   EXEC PGM=GFCT2117 (UTILIZA BOOK I#GFCTRU) - AJUSTADO
+   EXEC PGM=GFCT2118 (UTILIZA BOOK I#GFCTRU E I#CHEQ04) - CONFIRMANDO ALTERAÇÃO
+        MJ.CLIE.PRP.CADPREDU	I#CHEQ04   =======>>	MJ.CLIE.PRP.CADPREDU.ALFA	CLIEW05B
+
+   EXEC PGM=GFCT2119(UTILIZA BOOK I#GFCTRU) - AJUSTADO
+
+JOB GFCT9409 - NAO HA IMPACTO
+   EXEC PGM=GFCT9304 (NAO) - NAO HA IMPACTO
+   
+
+JOB GFCT9411 - NAO HA IMPACTO
+   EXEC PGM=GFCT9305 (UTILIZA BOOK I#GFCTRU) - AJUSTADO
+
+JOB GFCT9413 - AJUSTADO
+  EXEC PGM=GFCT2120 (UTILIZA BOOK I#GFCTRU) - AJUSTADO
+  EXEC PGM=GFCT9307 (NAO) - NAO HA IMPACTO
+   
+JOB GFCT9415 - AVALIAR 
+
+JOB GFCT9417 - AJUSTADO
+   EXEC PGM=GFCT2120 (UTILIZA BOOKS I#GFCTRY, I#GFCTRU) - AJUSTADO
+   EXEC PGM=GFCT9308 (UTILIZA BOOK I#GFCTRY) - AJUSTADO
+
+JOB GFCT9419 - AJUSTADO
+   EXEC PGM=GFCT9309(UTILIZA BOOK I#GFCTRU) - AJUSTADO
+
+JOB GFCT9421 - AJUSTADO
+    EXEC PGM=GFCT2135 (UTILIZA BOOKS I#GFCTRU E KCIMW184) - AJUSTADO
+         KCIMO184  ===> SUBSTITUIR POR     KCIMO186 
+    EXEC PGM=GFCT9310(UTILIZA BOOK I#GFCTRU) - AJUSTADO 
+
+JOB GFCT9423 - AJUSTADO
+    EXEC PGM=GFCT2135 (UTILIZA BOOKS I#GFCTRU E KCIMW184) GFCT002972  TICKET-56437	tab GFCT9400  - AJUSTADO
+         KCIMO184  ===> SUBSTITUIR POR     KCIMO186
+    EXEC PGM=GFCT9311(UTILIZA BOOK I#GFCTRU) - AJUSTADO
+
+JOB GFCT9425 - AJUSTADO
+    EXEC PGM=GFCT2135 (UTILIZA BOOKS I#GFCTRU E KCIMW184) - AJUSTADO
+         KCIMO184  ===> SUBSTITUIR POR     KCIMO186
+    EXEC PGM=GFCT9311(UTILIZA BOOK I#GFCTRU) - AJUSTADO
+
+JOB GFCT9427 - AJUSTADO
+   EXEC PGM=GFCT2160(UTILIZA BOOKS I#GFCTRY, I#GFCTRU) - ALTERADO NO 2972 - AJUSTADO
+   EXEC PGM=GFCT9312 (UTILIZA BOOK I#GFCTRY) - AJUSTADO
+
+JOB GFCT9429 - NAO HA IMPACTO
+   EXEC PGM=GFCT9313 (NAO) - NAO HA IMPACTO
+   EXEC PGM=GFCT2175 (NAO) - NAO HA IMPACTO
+   EXEC PGM=GFCT2180 (NAO) - NAO HA IMPACTO
+ 
+JOB GFCT9430 - VERIFICAR
+
+JOB GFCT9431
+   EXEC PGM=GFCT2190 (NAO) - NAO HA IMPACTO
+   EXEC PGM=GFCT2185 (NAO) - NAO HA IMPACTO
+   EXEC PGM=GFCT9301(NAO) - NAO HA IMPACTO
+  
+JOB GFCT9435
+    EXEC PGM=GFCT2195 (NAO) - NAO HA IMPACTO
+   
+JOB GFCT9445 - NAO HA IMPACTO
+
+JOB GFCT9446
+   EXEC PGM=GFCT1110 (NAO) - NAO HA IMPACTO
+   EXEC PGM=GFCT1100(NAO) - NAO HA IMPACTO
+   EXEC PGM=GFCT1105 (UTILIZA I#MESUM8) SUBSTITUIR MESUWIM8 - AJUSTADO NO 3022
+        MESU9018 ===> SUBSTITUIR MESU9718
+   EXEC PGM=GFCT1120(NAO) - NAO HA IMPACTO
+ 
+JOB GFCT9447 - NAO HA IMPACTO
+

@@ -1,0 +1,35 @@
+           05 CRURW01C-E-HEADER.
+             10 CRURW04C-BLOCO-ENTRADA.
+               15 CRURW04C-E-CPSSOA-DETNT-REC      PIC 9(10).
+               15 CRURW04C-E-CANO-SAFRA            PIC 9(5).
+               15 CRURW04C-E-NCEN-ANO-SAFRA        PIC 9(4).
+               15 CRURW10C-S-NDOTAC-SAFRA          PIC 9(04).
+               15 CRURW04C-E-CTPO-ORIGE-REC        PIC 9(2).
+               15 CRURW04C-E-DINIC-PER-EXIGB       PIC X(10).
+               15 CRURW04C-E-DFIM-PER-EXIGB        PIC X(10).
+               15 CRURW04C-E-CTPO-REC-FINCR        PIC 9(1).
+               15 CRURW10C-S-VEXIGB-DOTAC          PIC 9(08)V9(02).
+               15 CRURW10C-S-DFIM-ETAPA1           PIC X(10).
+               15 CRURW10C-S-NETAPA1               PIC 9(02).
+               15 CRURW10C-S-DFIM-ETAPA2           PIC X(10).
+               15 CRURW10C-S-NETAPA2               PIC 9(02).
+               15 CRURW10C-S-DFIM-ETAPA3           PIC X(10).
+               15 CRURW10C-S-NETAPA3               PIC 9(02).
+               15 CRURW10C-S-DFIM-ETAPA4           PIC X(10).
+               15 CRURW10C-S-NETAPA4               PIC 9(02).
+               15 CRURW10C-S-DFIM-ETAPA5           PIC X(10).
+               15 CRURW10C-S-NETAPA5               PIC 9(02).
+               15 CRURW10C-S-DFIM-ETAPA6           PIC X(10).
+               15 CRURW10C-S-NETAPA6               PIC 9(02).
+               15 CRURW10C-S-DFIM-ETAPA7           PIC X(10).
+               15 CRURW10C-S-NETAPA7               PIC 9(02).
+               15 CRURW10C-S-DFIM-ETAPA8           PIC X(10).
+               15 CRURW10C-S-NETAPA8               PIC 9(02).
+               15 CRURW10C-S-DFIM-ETAPA9           PIC X(10).
+               15 CRURW10C-S-NETAPA9               PIC 9(02).
+               15 CRURW10C-S-DFIM-ETAPA10          PIC X(10).
+               15 CRURW10C-S-NETAPA10              PIC 9(02).
+               15 CRURW10C-S-DFIM-ETAPA11          PIC X(10).
+               15 CRURW10C-S-NETAPA11              PIC 9(02).
+               15 CRURW10C-S-DFIM-ETAPA12          PIC X(10).
+               15 CRURW10C-S-NETAPA12              PIC 9(02).

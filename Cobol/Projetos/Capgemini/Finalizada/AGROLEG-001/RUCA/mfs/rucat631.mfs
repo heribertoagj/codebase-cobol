@@ -1,0 +1,313 @@
+***********************************************************************
+*                   J A P I   I N F O R M A T I C A                   *
+***********************************************************************
+*        TELA......... RUCAT631                                       *
+*        ANALISTA..... FABRICA JAPI                                   *
+*        DATA......... OUTUBRO/2006                                   *
+*        OBJETIVO..... DEMONSTRACAO DE SITUACAO                       *
+***********************************************************************
+***********************************************************************
+*        A L T E R A C A O                                            *
+***********************************************************************
+*        ANALISTA....: RODRIGO KONSTANTINOVAS - BRADESCO              *
+*        DATA........: 28/02/2024                                     *
+*        MOTIVO......: INCLUSAO DA PF6 PARA CHAMADA DA TRANSACAO      *
+*                      RUCA6690 - CONSULTA DO DESCRITIVO DE CREDITO DA*
+*                      OPERACAO                                       *
+*---------------------------------------------------------------------*
+         PRINT NOGEN
+QUT631   FMT
+         DEV   TYPE=(3270,2),FEAT=IGNORE,SYSMSG=MENSYS,DSCA=X'00A0',   X
+               PFK=(PF,1='HELP6100 6630  ',2='/RCL          .',        X
+               03='RUCA6630      3',04='RUCA6630      4',              X
+               05='RUCA6630      5',06='RUCA6630      6',              X
+               07='RUCA6630      7',08='RUCA6630      8',              X
+               09='RUCA6630      9',10='RUCA6630      D',              X
+               11='RUCA6630      E',12='RUCA6630      *',              X
+               13='RUCA6630      *',14='RUCA6630      *',              X
+               15='RUCA6630      *',16='RUCA6630      *',              X
+               17='RUCA6630      *',18='RUCA6630      *',              X
+               19='RUCA6630      *',20='RUCA6630      *',              X
+               21='RUCA6630      *',22='RUCA6630      *',              X
+               23='RUCA6630      *',24='RUCA6630      *')
+         DIV   TYPE=INOUT
+         DPAGE CURSOR=((04,09))
+*-------------------------------------------------------------------*
+*        LINHA 01,02                                                *
+*-------------------------------------------------------------------*
+DATA     DFLD  POS=(01,02),LTH=08,ATTR=(PROT,HI)
+         DFLD  'SISTEMA DE CREDITO RURAL',POS=(01,32),ATTR=(PROT,HI)
+HORA     DFLD  POS=(01,73),LTH=08,ATTR=(PROT,HI)
+         DFLD  'RUCAT631',POS=(02,02),ATTR=(PROT,HI)
+         DFLD  'DEMONSTRACAO DE SITUACAO',                             X
+               POS=(02,32),ATTR=(PROT,HI)
+         DFLD  'RUCA6630',POS=(02,73),ATTR=(PROT,HI)
+*---------------------------------------------------------------------*
+*        LINHA 03                                                     *
+*---------------------------------------------------------------------*
+SENHAS   DFLD  POS=(03,02),LTH=37,ATTR=(MOD,PROT,NODISP)
+ESCOND   DFLD  POS=(03,41),LTH=13,ATTR=(MOD,PROT,NODISP)
+*---------------------------------------------------------------------*
+*        LINHA 04                                                     *
+*---------------------------------------------------------------------*
+         DFLD  'EXTRATO DA CONTA VINCULADA NUM.',                      X
+               POS=(04,02),ATTR=(PROT,HI)
+CCVINC   DFLD  POS=(04,34),LTH=07,ATTR=(PROT,MOD)
+         DFLD  '/',POS=(04,42),ATTR=(PROT)
+DIGCCV   DFLD  POS=(04,44),LTH=01,ATTR=(PROT,MOD)
+         DFLD  'CHAVE DA OPERACAO',POS=(04,47),ATTR=(PROT,HI)
+NROPER   DFLD  POS=(04,67),LTH=09,ATTR=(PROT,NUM,MOD)
+         DFLD  '/',POS=(04,77),ATTR=(PROT)
+DIGOPER  DFLD  POS=(04,79),LTH=01,ATTR=(PROT,MOD)
+*---------------------------------------------------------------------*
+*        LINHA 05                                                     *
+*---------------------------------------------------------------------*
+         DFLD  'FORMA PGTO:',POS=(05,02),ATTR=(PROT,HI)
+FORM     DFLD  POS=(05,14),LTH=15,ATTR=(PROT,MOD)
+         DFLD  'DEBITOS VENC./PARCIAIS:',POS=(05,32),ATTR=(PROT,HI)
+DEBI     DFLD  POS=(05,56),LTH=03,ATTR=(PROT,MOD)
+         DFLD  'UTILIZA LIMITE:',POS=(05,60),ATTR=(PROT,HI)
+LIMI     DFLD  POS=(05,76),LTH=03,ATTR=(PROT,MOD)
+*---------------------------------------------------------------------*
+*        LINHA 06                                                     *
+*---------------------------------------------------------------------*
+         DFLD  'AG.OPERADORA',POS=(06,02),ATTR=(PROT,HI)
+AGENCIA  DFLD  POS=(06,15),LTH=05,ATTR=(PROT,NUM,MOD)
+         DFLD  '/',POS=(06,21),ATTR=(PROT)
+NOMAG    DFLD  POS=(06,23),LTH=20,ATTR=(PROT,MOD)
+         DFLD  'FINANC. RURAL NUM.',POS=(06,45),ATTR=(PROT,HI)
+AAFINAN  DFLD  POS=(06,65),LTH=08,ATTR=(PROT,NUM,MOD)
+*---------------------------------------------------------------------*
+*        LINHA 07                                                     *
+*---------------------------------------------------------------------*
+         DFLD  'CD. BARRAS:',POS=(07,02),ATTR=(PROT,HI)
+CDBARR   DFLD  POS=(07,15),LTH=44,ATTR=(PROT,NUM,MOD)
+*---------------------------------------------------------------------*
+*        LINHA 08                                                     *
+*---------------------------------------------------------------------*
+         DFLD  'NOME',POS=(08,02),ATTR=(PROT,HI)
+NOME     DFLD  POS=(08,07),LTH=30,ATTR=(PROT,MOD)
+         DFLD  'C/C',POS=(08,39),ATTR=(PROT,HI)
+CC       DFLD  POS=(08,43),LTH=09,ATTR=(PROT,MOD)
+         DFLD  'CGC/CPF',POS=(08,53),ATTR=(PROT,HI)
+CGCCPF   DFLD  POS=(08,61),LTH=17,ATTR=(PROT,MOD)
+*---------------------------------------------------------------------*
+*        LINHA 09                                                     *
+*---------------------------------------------------------------------*
+         DFLD  'TIPO DE PRODUTOR',POS=(09,02),ATTR=(PROT,HI)
+TIPROD   DFLD  POS=(09,20),LTH=02,ATTR=(PROT,NUM,MOD)
+         DFLD 'CATEGORIA DO MUTUARIO',POS=(09,23),ATTR=(PROT,HI)
+CATMUT   DFLD  POS=(09,46),LTH=02,ATTR=(PROT,MOD)
+         DFLD 'CAPACID.PRODUCAO',POS=(09,52),ATTR=(PROT,HI)
+CAPROD   DFLD  POS=(09,69),LTH=10,ATTR=(PROT,NUM,MOD)
+*---------------------------------------------------------------------*
+*        LINHA 10                                                     *
+*---------------------------------------------------------------------*
+         DFLD  'DAP/CAF',POS=(10,02),ATTR=(PROT,HI)
+NDAP     DFLD  POS=(10,11),LTH=25,ATTR=(PROT,NUM,MOD)
+         DFLD  'GRUPO',POS=(10,40),ATTR=(PROT,HI)
+GRUPO    DFLD  POS=(10,46),LTH=03,ATTR=(PROT,NUM,MOD)
+         DFLD  'VALIDADE',POS=(10,56),ATTR=(PROT,HI)
+DTVALID  DFLD  POS=(10,71),LTH=10,ATTR=(PROT,NUM,MOD)
+*---------------------------------------------------------------------*
+*        LINHA 11                                                     *
+*---------------------------------------------------------------------*
+         DFLD  'ATIVIDADE',POS=(11,02),ATTR=(PROT,HI)
+ATIVID   DFLD  POS=(11,19),LTH=03,ATTR=(PROT,NUM,MOD)
+         DFLD  'EMBALAGEM',POS=(11,26),ATTR=(PROT,HI)
+EMBALA   DFLD  POS=(11,46),LTH=03,ATTR=(PROT,NUM,MOD)
+         DFLD  'FISCALIZACAO',POS=(11,56),ATTR=(PROT,HI)
+FISCAL   DFLD  POS=(11,70),LTH=10,ATTR=(PROT,MOD)
+*---------------------------------------------------------------------*
+*        LINHA 12                                                     *
+*---------------------------------------------------------------------*
+         DFLD  'FINALIDADE',POS=(12,02),ATTR=(PROT,HI)
+FINALID  DFLD  POS=(12,19),LTH=03,ATTR=(PROT,NUM,MOD)
+         DFLD  'ORIGEM DE RECURSOS ',POS=(12,26),ATTR=(PROT,HI)
+ORIREC   DFLD  POS=(12,46),LTH=03,ATTR=(PROT,NUM,MOD)
+         DFLD  'CLAS.PRODUTO ',POS=(12,56),ATTR=(PROT,HI)
+CLAPRO   DFLD  POS=(12,70),LTH=10,ATTR=(PROT,NUM,MOD)
+*---------------------------------------------------------------------*
+*        LINHA 13                                                     *
+*---------------------------------------------------------------------*
+         DFLD  'EMPREENDIMENTO  ',POS=(13,02),ATTR=(PROT,HI)
+EMPREEN  DFLD  POS=(13,19),LTH=03,ATTR=(PROT,NUM,MOD)
+         DFLD  'CONV/FIANCA/SGUR.  ',POS=(13,26),ATTR=(PROT,HI)
+CFSEG    DFLD  POS=(13,46),LTH=03,ATTR=(PROT,NUM,MOD)
+SEGUR    DFLD  POS=(13,51),LTH=03,ATTR=(PROT,NUM,MOD)
+         DFLD  'RPL-CPO 100  ',POS=(13,56),ATTR=(PROT,HI)
+CP100    DFLD  POS=(13,79),LTH=01,ATTR=(PROT,MOD)
+*---------------------------------------------------------------------*
+*        LINHA 14                                                     *
+*---------------------------------------------------------------------*
+         DFLD  'TIPO DE TITULO',POS=(14,02),ATTR=(PROT,HI)
+TPTIT    DFLD  POS=(14,19),LTH=03,ATTR=(PROT,MOD)
+         DFLD  'TIPO DE GARANTIA',POS=(14,26),ATTR=(PROT,HI)
+TPGAR    DFLD  POS=(14,46),LTH=03,ATTR=(PROT,MOD)
+         DFLD  'DT. IMPRESSAO',POS=(14,56),ATTR=(PROT,HI)
+DIMPRE   DFLD  POS=(14,71),LTH=10,ATTR=(PROT,MOD)
+*---------------------------------------------------------------------*
+*        LINHA 15                                                     *
+*---------------------------------------------------------------------*
+         DFLD  'AREA TOTAL ',POS=(15,02),ATTR=(PROT,HI)
+AREA     DFLD  POS=(15,14),LTH=17,ATTR=(PROT,MOD)
+         DFLD  'QTDE.FINANCIADA ',POS=(15,33),ATTR=(PROT,HI)
+QTFIN    DFLD  POS=(15,50),LTH=17,ATTR=(PROT,MOD)
+         DFLD  'UNIDADE ',POS=(15,68),ATTR=(PROT,HI)
+UNID     DFLD  POS=(15,77),LTH=04,ATTR=(PROT,NUM,MOD)
+*---------------------------------------------------------------------*
+*        LINHA 16                                                     *
+*---------------------------------------------------------------------*
+         DFLD  'C.G.C. INSTITUICAO     ',POS=(16,02),ATTR=(PROT,HI)
+CGCINST  DFLD  POS=(16,26),LTH=11,ATTR=(PROT,MOD)
+         DFLD  '/',POS=(16,38),ATTR=(PROT)
+FILINST  DFLD  POS=(16,40),LTH=04,ATTR=(PROT,NUM,MOD)
+         DFLD  '/',POS=(16,45),ATTR=(PROT)
+CTRINST  DFLD  POS=(16,47),LTH=02,ATTR=(PROT,MOD)
+REDJURO  DFLD  POS=(16,51),LTH=25,ATTR=(PROT,MOD)
+*---------------------------------------------------------------------*
+*        LINHA 17                                                     *
+*---------------------------------------------------------------------*
+         DFLD  'NUM.REF.BCO CENTRAL',POS=(17,02),ATTR=(PROT,HI)
+NUMREF   DFLD  POS=(17,23),LTH=12,ATTR=(PROT,MOD)
+         DFLD  'C.MUNICIPIO ',POS=(17,37),ATTR=(PROT,HI)
+CODMUN   DFLD  POS=(17,50),LTH=07,ATTR=(PROT,NUM,MOD)
+         DFLD  'LASTRO LCA (S/N) ',POS=(17,59),ATTR=(PROT,HI)
+LASTRO   DFLD  POS=(17,77),LTH=01,ATTR=(PROT,MOD)
+*---------------------------------------------------------------------*
+*        LINHA 18                                                     *
+*---------------------------------------------------------------------*
+         DFLD  'DT.REG',POS=(18,02),ATTR=(PROT,HI)
+DTREG    DFLD  POS=(18,09),LTH=10,ATTR=(PROT,MOD)
+         DFLD  'DT.CED',POS=(18,20),ATTR=(PROT,HI)
+DTCED    DFLD  POS=(18,28),LTH=10,ATTR=(PROT,MOD)
+         DFLD  'VCTO.PROAGRO',POS=(18,39),ATTR=(PROT,HI)
+VFINAL   DFLD  POS=(18,52),LTH=10,ATTR=(PROT,MOD)
+         DFLD  'DT.VCTO',POS=(18,63),ATTR=(PROT,HI)
+DTOPE    DFLD  POS=(18,71),LTH=10,ATTR=(PROT,MOD)
+*---------------------------------------------------------------------*
+*        LINHA 19                                                     *
+*---------------------------------------------------------------------*
+         DFLD  'SALDO DEVEDOR',POS=(19,02),ATTR=(PROT,HI)
+DEVEDOR  DFLD  POS=(19,16),LTH=21,ATTR=(PROT,MOD,HI)
+LITER1   DFLD  POS=(19,38),LTH=26,ATTR=(PROT,MOD,HI)
+VRSECUR  DFLD  POS=(19,66),LTH=14,ATTR=(PROT,MOD)
+         DFLD  'TOTAL ORCADO',POS=(20,02),ATTR=(PROT,HI)
+ORCADO   DFLD  POS=(20,15),LTH=21,ATTR=(PROT,MOD)
+LITERA   DFLD  POS=(20,38),LTH=19,ATTR=(PROT,HI)
+COBERT   DFLD  POS=(20,59),LTH=21,ATTR=(PROT,MOD)
+         DFLD  'TOTAL FINANC',POS=(21,02),ATTR=(PROT,HI)
+CREDITO  DFLD  POS=(21,15),LTH=21,ATTR=(PROT,MOD)
+         DFLD  'VR.RECURSOS PROPRIOS',POS=(21,38),ATTR=(PROT,HI)
+RECPRO   DFLD  POS=(21,59),LTH=21,ATTR=(PROT,MOD)
+*-------------------------------------------------------------------*
+*        LINHA 22                                                   *
+*-------------------------------------------------------------------*
+MSGPGM   DFLD  POS=(22,02),LTH=50,ATTR=(PROT,HI)
+         DFLD  'NOVA OPCAO:',POS=(22,66)
+NOPCAO   DFLD  POS=(22,78),LTH=02,ATTR=(MOD)
+*-------------------------------------------------------------------*
+*        LINHA 23                                                   *
+*-------------------------------------------------------------------*
+         DFLD  'F1=AJU',POS=(23,02),ATTR=(PROT,HI)
+         DFLD  'F2=DESC',POS=(23,09),ATTR=(PROT,HI)
+         DFLD  'F4=RORG',POS=(23,17),ATTR=(PROT,HI)
+         DFLD  'F5=ROT',POS=(23,25),ATTR=(PROT,HI)
+         DFLD  'F6=DSCT',POS=(23,32),ATTR=(PROT,HI)
+         DFLD  'F7=DSCL',POS=(23,40),ATTR=(PROT,HI)
+         DFLD  'F8=Z/A',POS=(23,48),ATTR=(PROT,HI)
+         DFLD  'F9=NOVA',POS=(23,55),ATTR=(PROT,HI)
+         DFLD  'F10=CET',POS=(23,63),ATTR=(PROT,HI)
+         DFLD  'F11=BOL',POS=(23,71),ATTR=(PROT,HI)
+*-------------------------------------------------------------------*
+*       LINHA    24                                                 *
+*-------------------------------------------------------------------*
+MENSYS   DFLD  LTH=79,POS=(24,02),ATTR=(PROT,HI)
+         FMTEND
+*
+*---------------------------------------------------------------------*
+*        M I D / M O D                                                *
+*---------------------------------------------------------------------*
+*
+RUCAI631 MSG   TYPE=INPUT,SOR=(QUT631,IGNORE),NXT=RUCAT631,OPT=1
+         SEG
+         MFLD  (PF,'RUCA6630      .'),LTH=15
+         MFLD  SENHAS,LTH=37
+         MFLD  NOPCAO,LTH=02,FILL=C'0',JUST=R
+         MFLD  ESCOND,LTH=13,FILL=C'0',JUST=R
+         MFLD  NROPER,LTH=09
+         MFLD  AGENCIA,LTH=05
+         MFLD  NOMAG,LTH=20
+         MFLD  AAFINAN,LTH=08
+         MFLD  NOME,LTH=30
+         MFLD  CC,LTH=09
+         MFLD  CGCCPF,LTH=17
+         MFLD  ORIREC,LTH=03
+         MSGEND
+*
+RUCAT631 MSG   TYPE=OUTPUT,SOR=(QUT631,IGNORE),NXT=RUCAI631
+         SEG
+         MFLD  (DATA,DATE3)
+         MFLD  (HORA,TIME)
+         MFLD  SENHAS,LTH=37
+         MFLD  NOPCAO,LTH=02
+         MFLD  ESCOND,LTH=13
+         MFLD  CCVINC,LTH=07
+         MFLD  DIGCCV,LTH=01
+         MFLD  NROPER,LTH=09
+         MFLD  DIGOPER,LTH=01
+         MFLD  FORM,LTH=15
+         MFLD  DEBI,LTH=03
+         MFLD  LIMI,LTH=03
+         MFLD  AGENCIA,LTH=05
+         MFLD  NOMAG,LTH=20
+         MFLD  AAFINAN,LTH=07
+         MFLD  CDBARR,LTH=44
+         MFLD  NOME,LTH=30
+         MFLD  CC,LTH=09
+         MFLD  CGCCPF,LTH=17
+         MFLD  TIPROD,LTH=02
+         MFLD  CATMUT,LTH=02
+         MFLD  CAPROD,LTH=10
+         MFLD  NDAP,LTH=25
+         MFLD  GRUPO,LTH=03
+         MFLD  DTVALID,LTH=10
+         MFLD  ATIVID,LTH=03
+         MFLD  EMBALA,LTH=03
+         MFLD  FISCAL,LTH=10
+         MFLD  FINALID,LTH=03
+         MFLD  ORIREC,LTH=03
+         MFLD  CLAPRO,LTH=10
+         MFLD  EMPREEN,LTH=03
+         MFLD  CFSEG,LTH=03
+         MFLD  SEGUR,LTH=03
+         MFLD  CP100,LTH=01
+         MFLD  TPTIT,LTH=03
+         MFLD  TPGAR,LTH=03
+         MFLD  DIMPRE,LTH=10
+         MFLD  AREA,LTH=17
+         MFLD  QTFIN,LTH=17
+         MFLD  UNID,LTH=04
+         MFLD  CGCINST,LTH=11
+         MFLD  FILINST,LTH=04
+         MFLD  CTRINST,LTH=02
+         MFLD  REDJURO,LTH=25
+         MFLD  NUMREF,LTH=12
+         MFLD  CODMUN,LTH=07
+         MFLD  LASTRO,LTH=01
+         MFLD  DTREG,LTH=10
+         MFLD  DTCED,LTH=10
+         MFLD  VFINAL,LTH=10
+         MFLD  DTOPE,LTH=10
+         MFLD  DEVEDOR,LTH=21
+         MFLD  LITER1,LTH=26
+         MFLD  VRSECUR,LTH=14
+         MFLD  ORCADO,LTH=21
+         MFLD  LITERA,LTH=19
+         MFLD  COBERT,LTH=21
+         MFLD  CREDITO,LTH=21
+         MFLD  RECPRO,LTH=21
+         MFLD  CABEC,LTH=26
+         MFLD  MSGPGM,LTH=50
+         MSGEND
+         END

@@ -1,0 +1,118 @@
+PACOTE TABELA GFCT0300 - 19/01/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002995  TICKET-66073
+==========================================================
+
+RETIRAR OS RECOMPS DO PACOTE 
+GFCT2096
+GFCT2098
+GFCT2101
+GFCT2102
+GFCT2104
+GFCT2112
+GFCT2135
+GFCT2155
+GFCT4220
+GFCT4323
+
+===============================================================
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT0300 N P14          DFJ:GFCT0024 *                              GFCT0005 P14
+               GFCT0302*  RJ:GFCT0305 *                              GFCT0300 P14
+               GFCT0305*  DJ:GFCT0302 *                              GFCT0300 P14
+                         RJ:GFCT0310 *                              GFCT0300 P14
+               GFCT0310 * DJ:GFCT0305 *                              GFCT0300 P14
+                         RJ:GFCT0312 *                               GFCT0300 P14
+               GFCT0312*  DJ:GFCT0310 *                              GFCT0300 P14
+                         RJ:GFCT0315 *                              GFCT0300 P14
+               GFCT0315 * DJ:GFCT0312*                               GFCT0300 P14
+                         RJ:GFCT0319 *                              GFCT0300 P14
+               GFCT0319*  DJ:GFCT0315 *                              GFCT0300 P14
+                         RJ:GFCT0320 *                              GFCT0300 P14
+               GFCT0320*  DJ:GFCT0319*                               GFCT0300 P14
+                         RJ:GFCT0325  *                             GFCT0300 P14
+               GFCT0325*  DJ:GFCT0320 *                              GFCT0300 P14
+                         RJ:GFCT0330 *                              GFCT0300 P14
+                         RJ:BISDLAAH                               BISD0170 P13
+               GFCT0330 * DJ:GFCT0325 *                              GFCT0300 P14
+
+GFCT0300 N P14 GFCT0330* RIL:GFCT0330* GC-MZ1A-UNIX(GFCT0330BIM )                
+                         RJ:GFCT0335 *                              GFCT0300 P14
+                         RJ:PM141900                               PM14NOIT P14
+                         RJ:PM110007                               CCFC0700 P11
+                         RJ:PM110007                               PM11CLE7 P11
+                         RJ:PM142300                               PM14NOIT P14
+                         RJ:PM142300                               PM14NOIT P14
+                         RJ:PM14FIT4                               PM14FIT4 P14
+                         RJ:PM14FIT4                               PM14FIT4 P14
+                        GFJ:                                       GFCTG330 P14
+               GFCT0335*  DJ:GFCT0330 *                              GFCT0300 P14
+                         RJ:GFCT0960 *                              GFCT0300 P14
+               GFCT0339*  DJ:GFCT0961 ¨*                              GFCT0300 P14
+                        GFJ:                                       GFCT0340 P14
+               GFCT0960 * DJ:GFCT0335 *                               GFCT0300 P14
+                         RJ:GFCT0961  *                             GFCT0300 P14
+               GFCT0961*  DJ:GFCT0960 *                              GFCT0300 P14
+                         RJ:GFCT0339 *                              GFCT0300 P14
+GFCT0300 N P14 GFCT0961*  RJ:GFCT0001                               GFCT0000 P14
+                         RJ:GFCT0001                               GFCT0000 P14
+                        GFJ:                                       T7GF7000 P14
+
+
+
+===================================================================================
+PACOTE  GFCT002995  TICKET-66073
+===================================================================================
+
+job GFCT0024 - NAO HA IMPACTO
+   EXEC PGM=GFCT1011 (não tem) - NAO HA IMPACTO
+
+job GFCT0302 - NAO HA IMPACTO 
+   EXEC PGM=GFCT1941 (não tem) - NAO HA IMPACTO
+ 
+job GFCT0310 - NAO HA IMPACTO
+   EXEC PGM=GFCT1389 (não tem) - NAO HA IMPACTO
+   EXEC PGM=GFCT1365 (não tem) - NAO HA IMPACTO
+   EXEC PGM=GFCT1420(não tem) - NAO HA IMPACTO
+   
+job GFCT0312 - NAO HA IMPACTO
+   EXEC PGM=GFCT1423 (não tem) - NAO HA IMPACTO
+   
+job GFCT0315 - NAO HA IMPACTO
+   EXEC PGM=GFCT1425(não tem) - NAO HA IMPACTO
+
+job GFCT0319 - NAO HA IMPACTO
+   EXEC PGM=GFCT1352 (não tem) - NAO HA IMPACTO
+   EXEC PGM=GFCT1358 (não tem) - NAO HA IMPACTO
+   
+job GFCT0320 - NAO HA IMPACTO
+   EXEC PGM=GFCT1350 (não tem) - NAO HA IMPACTO
+   EXEC PGM=GFCT1360 (não tem) - NAO HA IMPACTO
+   
+job GFCT0325 - (PROGRAMA TRATA CONTABIL TRIC e CCFC)
+   EXEC PGM=TRIC0100
+   EXEC PGM=TRICE555
+   EXEC PGM=CCFC6010
+
+job GFCT0330 - UTILIZA PROGRAM CCFC TRCI
+   EXEC PGM=CCFCD010
+   EXEC PGM=TRCI2090
+
+job GFCT0325 - (PROGRAMA TRATA CONTABIL TRIC e CCFC)
+   EXEC PGM=TRIC0100
+   EXEC PGM=TRICE555
+   EXEC PGM=CCFC6010
+
+job GFCT0335 - NAO HA IMPACTO
+   EXEC PGM=GFCT1450 - NAO HA IMPACTO
+
+job GFCT0330 - UTILIZA PROGRAM CCFC TRCI
+   EXEC PGM=CCFCD010
+   EXEC PGM=TRCI2090
+
+
+   
+   
+

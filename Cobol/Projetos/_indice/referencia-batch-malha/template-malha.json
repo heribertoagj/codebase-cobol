@@ -1,0 +1,67 @@
+{
+  "malha": {
+    "id": "identificador-do-fluxo",
+    "demanda": "AGROLEG-XXXX",
+    "titulo": "Titulo do fluxo batch",
+    "descricao": "Descricao funcional do fluxo",
+    "atualizado_em": "AAAA-MM-DD"
+  },
+  "jobs": [
+    {
+      "id": "JOB-A",
+      "jcl": "MEMBERJCL",
+      "nome_job": "NOMEJOB",
+      "resumo": "Resumo do que este JOB faz",
+      "dispara": ["JOB-B"],
+      "steps": [
+        {
+          "step": "S010",
+          "programa": "PGM0001",
+          "resumo": "Resumo do programa",
+          "arquivos": [
+            {
+              "ddname": "ENTRADA",
+              "operacao": "READ",
+              "dataset": "GDG / PS / VSAM",
+              "lrecl": 400,
+              "blocos": 4000,
+              "observacao": "Opcional"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "JOB-B",
+      "jcl": "MEMBERJCL2",
+      "nome_job": "NOMEJOB2",
+      "resumo": "Resumo do JOB B",
+      "chamado_por": "JOB-A",
+      "dispara": [],
+      "steps": [
+        {
+          "step": "S010",
+          "programa": "PGM0002",
+          "resumo": "Resumo do programa",
+          "arquivos": [
+            {
+              "ddname": "SAIDA",
+              "operacao": "WRITE",
+              "lrecl": 32000,
+              "observacao": "Arquivo de saida"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "arquivos_compartilhados": [
+    {
+      "id": "ARQ-EXEMPLO",
+      "ddname": "ARQCOMUM",
+      "lrecl": 400,
+      "usado_por": ["JOB-A", "JOB-B"],
+      "observacao": "Arquivo de acoplamento entre jobs"
+    }
+  ]
+}

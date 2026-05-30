@@ -1,0 +1,153 @@
+*=====================================================================*
+*                             7 C O M M                               *
+*=====================================================================*
+*      TELA........:   RUECT798                                       *
+*      PROGRAMA....:   RUEC7952                                       *
+*      ANALISTA....:   VINICIUS MEIRELLES       - 7COMM               *
+*      DATA........:   01/2026                                        *
+*---------------------------------------------------------------------*
+*      OBJETIVO....: INCLUSAO DE PARCELAS PARA RENEGOCIACAO           *
+*=====================================================================*
+         PRINT NOGEN
+MQT798   FMT
+         DEV   TYPE=(3270,2),FEAT=IGNORE,SYSMSG=MENSA,DSCA=X'00A0',    X
+               PFK=(PF,01='/RCL          .',02='RUEC7952      *',      X
+               03='RUEC7952      3',04='RUEC7952      *',              X
+               05='RUEC7952      *',06='RUEC7952      6',              X
+               07='RUEC7952      7',08='RUEC7952      8',              X
+               09='RUEC7952      *',10='RUEC7952      A',              X
+               11='RUEC7952      *',12='RUEC7952      *',              X
+               13='RUEC7952      *',14='RUEC7952      *',              X
+               15='RUEC7952      *',16='RUEC7952      *',              X
+               17='RUEC7952      *',18='RUEC7952      *',              X
+               19='RUEC7952      *',20='RUEC7952      *',              X
+               21='RUEC7952      *',22='RUEC7952      *',              X
+               23='RUEC7952      *',24='RUEC7952      *')
+*---------------------------------------------------------------------*
+*                            D I F  /  D O F                          *
+*---------------------------------------------------------------------*
+         DIV  TYPE=INOUT
+         DPAGE CURSOR=((22,79))
+*---------------------------------------------------------------------*
+*                             LINHA 01                                *
+*---------------------------------------------------------------------*
+DATA     DFLD  POS=(01,02),LTH=10,ATTR=(MOD,NUM,PROT)
+         DFLD  'SISTEMA DE CREDITO RURAL',POS=(01,29),ATTR=(PROT,HI)
+HORA     DFLD  POS=(01,73),LTH=08,ATTR=(MOD,NUM,PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 02                                *
+*---------------------------------------------------------------------*
+         DFLD  'RUECT798',POS=(02,02),ATTR=(PROT)
+         DFLD  'VENCIMENTO(S) DO CONTRATO - A VENCER E VENCIDOS',      X
+               POS=(02,17),ATTR=(PROT,HI)
+         DFLD  'RUEC7952',POS=(02,73),ATTR=(PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 03                                *
+*---------------------------------------------------------------------*
+SENHAS   DFLD  POS=(03,02),LTH=37,ATTR=(PROT,MOD,NODISP)
+PAGINA   DFLD  POS=(03,39),LTH=04,ATTR=(PROT,MOD,NODISP)
+FIMPAG   DFLD  POS=(03,43),LTH=01,ATTR=(PROT,MOD,NODISP)
+CTERM    DFLD  POS=(03,44),LTH=08,ATTR=(PROT,MOD,NODISP)
+FASE     DFLD  POS=(03,52),LTH=01,ATTR=(PROT,MOD,NODISP)
+*---------------------------------------------------------------------*
+*                             LINHA 04                                *
+*---------------------------------------------------------------------*
+         DFLD  'CHAVE DA OPERACAO: ',POS=(04,02),ATTR=(PROT)
+CHVOPE   DFLD  POS=(04,22),LTH=07,ATTR=(MOD,NUM,PROT)
+         DFLD  'REFBACEN: ',POS=(04,40),ATTR=(PROT)
+REFBAC   DFLD  POS=(04,51),LTH=07,ATTR=(MOD,NUM,PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 06                                *
+*---------------------------------------------------------------------*
+         DFLD  'SELECIONE AS PARCELAS A RENEGOCIAR',                   X
+               POS=(06,02),ATTR=(PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 08                                *
+*---------------------------------------------------------------------*
+         DFLD  'DATA',POS=(08,06),ATTR=(PROT)
+         DFLD  'SALDO DEVEDOR',POS=(08,23),ATTR=(PROT)
+         DFLD  'SALDO DEVEDOR',POS=(08,45),ATTR=(PROT)
+         DFLD  'SALDO DEVEDOR',POS=(08,67),ATTR=(PROT)
+*---------------------------------------------------------------------*
+*                             LINHA 09                                *
+*---------------------------------------------------------------------*
+         DFLD  'VENCIMENTO',POS=(09,06),ATTR=(PROT)
+         DFLD  'PRINCIPAL',POS=(09,28),ATTR=(PROT)
+         DFLD  'ENCARGOS',POS=(09,50),ATTR=(PROT)
+         DFLD  'TOTAL',POS=(09,75),ATTR=(PROT)
+*---------------------------------------------------------------------*
+*                             LINHAS 10 ATE 21                        *
+*---------------------------------------------------------------------*
+         DO    10
+CINDPC   DFLD  POS=(10,03),LTH=01,ATTR=(MOD)
+DTVENC   DFLD  POS=(10,06),LTH=10,ATTR=(PROT,MOD)
+SLDPRI   DFLD  POS=(10,24),LTH=13,ATTR=(PROT,MOD)
+SLDENC   DFLD  POS=(10,45),LTH=13,ATTR=(PROT,MOD)
+SLDTOT   DFLD  POS=(10,66),LTH=14,ATTR=(PROT,MOD)
+         ENDDO
+*---------------------------------------------------------------------*
+*                             LINHA 22                                *
+*---------------------------------------------------------------------*
+MENSA    DFLD  POS=(22,02),LTH=79,ATTR=(PROT,MOD,HI)
+*---------------------------------------------------------------------*
+*                             LINHA 23                                *
+*---------------------------------------------------------------------*
+         DFLD  'PF:',POS=(23,02),ATTR=(PROT,HI)
+         DFLD  '3-',POS=(23,06),ATTR=(PROT,HI)
+         DFLD  'TELA ANTERIOR',POS=(23,09),ATTR=(PROT)
+         DFLD  '6-',POS=(23,24),ATTR=(PROT,HI)
+         DFLD  'SALVAR',POS=(23,27),ATTR=(PROT)
+         DFLD  '7-',POS=(23,35),ATTR=(PROT,HI)
+         DFLD  'VOLTA',POS=(23,38),ATTR=(PROT)
+         DFLD  '8-',POS=(23,45),ATTR=(PROT,HI)
+         DFLD  'AVANCA',POS=(23,48),ATTR=(PROT)
+         DFLD  '10-',POS=(23,55),ATTR=(PROT,HI)
+         DFLD  'MARCAR/DESMARCAR TODAS',POS=(23,59),ATTR=(PROT)
+	 FMTEND
+***********************************************************************
+*                              M I D                                  *
+***********************************************************************
+RUECI798 MSG   TYPE=INPUT,SOR=(MQT798,IGNORE),NXT=RUECT798,OPT=1
+         SEG
+         MFLD  (PF,'RUEC7952      .'),LTH=015
+         MFLD  SENHAS,LTH=37,FILL=C' ',JUST=L
+         MFLD  PAGINA,LTH=04,FILL=C'0',JUST=R
+         MFLD  FIMPAG,LTH=01,FILL=C' ',JUST=L
+         MFLD  CTERM,LTH=08,FILL=C' ',JUST=L
+         MFLD  FASE,LTH=01,FILL=C'0',JUST=R
+         MFLD  CHVOPE,LTH=07,FILL=C' ',JUST=R
+         MFLD  REFBAC,LTH=07,FILL=C' ',JUST=R
+         DO    12
+         MFLD  CINDPC,LTH=01,FILL=C' ',JUST=L
+         MFLD  DTVENC,LTH=10,FILL=C' ',JUST=L
+         MFLD  SLDPRI,LTH=13,FILL=C' ',JUST=R
+         MFLD  SLDENC,LTH=13,FILL=C' ',JUST=R
+         MFLD  SLDTOT,LTH=14,FILL=C' ',JUST=R
+         ENDDO
+         MFLD  MENSA,LTH=79,FILL=C' ',JUST=L
+         MSGEND
+***********************************************************************
+*                              M O D                                  *
+***********************************************************************
+RUECT798 MSG   TYPE=OUTPUT,SOR=(MQT798,IGNORE),NXT=RUECI798,OPT=1,     X
+               FILL=PT
+         SEG
+         MFLD  (DATA,DATE3Y4)
+         MFLD  (HORA,TIME)
+         MFLD  SENHAS,LTH=37
+         MFLD  PAGINA,LTH=04
+         MFLD  FIMPAG,LTH=01
+         MFLD  CTERM,LTH=08
+         MFLD  FASE,LTH=01
+         MFLD  CHVOPE,LTH=07
+         MFLD  REFBAC,LTH=07
+         DO    12
+         MFLD  CINDPC,LTH=03,ATTR=YES
+         MFLD  DTVENC,LTH=10
+         MFLD  SLDPRI,LTH=13
+         MFLD  SLDENC,LTH=13
+         MFLD  SLDTOT,LTH=14
+         ENDDO
+         MFLD  MENSA,LTH=79
+         MSGEND
+         END

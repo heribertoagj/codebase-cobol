@@ -1,0 +1,16 @@
+---
+description: Validate SQL tables through DCLGEN declarations in COBOL and copybooks
+globs: **/*.{cbl,cpy}
+alwaysApply: false
+---
+
+# DCLGEN And SQL Validation
+
+- Before proposing, reviewing, or editing `EXEC SQL`, identify the `DCLGEN` or `COPY` structure used by the host variables.
+- Treat the `DCLGEN` declaration as the source of truth for the real DB2 table name. Do not infer the table from section names, variable names, or business labels.
+- When a structure like `RUECB00C` is used, first locate its `DCLGEN` and confirm the `DECLARE ... TABLE` statement before suggesting `SELECT`, `INSERT`, `UPDATE`, or `DELETE`.
+- If the SQL references a table name that does not match the related `DCLGEN`, flag it as a likely error and mention the correct table from the declaration.
+- When analyzing COBOL SQL flows, explicitly cite the `DCLGEN` file that supports the table mapping.
+
+Example:
+- `RUECB00C` maps to `DB2PRD.TCDULA_TEMPR_RENEG` because `Cobol/LIBS/DCLGEN/RUEC/ruecb00c.cpy` declares `EXEC SQL DECLARE DB2PRD.TCDULA_TEMPR_RENEG TABLE`.

@@ -1,0 +1,184 @@
+PACOTE TABELA GFCT1700 - 22/01/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002964   TICKET-56433
+==========================================================
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT1700 N P14 GFCT1700 * DJ:GFCT1625*                               GFCT1010 P14
+                         RJ:GFCT1730 *                              GFCT1700 P14
+                         RJ:GFCT1707 *                              GFCT1700 P14
+                         RJ:GFCT1708 *                              GFCT1700 P14
+                         RJ:GFCT1714 *                              GFCT1700 P14
+                         RJ:GFCT1715*                               GFCT1700 P14
+                         RJ:GFCT1713 *                              GFCT1700 P14
+                         RJ:GFCT1709 *                               GFCT1700 P14
+                         RJ:GFCT1718 *                              GFCT1700 P14
+                         RJ:GFCT1712 *                              GFCT1700 P14
+                         RJ:GFCT1720 *                              GFCT1700 P14
+                         RJ:GFCT1721 *                              GFCT1700 P14
+                         RJ:GFCT1722 *                               GFCT1700 P14
+                         RJ:GFCT1723 *                              GFCT1700 P14
+                         RJ:GFCT1710 *                              GFCT1700 P14
+                         RJ:GFCT1724 *                               GFCT1700 P14
+                         RJ:GFCT1725*                               GFCT1700 P14
+                         RJ:GFCT1711 *                              GFCT1700 P14
+GFCT1700 N P14 GFCT1700*  RJ:GFCT1716 *                              GFCT1700 P14
+                         RJ:GFCT1717 *                              GFCT1700 P14
+                         RJ:GFCT1728 *                               GFCT1700 P14
+                         RJ:GFCT1729 *                              GFCT1700 P14
+                         RJ:GFCT1719 *                               GFCT1700 P14
+                         RJ:GFCT1726 *                               GFCT1700 P14
+                         RJ:GFCT1727 *                               GFCT1700 P14
+                         RJ:GFCT1704 *                               GFCT1700 P14
+                         RJ:GFCT1706*                               GFCT1700 P14
+                         RJ:GFCT1702*                               GFCT1700 P14
+                         RJ:GFCT1703 *                               GFCT1700 P14
+                         RJ:GFCT1701 *                               GFCT1700 P14
+                         RJ:GFCT1705 *                               GFCT1700 P14
+                        GFJ:                                       CMTFA624 P14
+               GFCT1701*  DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736 *                               GFCT1700 P14
+               GFCT1702 * DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+GFCT1700 N P14 GFCT1703*  DJ:GFCT1700*                               GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+               GFCT1704*  DJ:GFCT1700*                               GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+               GFCT1705 * DJ:GFCT1700*                               GFCT1700 P14
+                         RJ:GFCT1736*                               GFCT1700 P14
+               GFCT1706 * DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+               GFCT1707 * DJ:GFCT1700*                               GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+               GFCT1708*  DJ:GFCT1700*                               GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+               GFCT1709 * DJ:GFCT1700*                               GFCT1700 P14
+                         RJ:GFCT1736*                               GFCT1700 P14
+               GFCT1710*  DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+               GFCT1711 * DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736  *                             GFCT1700 P14
+GFCT1700 N P14 GFCT1712 * DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+               GFCT1713*  DJ:GFCT1700  *                             GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+               GFCT1714 * DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+               GFCT1715*  DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+               GFCT1716*  DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+               GFCT1717 * DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+               GFCT1718*  DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+               GFCT1719*  DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+               GFCT1720 * DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+GFCT1700 N P14 GFCT1721 * DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+               GFCT1722*  DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+               GFCT1723* DJ:GFCT1700*                               GFCT1700 P14
+                         RJ:GFCT1736  *                             GFCT1700 P14
+               GFCT1724*  DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736  *                             GFCT1700 P14
+               GFCT1725*  DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+               GFCT1726*  DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+               GFCT1727*  DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736*                               GFCT1700 P14
+               GFCT1728 * DJ:GFCT1700*                               GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+               GFCT1729 * DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+GFCT1700 N P14 GFCT1730*  DJ:GFCT1700 *                              GFCT1700 P14
+                         RJ:GFCT1736 *                              GFCT1700 P14
+               GFCT1731*  DJ:GFCTH601*                               GFCTC010 P14
+                         DJ:GFCTH603 *                              GFCTC010 P14
+                         RJ:GFCTA200*                               GFCTA200 P14
+                         RJ:GFCTI050 *                              GFCTI050 P14
+                         RJ:GFCT0610 *                              GFCT0600 P14
+                         RJ:GFCT1760 *                               GFCT1700 P14
+                         RJ:GFCTINIC *                               GFCT0600 P14
+                         RJ:CMTFA626 *                               CMTFA624 P14
+                        GFJ:                                       GFCTC300 P14
+                        GFJ:                                       GFCTD348 P14
+               GFCT1735*  DJ:GFCT1560 *                              GFCT1010 P14
+               GFCT1736*  DJ:GFCT0976 *                              GFCT0500 P14
+                         DJ:GFCT1714*                               GFCT1700 P14
+                         DJ:GFCT1730*                               GFCT1700 P14
+                         DJ:GFCT1721*                               GFCT1700 P14
+                         DJ:GFCT1726 *                              GFCT1700 P14
+GFCT1700 N P14 GFCT1736 * DJ:GFCT1720 *                              GFCT1700 P14
+                         DJ:GFCT1713 *                              GFCT1700 P14
+                         DJ:GFCT1723 *                              GFCT1700 P14
+                         DJ:GFCT1710*                               GFCT1700 P14
+                         DJ:GFCT1718 *                              GFCT1700 P14
+                         DJ:GFCT1729 *                              GFCT1700 P14
+                         DJ:GFCT1715 *                              GFCT1700 P14
+                         DJ:GFCT1712*                               GFCT1700 P14
+                         DJ:GFCT1716 *                              GFCT1700 P14
+                         DJ:GFCT1727 *                              GFCT1700 P14
+                         DJ:GFCT1722*                               GFCT1700 P14
+                         DJ:GFCT1724*                               GFCT1700 P14
+                         DJ:GFCT1725*                               GFCT1700 P14
+                         DJ:GFCT1719*                               GFCT1700 P14
+                         DJ:GFCT1711*                               GFCT1700 P14
+                         DJ:GFCT1728*                               GFCT1700 P14
+                         DJ:GFCT1708 *                              GFCT1700 P14
+                         DJ:GFCT1709 *                              GFCT1700 P14
+GFCT1700 N P14 GFCT1736*  DJ:GFCT1702 *                              GFCT1700 P14
+                         DJ:GFCT1704*                               GFCT1700 P14
+                         DJ:GFCT1705 *                              GFCT1700 P14
+                         DJ:GFCT1701 *                              GFCT1700 P14
+                         DJ:GFCT1706 *                              GFCT1700 P14
+                         DJ:GFCT1707*                               GFCT1700 P14
+                         DJ:GFCT1703*                               GFCT1700 P14
+                         DJ:GFCT1717 *                              GFCT1700 P14
+                         RJ:GFCTC010*                               GFCTC010 P14
+               GFCT1760 * DJ:GFCT1731*                               GFCT1700 P14
+                         RJ:GFCT1761 *                              GFCT1700 P14
+               GFCT1761*  DJ:GFCT1760 *                              GFCT1700 P14
+
+
+==================================================================================
+
+ PACOTE GFCT002964   TICKET-56433
+
+
+JOB GFCT1700 - AJUSTADO
+   EXEC PGM=GFCT4320 (UTILIZA BOOK I#GFCTVA) -> AJUSTADO NO PACOTE 3022
+ 
+JOB GFCT1625 - AJUSTADO
+     EXEC PGM=GFCT1890 (UTILIZA BOOK I#GFCTVA) -> AJUSTADO NO PACOTE 3022
+     EXEC PGM=GFCT1119 (UTILIZA BOOK I#GFCTVA) -> AJUSTADO NO PACOTE 3022
+
+JOB GFCT1731 - AJUSTADO
+    EXEC PGM=GFCT4327 (utiliza I#GFCTVA) -> AJUSTADO 
+    EXEC PGM=GFCT4321 (utiliza I#GFCTVA) -> AJUSTADO NO PACOTE 2970
+    EXEC PGM=GFCT1860 (utiliza I#GFCTVA) -> AJUSTADO NO PACOTE 2970
+
+job GFCTA200 - AJUSTADO  
+   EXEC PGM=GFCT2500 (não tem) - NAO HA IMPACTO
+   EXEC PGM=GFCT2501 (utliza books I#CLIE20) - AJUSTADO  
+
+job GFCT0610 - NAO HA IMPACTO
+   EXEC PGM=GFCT1178 (não) - NAO HA IMPACTO
+   
+
+job GFCT1560 - NAO HA IMPACTO
+   EXEC PGM=GFCT1632 (não) - NAO HA IMPACTO
+   EXEC PGM=GFCT1100 (não) - NAO HA IMPACTO
+   EXEC PGM=GFCT1105 (usa POOL0536) - AJUSTADO  
+   EXEC PGM=GFCT1120 (não) - NAO HA IMPACTO
+
+job GFCTC010 - AJUSTADO
+   EXEC PGM=GFCT4190 (não) - NAO HA IMPACTO
+   EXEC PGM=GFCT4192 (utiliza books GFCTWBB7 , I#GFCTVA) - AJUSTADO  
+   EXEC PGM=GFCT4195 (utiliza books GFCTWBB7 , I#GFCTVA) - AJUSTADO
+   EXEC PGM=GFCT4198 (não) - NAO HA IMPACTO

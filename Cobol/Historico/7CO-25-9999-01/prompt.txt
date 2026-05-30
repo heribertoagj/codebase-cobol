@@ -1,0 +1,138 @@
+PROMPT TRAE – ALTERAÇÃO CAMPOS CNPJ E FILIAL NOS PROGRAMAS BVVE e DCOM
+
+Você é um desenvolvedor COBOL, estamos trabalhando em um processo de migração de CNPJ numerico
+para ALFANUMERICO. 
+O CNPJ atualmente é composto por um código (CGC) 9(08) ou 9(09), uma Filial 9(04) e um controle de 9(02),
+ele será alterado para um código (CGC) X(08) ou X(09), uma Filial X(04) e um controle de 9(02).
+
+Segue as instruções pra alteração dos programas.
+
+Você deve analisar o programa aplicando as alterações descritas abaixo garantindo que 
+o programa estea sintaticamente correto, porem não deve fazer ajustes que não estão descritos.
+
+1. INSTRUÇÕES DE FORMATAÇÃO COBOL
+- Colunas 1 a 6: prefixo do programa (ex: 4S2511)
+- Coluna 7: * comenta a linha
+- Procedure Division: instruções iniciam na coluna 20
+- Working-Storage Section:
+  - Nível 01 → iniciar na coluna 8
+  - Níveis inferiores → iniciar na coluna 20
+
+2. ESCOPO DAS ALTERAÇÕES
+- Ajuste de formato das variáveis
+- Consistência dos campos CNPJ e FILIAL
+- Movimentação das variáveis
+- Alterações nos acessos DB2
+
+3. REGRAS DE FORMATAÇÃO DE VARIÁVEIS
+- Variáveis com nomes contendo "CPF-CNPJ", "CGC", "CNPJ" → alterar de PIC 9(09) para PIC X(09)
+- Variáveis com nomes contendo "FILIAL" → alterar de PIC 9(05) para PIC X(04)
+- Em arquivos FD:
+  - Ajustar formato conforme acima
+- Caso haja necessidade de ajustar algum copybook do BVVE e necessário copiar o arquivo do diretório
+C:\Users\herib\OneDrive\Documents\Workspace\Cobol\LIBS\COPYLIB\BVVE 
+para 
+C:\Users\herib\OneDrive\Documents\Workspace\Cobol\7CO-25-9999-01\BVVE\cpy
+
+- Caso haja necessidade de ajustar algum copybook do BVVE e necessário copiar o arquivo do diretório
+C:\Users\herib\OneDrive\Documents\Workspace\Cobol\LIBS\COPYLIB\DCOM 
+para 
+C:\Users\herib\OneDrive\Documents\Workspace\Cobol\7CO-25-9999-01\DCOM
+
+4. REGRAS DE CONSISTÊNCIA DE CAMPOS
+- Substituir chamadas à BRAD0110 por BRAD2000
+- Consistência dos campos CNPJ/FILIAL deve ser feita com:
+  IF campo EQUAL SPACES OR campo EQUAL LOW-VALUES
+- Manter tratamento para campos inconsistentes
+- Exemplo de substituição:
+
+BRAD2000 - TEM COMO OBJETIVO CALCULAR O DIGITO DO CNPJ INFORMADO 
+EXEMPLO WORKING-STORAGE SECTION (BRAD2000)
+4S2511 01 WRK-BRAD2000                 PIC  X(08)  VALUE 'BRAD2000'.
+ST2511 01 WRK-AREA-BRAD2000.
+4S2511    05 WRK-CAD-CPFCGC.
+4S2511       10 WRK-CAD-NUMERO         PIC X(09)           VALUE SPACES.
+4S2511       10 WRK-CAD-FILIAL         PIC X(04)           VALUE SPACES.
+4S2511 77  WRK-CAD-CONTROLE            PIC 9(02)           VALUE ZEROS.
+
+EXEMPLO PROCEDURE DIVISION(BRAD2000)
+
+4S2511*    MOVIMENTAÇÕES PARA OS CAMPOS DA BRAD2000
+4S2511     MOVE ZEROS          TO WRK-CAD-CONTROLE. 
+4S2511     MOVE WRK-CGC-CPF    TO WRK-CAD-NUMERO.
+4S2511     MOVE WRK-FILIAL     TO WRK-CAD-FILIAL.
+
+4S2511*    CHAMADA DA BRAD2000
+4S2511     CALL WRK-BRAD2000     USING WRK-CAD-CPFCGC
+4S2511                                 WRK-CAD-CONTROLE.
+
+4S2511* VALIDACAO DO RETORNO DA CHAMADA
+           IF RETURN-CODE NOT EQUAL ZEROS
+4S2511* CASO OCORRA ALGUM ERRO UTILIZAR O TRATAMENTO DE ERRO PADRAO DO PROGRAMA  
+           END-IF.
+
+4S2511* VALIDA SE O CODIGO INFORMADO AO PROGRAMA É IGUAL AO CALCULADO
+4S2511     MOVE WRK-CAD-CONTROLE TO WRK-9-02
+           IF GFCTLH-CONTROLE NOT EQUAL WRK-9-02-X 
+4S2511* CASO OCORRA ALGUM ERRO UTILIZAR O TRATAMENTO DE ERRO PADRAO DO PROGRAMA  
+           END-IF.
+
+5. MOVIMENTAÇÃO DE VARIÁVEIS
+
+exemplo de nomes dos novos campos:
+
+| Campo Original         | Campo Novo             |
+|------------------------|------------------------|
+| CCGC-CPF               | CCGC-CPF-ST            |
+| CFLIAL-CGC             | CFLIAL-CGC-ST          |
+| CCTRL-CPF-CGC          | CCTRL-CPF-CGC-ST       |
+| CCNPJ-CPF              | CCNPJ-CPF-ST           |
+| CFLIAL-CNPJ            | CFLIAL-CNPJ-ST         |
+| CCTRL-CNPJ             | CCTRL-CNPJ-ST          |
+| CCNPJ-CPF-DEB          | CCNPJ-CPF-DEB-ST       |
+| CFLIAL-CNPJ-DEB        | CFLIAL-CNPJ-DEB-ST     |
+| CCTRL-CNPJ-CPF-DEB     | CCTRL-CNPJ-CPF-DEB-ST  |
+| CCPF-CNPJ              | CCPF-CNPJ-ST           |
+| CFLIAL-CPF-CNPJ        | CFLIAL-CPF-CNPJ-ST     |
+| CCTRL-CPF-CNPJ         | CCTRL-CPF-CNPJ-ST      |
+| CFLIAL-FORNC           | CFLIAL-FORNC-ST        |
+| CCTRL-FORNC-ST         | CCTRL-FORNC-ST         |
+
+
+6. ALTERAÇÕES EM ACESSOS DB2
+
+Tabelas alteradas:
+
+O DCLGEN das tabelas alteradas estão disponiveis na pasta Stefanini\TABELAS
+
+Regras:
+- SELECT, INSERT, UPDATE: adicionar campos com sufixo -ST, sem remover atributos existentes
+- WHERE: comentar campos antigos e incluir os novos com -ST
+- DELETE: ajustar cláusula WHERE conforme acima
+- FETCH: ajustar cláusula INTO conforme SELECT
+
+7. RECOMENDAÇÕES E RESTRIÇÕES
+
+- Comentar código antigo e incluir novo com prefixo 4S2511. Caso ja exista um prefixo voce deve substituir o prefixo existente
+- Aplicar alterações apenas nos campos com nomes contendo "CPF-CNPJ", "CGC", "CNPJ", "FILIAL"
+
+É PROIBIDO:
+- Alterar qualquer linha fora dos padrões acima
+- Importante!Aplicar refatorações, melhorias ou boas práticas não descritas
+- Acessar ou modificar arquivos fora da pasta indicada
+- Importante!Alterar acesso DB2 em tabelas que não estão listadas na pasta  C:\Users\herib\OneDrive\Documents\Workspace\Cobol\Stefanini\GFCT\02.tabelas alteradas
+
+8. RESUMO FINAL
+
+✔ Alterar apenas campos CNPJ e FILIAL conforme descrito  
+✔ Comentar código antigo e incluir novo com prefixo 4S2511  
+✔ Aplicar alterações apenas nas tabelas listadas na pasta Stefanini\TABELAS 
+✔ Respeitar a identação programa que esta sendo e processado, como a Area A e Area B para escrita do código 
+✔ Gerar um checklist do que foi analisado e alterado no programa processado com os seguintes inconsistentes
+  -> Correção formato de variaveis CNPJ
+  -> Copybook corrigido
+  -> Correção na consistências das variaveis
+  -> Correção de acessos DB2
+  
+❌ Não alterar campos fora dos padrões indicados  
+❌ Não aplicar refatorações ou melhorias não descritas

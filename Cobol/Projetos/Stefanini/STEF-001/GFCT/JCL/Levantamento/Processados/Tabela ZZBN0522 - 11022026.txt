@@ -1,0 +1,23 @@
+
+TABELA ZZBN0522 - 11/02/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002944   TICKET-52719
+==========================================================
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME          
+ZZBN0522 N P14 ZZBN0623*   NAO HA DEPENDENCIAS/RELEASES     
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002944   TICKET-52719
+==========================================================
+
+
+job ZZBN0623
+    EXEC PGM=GFCT1204  (utiliza book I#GFCTIL)  ==>  MOVIDO PARA PACOTE 2944
+    EXEC PGM=GFCT1202 (não tem)
+    EXEC PGM=GFCT1198  (utiliza book I#GFCTIL)  ==> AJUSTADO NO PACOTE 2944
+    EXEC PGM=GFCT1199 (não)
+

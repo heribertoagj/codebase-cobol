@@ -1,0 +1,35 @@
+Tabela GFCTNX128 - 25012026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002968   TICKET-56435
+==========================================================
+EXECUTA O PROGRAMA GFCT2123
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTX128 N P14          DFJ:GFCTY850 *                              GFCTY850 P14
+               GFCTW124*  RJ:GFCTW125 *                              GFCTX128 P14
+               GFCTW125*  DJ:GFCTW124*                               GFCTX128 P14
+                         RJ:GFCTX128 *                              GFCTX128 P14
+               GFCTW128*  DJ:GFCTX128 *                              GFCTX128 P14
+                         RJ:GFCTW129 *                              GFCTX128 P14
+               GFCTW129 * DJ:GFCTW128 *                              GFCTX128 P14
+                         RJ:GFCTX133*                               GFCTX128 P14
+               GFCTX128*  DJ:GFCTW125*                               GFCTX128 P14
+                         RJ:GFCTW128*                               GFCTX128 P14
+               GFCTX133 * DJ:GFCTW129 *                              GFCTX128 P14
+
+
+================================================================================
+
+job GFCTY850 - NA HA IMPACTO
+
+job GFCTX128
+   EXEC PGM=GFCT2123 (utiliza tabela GFCTB0I0 e book GFCTWK7C) ===> AJUSTADO
+   
+ 
+job GFCTX133 - NAO HA IMPACTO
+
+   
+
+

@@ -1,0 +1,40 @@
+TABELA GFCTA500 - 30/01/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002997 TICKET-68279
+==========================================================
+EXECUTAM PROGRAMA GFCT3408
+
+JOB GFCTA504 - tabela GFCTA500 
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTA500 N P14 GFCTA500*  RJ:GFCTA504*                               GFCTA500 P14
+               GFCTA504*  DJ:GFCTA500 *                              GFCTA500 P14
+                         RJ:GFCTA508*                               GFCTA500 P14
+               GFCTA508*  DJ:GFCTA504*                               GFCTA500 P14
+                         RJ:GFCTA512 *                              GFCTA500 P14
+               GFCTA512*  DJ:GFCTA508 *                              GFCTA500 P14
+                         RJ:GFCTH515 *                              GFCTA500 P14
+               GFCTH515*  DJ:GFCTA512*                               GFCTA500 P14
+                         RJ:GFCTH516*                               GFCTA500 P14
+               GFCTH516*  DJ:GFCTH515*                               GFCTA500 P14
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002997 TICKET-68279
+==========================================================
+
+JOB GFCTA500
+  EXEC PGM=GFCT3400 (NAO)
+  EXEC PGM=GFCT4202 (NAO)
+   
+JOB GFCTA504 - AJUSTADO
+  EXEC PGM=GFCT3408 (UTLIZA BOOK I#CLIE20) - AJUSTADO
+    MJ.CLIE.PRP.CADNOVGR(0)  =======================> AGUARDANDO O RUI
+  EXEC PGM=GFCT3412 (NAO)
+  EXEC PGM=GFCT3720 (NAO)
+  
+JOB GFCTA508 - NAO HA IMPACTO
+
+JOB GFCTA512 - NAO HA IMPACTO
+

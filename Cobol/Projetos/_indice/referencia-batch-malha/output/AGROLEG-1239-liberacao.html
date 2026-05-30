@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malha Batch â€” Liberacao de contratos — COR0005 batch (RUEC)</title>
+  <style>
+    :root { --bg: #0f1419; --card: #1a2332; --border: #2d3a4d; --text: #e6edf3; --muted: #8b949e; --accent: #58a6ff; --ok: #3fb950; }
+    * { box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 1.5rem 2rem; line-height: 1.5; }
+    h1 { font-size: 1.5rem; margin: 0 0 0.25rem; }
+    .subtitle { color: var(--muted); margin-bottom: 1.5rem; }
+    .badge { display: inline-block; background: var(--border); padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.85rem; margin-right: 0.5rem; }
+    section { margin-bottom: 2rem; }
+    h2 { font-size: 1.15rem; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; margin-top: 0; }
+    .mermaid-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; }
+    table.summary { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    table.summary th, table.summary td { border: 1px solid var(--border); padding: 0.5rem 0.65rem; text-align: left; vertical-align: top; }
+    table.summary th { background: var(--card); color: var(--accent); }
+    table.summary tr:nth-child(even) { background: rgba(255,255,255,0.03); }
+    .job-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .job-card header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.75rem; margin-bottom: 0.5rem; }
+    .job-card h3 { margin: 0; font-size: 1.1rem; color: var(--ok); }
+    .meta { font-size: 0.85rem; color: var(--muted); }
+    .meta.link { color: var(--accent); }
+    .resumo { color: var(--muted); margin: 0.5rem 0 1rem; }
+    .step { margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--border); }
+    .step h4 { margin: 0 0 0.35rem; font-size: 1rem; }
+    .step code { background: var(--bg); padding: 0.1rem 0.35rem; border-radius: 3px; }
+    table.files { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.5rem; }
+    table.files th, table.files td { border: 1px solid var(--border); padding: 0.35rem 0.5rem; }
+    table.files th { background: var(--bg); }
+    footer { margin-top: 2rem; font-size: 0.8rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Liberacao de contratos — COR0005 batch (RUEC)</h1>
+    <p class="subtitle">Fluxo batch de liberacao de contratos credito rural com montagem da mensageria COR0005 para envio SICOR. Exclusao campos descontinuados catalogo 5.12 em RUEC8831 / I#RUECC5.</p>
+    <span class="badge">AGROLEG-1239</span>
+    <span class="badge">ID: liberacao-cor0005-rura</span>
+    <span class="badge">Atualizado: 2026-05-26</span>
+  </header>
+
+  <section>
+    <h2>Diagrama da malha</h2>
+    <div class="mermaid-wrap">
+      <pre class="mermaid">
+flowchart TB
+    JOB_A["JOB-A<br/>RUEC0895<br/>JCL: RUECJ0895"]
+    JOB_B["JOB-B<br/>RUEC8831<br/>JCL: RUECJ8831"]
+    JOB_A -->|dispara| JOB_B
+    ARQ_CADRURAL[("CADRURAL LRECL=400")]
+    JOB_A -.->|arquivo| ARQ_CADRURAL
+    JOB_B -.->|arquivo| ARQ_CADRURAL
+      </pre>
+    </div>
+    <p class="subtitle">Seta solida = JOB dispara JOB. Seta tracejada = arquivo compartilhado.</p>
+  </section>
+
+  <section>
+    <h2>Resumo por JOB</h2>
+    <table class="summary">
+      <thead>
+        <tr><th>JOB</th><th>JCL</th><th>Nome JOB</th><th>Programas</th><th>Arquivos (I/O)</th><th>Resumo</th></tr>
+      </thead>
+      <tbody>
+            <tr>
+      <td><strong>JOB-A</strong></td>
+      <td>RUECJ0895</td>
+      <td>RUEC0895</td>
+      <td>RUEC0895</td>
+      <td>READ CADRURAL LRECL=400; WRITE CTR-RESTART LRECL=80</td>
+      <td>Orquestrador batch de liberacao de contratos. Le base de contratos pendentes, controla restart e dispara processamento downstream.</td>
+    </tr>
+    <tr>
+      <td><strong>JOB-B</strong></td>
+      <td>RUECJ8831</td>
+      <td>RUEC8831</td>
+      <td>RUEC8831</td>
+      <td>READ ENTRADA-CTR LRECL=400; WRITE COR0005-OUT LRECL=32000</td>
+      <td>Montagem da mensagem COR0005 para interface SICOR BACEN.</td>
+    </tr>
+      </tbody>
+    </table>
+  </section>
+
+      <section>
+      <h2>Arquivos compartilhados</h2>
+      <table class="summary">
+        <thead><tr><th>ID</th><th>DDNAME</th><th>LRECL</th><th>Usado por</th><th>Observacao</th></tr></thead>
+        <tbody>        <tr>
+          <td>ARQ-CADRURAL</td>
+          <td>CADRURAL</td>
+          <td>400</td>
+          <td>JOB-A, JOB-B</td>
+          <td>Fluxo de contratos entre orquestrador e montador COR0005 — confirmar acoplamento real no JCL</td>
+        </tr></tbody>
+      </table>
+    </section>
+
+  <section>
+    <h2>Detalhe por JOB e programa</h2>
+        <article class="job-card" id="card-JOB_A">
+      <header>
+        <h3>JOB-A - RUEC0895</h3>
+        <span class="meta">JCL: RUECJ0895</span>
+        <span class="meta link">Dispara: JOB-B</span>
+      </header>
+      <p class="resumo">Orquestrador batch de liberacao de contratos. Le base de contratos pendentes, controla restart e dispara processamento downstream.</p>
+              <div class="step">
+          <h4>Step S010 - <code>RUEC0895</code></h4>
+          <p class="resumo">Batch liberacao — orquestrador principal; sem alteracao prevista na AGROLEG-1239 (validar na analise).</p>
+          <table class="files">
+            <thead><tr><th>DDNAME</th><th>Op</th><th>LRECL</th><th>BLKSIZE</th><th>Dataset</th><th>Obs</th></tr></thead>
+            <tbody>            <tr>
+              <td>CADRURAL</td>
+              <td>READ</td>
+              <td>400</td>
+              <td>4000</td>
+              <td>Arquivo entrada contratos (confirmar DSN no JCL)</td>
+              <td>Entrada do processo de liberacao</td>
+            </tr>
+            <tr>
+              <td>CTR-RESTART</td>
+              <td>WRITE</td>
+              <td>80</td>
+              <td>-</td>
+              <td>Controle checkpoint/restart</td>
+              <td>I#CKRS01 — area restart</td>
+            </tr></tbody>
+          </table>
+        </div>
+    </article>
+    <article class="job-card" id="card-JOB_B">
+      <header>
+        <h3>JOB-B - RUEC8831</h3>
+        <span class="meta">JCL: RUECJ8831</span>
+        <span class="meta link">Chamado por: JOB-A</span>
+      </header>
+      <p class="resumo">Montagem da mensagem COR0005 para interface SICOR BACEN.</p>
+              <div class="step">
+          <h4>Step S010 - <code>RUEC8831</code></h4>
+          <p class="resumo">Montador COR0005 — exclusao campos certificacao/rastreabilidade e demais campos 5.12 (CAPG05). Copybook I#RUECC5.</p>
+          <table class="files">
+            <thead><tr><th>DDNAME</th><th>Op</th><th>LRECL</th><th>BLKSIZE</th><th>Dataset</th><th>Obs</th></tr></thead>
+            <tbody>            <tr>
+              <td>ENTRADA-CTR</td>
+              <td>READ</td>
+              <td>400</td>
+              <td>-</td>
+              <td></td>
+              <td>Contratos processados / saida do fluxo upstream</td>
+            </tr>
+            <tr>
+              <td>COR0005-OUT</td>
+              <td>WRITE</td>
+              <td>32000</td>
+              <td>-</td>
+              <td></td>
+              <td>Mensagem COR0005 serializada — confirmar LRECL no JCL</td>
+            </tr></tbody>
+          </table>
+        </div>
+    </article>
+  </section>
+
+  <footer>
+    Gerado de: c:\Users\herib\OneDrive\Documents\Workspace\Cobol\Projetos\_indice\referencia-batch-malha\malhas\AGROLEG-1239-liberacao.json â€” 2026-05-26 13:34
+  </footer>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'dark',
+      flowchart: { curve: 'basis', padding: 16 }
+    });
+  </script>
+</body>
+</html>

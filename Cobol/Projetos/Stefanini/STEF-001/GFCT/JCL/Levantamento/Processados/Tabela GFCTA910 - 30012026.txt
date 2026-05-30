@@ -1,0 +1,99 @@
+Tabela GFCTA910 - 30012026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002966   TICKET-56434
+==========================================================
+
+pgm GFCT2ZAF -  job GFCTA914 - tabela GFCTA910
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTA910 N P14          DFJ:GOTFA917                               GOTFA910 P14
+               GFCTA910*  RJ:GFCTA911 *                              GFCTA910 P14
+               GFCTA911*  DJ:GFCTA910*                               GFCTA910 P14
+                         RJ:GFCTA912*                               GFCTA910 P14
+               GFCTA912*  DJ:GFCTA911*                               GFCTA910 P14
+                         RJ:GFCTA913 *                              GFCTA910 P14
+               GFCTA913*  DJ:GFCTA912*                               GFCTA910 P14
+                         RJ:GFCTA914*                               GFCTA910 P14
+               GFCTA914*  DJ:GFCTA913*                               GFCTA910 P14
+                         RJ:GFCTA917*                               GFCTA910 P14
+               GFCTA917*  DJ:GFCTA914*                               GFCTA910 P14
+                         RJ:GFCTA918 *                              GFCTA910 P14
+               GFCTA918*  DJ:GFCTA917*                               GFCTA910 P14
+                         RJ:GFCTA921 *                              GFCTA910 P14
+               GFCTA921*  DJ:GFCTA918*                               GFCTA910 P14
+                         RJ:GFCTA924*                               GFCTA910 P14
+               GFCTA924*  DJ:GFCTA921 *                              GFCTA910 P14
+                         RJ:GFCTA925 *                               GFCTA910 P14
+GFCTA910 N P14 GFCTA925*  DJ:GFCTA924*                               GFCTA910 P14
+                         RJ:GFCTH910 *                              GFCTA910 P14
+               GFCTH910*  DJ:GFCTA925*                               GFCTA910 P14
+                         RJ:GFCTH911*                               GFCTA910 P14
+               GFCTH911*  DJ:GFCTH910 *                              GFCTA910 P14
+                         RJ:GFCTN551 *                              GFCTN551 P14
+                         RJ:GFCTD551*                               GFCTN551 P14
+                                                                               
+
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002966   TICKET-56434
+==========================================================
+
+JOB GFCTA910
+   EXEC PGM=GFCT2BCH (NÃO)
+   EXEC PGM=GFCT2BCC (NAO)
+   EXEC PGM=GFCT2QJF (NÃO)
+   
+JOB GFCTA912
+  EXEC PGM=GFCT2BTF (NÃO)
+  EXEC PGM=GFCT2BEC (NAO)
+  EXEC PGM=GFCT2BGF (NAO)
+  EXEC PGM=GFCT2BHF (NAO)
+   
+JOB GFCTA911 - AJUSTADO
+  EXEC PGM=GFCT2BDF (utiliza book I#CHEQ04) - AJUSTADO
+  EXEC PGM=GFCT2BYF (UTILIZA BOOK I#CHEQ04) - AJUSTADO
+    MJ.CLIE.PRP.REDZAGCT(I#CHEQ04) ====> SUBSTITUIR POR MJ.CLIE.PRP.REDUZGER.ALFA (CLIEW05B)
+
+JOB GFCTA913
+  EXEC PGM=GFCT2BFF (NAO)
+  EXEC PGM=GFCT2BXC (NAO)
+  EXEC PGM=GFCT2BFG (NAO)
+  EXEC PGM=GFCT2BKF(NAO)
+  
+JOB GFCTA914 - BOOK GFCTWQEF NAO ALTEROU O TAMANHO
+  EXEC PGM=GFCT2ZAF (UTILIZA BOOKS GOTFWQEF, GFCTWQFF)  ===> VERIFICANDO GOTF COM RUI
+     MX.GOTF.JA912S05.VINCULOS e MX.GOTF.JA910S03.VINCULOP ===> VERIFICANDO com RUI
+     #### GFCTWQEF (ESTA NO PACOTE GFCT001051) / GFCTWQFF (NAO ESTA NO PACOTE GFCT001051)
+
+JOB GFCTA917
+  EXEC PGM=GFCT2ZHF (UTILIZA BOOK GFCTWQFF)
+  ### BOOK ESPELHO DO GOTF, FILIAL NO GOTF ESTA NO PIC X(05). VERIFICAR IRAO CORRIGIR
+  EXEC PGM=GFCT2BKF (NAO)
+  EXEC PGM=GFCT2ZJF (UTILIZA BOOK GFCTWQFF)
+  ### BOOK ESPELHO DO GOTF, FILIAL NO GOTF ESTA NO PIC X(05). VERIFICAR IRAO CORRIGIR
+      
+JOB GFCTA918
+  EXEC PGM=GFCT2ZKF(NAO)
+  
+JOB GFCTA921
+   EXEC PGM=GFCT2BGC (NAO)
+   
+JOB GFCTA924
+  EXEC PGM=GFCT2BCL(NAO)
+  EXEC PGM=GFCT2ZQF (NAO)
+ 
+
+JOB GFCTA925 - VERIFICAR
+
+JOB GFCTN551
+   EXEC PGM=GFCT2BKC(NAO)
+   EXEC PGM=GFCT2ZWA (UTILIZA BOOK GOTFWQEF) ======> VERIFICAR COM RUI 
+        MX.GOTF.JA910S03.VINCULOP    ======> VERIFICAR COM RUI
+  EXEC PGM=GFCT2BNC (NAO)
+  EXEC PGM=GFCT2ZMA (UTILIZA BOOK CMPIW51B)  ======> verificar com RUI
+  EXEC PGM=GFCT2ZNF (NAO)
+  EXEC PGM=GFCT2ZIF(NAO)
+   EXEC PGM=GFCT2ZRF
+

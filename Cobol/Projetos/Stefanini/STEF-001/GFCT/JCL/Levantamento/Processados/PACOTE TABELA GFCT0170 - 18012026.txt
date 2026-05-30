@@ -1,0 +1,40 @@
+PACOTE TABELA GFCT0170 - 18/01/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002995  TICKET-66073
+==========================================================
+
+RETIRAR OS RECOMPS DO PACOTE 
+GFCT2096
+GFCT2098
+GFCT2101
+GFCT2102
+GFCT2104
+GFCT2112
+GFCT2135
+GFCT2155
+GFCT4220
+GFCT4323
+
+===============================================================
+
+  TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+ GFCT0170 N P14          DFJ:GFCT0115  *                             GFCT0115 P14
+                GFCT0170 * DJ:GFCT0160  *                             GFCT0115 P14
+                          RJ:GFCT0215 *                              GFCT0170 P14
+                          RJ:GFCT0196*                               GFCT0115 P14
+                          RJ:GFCT0200 *                              GFCT0170 P14
+                GFCT0200 * DJ:GFCT0170 *                              GFCT0170 P14
+                          RJ:GFCT0910 *                              GFCT0100 P14
+                          RJ:GFCT0950 *                              GFCT0115 P14
+                GFCT0215 *  DJ:GFCT0170 *                              GFCT0170 P14
+                          RJ:GFCT0950 *                               GFCT0115 P14
+                          RJ:GFCT0910  *                             GFCT0100 P14
+                          RJ:PM142000                               PM14NOIT P14
+
+
+job GFCT0115 - NAO HA AJUSTE
+   EXEC PGM=GFCT1115 (não tem)
+   
+

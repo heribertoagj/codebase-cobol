@@ -1,0 +1,31 @@
+//SLIG1060 JOB 'SLIG,4130,PR11','D651960',MSGCLASS=Z,SCHENV=BATCH       
+//JOBLIB   DD DSN=MX.BIBGERAL,DISP=SHR                                  
+//         DD DSN=SYS1.CEE.SCEERUN,DISP=SHR                             
+//*                                                                     
+//STEP1    EXEC PGM=SLIG6050,                                           
+//       PARM='0601'                                                    
+//*                                                                     
+//* ***    FAZ MERGE DOS ARQUIVOS DE TITULOS E DESCONTO *               
+//*                                                                     
+//ENTRA001 DD DSN=MX.SLIG.REDUDEC1.CLASS(0),                            
+//       DISP=SHR                                                       
+//ENTRA002 DD DSN=MX.SLIG.REDUDEC2.CLASS(0),                            
+//       DISP=SHR                                                       
+//ENTRA003 DD DSN=MX.SLIG.REDUDEC3.CLASS(0),                            
+//       DISP=SHR                                                       
+//ENTRA004 DD DSN=MX.SLIG.REDUDEC4.CLASS(0),                            
+//       DISP=SHR                                                       
+//ENTRA005 DD DSN=MX.SLIG.REDUDEC5.CLASS(0),                            
+//       DISP=SHR                                                       
+//ENTRA006 DD DSN=MX.SLIG.DESCDECE.CLASS(0),                            
+//       DISP=SHR                                                       
+//SAIDA001 DD DSN=MX.SLIG.REDECTOT(+1),                                 
+//       DISP=(,CATLG,DELETE),                                          
+//       UNIT=(DISCO,20),                                               
+//       SPACE=(TRK,(028374,5675),RLSE),                                
+//       DCB=(MX.A,LRECL=0182,RECFM=FB)                                 
+//SYSOUT   DD SYSOUT=*                                                  
+//SRELCTRL DD SYSOUT=*                                                  
+//SYSUDUMP DD SYSOUT=Y                                                  
+//*                                                                     
+                              

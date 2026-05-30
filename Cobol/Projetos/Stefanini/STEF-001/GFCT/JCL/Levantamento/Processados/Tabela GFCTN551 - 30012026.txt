@@ -1,0 +1,68 @@
+
+Tabela GFCTN551 - 30012026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002966   TICKET-56434
+==========================================================
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTN551 N P14 GFCTD551 * DJ:GFCTH911 *                              GFCTA910 P14
+               GFCTN551*  DJ:GFCTH911 *                              GFCTA910 P14
+                         DJ:GFCTW555*                               GFCTN550 P14
+                         RJ:GFCTN552*                               GFCTN551 P14
+                         RJ:PM140100                               PM14MAD1 P14
+               GFCTN552*  DJ:GFCTN551*                               GFCTN551 P14
+                         RJ:GFCTN553 *                              GFCTN551 P14
+                         RJ:GFCTW558*                               GFCTN551 P14
+               GFCTN553 * DJ:GFCTN552 *                              GFCTN551 P14
+               GFCTN555*  DJ:GFCTW559*                               GFCTN551 P14
+                         RJ:GFCTN557 *                              GFCTN551 P14
+               GFCTN556*  DJ:GFCTN557 *                              GFCTN551 P14
+                         RJ:GFCTW552*                               GFCTN551 P14
+               GFCTN557*  DJ:GFCTN555*                               GFCTN551 P14
+                         RJ:GFCTN556*                               GFCTN551 P14
+               GFCTW552 * DJ:GFCTN556 *                              GFCTN551 P14
+                         RJ:GFCTW553*                               GFCTN551 P14
+               GFCTW553*  DJ:GFCTW552*                               GFCTN551 P14
+GFCTN551 N P14 GFCTW553*  RJ:PM140100                               PM14MAD1 P14
+               GFCTW558*  DJ:GFCTN552*                               GFCTN551 P14
+                         RJ:GFCTW559*                               GFCTN551 P14
+               GFCTW559*  DJ:GFCTW558*                               GFCTN551 P14
+                         RJ:GFCTN555*                               GFCTN551 P14
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002966   TICKET-56434
+==========================================================
+
+JOB GFCTN552
+   EXEC PGM=GFCT2ZMH (NAO)
+    
+JOB GFCTN551
+   EXEC PGM=GFCT2BKC(NAO)
+   EXEC PGM=GFCT2ZWA (UTILIZA BOOK GOTFWQEF) - AJUSTADO
+   EXEC PGM=GFCT2BNC (não)
+   EXEC PGM=GFCT2ZMA (utliza book CMPIW51B )   => AJUSTADO 
+   EXEC PGM=GFCT2ZNF (não)
+   EXEC PGM=GFCT2ZIF (não)
+   EXEC PGM=GFCT2ZRF (não)
+
+job GFCTN553
+    EXEC PGM=GFCT2BKO (não)
+   EXEC PGM=GFCT2ZKK (não)
+   EXEC PGM=GFCT2BMC (não)
+   EXEC PGM=GFCT2QTF (não)
+  
+job GFCTN555 
+   EXEC PGM=GFCT2BOC(não)
+   EXEC PGM=GFCT2BOD (não)
+   EXEC PGM=GFCT2BVC (utliza book GFCTWBKE) - AJUSTADO
+   EXEC PGM=GFCT2BVD (utiliza books GFCTWBKX, GFCTWBKF e GFCTWBKE) - AJUSTADO
+       MJ.CLIE.PRP.REDZAGCT(I#CHEQ04) --> substituir por MJ.CLIE.PRP.REDUZGER.ALFA (CLIEW05B) - AJUSTADO
+   EXEC PGM=GFCT2BVH (utiliza book I#CHEQ04 e GFCTWBKF) - AJUSTADO
+   
+job GFCTN557
+   EXEC PGM=GFCT2BCL (não)
+    EXEC PGM=GFCT2ZQF(não)
+     
+

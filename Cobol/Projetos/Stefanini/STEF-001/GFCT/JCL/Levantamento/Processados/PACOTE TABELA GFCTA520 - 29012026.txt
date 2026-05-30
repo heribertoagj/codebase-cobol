@@ -1,0 +1,35 @@
+PACOTE TABELA GFCTA520 - 29/01/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002997 TICKET-68279
+==========================================================
+
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTA520 N              DFJ IRES0565 INTER-SITES AL1A              IRES0560 P12
+           P14          DFJ:RESTD878                               RESTD870 P41
+               GFCTA520*  RJ:GFCTA522*                               GFCTA520 P14
+               GFCTA522*  DJ:GFCTA520*                               GFCTA520 P14
+                         RJ:GFCTA524*                               GFCTA520 P14
+               GFCTA524 * DJ:GFCTA522 *                              GFCTA520 P14
+                         RJ:GFCTH620*                               GFCTA520 P14
+                         RJ:GFCTH622*                               GFCTA520 P14
+               GFCTH620*  DJ:GFCTA524*                               GFCTA520 P14
+                         RJ:GFCTH621*                               GFCTA520 P14
+               GFCTH621*  DJ:GFCTH620*                               GFCTA520 P14
+               GFCTH622 * DJ:GFCTA524*                               GFCTA520 P14
+                         RJ:GFCTH623*                               GFCTA520 P14
+               GFCTH623*  DJ:GFCTH622*                               GFCTA520 P14
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002997 TICKET-68279
+==========================================================
+
+
+JOB GFCTA520 - NAO HA IMPACTO
+
+JOB GFCTA522 - NAO HA IMPACTO 
+    EXEC PGM=GFCT4114 (UTILIZAM BOOKS GFCTWAOU E GFCTWAOV) - AJUSTADO

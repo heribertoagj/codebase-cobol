@@ -1,0 +1,64 @@
+Tabela GFCTN600 - 30012026 
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002966   TICKET-56434
+==========================================================
+
+
+GFCT2264 - job GFCTN605 - tabela GFCTN600
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTN600 N P14 GFCTD600*  DJ:GFCTC025 *                              GFCTC025 P14
+               GFCTN600*  DJ:GFCTC025 *                              GFCTC025 P14
+                         RJ:GFCTN602 *                              GFCTN600 P14
+               GFCTN602*  DJ:GFCTN600*                               GFCTN600 P14
+                         RJ:GFCTN605*                               GFCTN600 P14
+               GFCTN605*  DJ:GFCTN602*                               GFCTN600 P14
+                         RJ:GFCTN610*                               GFCTN600 P14
+               GFCTN610*  DJ:GFCTN605*                               GFCTN600 P14
+                         RJ:GFCTW600*                               GFCTN600 P14
+                         RJ:GFCTN615*                               GFCTN600 P14
+                         RJ:T7GFZ613*                               T7GFZ613 P14
+                        GFJ:                                       T7GFZ613 P14
+               GFCTN615*  DJ:GFCTN610*                               GFCTN600 P14
+                        GFJ:                                       CMETO730 P11
+               GFCTW600*  DJ:GFCTN610 *                              GFCTN600 P14
+                         RJ:GFCTW601*                               GFCTN600 P14
+               GFCTW601*  DJ:GFCTW600 *                              GFCTN600 P14
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002966   TICKET-56434
+==========================================================
+
+job GFCTC025 - AJUSTADO
+   EXEC PGM=GFCT2280 (utliza books I#GFCTVA) - AJUSTADO
+
+job GFCTN600
+   EXEC PGM=GFCT2261 (não)
+   EXEC PGM=GFCT2262(não)
+   EXEC PGM=GFCT2266(não)
+   EXEC PGM=GFCT2265(não)
+   EXEC PGM=GFCT2263(não)
+
+job GFCTN602
+   EXEC PGM=GFCT2267(não)
+
+job T7GFZ613 - verificar
+
+
+  
+job GFCTN605 - AJUSTADO
+   EXEC PGM=GFCT2285(não)
+   EXEC PGM=GFCT2290 (não)
+   EXEC PGM=GFCT2264(utiliza book I#CLIE20) - AJUSTADO
+   
+job GFCTN610
+  EXEC PGM=GFCT2295 (não)
+
+job GFCTN615 - verificar
+
+job GFCTN615 - verificar
+

@@ -1,0 +1,20 @@
+Tabela GFCTC207 - 01022026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002962   TICKET-56431
+==========================================================
+
+job GFCTC207  - NAO HA IMPACTO
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTC207 N P14 GFCTC207*  RJ:GFCTH208*                               GFCTC207 P14
+               GFCTH208*  DJ:GFCTC207 *                              GFCTC207 P14
+                         RJ:GFCTH209*                               GFCTC207 P14
+               GFCTH209*  DJ:GFCTH208 *                              GFCTC207 P14
+
+
+EXEC PGM=GFCT6850
+   EXEC PGM=GFCT6850 (UTILIZA BOOK GFCTW003 E i#CLIE20) - AJUSTADO
+   EXEC PGM=GFCT6855 (UTILIZA BOOK GFCTW003) - AJUSTADO
+   EXEC PGM=GFCT6865 (UTILIZA BOOK GFCTW003) - AJUSTADO
+   EXEC PGM=GFCT6875 (UTILIZA BOOK GFCTW003) - AJUSTADO

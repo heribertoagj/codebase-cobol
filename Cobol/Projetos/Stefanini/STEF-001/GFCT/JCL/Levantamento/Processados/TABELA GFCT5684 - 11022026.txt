@@ -1,0 +1,47 @@
+TABELA GFCT5684 - 11/02/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002944   TICKET-52719
+==========================================================
+
+
+
+tabela  GFCT5684 
+GFCT3606 - job GFCT5686
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT5684 N P14 GFCT5684* DED:SBAT0250 MX.ISDB.GFCT.GFCT5684         SBATESPE P11
+                        DED:SBAT0250 MX.ISDB.GFCT.GFCT5684         SBAT0250 P11
+                        GFJ:GFCT5686*                               GFCT5684 P14
+               *GFCT5686* DFJ:GFCT5684*                               GFCT5684 P14
+                        GFJ:GFCT5971*                               GFCT5684 P14
+                        GFJ:GFCT5970*                               GFCT5684 P14
+               GFCT5970* DFJ:GFCT5686 *                              GFCT5684 P14
+                         RJ:GFCT5971*                               GFCT5684 P14
+               GFCT5971*  DJ:GFCT5970 *                              GFCT5684 P14
+                        DFJ:GFCT5686*                               GFCT5684 P14
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002944   TICKET-52719
+==========================================================
+
+
+job GFCT5686 - NAO TEM IMPACTO
+    EXEC PGM=GFCT3606 (utiliza tabela CLIEV004) - AJUSTADO
+    EXEC PGM=GFCT3660 (NÃO TEM)
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+

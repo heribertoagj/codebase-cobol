@@ -1,0 +1,69 @@
+PACOTE TABELA GFCT0740 - 20/01/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002995  TICKET-66073
+==========================================================
+
+RETIRAR OS RECOMPS DO PACOTE 
+GFCT2096
+GFCT2098
+GFCT2101
+GFCT2102
+GFCT2104
+GFCT2112
+GFCT2135
+GFCT2155
+GFCT4220
+GFCT4323
+
+
+
+
+
+==========================================================================================
+
+GFCT0740 N P14          DFJ:GFCT0860 *                              GFCT0850 P14
+               GFCT0743*  RJ:GFCT0744 *                              GFCT0740 P14
+               GFCT0744*  DJ:GFCT0743 *                              GFCT0740 P14
+                         RJ:GFCT0745 *                              GFCT0740 P14
+               GFCT0745*  DJ:GFCT0744 *                              GFCT0740 P14
+                         RJ:GFCT0746 *                              GFCT0740 P14
+                         RJ:PM142130                               PM14NOIT P14
+                         RJ:PM142130                               PM14NOIT P14
+               GFCT0746 * DJ:GFCT0745*                               GFCT0740 P14
+                         RJ:GFCT0747 *                              GFCT0740 P14
+               GFCT0747 * DJ:GFCT0746 *                              GFCT0740 P14
+                         RJ:GFCT0748*                               GFCT0740 P14
+                         RJ:GFCT1900 *                              GFCT1900 P14
+               GFCT0748*  DJ:GFCT0747*                               GFCT0740 P14
+                         RJ:GFCT0001 *                              GFCT0000 P14
+                         RJ:GFCT0001 *                              GFCT0000 P14
+
+
+job GFCT0860 - NAO HA IMPACTO
+   EXEC PGM=GFCT1647(utiliza book  I#GFCTYK) - AJUSTADO
+
+job GFCT0743 - NAO HA IMPACTO
+   EXEC PGM=GFCT1530 (não) - NAO HA IMPACTO
+   
+job GFCT0744 - NAO HA IMPACTO
+   EXEC PGM=GFCT1535(utiliza book I#MESUM8) - AJUSTADO
+
+job GFCT0745 - NAO HA IMPACTO
+   EXEC PGM=GFCT1540(utiliza book I#MESUM8) - AJUSTADO
+
+job GFCT0746 - NAO HA IMPACTO
+   EXEC PGM=GFCT1545 (tabela GFCTB0A4 e CLIEV004) - AJUSTADO 
+
+job GFCT0747 - NAO HA IMPACTO
+   EXEC PGM=GFCT1550(não) - NAO HA IMPACTO
+   
+job GFCT0748 - NAO HA IMPACTO
+   EXEC PGM=GFCT1555(não) - NAO HA IMPACTO
+
+job GFCT1900 (não) - NAO HA IMPACTO
+
+job GFCT0001 - NAO HA IMPACTO
+   EXEC PGM=GFCT1000(não) - NAO HA IMPACTO
+       

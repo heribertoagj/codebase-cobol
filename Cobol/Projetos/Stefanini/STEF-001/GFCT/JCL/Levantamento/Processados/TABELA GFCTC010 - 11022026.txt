@@ -1,0 +1,55 @@
+TABELA GFCTC010 - 11/02/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002953 TICKET-56439
+==========================================================
+
+
+GFCT4102 - job GFCTC016
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTC010 N P14 GFCTC010*  DJ:GFCT1736*                               GFCT1700 P14
+                         RJ:GFCTC014 *                              GFCTC010 P14
+                         RJ:GFCTC012*                               GFCTC010 P14
+                         RJ:GFCTC011 *                              GFCTC010 P14
+               GFCTC011 * DJ:GFCTC010 *                              GFCTC010 P14
+               GFCTC012 * DJ:GFCTC010 *                              GFCTC010 P14
+                         RJ:GFCTC016 *                              GFCTC010 P14
+               GFCTC014*  DJ:GFCTC010 *                              GFCTC010 P14
+                         RJ:GFCTC016 *                              GFCTC010 P14
+               GFCTC016*  DJ:GFCTC012 *                              GFCTC010 P14
+                         DJ:GFCTC014 *                              GFCTC010 P14
+                         RJ:GFCTC020*                               GFCTC010 P14
+                         RJ:GFCTC018 *                              GFCTC010 P14
+               GFCTC018*  DJ:GFCTC016 *                              GFCTC010 P14
+                         RJ:GFCTH600&                               GFCTC010 P14
+               GFCTC020*  DJ:GFCTC016 *                              GFCTC010 P14
+                         RJ:GFCTH602*                               GFCTC010 P14
+               GFCTH600*  DJ:GFCTC018*                               GFCTC010 P14
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002953 TICKET-56439  tab C010
+==========================================================
+
+JOB GFCTC010
+     EXEC PGM=GFCT4190 (NAO)
+     EXEC PGM=GFCT4192 (UTILIZA BOOK I#GFCTVA E GFCTWBB6)  ==> MOVIDO PARA PACOTE 2953
+     EXEC PGM=GFCT4195  (UTILIZA BOOK I#GFCTVA E GFCTWBB6)  ==> MOVIDO PARA PACOTE 2953
+     EXEC PGM=GFCT4198 (NAO) 
+
+JOB GFCTC014 - AJUSTADO
+
+JOB GFCTC012 - AJUSTADO
+
+JOB GFCTC011 - NAO HA IMPACTO
+    EXEC PGM=GFCT4415 (NAO)
+
+JOB GFCTC016 - AJUSTADO
+    EXEC PGM=GFCT4100 (UTILIZA BOOKS GFCTWTOT  I#GFCTVA) - AJUSTADO
+    EXEC PGM=GFCT4102  (UTILIZA BOOKS GFCTWTOT  I#GFCTVA) - AJUSTADO
+
+JOB GFCTC018 - AVALIAR
+
+
+

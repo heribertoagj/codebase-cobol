@@ -1,0 +1,123 @@
+PACOTE TABELA GFCT0340 - 19/01/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002995  TICKET-66073
+==========================================================
+
+RETIRAR OS RECOMPS DO PACOTE 
+GFCT2096
+GFCT2098
+GFCT2101
+GFCT2102
+GFCT2104
+GFCT2112
+GFCT2135
+GFCT2155
+GFCT4220
+GFCT4323
+
+
+
+
+
+==========================================================================================
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT0340 N P14          DFJ:GFCT0339 *                              GFCT0300 P14
+               GFCT0345*  RJ:GFCT0348 *                              GFCT0340 P14
+               GFCT0348 * DJ:GFCT0345 *                              GFCT0340 P14
+                         RJ:GFCT0350 *                              GFCT0340 P14
+               GFCT0350 * DJ:GFCT0348 *                              GFCT0340 P14
+                         RJ:GFCT0352 *                              GFCT0340 P14
+               GFCT0352*  DJ:GFCT0350 *                              GFCT0340 P14
+                         RJ:GFCT0354 *                              GFCT0340 P14
+               GFCT0354*  DJ:GFCT0352 *                              GFCT0340 P14
+                         RJ:GFCT0356 *                              GFCT0340 P14
+               GFCT0356*  DJ:GFCT0354 *                              GFCT0340 P14
+                         RJ:GFCT0358 *                              GFCT0340 P14
+               GFCT0358*  DJ:GFCT0356 *                              GFCT0340 P14
+                         RJ:GFCT0360 *                              GFCT0340 P14
+               GFCT0360 * DJ:GFCT0358*                               GFCT0340 P14
+                         RJ:GFCT0364 *                              GFCT0340 P14
+               GFCT0364 * DJ:GFCT0360 *                              GFCT0340 P14
+                         RJ:GFCT0365*                               GFCT0340 P14
+GFCT0340 N P14 GFCT0364 * RJ:GFCT0366 *                              GFCT0340 P14
+               GFCT0365*  DJ:GFCT0364 *                              GFCT0340 P14
+                         RJ:GFCT0370  *                             GFCT0340 P14
+               GFCT0366*  DJ:GFCT0364 *                              GFCT0340 P14
+                        GFS          INTER-SITES AL1A              PADE0100    
+                         RJ:GFCT0940 *                              GFCT0340 P14
+               GFCT0370*  DJ:GFCT0365*                               GFCT0340 P14
+                         RJ:GFCT0375 *                              GFCT0340 P14
+               GFCT0375*  DJ:GFCT0370 *                              GFCT0340 P14
+                         RJ:GFCT0380*                               GFCT0340 P14
+                         RJ:PM14FIT4                               PM14FIT4 P14
+                         RJ:PM14FIT4                               PM14FIT4 P14
+                         RJ:PM117001                               PM11LAZE P11
+                        GFJ:                                       GFCTG375 P14
+               GFCT0380*  DJ:GFCT0375*                               GFCT0340 P14
+                         RJ:GFCT0385 *                              GFCT0340 P14
+               GFCT0385 * DJ:GFCT0380 *                              GFCT0340 P14
+                         RJ:GFCT0940*                               GFCT0340 P14
+GFCT0340 N P14 GFCT0940*  DJ:GFCT0366*                               GFCT0340 P14
+                         DJ:GFCT0385 *                              GFCT0340 P14
+                         RJ:GFCT0941 *                              GFCT0340 P14
+               GFCT0941*  DJ:GFCT0940*                               GFCT0340 P14
+                         RJ:GFCT0103*                               GFCT0100 P14
+
+
+
+
+job GFCT0352 - NAO HA IMPACTO
+   EXEC PGM=GFCT1505 (utiliza book I#MESUM8) - AJUSTADO
+   EXEC PGM=GFCT1410 (não tem) - NAO HA IMPACTO
+
+job GFCT0354
+   EXEC PGM=GFCT1510 (utiliza book I#MESUM8) - AJUSTADO
+   EXEC PGM=GFCT1410 (não tem) - NAO HA IMPACTO
+    
+job GFCT0356 - NAO HA IMPACTO
+   EXEC PGM=GFCT1515 (utiliza tabela cliev0004 e GFCTB0A4) - AJUSTADO
+   EXEC PGM=GFCT1410 (não tem) - NAO HA IMPACTO
+    
+job GFCT0358 - NAO HA IMPACTO
+   EXEC PGM=GFCT1520 (não tem) - NAO HA IMPACTO
+   EXEC PGM=GFCT1410 (não tem) - NAO HA IMPACTO
+    
+jo GFCT0360 - NAO HA IMPACTO
+   EXEC PGM=GFCT1526 (não tem) - NAO HA IMPACTO
+   EXEC PGM=GFCT1410 (não tem) - NAO HA IMPACTO
+
+job GFCT0364 - NAO HA IMPACTO
+   EXEC PGM=GFCT1352 (não tem) - NAO HA IMPACTO
+   EXEC PGM=GFCT1358 (não tem) - NAO HA IMPACTO
+
+job GFCT0365 - NAO HA IMPACTO
+   EXEC PGM=GFCT1350 (utiliza tabela cliev0004) - AJUSTADO
+
+job GFCT0366 (verificar) - NAO HA IMPACTO
+ 
+job GFCT0370 (verificar) - NAO HA IMPACTO
+   EXEC PGM=TRIC0100
+   EXEC PGM=TRICE555
+   EXEC PGM=CCFC6010
+
+ 
+job GFCT0375(verificar) - NAO HA IMPACTO
+   EXEC PGM=CCFCD010
+   EXEC PGM=TRCI2090
+
+job GFCT0380 - NAO HA IMPACTO
+   EXEC PGM=GFCT1460 (tabela GFCTB0A4) - AJUSTADO
+   
+job GFCT0385 - NAO HA IMPACTO
+   EXEC PGM=GFCT1560 (não tem) - NAO HA IMPACTO
+   EXEC PGM=GFCT1565 (não tem) - NAO HA IMPACTO
+
+
+job GFCT0103 (verificar) - NAO HA IMPACTO
+   
+   
+   
+                                                                               

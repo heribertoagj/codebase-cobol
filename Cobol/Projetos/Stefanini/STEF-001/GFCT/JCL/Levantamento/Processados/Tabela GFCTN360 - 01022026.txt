@@ -1,0 +1,20 @@
+Tabela GFCTN360 - 01022026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002966   TICKET-56434
+==========================================================
+
+
+
+
+GFCTN360 N P14          DFJ:GFCT0001*                               GFCT0000 P14
+                        DFJ:GFCT0001*                               GFCT0000 P14
+               GFCTN360*   NAO HA DEPENDENCIAS/RELEASES                         
+                        GFJ:                                       GFCT5005 P14
+
+
+
+JOB GFCTN360
+   EXEC PGM=GFCT4460 (NAO)
+   EXEC PGM=GFCT4464 (UTLIZA TABELA CLIEV004 e book GFCTWBTA) - AJUSTADO
+   EXEC PGM=GFCT4466 (UTLIZA book GFCTWBTA) - AJUSTADO

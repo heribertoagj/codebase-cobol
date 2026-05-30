@@ -1,0 +1,102 @@
+PACOTE TABELA GFCT0800 - 21/01/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002954 TICKET-56441
+==========================================================
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT0800 N P14          DFJ:GFCT0860*                               GFCT0850 P14
+               GFCT0803* DCO:GFCT2691*                               GFCT2610 P14
+                         RJ:GFCT0805*                               GFCT0800 P14
+               GFCT0805*  DJ:GFCT0803*                               GFCT0800 P14
+                         RJ:GFCT0810 *                              GFCT0800 P14
+               GFCT0810 * DJ:GFCT0805*                               GFCT0800 P14
+                         RJ:GFCT0812*                               GFCT0800 P14
+               GFCT0812*  DJ:GFCT0810 *                              GFCT0800 P14
+                         RJ:GFCT0813 *                              GFCT0800 P14
+                         RJ:GFCT0815 *                              GFCT0800 P14
+               GFCT0813*  DJ:GFCT0812*                               GFCT0800 P14
+                         RJ:GFCT0814 *                              GFCT0800 P14
+               GFCT0814*  DJ:GFCT0813*                               GFCT0800 P14
+                         RJ:GFCT0825 *                              GFCT0800 P14
+               GFCT0815 * DJ:GFCT0812*                               GFCT0800 P14
+                         RJ:GFCT0817 *                              GFCT0800 P14
+               GFCT0817 * DJ:GFCT0815*                               GFCT0800 P14
+                         RJ:GFCT0820 *                              GFCT0800 P14
+GFCT0800 N P14 GFCT0820*  DJ:GFCT0817*                               GFCT0800 P14
+                         RJ:GFCT0822 *                              GFCT0800 P14
+               GFCT0822*  DJ:GFCT0820*                               GFCT0800 P14
+                         RJ:GFCT0825*                               GFCT0800 P14
+               GFCT0825*  DJ:GFCT0822*                               GFCT0800 P14
+                         DJ:GFCT0814 *                              GFCT0800 P14
+                         RJ:GFCT0830 *                              GFCT0800 P14
+               GFCT0830*  DJ:GFCT0825 *                              GFCT0800 P14
+                         RJ:GFCT1900*                               GFCT1900 P14
+                         RJ:GFCT0988 *                              GFCT0800 P14
+                        GFJ:                                       GFCT1750 P14
+               GFCT0988*  DJ:GFCT0830 *                              GFCT0800 P14
+                         RJ:GFCT0989 *                              GFCT0800 P14
+               GFCT0989*  DJ:GFCT0988 *                              GFCT0800 P14
+
+
+=======================================================================================
+
+GFCT002954 TICKET-56441
+
+job GFCT0860 - NAO HA IMPACTO
+   EXEC PGM=GFCT1647 (utiliza book I#GFCTYK) - AJUSTADO
+      
+job GFCT0803 verificar - NAO HA IMPACTO
+
+job GFCT0805 - NAO HA IMPACTO
+    EXEC PGM=GFCT1470 (não) - NAO HA IMPACTO
+      
+job GFCT0812 - NAO HA IMPACTO
+   EXEC PGM=GFCT1475 (não) - NAO HA IMPACTO
+   
+job GFCT0814 - NAO HA IMPACTO
+   EXEC PGM=GFCT1476 (não) - NAO HA IMPACTO
+
+job GFCT0825 - NAO HA IMPACTO
+   EXEC PGM=GFCT1490 (NA0) - NAO HA IMPACTO
+   EXEC PGM=GFCT1493 (NAO) - NAO HA IMPACTO
+
+job GFCT0817 - NAO HA IMPACTO
+   EXEC PGM=GFCT1480 (não) - NAO HA IMPACTO
+   
+j0ob GFCT0820 - avaliar - NAO HA IMPACTO
+
+job GFCT0822 - NAO HA IMPACTO
+   EXEC PGM=GFCT1485 (não) - NAO HA IMPACTO
+   
+job GFCT0830 - NAO HA IMPACTO
+   EXEC PGM=GFCT4401 (não) - NAO HA IMPACTO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

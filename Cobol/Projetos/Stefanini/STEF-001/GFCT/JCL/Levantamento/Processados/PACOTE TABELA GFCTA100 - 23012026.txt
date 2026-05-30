@@ -1,0 +1,115 @@
+PACOTE TABELA GFCTA100 - 23/01/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002962   TICKET-56431
+==========================================================
+OBS... JOBS QUE TRATAM O PROGRAMA GFCT2408
+
+
+===============================================================
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTA100 N P14 GFCTA100*  RJ:GFCTA104*                               GFCTA100 P14
+               GFCTA104 * DJ:GFCTA100*                               GFCTA100 P14
+                         RJ:GFCTA106*                               GFCTA100 P14
+               GFCTA106 * DJ:GFCTA104*                               GFCTA100 P14
+                         RJ:GFCTA108*                               GFCTA100 P14
+               GFCTA108*  DJ:GFCTA106*                               GFCTA100 P14
+                         RJ:GFCTA110 *                              GFCTA100 P14
+               GFCTA110*  DJ:GFCTA108*                               GFCTA100 P14
+                         RJ:GFCTA112 *                              GFCTA100 P14
+                         RJ:PM142000                               PM14NOIT P14
+               GFCTA112 * DJ:GFCTA110 *                              GFCTA100 P14
+                         RJ:GFCTA114 *                              GFCTA100 P14
+***************GFCTA114*  DJ:GFCTA112 *                              GFCTA100 P14
+                         RJ:GFCTA116 *                              GFCTA100 P14
+               GFCTA116*  DJ:GFCTA114*                               GFCTA100 P14
+                         RJ:GFCTA118 *                              GFCTA100 P14
+               GFCTA118*  DJ:GFCTA116 *                              GFCTA100 P14
+                         RJ:GFCTA120*                               GFCTA100 P14
+GFCTA100 N P14 GFCTA118* GFJ:                                       CMTFA516 P14
+               GFCTA120*  DJ:GFCTA118*                               GFCTA100 P14
+                         RJ:GFCTA122 *                              GFCTA100 P14
+                        GFJ:                                       CMTFA500 P14
+               GFCTA122*  DJ:GFCTA120*                               GFCTA100 P14
+                         RJ:GFCTA124 *                              GFCTA100 P14
+                        GFJ:                                       CMTFA504 P14
+               GFCTA124*  DJ:GFCTA122*                               GFCTA100 P14
+                         RJ:GFCTA126 *                              GFCTA100 P14
+                        GFJ:                                       CMTFA512 P14
+               GFCTA126*  DJ:GFCTA124 *                              GFCTA100 P14
+                         RJ:GFCTA128*                               GFCTA100 P14
+                        GFJ:                                       CMTFA508 P14
+               GFCTA128*  DJ:GFCTA126 *                              GFCTA100 P14
+                         RJ:GFCTA134 *                              GFCTA100 P14
+                         RJ:GFCTN220*                               GFCTN220 P14
+                         RJ:GFCTDEL2 *                              GFCTDELE P14
+               GFCTA134*  DJ:GFCTA128 *                              GFCTA100 P14
+GFCTA100 N P14 GFCTA134*  RJ:GFCTH100 *                              GFCTA100 P14
+               GFCTH100 * DJ:GFCTA134*                               GFCTA100 P14
+                         RJ:GFCTH101*                               GFCTA100 P14
+               GFCTH101*  DJ:GFCTH100 *                              GFCTA100 P14
+
+
+============================================================================
+GFCT002962   TICKET-56431   tab GFCTA100
+
+job GFCTA100 - verificar
+
+job GFCTA104 - NAO HA IMPACTO
+   EXEC PGM=GFCT2419 (não) - NAO HA IMPACTO
+   
+job GFCTA110 - PENDENTE AJUSTE ARQUIVO DO CLIE MJ.CLIE.PRP.CADNOVGR
+   EXEC PGM=GFCT2401 (utiliza book I#CLIE20) - AJUSTADO
+   EXEC PGM=GFCT2402 (utiliza book GFCTWAFZ) - RECOMP
+   EXEC PGM=GFCT2403 (utiliza book GFCTWAFZ) - RECOMP
+
+job GFCTA112 - NAO HA IMPACTO
+   EXEC PGM=GFCT2421 (utiliza book GFCTWAFZ) - RECOMP
+   EXEC PGM=GFCT2404 (não) - NAO HA IMPACTO
+   EXEC PGM=GFCT2405 (não) - NAO HA IMPACTO
+   EXEC PGM=GFCT2406 (não) - NAO HA IMPACTO
+   EXEC PGM=GFCT2407 (utiliza book GFCTWAFZ) - RECOMP
+
+
+job GFCTA114
+   EXEC PGM=GFCT2408 (utiliza book GFCTWAFZ) - AJUSTADO
+   EXEC PGM=GFCT2409 (NAO) - NAO HA IMPACTO
+   EXEC PGM=GFCT2410 (utiliza book I#CSAL02)  ===> pacote csal000863 
+                           obs quando terminarmos os ajustes avisar eles para eles liberarem o pacote para compilarmos 
+           CSAL8010(I#CSAL02) ====> SUBSTITUIR POR CSALAN09 (I#CSALX2) - AJUSTADO PENDENTE COLOCAR PACOTE CSAL NO COMPLEX
+   EXEC PGM=GFCT2411 (não) - NAO HA IMPACTO
+   EXEC PGM=GFCT2406 (não) - NAO HA IMPACTO
+   EXEC PGM=GFCT2407 (utiliza book GFCTWAFZ) - RECOMP
+
+
+job GFCTA116 - NAO HA IMPACTO
+
+job GFCTA118 - NAO HA IMPACTO
+
+job GFCTA120
+    EXEC PGM=GFCT2413 (não) - NAO HA IMPACTO
+    
+job GFCTA122
+   EXEC PGM=GFCT2414 (não) - NAO HA IMPACTO
+   
+job GFCTA124
+   EXEC PGM=GFCT2415 (não) - NAO HA IMPACTO
+
+job GFCTA126
+   EXEC PGM=GFCT2416 (não) - NAO HA IMPACTO
+   
+job GFCTA128
+   EXEC PGM=GFCT2417 (utiliza books GFCTWAFZ) - RECOMP
+
+job GFCTA134
+   EXEC PGM=GFCT2418 (não) - NAO HA IMPACTO
+ 
+
+job GFCTN220
+   EXEC PGM=GFCT2451 (não) - NAO HA IMPACTO
+   
+
+
+
+

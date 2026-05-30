@@ -1,0 +1,71 @@
+      *----------------------------------------------------------------*
+      *  SISTEMA : BVVE - CARTAO DE CREDITO / VENDEDOR                 *
+      *  ARQUIVO : DADOS DO RETORNO PARA ATUALIZACAO DA TABELA DE      *
+      *            SOLICITACOES  DE  TRAVA/DESTRAVA  DE DOMICILIO      *
+      *  LRECL   : 151 (FB)                                            *
+      *  NOME INC: I#BVVEG6                                            *
+      *  DATA    : 20/07/2008                                          *
+      *----------------------------------------------------------------*
+       01  BVVEG6-REG.
+           05  BVVEG6-DATA-PROCES             PIC 9(009)     COMP-3.
+           05  BVVEG6-HORA-PROCES             PIC 9(007)     COMP-3.
+           05  BVVEG6-VRSARQ-BANCO            PIC 9(009)     COMP-3.
+           05  BVVEG6-VRSARQ-REDECARD         PIC 9(009)     COMP-3.
+           05  BVVEG6-PONTO-VENDA             PIC 9(009)     COMP-3.
+*     *     05  BVVEG6-CNPJCPF-NRO             PIC 9(009)     COMP-3.
+7C2511     05  BVVEG6-CNPJCPF-NRO             PIC X(009).
+*     *     05  BVVEG6-CNPJ-FILIAL             PIC 9(005)     COMP-3.
+7C2511     05  BVVEG6-CNPJ-FILIAL             PIC X(004).
+7C2511     05  FILLER                         PIC X(01).
+           05  BVVEG6-CNPJCPF-CTRL            PIC 9(002)     COMP-3.
+           05  BVVEG6-TIPO-OPER               PIC X(001).
+           05  BVVEG6-BANCO                   PIC 9(003)     COMP-3.
+           05  BVVEG6-AGENCIA                 PIC 9(005)     COMP-3.
+           05  BVVEG6-CONTA-NRO               PIC 9(013)     COMP-3.
+           05  BVVEG6-CONTA-DIG               PIC X(001).
+           05  BVVEG6-IND-TRAVA               PIC X(001).
+           05  BVVEG6-SIT-PROCES              PIC X(001).
+           05  BVVEG6-DTINIC-TRAVA            PIC 9(009)     COMP-3.
+           05  BVVEG6-DTFIM-TRAVA             PIC 9(009)     COMP-3.
+           05  BVVEG6-DTENVIO-BANCO           PIC 9(009)     COMP-3.
+*     *    05  BVVEG6-RCNPJCPF-NRO            PIC 9(009)     COMP-3.
+7C2511     05  BVVEG6-RCNPJCPF-NRO            PIC X(009).
+*     *     05  BVVEG6-RCNPJ-FILIAL            PIC 9(005)     COMP-3.
+7C2511     05  BVVEG6-RCNPJ-FILIAL            PIC X(004).
+7C2511     05  FILLER                         PIC X(01).
+           05  BVVEG6-RCNPJCPF-CTRL           PIC 9(002)     COMP-3.
+           05  BVVEG6-DTTRAVA-REDECARD        PIC 9(009)     COMP-3.
+           05  BVVEG6-COD-RETORNO             PIC 9(005)     COMP-3.
+           05  BVVEG6-MSG-ERRO                PIC X(060).
+           05  BVVEG6-CEMPR-INC               PIC 9(05)      COMP-3.
+           05  BVVEG6-CDEPDC                  PIC 9(05)      COMP-3.
+           05  BVVEG6-TPO-BANDEIRA            PIC X(002).
+      *----------------------------------------------------------------*
+      * 001-005 DATA PROCESSAMENTO/ENVIO ARQ PELA REDECARD (AAAAMMDD)
+      * 006-009 HORARIO PROCESSAMENTO/ENVIO ARQ PELA REDECARD (AAAAMMDD)
+      * 010-014 VERSAO DO ARQUIVO ENVIADO PELO BANCO
+      * 015-019 VERSAO DO ARQUIVO ENVIADO PELA REDECARD
+      * 020-024 NUMERO DO PONTO DE VENDA=CODIGO DO ESTABELECIMENTO COML
+      * 025-029 NUMERO DO CNPJ/CPF DO ESTABELECIMENTO
+      * 030-032 FILIAL DO CNPJ DO ESTABELECIMENTO
+      * 033-034 CONTROLE DO CNPJ/CPF DO ESTABELECIMENTO
+      * 035-035 TIPO DE OPERACAO C=CREDITO D=DEBITO
+      * 036-037 BANCO DA CONTA CORRENTE DO ESTABELECIMENTO
+      * 038-040 AGENCIA DA CONTA CORRENTE DO ESTABELECIMENTO
+      * 041-047 NUMERO DA CONTA CORRENTE DO ESTABELECIMENTO
+      * 048-048 DIGITO DA CONTA CORRENTE DO ESTABELECIMENTO
+      * 049-049 INDICADOR DE TRAVA T=TRAVA D=DESTRAVA
+      * 050-050 STATUS DO PROCESSAMENTO P=PROCESSAMENTO A=AVISO
+      * 051-055 DATA DE INICIO DE TRAVA SOLICITADO PELO BANCO AAAAMMDD
+      * 056-060 DATA DE TERMINO DE TRAVA SOLICITADO PELO BANCO AAAAMMDD
+      * 061-065 DATA DE ENVIO DO ARQ/SOLICITACAO PELO BANCO AAAAMMDD
+      * 066-070 NUMERO DO CNPJ/CPF DO ESTABELECIMENTO NA REDECARD
+      * 071-073 FILIAL DO CNPJ DO ESTABELECIMENTO NA REDECARD
+      * 074-075 CONTROLE DO CNPJ/CPF DO ESTABELECIMENTO NA REDECARD
+      * 076-080 DATA DE FIM DE TRAVA ACATADA PELA REDECARD AAAAMMDD
+      * 081-083 CODIGO DE ERRO OU AVISO DEPENDENDO DA SIT DO PROCESSAM.
+      * 084-143 MENSAG DE ERRO OU AVISO DEPENDENDO DA SIT DO PROCESSAM.
+      * 144-146 CODIGO DA EMPRESA/BANCO INCORPORADA(O)
+      * 147-149 CODIGO DA DEPENDENCIA BRADESCO (AGENCIA/DEPTO)
+      * 150-151 TIPO DE BANDEIRA: VISA OU MASTERCARD
+      *----------------------------------------------------------------*

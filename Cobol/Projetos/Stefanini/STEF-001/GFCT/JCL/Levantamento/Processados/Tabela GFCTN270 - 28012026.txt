@@ -1,0 +1,37 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002972  TICKET-56437, CASO ESTEJA EM OUTRO PACOTE, MOVER PARA ESSE.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+
+
+TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTN270 N P14          DFJ:GFCT2922*                               GFCT2100 P14
+               GFCTN270*  RJ:GFCTN280*                               GFCTN270 P14
+               GFCTN280 * DJ:GFCTN270 *                              GFCTN270 P14
+                         RJ:GFCTN290 *                              GFCTN270 P14
+               GFCTN290 * DJ:GFCTN280*                               GFCTN270 P14
+                         RJ:GFCTN291*                               GFCTN270 P14
+               GFCTN291*  DJ:GFCTN290*                               GFCTN270 P14
+
+
+
+JOB GFCTN270 - NAO HA IMPACTO
+   EXEC PGM=GFCT2435 (utiliza books KCIMW184 e I#MESUM8) - AJUSTADO
+      MESU9018  ==> MESU9718
+      I#MESUM8  ==>> MESUWIM8
+      KCIMW184  ==>  KCIMW186 
+   EXEC PGM=GFCT2437 (não)
+   EXEC PGM=GFCT2438(não)
+   
+ job GFCTN280 - NAO HA IMPACTO
+    EXEC PGM=GFCT2440  (utiliza books KCIMW184 e I#MESUM8) - AJUSTADO
+      MESU9018  ==> MESU9718
+      I#MESUM8  ==>> MESUWIM8
+      KCIMW184  ==>  KCIMW186 
+   EXEC PGM=GFCT2442 (não)
+   EXEC PGM=GFCT2443 (não)
+
+    
+ 

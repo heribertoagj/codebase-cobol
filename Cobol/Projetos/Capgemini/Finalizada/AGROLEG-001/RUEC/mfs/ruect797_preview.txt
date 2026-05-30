@@ -1,0 +1,25 @@
+----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8
+ 99/99/9999           SISTEMA DE CREDITO RURAL                  99:99:99        
+ RUECT796          DADOS DOS CONTRATOS PARA REORGANIZACAO        RUEC7951       
+ ---------------------------------- XXXXXXXXX ------------------------ 999999999
+                                                                                 
+ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   XXXXXXXX XXXXXXXX XXXXXXXX 99 99       
+ AGENCIA/CONTA:   99999/9999999999999   CNPJ/CPF DO CLIENTE:  XXXXXXXXXXXXXXXXXX
+                                                                                 
+      REFBCN   CH.OPE         SALDO DEV.     SALDO DEV. BASE           VALOR A
+                               PRINCIPAL       ENCARGOS LEG.        RENEGOCIAR 
+ X 99999999999 9999999 99.999.999.999,99 999.999.999,99 9999 99.999.999.999,99 (!!)
+ X 99999999999 9999999 99.999.999.999,99 999.999.999,99 9999 99.999.999.999,99 (!!)
+ X 99999999999 9999999 99.999.999.999,99 999.999.999,99 9999 99.999.999.999,99 (!!)
+ X 99999999999 9999999 99.999.999.999,99 999.999.999,99 9999 99.999.999.999,99 (!!)
+ X 99999999999 9999999 99.999.999.999,99 999.999.999,99 9999 99.999.999.999,99 (!!)
+ X 99999999999 9999999 99.999.999.999,99 999.999.999,99 9999 99.999.999.999,99 (!!)
+ X 99999999999 9999999 99.999.999.999,99 999.999.999,99 9999 99.999.999.999,99 (!!)
+ X 99999999999 9999999 99.999.999.999,99 999.999.999,99 9999 99.999.999.999,99 (!!)
+                                                                                
+                             VALOR TOTAL A RENEGOCIAR:  99.999.999.999.999,99   
+                                                                                
+ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+ PF: 1-DESC.  3-MENU CEDULA   5-MENU ROTINAS   9-LISTA          11-PROX. TELA   
+
+ (!!) O campo final termina na coluna 83, excedendo o limite de 80 colunas.

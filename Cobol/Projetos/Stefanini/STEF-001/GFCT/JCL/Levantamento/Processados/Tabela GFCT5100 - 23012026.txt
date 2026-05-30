@@ -1,0 +1,165 @@
+Tabela GFCT5100 - 23012026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002947    TICKET-53638
+==========================================================
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT5100 N P14          DFJ:GFCT1320 *                              GFCT1310 P14
+                        DFJ:GFCT1310 *                              GFCT1310 P14
+               GFCT5105*  RJ:GFCT5106 *                              GFCT5100 P14
+                         RJ:GFCT5110 *                              GFCT5100 P14
+               GFCT5106*  DJ:GFCT5105*                               GFCT5100 P14
+                         RJ:GFCT5108 *                              GFCT5100 P14
+                         RJ:GFCT5107 *                              GFCT5100 P14
+                         RJ:GFCT5109*                               GFCT5100 P14
+               GFCT5107*  DJ:GFCT5106*                               GFCT5100 P14
+                         RJ:GFCT5117 *                              GFCT5100 P14
+               GFCT5108*  DJ:GFCT5106*                               GFCT5100 P14
+                         RJ:GFCT5118*                               GFCT5100 P14
+                         RJ:GFCT5116 *                              GFCT5100 P14
+               GFCT5109 * DJ:GFCT5106 *                              GFCT5100 P14
+                         RJ:GFCT5119*                               GFCT5100 P14
+               GFCT5110*  DJ:GFCT5105 *                              GFCT5100 P14
+                         RJ:GFCT5112 *                              GFCT5100 P14
+               GFCT5112*  DJ:GFCT5110 *                               GFCT5100 P14
+GFCT5100 N P14 GFCT5112*  RJ:GFCT5115 *                              GFCT5100 P14
+               GFCT5115*  DJ:GFCT5112*                               GFCT5100 P14
+                         RJ:GFCT5120 *                              GFCT5100 P14
+               GFCT5116*  DJ:GFCT5108*                               GFCT5100 P14
+                         RJ:GFCT5122 *                              GFCT5100 P14
+               GFCT5117*  DJ:GFCT5107 *                              GFCT5100 P14
+                         RJ:GFCT5121 *                              GFCT5100 P14
+               GFCT5118*  DJ:GFCT5108 *                              GFCT5100 P14
+                         RJ:GFCT5123 *                              GFCT5100 P14
+               GFCT5119*  DJ:GFCT5109*                               GFCT5100 P14
+                         RJ:GFCT5124  *                             GFCT5100 P14
+               GFCT5120 * DJ:GFCT5115*                               GFCT5100 P14
+                         RJ:GFCT5121 *                              GFCT5100 P14
+               GFCT5121 * DJ:GFCT5120 *                              GFCT5100 P14
+                         DJ:GFCT5117 *                              GFCT5100 P14
+                         RJ:GFCT5122 *                              GFCT5100 P14
+               GFCT5122*  DJ:GFCT5116*                               GFCT5100 P14
+                         DJ:GFCT5121 *                              GFCT5100 P14
+GFCT5100 N P14 GFCT5122*  RJ:GFCT5123 *                              GFCT5100 P14
+               GFCT5123*  DJ:GFCT5122*                               GFCT5100 P14
+                         DJ:GFCT5118 *                              GFCT5100 P14
+                         RJ:GFCT5124 *                              GFCT5100 P14
+               GFCT5124 * DJ:GFCT5123 *                              GFCT5100 P14
+                         DJ:GFCT5119 *                              GFCT5100 P14
+                         RJ:GFCT5125 *                              GFCT5100 P14
+               GFCT5125 * DJ:GFCT5124 *                              GFCT5100 P14
+                         RJ:GFCT5130 *                              GFCT5100 P14
+               GFCT5130 * DJ:GFCT5125 *                              GFCT5100 P14
+                         RJ:GFCT5135*                               GFCT5100 P14
+               GFCT5135*  DJ:GFCT5130 *                              GFCT5100 P14
+                         RJ:GFCT5140 *                              GFCT5100 P14
+               GFCT5140*  DJ:GFCT5135 *                              GFCT5100 P14
+                         RJ:GFCT5150 *                              GFCT5100 P14
+               GFCT5150*  DJ:GFCT5140*                               GFCT5100 P14
+                         RJ:GFCT5155 *                              GFCT5100 P14
+               GFCT5155 * DJ:GFCT5150*                               GFCT5100 P14
+GFCT5100 N P14 GFCT5155*  RJ:GFCT5160 *                              GFCT5100 P14
+               GFCT5160 * DJ:GFCT5155 *                              GFCT5100 P14
+                         RJ:GFCT5100 P14
+               GFCT5165*  DJ:GFCT5160 *                              GFCT5100 P14
+                         RJ:GFCT5167*                               GFCT5100 P14
+               GFCT5167 * DJ:GFCT5165 *                              GFCT5100 P14
+                         RJ:GFCT5170*                               GFCT5100 P14
+               GFCT5170 * DJ:GFCT5167 *                              GFCT5100 P14
+                         RJ:GFCT5910 *                              GFCT5100 P14
+               GFCT5910*  DJ:GFCT5170*                               GFCT5100 P14
+                         RJ:GFCT5911 *                              GFCT5100 P14
+               GFCT5911*  DJ:GFCT5910 *                              GFCT5100 P14
+                                                                               
+
+========================================================================================
+GFCT002947    TICKET-53638   tab GFCT5100
+
+job GFCT1320 - NAO HA IMPACTO
+   EXEC PGM=GFCT2708 (não) - NAO HA IMPACTO 
+
+job GFCT1310 - NAO HA IMPACTO
+   EXEC PGM=GFCT2640 (não) - NAO HA IMPACTO  
+
+job GFCT5105 - NAO HA IMPACTO
+
+job GFCT5107 - utiliza tabela GFCTB0L5 - AJUSTADO
+
+job GFCT5117 - AJUSTADO
+   EXEC PGM=GFCT2759 (utiliza book GFCTWAIC) - AJUSTADO
+
+job GFCT5118 - NAO HA IMPACTO
+   EXEC PGM=GFCT2760 (não) - NAO HA IMPACTO
+   
+job GFCT5116 - NAO HA IMPACTO
+   EXEC PGM=GFCT2761 (não) - NAO HA IMPACTO
+
+job GFCT5119 - NAO HA IMPACTO
+  EXEC PGM=GFCT2762 (não) - NAO HA IMPACTO
+
+job GFCT5112 - AJUSTADO
+   EXEC PGM=GFCT2646 (utiliza book GFCTWAET) - AJUSTADO
+   EXEC PGM=GFCT2692 (utiliza book GFCTWAET) - AJUSTADO
+
+GFCT002947    TICKET-53638   tab GFCT5100
+
+job GFCT5115 - AJUSTADO
+   EXEC PGM=GFCT2648 (utiliza book GFCTWAET) - AJUSTADO 
+
+ job GFCT5120 - AJUSTADO
+   EXEC PGM=GFCT2652 (utiliza book GFCTWAET) - AJUSTADO
+   EXEC PGM=GFCT2654 (utiliza book GFCTWAET) - AJUSTADO
+   EXEC PGM=GFCT2655 (UTILIZA TABELA CLIEV004  E BOOK GFCTWAET) - AJUSTADO
+   EXEC PGM=GFCT2676 (UTILIZA BOOK GFCTWAET) - AJUSTADO
+  
+JOB GFCT5122 - AJUSTADO
+   EXEC PGM=GFCT2764 (UTILIZA BOOK GFCTWAET) - AJUSTADO
+   
+JOB GFCT5121 - AJUSTADO
+   EXEC PGM=GFCT2763 (UTILIZA BOOK GFCTWAIC GFCTWAET) - AJUSTADO
+   
+JOB GFCT5123 - AJUSTADO
+   EXEC PGM=GFCT2765 (UTILIZA BOOK GFCTWAET) - AJUSTADO
+
+JOB GFCT5124 - AJUSTADO
+   EXEC PGM=GFCT2766 (UTILIZA BOOK GFCTWAET) - AJUSTADO
+
+JOB GFCT5125 - AJUSTADO
+    EXEC PGM=GFCT2656 (UTILIZA BOOK GFCTWAET) - AJUSTADO
+    EXEC PGM=GFCT2684 (UTILIZA BOOK GFCTWAET) - AJUSTADO
+
+JOB GFCT5130 - NAO HA IMPACTO
+   EXEC PGM=GFCT2660 (NÃO) - NAO HA IMPACTO
+
+JOB GFCT5135 - AJUSTADO
+   EXEC PGM=GFCT2664 (UTILIZA BOOK GFCTWAET) - AJUSTADO
+   EXEC PGM=GFCT2672 (UTILIZA BOOK GFCTWAET) - AJUSTADO
+  
+JOB GFCT5140 - AJUSTADO
+   EXEC PGM=GFCT2664 (UTILIZA BOOK GFCTWAET) - AJUSTADO
+   EXEC PGM=GFCT2672 (UTILIZA BOOK GFCTWAET) - AJUSTADO
+
+JOB GFCT5150 - AJUSTADO
+   EXEC PGM=GFCT2680 (UTILIZA BOOK GFCTWAET) - AJUSTADO
+   
+JOB GFCT5155 - AJUSTADO
+   EXEC PGM=GFCT2768 (UTILIZA BOOK GFCTWAET) - AJUSTADO
+   EXEC PGM=GFCT2688 (UTILIZA BOOK GFCTWAET) - AJUSTADO
+
+JOB GFCT5160 - NAO HA IMPACTO
+   EXEC PGM=GFCT2704 (NÃO) - NAO HA IMPACTO
+
+JOB GFCT5165 - NAO HA IMPACTO
+   EXEC PGM=GFCT2696 (UTILIZA BOOK GFCTWAET) - AJUSTADO
+   EXEC PGM=GFCT2700 (NÃO) - NAO HA IMPACTO
+   EXEC PGM=GFCT2748 (NÃO) - NAO HA IMPACTO
+
+JOB GFCT5167 - NAO HA IMPACTO
+   EXEC PGM=GFCT2636 (NÃO) - NAO HA IMPACTO
+   
+   
+JOB GFCT5170 - NAO HA IMPACTO
+   EXEC PGM=GFCT2712 (NÃO) - NAO HA IMPACTO
+   

@@ -1,0 +1,162 @@
+Tabela GFCT4550 - 03022026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002952  TICKET-56438
+==========================================================
+
+
+Job GFCT4550
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT4550 N P14          DFJ:GFCT4545 *                              GFCT4545 P14
+               GFCTM591* DNS:EMPBR524                                           
+               GFCTM592* DNS:EMPBR525                                           
+               GFCTM593* DNS:EMPBR526                                           
+               GFCTM594* DNS:EMPBR527                                           
+               GFCTM596* DNS:EMPBR528                                           
+               GFCTM597* DNS:EMPBR529                                           
+               GFCTM598* DNS:EMPBR530                                           
+               GFCTM599* DNS:EMPBR531                                           
+               GFCT4550*  RJ:GFCT4551 *                              GFCT4550 P14
+                         RJ:GFCT4560 *                              GFCT4550 P14
+               GFCT4551*  DJ:GFCT4550*                               GFCT4550 P14
+               GFCT4555*  RJ:GFCT4560 *                              GFCT4550 P14
+               GFCT4560*  DJ:GFCT4550*                               GFCT4550 P14
+                         DJ:GFCT4555*                               GFCT4550 P14
+                         RJ:GFCT4565 *                              GFCT4550 P14
+               GFCT4565*  DJ:GFCT4560 *                              GFCT4550 P14
+                         RJ:GFCT4570*                               GFCT4550 P14
+
+
+GFCT4550 N P14 GFCT4570*  DJ:GFCT4565*                               GFCT4550 P14
+                         RJ:GFCT4575*                               GFCT4550 P14
+                         RJ:GFCT4573 *                              GFCT4550 P14
+                         RJ:GFCT4571 *                              GFCT4550 P14
+               GFCT4571*  DJ:GFCT4570 *                              GFCT4550 P14
+               GFCT4573*  DJ:GFCT4570 *                              GFCT4550 P14
+                         RJ:GFCT4574*                               GFCT4550 P14
+                         RJ:GFCT4580 *                              GFCT4550 P14
+               GFCT4574*  DJ:GFCT4573*                               GFCT4550 P14
+                         RJ:GFCT4578*                               GFCT4550 P14
+               GFCT4575*  DJ:GFCT4570*                               GFCT4550 P14
+                         RJ:GFCT4576*                               GFCT4550 P14
+                         RJ:GFCT4580*                               GFCT4550 P14
+               GFCT4576*  DJ:GFCT4575*                               GFCT4550 P14
+                         RJ:GFCT4578*                               GFCT4550 P14
+               GFCT4578*  DJ:GFCT4574*                               GFCT4550 P14
+                         DJ:GFCT4576 *                              GFCT4550 P14
+                        RSI:GFCT4955*                                           
+GFCT4550 N P14 GFCT4580*  DJ:GFCT4573*                               GFCT4550 P14
+                         DJ:GFCT4575*                               GFCT4550 P14
+                         RJ:GFCT4582 *                              GFCT4550 P14
+                         RJ:GFCT4584*                               GFCT4550 P14
+               GFCT4582*  DJ:GFCT4580*                               GFCT4550 P14
+                         RJ:GFCT4586 *                              GFCT4550 P14
+               GFCT4584*  DJ:GFCT4580 *                              GFCT4550 P14
+                         RJ:GFCT4590*                               GFCT4550 P14
+                         RJ:GFCT4595 *                              GFCT4550 P14
+               GFCT4586 * DJ:GFCT4582 *                              GFCT4550 P14
+                         RJ:GFCT4588*                               GFCT4550 P14
+               GFCT4588*  DJ:GFCT4586*                               GFCT4550 P14
+                         RJ:GFCT4590*                               GFCT4550 P14
+                         RJ:GFCT4595*                               GFCT4550 P14
+               GFCT4590 * DJ:GFCT4588*                               GFCT4550 P14
+                         DJ:GFCT4584 *                              GFCT4550 P14
+                         RJ:GFCT4593*                               GFCT4550 P14
+                         RJ:GFCT4594*                               GFCT4550 P14
+GFCT4550 N P14 GFCT4590*  RJ:GFCT4591*                               GFCT4550 P14
+                         RJ:GFCT4592*                               GFCT4550 P14
+               GFCT4591*  DJ:GFCT4590 *                              GFCT4550 P14
+                        GFS          INTER-SITES MZ2A              GFCTAB21    
+                         RJ:GFCT4600 *                              GFCT4550 P14
+               GFCT4592*  DJ:GFCT4590*                               GFCT4550 P14
+                        GFS          INTER-SITES MZ2A              GFCTAB22    
+                         RJ:GFCT4600*                               GFCT4550 P14
+               GFCT4593*  DJ:GFCT4590*                               GFCT4550 P14
+                        GFS          INTER-SITES MZ2A              GFCTAB23    
+                         RJ:GFCT4600 *                              GFCT4550 P14
+               GFCT4594*  DJ:GFCT4590*                               GFCT4550 P14
+                        GFS          INTER-SITES MZ2A              GFCTAB24    
+                         RJ:GFCT4600*                               GFCT4550 P14
+               GFCT4595 * DJ:GFCT4588*                               GFCT4550 P14
+                         DJ:GFCT4584*                               GFCT4550 P14
+                         RJ:GFCT4597*                               GFCT4550 P14
+                         RJ:GFCT4599*                               GFCT4550 P14
+GFCT4550 N P14 GFCT4595*  RJ:GFCT4598*                               GFCT4550 P14
+                         RJ:GFCT4596*                               GFCT4550 P14
+               GFCT4596  DJ:GFCT4595*                               GFCT4550 P14
+                        GFS          INTER-SITES MZ2A              GFCTAB25    
+                         RJ:GFCT4600*                               GFCT4550 P14
+               GFCT4597*  DJ:GFCT4595*                               GFCT4550 P14
+                        GFS          INTER-SITES MZ2A              GFCTAB26    
+                         RJ:GFCT4600*                               GFCT4550 P14
+               GFCT4598*  DJ:GFCT4595 *                              GFCT4550 P14
+                        GFS          INTER-SITES MZ2A              GFCTAB27    
+                         RJ:GFCT4600 *                              GFCT4550 P14
+               GFCT4599*  DJ:GFCT4595 *                              GFCT4550 P14
+                        GFS          INTER-SITES MZ2A              GFCTAB28    
+                         RJ:GFCT4600*                               GFCT4550 P14
+               GFCT4600*  DJ:GFCT4594*                               GFCT4550 P14
+                         DJ:GFCT4598*                               GFCT4550 P14
+                         DJ:GFCT4596 *                              GFCT4550 P14
+                         DJ:GFCT4592 *                              GFCT4550 P14
+GFCT4550 N P14 GFCT4600*  DJ:GFCT4599*                               GFCT4550 P14
+                         DJ:GFCT4591*                               GFCT4550 P14
+                         DJ:GFCT4597*                               GFCT4550 P14
+                         DJ:GFCT4593*                               GFCT4550 P14
+                         RJ:GFCT4955 *                              GFCT4550 P14
+               GFCT4955*  DJ:GFCT4600 *                              GFCT4550 P14
+                        RSI:GFCT4956*                                           
+               GFCT4956* DNS:GFCT4955*                                           
+
+
+
+job GFCT4545
+   EXEC PGM=GFCT2800 (não)
+   EXEC PGM=GFCT2805 (não)
+   EXEC PGM=GFCT2810(não)
+   EXEC PGM=GFCT2815(não)
+   EXEC PGM=GFCT2820 (não)
+
+
+job GFCT4550
+   EXEC PGM=GFCT2825 (book GFCTWAD5) - tem ajuste - AJUSTADO
+   EXEC PGM=GFCT2830 (book GFCTWAD5) - AJUSTADO
+   EXEC PGM=GFCT2835 - tem ajuste - AJUSTADO
+   EXEC PGM=GFCT2840 (não)
+   
+job GFCT4551
+   EXEC PGM=GFCT2880(não)
+
+job GFCT4560 - avaliar - NAO HA IMPACTO
+
+job GFCT4555 - NAO HA IMPACTO
+   EXEC PGM=GFCT2845(não)
+   EXEC PGM=GFCT2895 - tem ajuste - AJUSTADO
+    
+
+job GFCT4565
+   EXEC PGM=GFCT2850(não)
+   
+job GFCT4570
+   EXEC PGM=GFCT2855(não)
+    
+job GFCT4575
+   EXEC PGM=GFCT2865(não)
+
+job GFCT4573
+   EXEC PGM=GFCT2860(não)
+
+job GFCT4574
+   EXEC PGM=GFCT2920 (não)
+   EXEC PGM=GFCT2880(não)
+
+job GFCT4580
+   EXEC PGM=GFCT2870 (não)
+
+job GFCT4578
+   EXEC PGM=GFCT2910(não)
+
+ job GFCT4582
+    EXEC PGM=GFCT2875 (não)
+     

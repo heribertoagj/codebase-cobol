@@ -1,0 +1,33 @@
+Tabela GFCT0700 - 30012026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002966   TICKET-56434
+==========================================================
+
+GFCT4278 - GFCT0702 - tabela GFCT0700 
+
+
+ TABELA  T GRP JOBNAME      JOBNAME *        DSNAME                 TABELA   GRP
+GFCT0700 N P14 GFCT0700*  RJ:GFCT0702*                               GFCT0700 P14
+                         RJ:GFCT0977*                               GFCT0700 P14
+                         RJ:LIME0540                               LIME0500 P32
+               GFCT0702*  DJ:GFCT0700*                               GFCT0700 P14
+               GFCT0977 * DJ:GFCT0700*                               GFCT0700 P14
+                         RJ:GFCT0978*                               GFCT0700 P14
+               GFCT0978*  DJ:GFCT0977*                               GFCT0700 P14
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002966   TICKET-56434
+==========================================================
+
+job GFCT0700 - NAO HA IMPACTO
+  EXEC PGM=GFCT1400 (não) - NAO HA IMPACTO
+  EXEC PGM=GFCT4276 (não) - NAO HA IMPACTO
+
+
+job GFCT0702 - AJUSTADO
+   MJ.CLIE.PRP.CADNOVGR(0) ================================>>> aguardando resposta do Rui
+   EXEC PGM=GFCT4278 (utiliza book I#CLIE20) - AJUSTADO
+   EXEC PGM=GFCT4279 (não) - NAO HA IMPACTO
+   
+     

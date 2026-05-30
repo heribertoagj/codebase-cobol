@@ -1,0 +1,189 @@
+Tabela GFCTN060 - 25012026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002947    TICKET-53638
+==========================================================
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTN060 N P14 GFCTN060*  DJ:GFCTN029 *                              GFCTN020 P14
+                         DJ:GFCTN054*                               GFCTN050 P14
+                         DJ:GFCTN052 *                              GFCTN050 P14
+                         DJ:GFCTN041 *                              GFCTN040 P14
+                         DJ:GFCTN043 *                              GFCTN040 P14
+                         DJ:GFCTN040*                               GFCTN040 P14
+                         DJ:GFCTN050* P14
+                         DJ:GFCTN053 *                              GFCTN050 P14
+                         DJ:GFCTN042 *                               GFCTN040 P14
+                         DJ:GFCTN044*                               GFCTN040 P14
+                         DJ:GFCTN051*                               GFCTN050 P14
+                         DJ:GFCT2922 *                              GFCT2100 P14
+                         RJ:GFCTN063 *                              GFCTN060 P14
+                         RJ:GFCTN062 *                              GFCTN060 P14
+                         RJ:GFCTN064*                               GFCTN060 P14
+                         RJ:GFCTN065 *                              GFCTN060 P14
+                         RJ:GFCTN066 *                              GFCTN060 P14
+               GFCTN062*  DJ:GFCTN060 *                              GFCTN060 P14
+GFCTN060 N P14 GFCTN062*  RJ:GFCTN070 *                              GFCTN060 P14
+               GFCTN063*  DJ:GFCTN060 *                              GFCTN060 P14
+                         RJ:GFCTN071 *                              GFCTN060 P14
+               GFCTN064*  DJ:GFCTN060*                               GFCTN060 P14
+                         RJ:GFCTN072 *                              GFCTN060 P14
+               GFCTN065 * DJ:GFCTN060 *                              GFCTN060 P14
+                         RJ:GFCTN073 *                              GFCTN060 P14
+               GFCTN066*  DJ:GFCTN060*                               GFCTN060 P14
+                         RJ:GFCTN074*                               GFCTN060 P14
+               GFCTN070*  DJ:GFCTN062 *                              GFCTN060 P14
+                         RJ:GFCTN960 *                              GFCTN060 P14
+                         RJ:GFCTN080 *                              GFCTN060 P14
+               GFCTN071*  DJ:GFCTN063*                               GFCTN060 P14
+                         RJ:GFCTN080 *                              GFCTN060 P14
+                         RJ:GFCTN960*                               GFCTN060 P14
+               GFCTN072*  DJ:GFCTN064 *                              GFCTN060 P14
+                         RJ:GFCTN960 *                              GFCTN060 P14
+                         RJ:GFCTN080 *                              GFCTN060 P14
+GFCTN060 N P14 GFCTN073 * DJ:GFCTN065*                               GFCTN060 P14
+                         RJ:GFCTN080 *                              GFCTN060 P14
+                         RJ:GFCTN960 *                              GFCTN060 P14
+               GFCTN074 * DJ:GFCTN066 *                              GFCTN060 P14
+                         RJ:GFCTN960 *                              GFCTN060 P14
+                         RJ:GFCTN080 *                              GFCTN060 P14
+               GFCTN080*  DJ:GFCTN074*                               GFCTN060 P14
+                         DJ:GFCTN071*                               GFCTN060 P14
+                         DJ:GFCTN073 *                              GFCTN060 P14
+                         DJ:GFCTN070 *                              GFCTN060 P14
+                         DJ:GFCTN072 *                              GFCTN060 P14
+                         RJ:GFCTN085 *                              GFCTN060 P14
+                         RJ:GFCTN082 *                              GFCTN060 P14
+                         RJ:GFCTN083 *                              GFCTN060 P14
+                         RJ:GFCTN084 *                              GFCTN060 P14
+                         RJ:GFCTN086 *                              GFCTN060 P14
+               GFCTN082*  DJ:GFCTN080 *                              GFCTN060 P14
+                         RJ:GFCTN090 *                              GFCTN060 P14
+GFCTN060 N P14 GFCTN083*  DJ:GFCTN080 *                              GFCTN060 P14
+                         RJ:GFCTN091 *                              GFCTN060 P14
+               GFCTN084*  DJ:GFCTN080 *                              GFCTN060 P14
+                         RJ:GFCTN092  *                             GFCTN060 P14
+               GFCTN085*  DJ:GFCTN080 *                              GFCTN060 P14
+                         RJ:GFCTN093 *                              GFCTN060 P14
+               GFCTN086 * DJ:GFCTN080  *                             GFCTN060 P14
+                         RJ:GFCTN094 *                              GFCTN060 P14
+               GFCTN090 * DJ:GFCTN082 *                              GFCTN060 P14
+                         RJ:GFCTN100*                               GFCTN100 P14
+                         RJ:GFCTN960 *                              GFCTN060 P14
+               GFCTN091*  DJ:GFCTN083*                               GFCTN060 P14
+                         RJ:GFCTN960 *                              GFCTN060 P14
+                         RJ:GFCTN100 *                              GFCTN100 P14
+               GFCTN092*  DJ:GFCTN084*                               GFCTN060 P14
+                         RJ:GFCTN100*                               GFCTN100 P14
+                         RJ:GFCTN960 *                              GFCTN060 P14
+               GFCTN093*  DJ:GFCTN085 *                              GFCTN060 P14
+GFCTN060 N P14 GFCTN093*  RJ:GFCTN100*                               GFCTN100 P14
+                         RJ:GFCTN960*                               GFCTN060 P14
+               GFCTN094 * DJ:GFCTN086 *                              GFCTN060 P14
+                         RJ:GFCTN100 *                              GFCTN100 P14
+                         RJ:GFCTN960*                               GFCTN060 P14
+               GFCTN960*  DJ:GFCTN074*                               GFCTN060 P14
+                         DJ:GFCTN092*                               GFCTN060 P14
+                         DJ:GFCTN093 *                              GFCTN060 P14
+                         DJ:GFCTN090 *                              GFCTN060 P14
+                         DJ:GFCTN091 *                              GFCTN060 P14
+                         DJ:GFCTN094*                               GFCTN060 P14
+                         DJ:GFCTN070*                               GFCTN060 P14
+                         DJ:GFCTN072 *                              GFCTN060 P14
+                         DJ:GFCTN073*                               GFCTN060 P14
+                         DJ:GFCTN071*                               GFCTN060 P14
+                         RJ:GFCTN961*                               GFCTN060 P14
+               GFCTN961*  DJ:GFCTN960 *                              GFCTN060 P14
+
+
+
+=========================================================================================
+
+JOB GFCTN060 - AJUSTADO
+    UTILIZA MJ.CLIE.PRP.CADNOVGR(0)... PRECISAMOS VER O NOVO ARQUIVO.. VOU VER COM O RUI
+    EXEC PGM=GFCT1333 (UTILIZA BOOKS I#GFCTRU) - AJUSTADO
+
+
+JOB GFCTN029
+   EXEC PGM=GFCT1141 (NÃO)
+
+
+job GFCTN054 - NAO HA IMPACTO
+
+job GFCTN052 - NAO HA IMPACTO
+
+job GFCTN041  - NAO HA IMPACTO
+
+job GFCTN043 - NAO HA IMPACTO
+
+job GFCTN040 - NAO HA IMPACTO
+
+job GFCTN050 - NAO HA IMPACTO 
+ 
+job GFCTN053 - NAO HA IMPACTO
+
+job GFCTN042 - NAO HA IMPACTO
+
+job GFCTN044 - NAO HA IMPACTO
+
+job GFCTN051 - NAO HA IMPACTO
+
+job GFCTN063 
+   EXEC PGM=GFCT1131 (não)
+   
+job GFCTN062
+   EXEC PGM=GFCT1131 (não)
+
+jopb GFCTN064
+   EXEC PGM=GFCT1131 (não)
+
+job GFCTN065
+   EXEC PGM=GFCT1131 (não)
+
+job GFCTN066
+   EXEC PGM=GFCT1131 (não)
+
+job GFCTN070 - NAO HA IMPACTO
+
+job GFCTN071 - NAO HA IMPACTO
+
+job GFCTN072 - NAO HA IMPACTO
+
+job GFCTN073 - NAO HA IMPACTO
+
+job GFCTN074 - NAO HA IMPACTO
+
+job GFCTN080 - NAO HA IMPACTO
+
+job GFCTN085
+   EXEC PGM=GFCT1334 (não)
+   
+job GFCTN082
+   EXEC PGM=GFCT1334 (não)
+
+job GFCTN083
+   EXEC PGM=GFCT1334 (não)
+   
+job GFCTN084
+   EXEC PGM=GFCT1334 (não)
+
+job GFCTN086
+   EXEC PGM=GFCT1334 (não)
+
+job GFCTN090 - NAO HA IMPACTO
+
+job GFCTN091 - NAO HA IMPACTO
+
+job GFCTN092 - NAO HA IMPACTO
+
+job GFCTN093 - NAO HA IMPACTO
+
+job GFCTN094 - NAO HA IMPACTO
+
+job GFCTN100 - NAO HA IMPACTO
+
+
+
+   
+   

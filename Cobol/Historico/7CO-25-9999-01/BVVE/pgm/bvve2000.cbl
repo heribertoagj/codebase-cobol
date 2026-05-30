@@ -1,0 +1,203 @@
+000010 ID  DIVISION.
+000020 PROGRAM-ID. BVVE2000.
+000030 AUTHOR. RICARDO JIMENEZ.
+000040**************************************************************
+000050*                    ULTIMA ALTERACAO                        *
+000060*------------------------------------------------------------*
+000070*    PROGRAMA    :   BVVE2000                                *
+000080*    PROGRAMADOR :   PREVEDEL - CPM                          *
+000090*    ANALISTA    :   ANGELO - GR 91                          *
+000100*    DATA        :   07/ABRIL/97                             *
+000110*------------------------------------------------------------*
+000120*    OBJETIVO    :   CRIAR O PGM 'TTV22000' COM BASE NO PGM  *
+000130*                    'ELOE2000', ALTERANDO O CENTRO DE CUS-  *
+000140*                    TO DE 'ELOE' PARA 'BVVE'                *
+000150**************************************************************
+000160****************************************************************
+000170*    U  L  T  I  M  A    A  L  T  E  R  A  C  A  O   :         *
+000180****************************************************************
+000190*                                                              *
+000200* PROGRAMADOR...: ROMULO MARCHINA SOARES - CPM                 *
+000210* ANALISTA......: VALERIA                - CPM                 *
+000220* DATA..........: 17/11/1998                                   *
+000230*                                                              *
+000240* OBJETIVO......: CONVERSAO DE TODAS AS DATAS CONTEMPLANDO A   *
+000250*                 VIRADA DO SECULO.                            *
+000260*                                                              *
+000270****************************************************************
+000280 ENVIRONMENT DIVISION.
+000290 CONFIGURATION SECTION.
+000300 SPECIAL-NAMES.
+000310     DECIMAL-POINT IS COMMA.
+000320
+000330 INPUT-OUTPUT  SECTION.
+000340 FILE-CONTROL.
+000350     SELECT  FITACOMO ASSIGN  UT-S-FITACOMO.
+000360     SELECT  FITA4    ASSIGN  UT-S-FITA4.
+000370     SELECT  FITAFUTU ASSIGN  UT-S-FITAFUTU.
+000380
+000390 DATA DIVISION.
+000400 FILE SECTION.
+000410
+000420 FD  FITACOMO
+000430     RECORDING V LABEL RECORD STANDARD BLOCK 0.
+000440 01  REG-COMO.
+000450     03  COMO-AGEN              PIC 9(05)    COMP-3.
+000460     03  COMO-RAZAO             PIC 9(05)    COMP-3.
+000470     03  COMO-CONTA             PIC 9(07)    COMP-3.
+000480     03  COMO-DGCC              PIC X.
+000490     03  FILLER                 PIC X(03).
+000500     03  COMO-LANCA             PIC 9(03)    COMP-3.
+000510     03  COMO-DOCTO             PIC 9(07)    COMP-3.
+000520     03  FILLER                 PIC X(05).
+000530     03  COMO-DTMTO             PIC 9(09)    COMP-3.
+000540     03  FILLER                 PIC X(16).
+000550     03  COMO-MOEDA             PIC XX.
+000560     03  COMO-VALOR             PIC 9(11)V99 COMP-3.
+000570     03  COMO-QUANT             PIC 9(02).
+000580     03  COMO-OCORR  OCCURS 1 TO 20
+000590                     DEPENDING ON COMO-QUANT.
+000600         05  FILLER      PIC X(10).
+000610
+000620 FD  FITA4
+000630     RECORDING F LABEL RECORD STANDARD BLOCK 0.
+000640
+000650 01  FT4-REG.
+000660     03  FILLER      PIC X(24).
+000670     03  FT4-DECR    PIC X(01).
+000680     03  FILLER      PIC X(75).
+000690
+000700 FD  FITAFUTU
+000710     RECORDING F LABEL RECORD STANDARD BLOCK 0.
+000720
+000730 01  FUTU-REG       PIC X(100).
+000740
+000750 WORKING-STORAGE SECTION.
+000760
+000770*-------------------------------------------------------*
+000780*        A R E A    D A   P O O L 0 4 3 1
+000790*-------------------------------------------------------*
+000800
+000810 77  WRK-CONTA-POOL0431       PIC 9(07) VALUE ZEROS.
+000820 77  WRK-DIGITO-POOL0431      PIC X(01).
+000830 77  WRK-TAMANHO-POOL0431     PIC 9(02) VALUE 7.
+000840
+000850 01  WRK-RAZAO      PIC 9(05) VALUE ZEROS.
+000860 01  FILLER REDEFINES WRK-RAZAO.
+000870     03  WRK-GRUPO  PIC 9(02).
+000880     03  WRK-SUBGP  PIC 9(02).
+000890     03  FILLER     PIC 9(01).
+000900
+000910
+000920 01  WK-FUT-REG.
+000930     03  FUT-F4.
+000940         05  FUT-AGENC         PIC 9(05) COMP-3.
+000950         05  FUT-RAZAO.
+000960             10  FUT-GRUPO     PIC 9(03) COMP-3.
+000970             10  FUT-SUBGR     PIC 9(03) COMP-3.
+000980         05  FUT-CONTA         PIC 9(7)  COMP-3.
+000990         05  FUT-DIGI          PIC X(1).
+001000         05  FUT-DTMTO         PIC 9(09) COMP-3.
+001010         05  FUT-LANCA         PIC 9(5)  COMP-3.
+001020         05  FUT-DOCTO         PIC 9(7)  COMP-3.
+001030         05  FUT-DC            PIC X(1).
+001040         05  FUT-VALOR         PIC 9(13)V99 COMP-3.
+001050         05  FUT-DIASVINC      PIC 9(03)    COMP-3.
+001060         05  FUT-CCUSTO        PIC X(04).
+001070         05  FUT-SUBS          PIC 9(05)    COMP-3.
+001080         05  FUT-TPSER         PIC X(02).
+001090         05  FUT-TPENT         PIC X(01).
+001100         05  FUT-SN            PIC X(01).
+001110         05  FUT-ORIGEM        PIC X(32).
+001120         05  FUT-DIALA         PIC 9(02).
+001130         05  FUT-IDENT         PIC 9(09)    COMP-3.
+001140         05  FUT-PROD          PIC 9(04).
+001150         05  FUT-DTGRV         PIC 9(09)    COMP-3.
+001160******* DATA GRAVACAO (AAAAMMDD)
+001170         05  FUT-FILLER        PIC 9(02).
+001180         05  FUT-NUMSEQ        PIC 9(03).
+001190         05  FUT-TIPO          PIC X(01).
+001200
+001210**** AREA DA POOL7600 ***
+-INC I#BVGEDH
+001230
+001240 01  DATA-MAQ              PIC 9(8).
+001250
+001260 PROCEDURE DIVISION.
+001270
+001280 010-INICIO.
+001290
+001300     CALL 'POOL7600' USING DATA-HORA.
+001310     MOVE DT-AAAAMMDD  TO  DATA-MAQ.
+001320
+001330     OPEN  INPUT  FITA4
+001340                  FITACOMO
+001350          OUTPUT  FITAFUTU.
+001360
+001370 020-LER-FITA4.
+001380
+001390     READ  FITA4   AT END  GO  030-FITA-COMO.
+001400
+001410     IF  FT4-DECR  EQUAL  1
+001420         GO  020-LER-FITA4.
+001430
+001440     MOVE  FT4-REG     TO    FUT-F4
+001450     MOVE  'LF'        TO    FUT-TPSER.
+001460     MOVE  ZEROS       TO    FUT-DIALA.
+001470     MOVE  DATA-MAQ    TO    FUT-DTGRV.
+001480     MOVE  ZEROS       TO    FUT-NUMSEQ.
+001490     MOVE  2           TO    FUT-DIASVINC.
+001500     MOVE  'D'         TO    FUT-TIPO.
+001510
+001520     WRITE FUTU-REG    FROM  WK-FUT-REG.
+001530     GO  020-LER-FITA4.
+001540
+001550 030-FITA-COMO.
+001560
+001570 035-LER-FITA-COMO.
+001580     READ  FITACOMO  AT END  GO 040-FIM-PGM.
+001590
+001600     IF  COMO-MOEDA  EQUAL  'NZ'
+001610         MOVE  24680  TO  COMO-RAZAO.
+001620
+001630     MOVE  COMO-AGEN   TO   FUT-AGENC.
+001640     MOVE  COMO-RAZAO  TO   WRK-RAZAO.
+001650     MOVE  WRK-GRUPO   TO   FUT-GRUPO.
+001660     MOVE  WRK-SUBGP   TO   FUT-SUBGR.
+001670     MOVE  COMO-CONTA  TO   FUT-CONTA.
+001680     MOVE  COMO-CONTA          TO    WRK-CONTA-POOL0431.
+001690     MOVE  7                   TO    WRK-DIGITO-POOL0431.
+001700
+001710     CALL  'POOL0431'       USING    WRK-CONTA-POOL0431
+001720                                     WRK-DIGITO-POOL0431
+001730                                     WRK-TAMANHO-POOL0431.
+001740
+001750     IF    WRK-DIGITO-POOL0431   EQUAL  '.'
+001760           MOVE  SPACES        TO    WRK-DIGITO-POOL0431.
+001770
+001780     MOVE  WRK-DIGITO-POOL0431 TO    FUT-DIGI.
+001790
+001800     MOVE  COMO-DTMTO  TO   FUT-DTMTO.
+001810     MOVE  COMO-LANCA  TO   FUT-LANCA.
+001820     MOVE  COMO-DOCTO  TO   FUT-DOCTO.
+001830     MOVE  '1'         TO   FUT-DC.
+001840     MOVE  COMO-VALOR  TO   FUT-VALOR.
+001850     MOVE  2           TO   FUT-DIASVINC.
+001860     MOVE  'BVVE'      TO   FUT-CCUSTO.
+001870     MOVE  04025       TO   FUT-SUBS.
+001880     MOVE  'LF'        TO   FUT-TPSER.
+001890     MOVE  SPACES      TO   FUT-TPENT.
+001900     MOVE  'N'         TO   FUT-SN.
+001910     MOVE  SPACES      TO   FUT-ORIGEM.
+001920     MOVE  ZEROS       TO   FUT-DIALA.
+001930     MOVE  ZEROS       TO   FUT-IDENT.
+001940     MOVE  ZEROS       TO   FUT-PROD.
+001950     MOVE   DATA-MAQ   TO   FUT-DTGRV.
+001960     MOVE  ZEROS       TO   FUT-NUMSEQ.
+001970     MOVE  'D'         TO   FUT-TIPO.
+001980     WRITE FUTU-REG   FROM  WK-FUT-REG.
+001990     GO  035-LER-FITA-COMO.
+002000
+002010 040-FIM-PGM.
+002020     CLOSE FITA4 FITACOMO FITAFUTU.
+002030     STOP RUN.

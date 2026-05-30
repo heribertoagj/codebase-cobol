@@ -1,0 +1,270 @@
+PACOTE TABELA GFCT0005 - 18/01/2026
+
+
+OBS ACHO QUE ESSE SOMENTE É PARA CONFERIR.. MAS NÃO TEM AJUSTES.
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002995  TICKET-66073
+==========================================================
+
+RETIRAR OS RECOMPS DO PACOTE 
+GFCT2096
+GFCT2098
+GFCT2101
+GFCT2102
+GFCT2104
+GFCT2112
+GFCT2135
+GFCT2155
+GFCT4220
+GFCT4323
+
+==================================================================
+GFCT0005 N P14 ACRITICO   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTDLIB*  DJ:GFCT0981 *                              GFCT0600 P14
+                         DJ:GFCTD300 *                              GFCT3000 P14
+                         DJ:GFCT0114 *                              GFCT0100 P14
+                         DJ:GFCT2911 *                              GFCT2000 P14
+                         DJ:GFCT3913 *                               GFCT3000 P14
+                         DJ:GFCTD300 *                              GFCT3000 P14
+                         DJ:GFCT0276  *                             GFCT0250 P14
+                         DJ:GFCTD002  *                             GFCT2000 P14
+                         DJ:GFCTD002 *                              GFCT2000 P14
+                         DJ:GFCT3921 *                              GFCT3000 P14
+                         RJ:GFCT0014  *                             GFCT0005 P14
+               GFCTDOCT   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTD005 * DJ:GFCT0024  *                             GFCT0005 P14
+                         DJ:GFCT0031 *                              GFCT0005 P14
+                         DJ:GFCT0033 *                              GFCT0005 P14
+                         DJ:GFCT0029  *                             GFCT0005 P14
+                         RJ:GFCT2420 *                              GFCT2420 P14
+GFCT0005 N P14 GFCTD005 *  RJ:GFCTD001  *                             GFCT3000 P14
+                         RJ:GFCT2422 *	                              GFCT2420 P14
+                         RJ:GFCTD300 *                              GFCT3000 P14
+                         RJ:GFCT2424 *                               GFCT2420 P14
+                         RJ:GFCTD420 *                              GFCT2420 P14
+                         RJ:GFCTD420 *                               GFCT2420 P14
+                         RJ:GFCTD420 *                              GFCT2420 P14
+                         RJ:GFCTD510 *                              GFCT2510 P14
+               GFCTD007*  DJ:GFCT0114 *                               GFCT0100 P14
+                         DJ:GFCT0951  *                             GFCT0115 P14
+               GFCT0014 * DNS:LIBERADO                                           
+                         DJ:GFCTDLIB  *                             GFCT0005 P14
+                         RJ:PM141930                               PM14NOIT P14
+                        GCO:GFCT0111 *                              GFCT0111 P14
+                        GCO:GFCT0015  *                             GFCT0005 P14
+                        GCO:GFCT1190 *                              GFCT1190 P14
+                        GCO:GFCTX111 *                              GFCTX111 P14
+                        GCO:GFCT0401 *                              GFCT0400 P14
+GFCT0005 N P14 GFCT0014 * GFJ:GFCT5998 *                               GFCTPEDI P14
+                        GFJ:GFCT5999 *                               GFCTPEDI P14
+                        GFJ:                                       GFCT0111 P14
+                        GFJ:                                       GFCTX111 P14
+                        GFJ:                                       GFCTX610 P14
+               GFCT0015 * DJ:GFCT3913 *                              GFCT3000 P14
+                         DJ:GFCT0276 *                              GFCT0250 P14
+                         DJ:GFCTFINA *                              GFCTX610 P14
+                         DJ:GFCTD300 *                              GFCT3000 P14
+                         DJ:GFCTD300 *                              GFCT3000 P14
+                         DJ:GFCT3921 *                              GFCT3000 P14
+                         DJ:GFCT0114  *                             GFCT0100 P14
+                         DJ:GFCT0981 *                              GFCT0600 P14
+                         DJ:GFCTD002 *                              GFCT2000 P14
+                         DJ:GFCTD002 *                              GFCT2000 P14
+                         DJ:GFCT2911 *                              GFCT2000 P14
+                        DCO:GFCT0014 *                              GFCT0005 P14
+                         RJ:GFCT0034 *                              GFCT0005 P14
+GFCT0005 N P14 GFCT0015 *  RJ:GFCT0226  *                             GFCT0226 P14
+                         RJ:GFCT0020  *                             GFCT0005 P14
+                         RJ:GFCT1827  *                             GFCT1827 P14
+                         RJ:GFCTD215 *                              GFCTN215 P14
+                         RJ:GFCTN215 *                              GFCTN215 P14
+                         RJ:GFCT0401 *                              GFCT0400 P14
+                         RJ:PM142030                               PM14NOIT P14
+                         RJ:PM142030                               PM14NOIT P14
+                         RJ:PM142030                               PM14NOIT P14
+                        GFJ:                                       GFCTN320 P14
+               GFCT0020 * DJ:GFCT0015 *                              GFCT0005 P14
+                         RJ:GFCT0021 *                              GFCTANAT P14
+                         RJ:GFCT0021 *                              GFCT0005 P14
+               GFCT0021 * DJ:GFCT0020 *                              GFCTANAT P14
+                         DJ:GFCT0020 *                              GFCT0005 P14
+                         RJ:GFCT0022 *                              GFCT0005 P14
+               GFCT0022*  DJ:GFCT0021 *                               GFCT0005 P14
+                         DJ:GFCT0035 *                               GFCT0005 P14
+GFCT0005 N P14 GFCT0022*  RJ:GFCT0023  *                             GFCT0005 P14
+               GFCT0023*  DJ:GFCT0022  *                             GFCT0005 P14
+                         RJ:GFCT0026  *                             GFCT0005 P14
+               GFCT0024 * DJ:GFCT0025  *                            GFCT0005 P14
+                         DJ:GFCT0025 *                             GFCT0005 P14
+                         RJ:GFCT0103 *                             GFCT0100 P14
+                         RJ:GFCTA070 *                             GFCTA070 P14
+                         RJ:GFCTD005 *                               GFCT0005 P14
+                        GFJ:                                       GFCT0300 P14
+               GFCT0025 *DJ:GFCT0031 *                              GFCT0005 P14
+                         DJ:GFCT0031  *                             GFCT0005 P14
+                        RIL:GFCT0025*GC-MZ1A-UNIX(GFCT0025BIM )                
+                        RIL:GFCT0025*GC-MZ1A-UNIX(GFCT0025BIM )                
+                         RJ:GFCT0028 *                             GFCT0005 P14
+                         RJ:GFCT0028 *                             GFCT0005 P14
+                         RJ:GFCT0024 *                              GFCT0005 P14
+                         RJ:GFCT0024 *                              GFCT0005 P14
+                         RJ:PM142030                               PM14NOIT P14
+GFCT0005 N P14 GFCT0025 *RJ:PM142030                               PM14NOIT P14
+                         RJ:PM141930                               PM14NOIT P14
+                         RJ:PM141930                               PM14NOIT P14
+                        GFJ:                                       GFCT5700 P14
+                        RJS MOCCT026 INTER-SITES AL1A                          
+                        RJS MOCC0130 INTER-SITES AL1A                          
+                        RJS MOCCT026 INTER-SITES AL1A                          
+                        RJS MOCC0130 INTER-SITES AL1A                          
+               GFCT0026 * DJ:GFCT0023 *                               GFCT0005 P14
+                         RJ:GFCT0027 *                             GFCT0005 P14
+               GFCT0027* DJ:GFCT0026 *                              GFCT0005 P14
+                         RJ:GFCT0030  *                            GFCT0005 P14
+               GFCT0028 *DJ:GFCT0025 *                             GFCT0005 P14
+                         DJ:GFCT0025 *                             GFCT0005 P14
+                         RJ:GFCT0029 *                              GFCT0005 P14
+               GFCT0029 *  DJ:GFCT0028 *                             GFCT0005 P14
+                         RJ:GFCT2200 *                             GFCT2200 P14
+                         RJ:GFCTD005 *                              GFCT0005 P14
+GFCT0005 N P14 GFCT0029 * RJ:GFCTD010  *                            GFCT2200 P14
+               GFCT0030 *DJ:GFCT0027 *                             GFCT0005 P14
+                         RJ:GFCT0031 *                               GFCT0005 P14
+               GFCT0031 * DJ:GFCT0030 *                             GFCT0005 P14
+                         RJ:GFCT0025 *                             GFCT0005 P14
+                         RJ:GFCT0025 *                             GFCT0005 P14
+                         RJ:GFCT0032 *                             GFCT0005 P14
+                         RJ:GFCTD005 *                              GFCT0005 P14
+               GFCT0032 *DJ:GFCT0031 *                              GFCT0005 P14
+                         RJ:GFCT0033 *                              GFCT0005 P14
+               GFCT0033 *  DJ:GFCT0032 *                             GFCT0005 P14
+                         RJ:GFCTD005 *                              GFCT0005 P14
+               GFCT0034 *  DJ:GFCT0015 *                              GFCT0005 P14
+                         RJ:GFCT0035 *                              GFCT0005 P14
+               GFCT0035 *  DJ:GFCT0034 *                              GFCT0005 P14
+                         RJ:GFCT0022 *                              GFCT0005 P14
+
+===================================
+PACOTE GFCT002995  TICKET-66073
+===================================
+
+job GFCTD002 - NAO HA AJUSTE
+    EXEC PGM=GFCT9208 (não tem) - NAO HA AJUSTE
+    EXEC PGM=GFCT9209 (não tem) - NAO HA AJUSTE
+
+job GFCTD005 - NAO HA AJUSTE
+    EXEC PGM=GFCT9208 (não tem) - NAO HA AJUSTE
+    EXEC PGM=GFCT9209 (não tem) - NAO HA AJUSTE
+  
+job GFCT0024 - NAO HA AJUSTE 
+    EXEC PGM=GFCT1011 (não tem) - NAO HA AJUSTE
+    
+job GFCT2420 - NAO HA AJUSTE
+ 
+job GFCTD001 - NAO HA AJUSTE
+   EXEC PGM=GFCT9208 (não tem) - NAO HA AJUSTE
+   EXEC PGM=GFCT9209 (não tem) - NAO HA AJUSTE
+
+job GFCT2422 (não tem) - NAO HA AJUSTE
+
+job GFCT2424 - NAO HA AJUSTE
+   EXEC PGM=GFCT1390 (não tem) - NAO HA AJUSTE
+
+job GFCT0111 - verificar - NAO HA AJUSTE
+
+job GFCT0015 - NAO HA AJUSTE
+   EXEC PGM=GFCT1005 (não tem) - NAO HA AJUSTE
+   EXEC PGM=GFCT4300 (não tem) - NAO HA AJUSTE
+   EXEC PGM=GFCT3615 (não tem) - NAO HA AJUSTE 
+ 
+job GFCT1190 - verificar - NAO HA AJUSTE 
+ 
+job GFCTX111 - não tem - NAO HA AJUSTE 
+
+job GFCT0401 - NAO HA AJUSTE
+    EXEC PGM=GFCT3638 (não tem) - NAO HA AJUSTE
+    EXEC PGM=GFCT3648 (não tem) - NAO HA AJUSTE
+
+job GFCT5998 (não tem) - NAO HA AJUSTE
+
+job GFCT5999 (não tem) - NAO HA AJUSTE
+
+job GFCT0226 - NAO HA AJUSTE
+   EXEC PGM=GFCT1850 (não tem) - NAO HA AJUSTE
+  
+  
+job GFCT1827 - NAO HA AJUSTE
+   EXEC PGM=GFCT1827 (não tem) - NAO HA AJUSTE
+    
+job GFCT0025 - NAO HA AJUSTE
+   EXEC PGM=GFCT1900 (não tem) - NAO HA AJUSTE
+   EXEC PGM=GFCT1010 (não tem) - NAO HA AJUSTE
+   EXEC PGM=GFCT1015 (não tem) - NAO HA AJUSTE
+   EXEC PGM=GFCT1193 (não tem) - NAO HA AJUSTE
+   EXEC PGM=GFCT1191 (não tem) - NAO HA AJUSTE
+   EXEC PGM=GFCT1190 (não tem) - NAO HA AJUSTE
+   EXEC PGM=COMO9327 (não tem) - NAO HA AJUSTE 
+     
+JOB GFCTA070 - NAO HA AJUSTE
+   EXEC PGM=GFCT4300 (NAO TEM) - NAO HA AJUSTE
+  
+JOB GFCT2200 - NAO HA AJUSTE
+   EXEC PGM=GFCT1575 (NAO TEM) - NAO HA AJUSTE
+
+
+   
+
+   
+ 
+   
+      
+       
+  
+
+   
+   
+   
+   
+  
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

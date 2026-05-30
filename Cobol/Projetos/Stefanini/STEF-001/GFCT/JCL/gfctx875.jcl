@@ -1,0 +1,115 @@
+//GFCTX875 JOB 'GFCT,4008,PR14','I353737',MSGCLASS=Z,SCHENV=BATCH
+//JOBLIB   DD DSN=MX.BIBGERAL,DISP=SHR
+//         DD DSN=MJ.BIBGERAL,DISP=SHR
+//         DD DSN=DB2M1.R2.DSNLOAD,DISP=SHR
+//         DD DSN=SYS1.CEE.SCEERUN,DISP=SHR
+//STEP1    EXEC DB2M1HPU
+//*
+//* ***    UNLOAD DE TABELA PERMISSAO DE CESTAS
+//*
+//SYSPUNCH DD DUMMY
+//SYSREC00 DD DSN=MX.GFCT.JX875S01.GOTFB0T7(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=DISCO,
+//       SPACE=(TRK,(150000,55000),RLSE),
+//       DCB=(MX.A),
+//       DATACLAS=PRODX37
+//SYSIN    DD *
+  UNLOAD TABLESPACE
+  DB2 YES
+  QUIESCE YES
+  SELECT  A.CSERVC_TARIF
+         ,A.CAGPTO_CTA
+         ,A.CSEQ_AGPTO_CTA
+         ,A.DINIC_PRMSS_PCOTE
+         ,V.CCGC_CPF
+         ,V.CCTRL_CPF_CGC
+         ,V.CFLIAL_CGC
+         ,V.CCGC_CPF_ST
+         ,V.CCTRL_CPF_CGC_ST
+         ,V.CFLIAL_CGC_ST
+  FROM    DB2PRD.PRMSS_ADSAO_PCOTE   A
+         ,DB2PRD.TPRMSS_GRP_CLI      V
+  WHERE   A.CSERVC_TARIF       = V.CSERVC_TARIF
+  AND     A.CAGPTO_CTA         = V.CAGPTO_CTA
+  AND     A.CSEQ_AGPTO_CTA     = V.CSEQ_AGPTO_CTA
+  AND     A.DINIC_PRMSS_PCOTE  = V.DINIC_PRMSS_PCOTE
+  OUTDDN (SYSREC00)
+  FORMAT  DSNTIAUL
+  LOADDDN SYSPUNCH
+//SYSOUT   DD SYSOUT=*
+//LISTING  DD SYSOUT=*
+//SYSTSPRT DD SYSOUT=*
+//SYSPRINT DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=Y
+//*
+//STEP02   EXEC SORTD,
+//       PARM='DYNALLOC=(,255),FILSZ=E250000000'
+//*
+//* ***    CLASSIFICA ARQ. POR:
+//*
+//SORTIN   DD DSN=*.STEP1.HPU.SYSREC00,
+//       DISP=SHR
+//SORTOUT  DD DSN=MX.GFCT.JX875S2.SORTB02R(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=DISCO,
+//       SPACE=(TRK,(150000,55000),RLSE),
+//       DATACLAS=PRODX37
+//SYSIN    DD *
+  SORT FIELDS=(01,03,PD,A,21,05,PD,A,28,03,PD,A,11,10,CH,A)
+  END
+//*
+//STEP03   EXEC PGM=ICETOOL
+//*
+//* ***    RELATORIO REGISTROS ATUALIZADOS
+//*
+//ARQUIVO  DD DSN=*.STEP02.SORT.SORTOUT,
+//       DISP=SHR
+//RELATO   DD DSN=MX.GFCT.JX875S3.PUBL(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=DISCO,
+//       SPACE=(TRK,(020000,8000),RLSE),
+//       DCB=(MX.A,LRECL=0133,RECFM=FB),
+//       DATACLAS=PRODX37
+//SORTCNTL DD *
+  SORT FIELDS=COPY
+//TOOLIN   DD *
+  DISPLAY  FROM(ARQUIVO)      LIST(RELATO)                       -
+  TITLE('PERMISSOES CADASTRADAS  ')    -
+  PAGE DATE(DM4/)          TIME                    BETWEEN(1)    -
+  HEADER('TARIFA')       ON(01,003,PD)                           -
+  HEADER('AGRUP')        ON(04,002,PD)                           -
+  HEADER('SEQUENCIA')    ON(06,005,PD)                           -
+  HEADER('DT-INI')       ON(11,010,CH)                           -
+  HEADER('CCGC-CPF')     ON(21,005,PD)                           -
+  HEADER('CFLIAL-CGC')   ON(28,003,PD)                           -
+  HEADER('CCTRL-CPF')    ON(26,002,PD)                           -
+  BLANK                                                          -
+  COUNT('TOTAL GERAL:') EDCOUNT(U10)
+//SYSOUT   DD SYSOUT=*
+//DFSMSG   DD SYSOUT=*
+//TOOLMSG  DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=Y
+//*
+//STEP04   EXEC PGM=GARQ2000
+//*
+//* ***    ************************************************************
+//* ***    *  ENVIA ARQUIVO ZIP PARA BGDT VIA GARQ (FLUXO DINAMICO TXT)
+//* ***    *  - ARQUIVO DE CONTROLE
+//* ***    *  DSNAME   : M2.GFCT.GARQ.ARQPERM
+//* ***    *  XFB/HDFS : GFCT.GARQ.ARQPERM
+//* ***    ************************************************************
+//*
+//ENTRADA  DD DSN=*.STEP03.RELATO,
+//       DISP=SHR
+//SAIDA    DD DSN=M2.GFCT.GARQ.ARQPERM,
+//       DISP=(,CATLG,DELETE),
+//       UNIT=DISCO,
+//       SPACE=(CYL,(20000,8000),RLSE),
+//       FREE=CLOSE,
+//       DATACLAS=DCZEDC
+//SYSIN    DD *
+NOME_DO_FLUXO=M2.GFCT.GARQ.ARQPERM
+//SYSOUT   DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=Y
+//*

@@ -1,0 +1,61 @@
+//GFCT5107 JOB 'GFCT,4220,PR14','B031531',MSGCLASS=Z,SCHENV=BATCH
+//JOBLIB   DD DSN=MX.BIBGERAL,DISP=SHR
+//         DD DSN=DB2M1.R2.DSNLOAD,DISP=SHR
+//         DD DSN=SYS1.CEE.SCEERUN,DISP=SHR
+//STEP1    EXEC DB2M1HPU
+//*
+//* ***    ---------------------------------------------------
+//* ***    HPU DA TABELA GFCTB0L5 - AGRUPAMENTO / CLIENTE.
+//* ***    ---------------------------------------------------
+//*
+//SYSREC00 DD DSN=MX.GFCT.GFCT5107.GFCTB0L5(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=DISCO,
+//       SPACE=(TRK,(020000,4000),RLSE),
+//       DCB=(MX.A)
+//SYSTSIN  DD DSN=DB2A2.R2.SYSIN(DSNTIAUL),
+//       DISP=SHR
+//SYSIN    DD *
+  UNLOAD TABLESPACE GFCTD000.GFCTS0L5
+  DB2 NO QUIESCE YES
+  SELECT
+         CAGPTO_CTA,
+         CINDCD_AUTRZ_EMIS,
+         HINCL_REG_SIST,
+         CCNPJ_CPF,
+         CFLIAL_CGC,
+         CCTRL_CPF_CGC,
+         CCNPJ_CPF_ST,
+         CFLIAL_CGC_ST,
+         CCTRL_CPF_CGC_ST
+    FROM
+         DB2PRD.TAUTRZ_ENVIO_CLI
+  OUTDDN ( SYSREC00 )
+  FORMAT DSNTIAUL
+  LOADDDN SYSPUNCH
+//SYSTSPRT DD SYSOUT=*
+//SYSPRINT DD SYSOUT=*
+//LISTING  DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=*
+//SYSPUNCH DD SYSOUT=*
+//*
+//STEP2    EXEC SORTD
+//*
+//* ***    -----------------------------------------------------
+//* ***    CLASSIFICA BAIXA DA TABELA GFCTB0L5 - CLIENTE.
+//* ***    ORDEM: AGRUPAM., COD. AUTORIZ. EMIS, E HORA INCLUSAO.
+//* ***    -----------------------------------------------------
+//*
+//SORTIN   DD DSN=MX.GFCT.GFCT5107.GFCTB0L5(0),
+//       DISP=SHR
+//SORTOUT  DD DSN=MX.GFCT.GFCT5107.TBCLIENT.CLASS(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=DISCO,
+//       SPACE=(TRK,(020000,4000),RLSE),
+//       DCB=(MX.A,LRECL=054,RECFM=FB)
+//SYSIN    DD *
+ SORT FIELDS=(1,2,PD,A,3,1,PD,A,4,26,CH,A),FORMAT=BI
+ END
+//SYSOUT   DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=Y
+//*

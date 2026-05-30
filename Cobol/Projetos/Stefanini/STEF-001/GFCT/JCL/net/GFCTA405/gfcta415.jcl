@@ -1,0 +1,240 @@
+//GFCTA415 JOB 'GFCT,4008,PR14','B587599',MSGCLASS=Z,SCHENV=BATCH
+//JOBLIB   DD DSN=MX.BIBGERAL,DISP=SHR
+//         DD DSN=SA.RDG2.SREST.MZ1.DCALOAD,DISP=SHR
+//         DD DSN=DB2M1.R2.DSNLOAD,DISP=SHR
+//         DD DSN=SYS1.CEE.SCEERUN,DISP=SHR
+//*
+//* ***    *********************************************************
+//* ***    *                SMART  RESTART                         *
+//* ***    *                                                       *
+//* ***    *  ESTE JOB  POSSUI "SMART RESTART" SOMENTE PARA        *
+//* ***    *                  LEITURA E DB2                        *
+//* ***    *                                                       *
+//* ***    *********************************************************
+//*
+//STEP1    EXEC PGM=GFCT3254
+//*
+//* ***    FAZ UPDATE NA TABELA GFCTB0M6 - COMMIT / RESTART
+//*
+//ATULSITU DD DSN=MX.GFCT.ARQCHEC2(0),
+//       DISP=SHR
+//SYSOUT   DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=Y
+//*
+//STEP2A   EXEC PGM=PLAN0260
+//*
+//* ***    -------------------------
+//* ***    VERIFICA ARQUIVO VAZIO.
+//* ***    -------------------------
+//*
+//LEITURA  DD DSN=MX.GFCT.EFEOKFIS(0),
+//       DISP=SHR
+//SYSOUT   DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=Y
+//*
+//STEP2B   EXEC PGM=POOL0262,
+//       COND=(0,NE,STEP2A)
+//*
+//* ***    DESCOMPACTA ARQUIVO DE CLIENTES - (LRECL= 180 I#CLIEV20)
+//* ***    ORDENANDO POR CAD-AGENCIA E CAD-CONTA.
+//*
+//SORTIN   DD DSN=MJ.CLIE.PRP.CADNOVGR.ALFA(0),
+//       DISP=SHR
+//SORTOUT  DD DSN=MX.GFCT.CLIENTES.GFCTA415(+1),
+//       DISP=(,CATLG,CATLG),
+//       UNIT=DISCO,
+//       SPACE=(TRK,(150000,50000),RLSE),
+//       DCB=(MX.A,LRECL=0180,RECFM=FB),
+//       DATACLAS=PRODX37
+//SYSIN    DD *
+  SORT FIELDS=(1,3,A,7,4,A),FORMAT=BI
+  END
+//SORTLIB  DD DSN=SYS1.SORTLIB,
+//       DISP=SHR
+//SORTWK01 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK02 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK03 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK04 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK05 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK06 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK07 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK08 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK09 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK10 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK11 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK12 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK13 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK14 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK15 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK16 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK17 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK18 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK19 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK20 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK21 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK22 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK23 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK24 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK25 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK26 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK27 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK28 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK29 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK30 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK31 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK32 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SYSOUT   DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=Y
+//*
+//STEP2C   EXEC PGM=GFCT4200,
+//       PARM='DIARIO',
+//       COND=(0,NE,STEP2A)
+//*
+//* ***    CONSISTENCIA DE MOVIMENTO
+//* ***    ESPURGO MENSAL DE LANCAMENTOS
+//* ***    MOVIMENTO PARA RELATORIO MENSAL
+//* ***    PARA PARM DIARIO SAI: MOVATUAL/INCONSIS
+//* ***    PARA PARM MENSAL SAI: MOVATUAL/MESPURGO/MOVTOLIS
+//*
+//MOVIMENT DD DSN=MX.GFCT.EFEOKFIS(0),
+//       DISP=SHR
+//ARQDATAS DD DSN=MX.GFCT.PRP.CTRLDATA(0),
+//       DISP=SHR
+//MOVATUAL DD DSN=MX.GFCT.EFOKFI2Q(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=(DISCO,20),
+//       SPACE=(TRK,(005000,0500),RLSE),
+//       DCB=(MX.A,LRECL=0200,RECFM=FB)
+//INCONSIS DD DSN=MX.GFCT.CREDINCD(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=(DISCO,20),
+//       SPACE=(TRK,(005000,0500),RLSE),
+//       DCB=(MX.A,LRECL=0200,RECFM=FB)
+//MOVTOLIS DD DUMMY,
+//       DCB=(LRECL=0200,RECFM=FB)
+//MESPURGO DD DUMMY,
+//       DCB=(LRECL=0200,RECFM=FB)
+//SYSOUT   DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=Y
+//*
+//STEP2D   EXEC SORTD
+//*
+//* ***    =============================================================
+//* ***    CLASSIFICA POR AGENCIA E CONTA
+//* ***    =============================================================
+//*
+//SORTIN   DD DSN=*.STEP2C.MOVATUAL,
+//       DISP=OLD
+//SORTOUT  DD DSN=MX.GFCT.MOVTOCLM(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=(DISCO,20),
+//       SPACE=(TRK,(005000,0500),RLSE),
+//       DCB=(MX.A,LRECL=0200,RECFM=FB)
+//SYSIN    DD *
+  SORT FIELDS=(1,3,PD,A,4,4,PD,A)
+  END
+//*
+//STEP2E   EXEC PGM=GFCT4208,
+//       COND=(0,NE,STEP2A)
+//*
+//* ***    OBTEM INFORMACOES DA MESU E CLIE
+//* ***    DATA DE ABERTURA, DIRETORIA, GERENCIA E UF.
+//*
+//CLIEDESC DD DSN=*.STEP2B.SORTOUT,
+//       DISP=SHR
+//RELCREDI DD DSN=*.STEP2D.SORT.SORTOUT,
+//       DISP=SHR
+//RELCREDS DD DSN=MX.GFCT.EFEOKFI3(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=(DISCO,20),
+//       SPACE=(TRK,(005000,0500),RLSE),
+//       DCB=(MX.A,LRECL=0200,RECFM=FB)
+//SYSOUT   DD SYSOUT=*
+//SYSTSPRT DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=Y
+//*
+//STEP2F   EXEC PGM=PLAN1970,
+//       PARM=01,
+//       COND=(0,NE,STEP2A)
+//*
+//* ***    *********************************************************
+//* ***    OBJETIVO : EFETUA ACUMULADO - CONSISTENCIA FISICA
+//* ***    *********************************************************
+//*
+//ENT00001 DD DSN=*.STEP2E.RELCREDS,
+//       DISP=SHR
+//         DD DSN=MX.GFCT.PRV.ACUMKFIS(0),
+//       DISP=OLD
+//SAI00001 DD DSN=MX.GFCT.PRV.ACUMKFIS(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=(DISCO,05),
+//       SPACE=(TRK,(016900,3380),RLSE),
+//       DCB=(MX.A,LRECL=0200,RECFM=FB)
+//SYSOUT   DD SYSOUT=*
+//PRINTER  DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=Y
+//*
+//STEP3A   EXEC PGM=PLAN0260
+//*
+//* ***    -------------------------
+//* ***    VERIFICA ARQUIVO VAZIO.
+//* ***    -------------------------
+//*
+//LEITURA  DD DSN=MX.GFCT.EFEOKLOG(0),
+//       DISP=SHR
+//SYSOUT   DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=Y
+//*
+//STEP3B   EXEC PGM=PLAN1970,
+//       PARM=01,
+//       COND=(0,NE,STEP3A)
+//*
+//* ***    *********************************************************
+//* ***    OBJETIVO : EFETUA ACUMULADO - CONSISTENCIA LOGICA
+//* ***    *********************************************************
+//*
+//ENT00001 DD DSN=MX.GFCT.EFEOKLOG(0),
+//       DISP=SHR
+//         DD DSN=MX.GFCT.PRV.ACUMKLOG(0),
+//       DISP=SHR
+//SAI00001 DD DSN=MX.GFCT.PRV.ACUMKLOG(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=(DISCO,16),
+//       SPACE=(TRK,(065500,13107),RLSE),
+//       DCB=(MX.A,LRECL=0200,RECFM=FB)
+//SYSOUT   DD SYSOUT=*
+//PRINTER  DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=Y
+//*

@@ -1,0 +1,21 @@
+PACOTE TABELA GFCT1740 - 22/01/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002964   TICKET-56433
+==========================================================
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT1740 N P14 GFCT1740 * DJ:GFCT0970 *                              GFCT0500 P14
+                         RJ:GFCT1745 *                              GFCT1740 P14
+               GFCT1745*  DJ:GFCT1740 *                              GFCT1740 P14
+                         RJ:GFCT0610 *                               GFCT0600 P14
+                         RJ:GFCTINIC                               GFCT0600 P14
+                                                                               
+
+job GFCT1745 - NAO HA IMPACTO
+     EXEC PGM=GFCT1692 (não) - NAO HA IMPACTO
+    
+
+job GFCT0610 - NAO HA IMPACTO
+   EXEC PGM=GFCT1178 (não) - NAO HA IMPACTO

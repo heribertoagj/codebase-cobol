@@ -1,0 +1,206 @@
+﻿HTML len: 19962
+RTF len: 0
+=== HTML TEXT ===
+
+
+<!--
+
+/* Font Definitions */
+
+@font-face
+
+	{font-family:"Cambria Math";
+
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+
+@font-face
+
+	{font-family:Calibri;
+
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+
+@font-face
+
+	{font-family:Aptos;}
+
+@font-face
+
+	{font-family:"Bradesco Sans";}
+
+@font-face
+
+	{font-family:Consolas;
+
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+
+/* Style Definitions */
+
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+
+	{margin:0cm;
+
+	font-size:12.0pt;
+
+	font-family:"Aptos",sans-serif;}
+
+a:link, span.MsoHyperlink
+
+	{mso-style-priority:99;
+
+	color:#467886;
+
+	text-decoration:underline;}
+
+pre
+
+	{mso-style-priority:99;
+
+	mso-style-link:"PrÚ-formataþÒo HTML Char";
+
+	margin:0cm;
+
+	margin-bottom:.0001pt;
+
+	font-size:10.0pt;
+
+	font-family:"Courier New";}
+
+span.Pr-formataoHTMLChar
+
+	{mso-style-name:"PrÚ-formataþÒo HTML Char";
+
+	mso-style-priority:99;
+
+	mso-style-link:"PrÚ-formataþÒo HTML";
+
+	font-family:Consolas;}
+
+span.EstiloDeEmail22
+
+	{mso-style-type:personal-reply;
+
+	font-family:"Aptos",sans-serif;
+
+	color:windowtext;}
+
+.MsoChpDefault
+
+	{mso-style-type:export-only;
+
+	font-size:10.0pt;
+
+	mso-ligatures:none;}
+
+@page WordSection1
+
+	{size:612.0pt 792.0pt;
+
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+
+div.WordSection1
+
+	{page:WordSection1;}
+
+/* List Definitions */
+
+@list l0
+
+	{mso-list-id:238056804;
+
+	mso-list-template-ids:-1025235346;}
+
+@list l1
+
+	{mso-list-id:377974415;
+
+	mso-list-template-ids:1634767534;}
+
+@list l1:level1
+
+	{mso-level-start-at:3;
+
+	mso-level-tab-stop:36.0pt;
+
+	mso-level-number-position:left;
+
+	text-indent:-18.0pt;}
+
+@list l2
+
+	{mso-list-id:561328485;
+
+	mso-list-template-ids:1257648246;}
+
+@list l2:level1
+
+	{mso-level-start-at:3;
+
+	mso-level-tab-stop:36.0pt;
+
+	mso-level-number-position:left;
+
+	text-indent:-18.0pt;}
+
+@list l3
+
+	{mso-list-id:840782506;
+
+	mso-list-template-ids:788178216;}
+
+@list l4
+
+	{mso-list-id:1587114199;
+
+	mso-list-template-ids:-1824865038;}
+
+@list l4:level1
+
+	{mso-level-start-at:2;
+
+	mso-level-tab-stop:36.0pt;
+
+	mso-level-number-position:left;
+
+	text-indent:-18.0pt;}
+
+@list l5
+
+	{mso-list-id:1731074302;
+
+	mso-list-template-ids:-88449650;}
+
+@list l5:level1
+
+	{mso-level-start-at:4;
+
+	mso-level-tab-stop:36.0pt;
+
+	mso-level-number-position:left;
+
+	text-indent:-18.0pt;}
+
+@list l6
+
+	{mso-list-id:1933656806;
+
+	mso-list-template-ids:1563985992;}
+
+@list l6:level1
+
+	{mso-level-start-at:2;
+
+	mso-level-tab-stop:36.0pt;
+
+	mso-level-number-position:left;
+
+	text-indent:-18.0pt;}
+
+ol
+
+	{margin-bottom:0cm;}
+
+ul
+
+	{margin-bottom:0cm;}
+
+-->+Heriba+AndersonáDe: ALINE BACCILIERI COUTINHO <alineb.coutinho@bradesco.com.br> Enviada em: quinta-feira, 28 de maio de 2026 08:51Para: Luciana Cristina Sato <luciana.sato@7comm.com.br>Cc: EDINELSON PACCI <edinelson.ep.pacci@bradesco.com.br>; RODOLFO LUIZ DE OLIVEIRA SILVA <rodolfo.l.silva@bradesco.com.br>; JULYO CESAR TREBESCHI MAIA <julyo.maia@bradesco.com.br>Assunto: ENC: SLIG - ERRO na carga do c¾digo do GRUPO (novo modulo GRUP201C)áLuciana, bom dia!áSegue anßlise do Edinelson referente ao erro na carga do C¾digo do Grupo no SLIG.áQualquer d·vida, estamos Ó disposiþÒo.áDe:áEDINELSON PACCI <edinelson.ep.pacci@bradesco.com.br>Enviadas:áQuarta-feira, 27 de Mai de 2026 19:26Para:áALINE BACCILIERI COUTINHO <alineb.coutinho@bradesco.com.br>Cc:áRODOLFO LUIZ DE OLIVEIRA SILVA <rodolfo.l.silva@bradesco.com.br>; JULYO CESAR TREBESCHI MAIA <julyo.maia@bradesco.com.br>Assunto:áSLIG - ERRO na carga do c¾digo do GRUPO (novo modulo GRUP201C) áAline, boa tarde !áConforme falamos segue anßlise para o SLIG estar com ERRO na carga do c¾digo do GRUPO.áFavor enviar para Luciana da 7COMM.áCausa RaizProgramas SLIG chamava o serviþo GRUP0930, mas esse m¾dulo nÒo foi ajustado para o CNPJ Alfa.Foi criado o clone GRUP201C para tratar o CNPJ Alfa.áPrograma SLIG6100 nÒo foi alteradoáERRO no pgm SLIG0420 ainda chamando o modulo antigo SLIG0930.áERRO, no pgm SLIG6105, na movimentaþÒo de varißveis:áObs: Vai truncar e perder o n·mero da filial a direita.áModulo novo GRUP201C espera receber CNPJ PIC X(11) sempre preenchido com zeros a esquerda e campo Filial com PIC X(04).áAþÒo Necessßria:Alterar programa SLIG6100 para chamar o novo modulo GRUP201CáCorrigir o programa SLIG0420áRevisar, todos os programas abaixo, para garantir que a chamada ao novo modulo estß corretaInclusive garantindo que a movimentaþÒo dos campos (CNPJ e FILIAL) estß corretaáPara melhor documentaþÒo e facilitar futuras anßlises:Alterar, em todos os programas abaixo, a string de ôGRUP0930ö paraá ôGRUP201CöExemplo: Em caso de futuros display de erro: o modulo correto Ú GRUP201CáPGMááááá < PACOTESLIG6100 < SLIG000873SLIG6102 < SLIG000887áSLIG6103 < SLIG000887áSLIG6226 < SLIG000888áSLIG6211 < SLIG000888SLIG6105 < SLIG000891SLIG6210 < SLIG000926SLIG6215 < SLIG000926SLIG6216 < SLIG000926SLIG6420 < SLIG000926áats,áEdinelson PACCIEng.SW Cobol Mainframe Hab.Credito4255/DS - SustentaþÒoBradesco - Matriz, Osasco.áAVISO LEGAL...Esta mensagem Ú destinada exclusivamente para a(s) pessoa(s) a quem Ú dirigida, podendo conter informaþÒo confidencial e/ou legalmente privilegiada. Se vocÛ nÒo for destinatßrio desta mensagem, desde jß fica notificado de abster-se a divulgar, copiar, distribuir, examinar ou, de qualquer forma, utilizar a informaþÒo contida nesta mensagem, por ser ilegal. Caso vocÛ tenha recebido esta mensagem por engano, pedimos que nos retorne este E-Mail, promovendo, desde logo, a eliminaþÒo do seu conte·do em sua base de dados, registros ou sistema de controle. Fica desprovida de eficßcia e validade a mensagem que contiver vÝnculos obrigacionais, expedida por quem nÒo detenha poderes de representaþÒo.áLEGAL ADVICE...This message is exclusively destined for the people to whom it is directed, and it can bear private and/or legally exceptional information. If you are not addressee of this message, since now you are advised to not release, copy, distribute, check or, otherwise, use the information contained in this message, because it is illegal. If you received this message by mistake, we ask you to return this email, making possible, as soon as possible, the elimination of its contents of your database, registrations or controls system. The message that bears any mandatory links, issued by someone who has no representation powers, shall be null or void.á

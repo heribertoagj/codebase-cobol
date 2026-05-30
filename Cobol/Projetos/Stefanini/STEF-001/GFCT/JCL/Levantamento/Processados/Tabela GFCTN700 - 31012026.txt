@@ -1,0 +1,56 @@
+Tabela GFCTN700 - 31012026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002960   TICKET-56429
+==========================================================
+
+
+JOB GFCTN702 - TABELA GFCTN700
+   PROGRAMA GFCT5709
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTN700 N P14 GFCTNDOC   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCTN700*  RJ:GFCTN702*                               GFCTN700 P14
+               *GFCTN702*  DJ:GFCTN700*                               GFCTN700 P14
+                         RJ:GFCTN703  *                             GFCTN700 P14
+               GFCTN703*  DJ:GFCTN702*                               GFCTN700 P14
+                         RJ:GFCTN704 *                              GFCTN700 P14
+               GFCTN704*  DJ:GFCTN703 *                              GFCTN700 P14
+                         RJ:GFCTN706 *                              GFCTN700 P14
+               GFCTN706*  DJ:GFCTN704*                               GFCTN700 P14
+                         RJ:GFCTN708 *                              GFCTN700 P14
+                         RJ:GFCTW972*                               GFCTN700 P14
+               GFCTN708*  DJ:GFCTN706*                               GFCTN700 P14
+                         RJ:GFCTW972 *                              GFCTN700 P14
+               GFCTW972 * DJ:GFCTN706*                               GFCTN700 P14
+                         DJ:GFCTN708*                               GFCTN700 P14
+                         RJ:GFCTW973*                               GFCTN700 P14
+               GFCTW973*  DJ:GFCTW972*                               GFCTN700 P14
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002960   TICKET-56429
+==========================================================
+
+job GFCTN700 - verificar
+
+job GFCTN702 - AJUSTADO
+   EXEC PGM=GFCT5709 (utliza book GFCTWF21 e GFCTWF25) - AJUSTADO
+
+job GFCTN703 - verificar
+
+job GFCTN704
+   EXEC PGM=GFCT4751 (não)
+   EXEC PGM=GFCT4752(não)
+   
+job GFCTN706 - NAO HA IMPACTO
+   EXEC PGM=GFCT4739 (não)
+   EXEC PGM=GFCT4740 (utiliza book GFCTWF40) - AJUSTADO
+   EXEC PGM=GFCT4741 (utliza tabela CLIEV004 e book GFCTWF40) - AJUSTADO
+   EXEC PGM=GFCT4742 (utiliza book GFCTWF40) - AJUSTADO   
+
+
+job GFCTN708
+   EXEC PGM=GFCT4727 (não)
+    

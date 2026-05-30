@@ -1,0 +1,50 @@
+Tabela GFCT2610 - 26022026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002960   TICKET-56429
+==========================================================
+
+
+
+job GFCT2625 
+   programa GFCT2606
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT2610 N P14          DFJ:GFCT2605                               GFCT2605 P14
+               *GFCT2610 *  RJ:GFCT2615 *                              GFCT2610 P14
+               GFCT2615*  DJ:GFCT2610*                               GFCT2610 P14
+                         RJ:GFCT2622 *                               GFCT2610 P14
+               GFCT2622*  DJ:GFCT2615*                               GFCT2610 P14
+                         RJ:GFCT2625 *                              GFCT2610 P14
+               GFCT2625 * DJ:GFCT2622*                               GFCT2610 P14
+                         RJ:GFCT2630 *                              GFCT2610 P14
+               GFCT2630*  DJ:GFCT2625*                               GFCT2610 P14
+                         RJ:GFCT2690*                               GFCT2610 P14
+                        GFJ:                                       GFCT2645 P14
+               GFCT2690*  DJ:GFCT2630*                               GFCT2610 P14
+                         RJ:GFCT2691*                               GFCT2610 P14
+               GFCT2691 * DJ:GFCT2690 *                              GFCT2610 P14
+                        GCO:GFCT0803                               GFCT0800 P14
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002960   TICKET-56429
+==========================================================
+
+job GFCT2610 - NAO HA IMPACTO
+    PGM=GFCT2602 - tem alteração (utiliza book GFCTWADJ  GFCTWADK  GFCTWAEX) - AJUSTADO
+
+job GFCT2615 - NAO HA IMPACTO
+    EXEC PGM=GFCT2608 - tem alteração ((utiliza book GFCTWADJ GFCTWADK GFCTWADM) - AJUSTADO
+
+job GFCT2622 - NAO HA IMPACTO
+    EXEC PGM=GFCT2609 (utiliza book GFCTWADJ) - AJUSTADO
+
+job GFCT2625
+    EXEC PGM=GFCT2606 - tem CNPJ - AJUSTADO
+
+
+job GFCT2630 - transmissao de arquivo - NAO HA IMPACTO
+
+
+job GFCT0803 - ZERA ARQUIVO - NAO HA IMPACTO

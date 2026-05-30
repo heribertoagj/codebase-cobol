@@ -1,0 +1,90 @@
+PACOTE TABELA GFCTA140 - 23/01/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE   GFCT002962   TICKET-56431
+==========================================================
+OBS... JOBS QUE TRATAM O PROGRAMA GFCT2408
+
+
+  TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTA140 N P14 GFCTA140*  RJ:GFCTA142 *                              GFCTA140 P14
+               GFCTA142 * DJ:GFCTA140*                               GFCTA140 P14
+                         RJ:GFCTA144 *                              GFCTA140 P14
+               GFCTA144 * DJ:GFCTA142 *                              GFCTA140 P14
+                         RJ:GFCTA146*                               GFCTA140 P14
+                         RJ:PM142300                               PM14NOIT P14
+                         RJ:PM142300                               PM14NOIT P14
+               GFCTA146 * DJ:GFCTA144 *                              GFCTA140 P14
+                         RJ:GFCTA148 *                              GFCTA140 P14
+               GFCTA148*  DJ:GFCTA146  *                             GFCTA140 P14
+                         RJ:GFCTA150 *                              GFCTA140 P14
+               GFCTA150*  DJ:GFCTA148 *                              GFCTA140 P14
+                         RJ:GFCTA152 *                              GFCTA140 P14
+************** GFCTA152*  DJ:GFCTA150 *                              GFCTA140 P14
+                         RJ:GFCTA154 *                              GFCTA140 P14
+               GFCTA154 * DJ:GFCTA152 *                              GFCTA140 P14
+                         RJ:GFCTA156 *                              GFCTA140 P14
+               GFCTA156*  DJ:GFCTA154*                               GFCTA140 P14
+GFCTA140 N P14 GFCTA156 * RJ:GFCTH140*                               GFCTA140 P14
+               GFCTH140*  DJ:GFCTA156*                               GFCTA140 P14
+                         RJ:GFCTH141*                               GFCTA140 P14
+               GFCTH141*  DJ:GFCTH140*                               GFCTA140 P14
+                         RJ:GFCTA540 *                              GFCTA540 P14
+                         RJ:GFCTDEL2 *                              GFCTDELE P14
+                         RJ:GFCTN220 *                              GFCTN220 P14
+                         RJ:GFCT2080 *                              GFCT2070 P14
+                         RJ:GFCTDEL3  *                             GFCT2070 P14
+
+
+
+===================================================================
+
+GFCT002962   TICKET-56431 tab GFCTA140
+
+job GFCTA140 - NAO HA IMPACTO
+ 
+job GFCTA142 - NAO HA IMPACTO
+   EXEC PGM=GFCT2419 (não) - NAO HA IMPACTO
+
+   
+job GFCTA146 - NAO HA IMPACTO
+   EXEC PGM=GFCT2400 (utiliza book GFCTWAFZ) - AJUSTADO
+
+job GFCTA148 - Utilza MJ.CLIE.PRP.CADNOVGR
+   EXEC PGM=GFCT2401 (utiliza book I#CLIE20) - AJUSTADO
+   EXEC PGM=GFCT2402 (utiliza book GFCTWAFZ) - AJUSTADO
+   EXEC PGM=GFCT2403 (utiliza book GFCTWAFZ) - AJUSTADO
+
+job GFCTA150 - NAO HA IMPACTO
+   EXEC PGM=GFCT2421 (utiliza book GFCTWAFZ) - AJUSTADO
+   EXEC PGM=GFCT2404 (não)
+   EXEC PGM=GFCT2405 (não)
+   EXEC PGM=GFCT2407 (utiliza book GFCTWAFZ) - AJUSTADO
+
+job GFCTA152
+   EXEC PGM=GFCT2408 (utiliza book GFCTWAFZ)  - AJUSTADO
+   EXEC PGM=GFCT2409(não) - NAO HA IMPACTO
+   EXEC PGM=GFCT2410 - sim - detalhado na lista da  tabela GFCTA100
+   EXEC PGM=GFCT2411 (não) - NAO HA IMPACTO
+   EXEC PGM=GFCT2407 (utiliza books GFCTWAFZ)  - AJUSTADO
+
+job GFCTA154 - verificar - NAO A IMPACTO
+
+job GFCTA156 - verificar
+   EXEC PGM=GFCT2417 (utiliza book GFCTWAFZ) - AJUSTADO
+
+job GFCTA540
+   EXEC PGM=GFCT4851 (utiliza tabela cliev004. e book GFCTWP17 e GFCTWP16) - AJUSTADO
+   EXEC PGM=GFCT4853 (utiliza book GFCTWP16)
+   EXEC PGM=GFCT4855 (utiliza book GFCTWP17)
+
+ 
+job GFCTN220
+   EXEC PGM=GFCT2451 (não)
+
+job GFCT2080
+   EXEC PGM=GFCT2108 (não)
+
+
+  

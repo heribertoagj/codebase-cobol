@@ -1,0 +1,78 @@
+      ******************************************************************
+      * SISTEMA : DCOM - I#DCOMS8                                      *
+      * TAMANHO : 0419 BYTES                                           *
+      * ARQUIVO : OPERACOES DESPREZADAS                                *
+      * INCLUDE PARA TABELA: DCOMB0K7    - DB2PRD.TDESPR_OPER_DESC     *
+      ******************************************************************
+       01  S8-K7-REGISTRO.
+ 01 03     05  S8-K7-DANO-OPER-DESC            PIC S9(4)V COMP-3.
+ 04 05     05  S8-K7-NSEQ-OPER-DESC            PIC S9(9)V COMP-3.
+ 09 02     05  S8-K7-CSIT-DESC-COML            PIC S9(3)V COMP-3.
+ 11 26     05  S8-K7-HSIT-DESC-COML            PIC X(26).
+ 37 09     05  S8-K7-VLIBRC-DESC-COML          PIC S9(15)V9(2) COMP-3.
+ 46 09     05  S8-K7-VLIBRC-ANTCP-OPER         PIC S9(15)V9(2) COMP-3.
+ 55 02     05  S8-K7-CBCO                      PIC S9(3)V COMP-3.
+ 57 03     05  S8-K7-CAG-BCRIA                 PIC S9(5)V COMP-3.
+ 60 07     05  S8-K7-CCTA-BCRIA-CLI            PIC S9(13)V COMP-3.
+ 67 02     05  S8-K7-CBCO-OPER-OPER            PIC S9(3)V COMP-3.
+ 69 03     05  S8-K7-CAG-OPER-OPER             PIC S9(5)V COMP-3.
+ 72 02     05  S8-K7-CPRODT                    PIC S9(3)V COMP-3.
+ 74 02     05  S8-K7-CSPROD-DESC-COML          PIC S9(3)V COMP-3.
+ 76 02     05  S8-K7-CTPO-DESC-COML            PIC S9(3)V COMP-3.
+ 78 05     05  S8-K7-CCONTR-CONVE-DESC         PIC S9(9)V COMP-3.
+ 83 02     05  S8-K7-CVRSAO-CONTR-CONVE        PIC S9(3)V COMP-3.
+ 85 02     05  S8-K7-CELMTO-DESC-COML          PIC S9(3)V COMP-3.
+ 87 05     05  S8-K7-NSMULA-OPER-DESC          PIC S9(9)V COMP-3.
+ 92 01     05  S8-K7-CINDCD-DIGTC-AG           PIC X(1).
+ 93 01     05  S8-K7-CINDCD-ISENC-OPER         PIC X(1).
+ 94 01     05  S8-K7-CINDCD-AUTRZ-OPER         PIC X(1).
+ 95 01     05  S8-K7-CINDCD-MODLD-INCL         PIC X(1).
+ 96 04     05  S8-K7-CCTRO-CUSTO               PIC X(4).
+100 03     05  S8-K7-DANO-BASE                 PIC S9(4)V COMP-3.
+103 03     05  S8-K7-CDEPDC                    PIC S9(5)V COMP-3.
+106 05     05  S8-K7-CSEQ-STUDO                PIC S9(9)V COMP-3.
+111 01     05  S8-K7-CINDCD-APROV-CREDT        PIC X(1).
+112 09     05  S8-K7-VOPER-DESC-COML           PIC S9(15)V9(2) COMP-3.
+121 10     05  S8-K7-DINIC-OPER-DESC           PIC X(10).
+131 10     05  S8-K7-DVCTO-FNAL-OPER           PIC X(10).
+141 09     05  S8-K7-VOPER-DESC-APURA          PIC S9(15)V9(2) COMP-3.
+150 03     05  S8-K7-QTITLO-OPER-APURA         PIC S9(5)V COMP-3.
+153 10     05  S8-K7-DVCTO-FNAL-APURA          PIC X(10).
+163 02     05  S8-K7-TOPER-DESC-APURA          PIC S9(3)V COMP-3.
+165 02     05  S8-K7-TMED-PONDE-OPER           PIC S9(3)V COMP-3.
+167 02     05  S8-K7-CMEIO-ENTRD-DESC          PIC S9(3)V COMP-3.
+169 03     05  S8-K7-QPCELA-OPER               PIC S9(5)V COMP-3.
+172 05     05  S8-K7-QTITLO-CHEQ-PCELA         PIC S9(9)V COMP-3.
+177 04     05  S8-K7-NAUTRZ-TRNSM-ESCR         PIC S9(7)V COMP-3.
+181 01     05  S8-K7-CINDCD-PGDOR-JURO         PIC X(1).
+182 02     05  S8-K7-CTPO-TX-JURO-DESC         PIC S9(3)V COMP-3.
+184 04     05  S8-K7-PMIN-TX-JURO-REGRA        PIC S9(3)V9(3) COMP-3.
+188 04     05  S8-K7-PMAX-TX-JURO-REGRA        PIC S9(3)V9(3) COMP-3.
+192 05     05  S8-K7-PALIQT-IOF-DESC           PIC S9(3)V9(5) COMP-3.
+197 05     05  S8-K7-PTX-JURO-MES              PIC S9(3)V9(5) COMP-3.
+202 05     05  S8-K7-PTX-JURO-ANO              PIC S9(3)V9(5) COMP-3.
+207 05     05  S8-K7-PTX-CUSTO-MES             PIC S9(3)V9(6) COMP-3.
+212 05     05  S8-K7-PTX-CUSTO-ANO             PIC S9(3)V9(6) COMP-3.
+217 09     05  S8-K7-VJURO-OPER-DESC           PIC S9(15)V9(2) COMP-3.
+226 09     05  S8-K7-VJURO-CUSTO-OPER          PIC S9(15)V9(2) COMP-3.
+235 09     05  S8-K7-VTARIF-REG-TITLO          PIC S9(15)V9(2) COMP-3.
+244 09     05  S8-K7-VTAC-OPER-DESC            PIC S9(15)V9(2) COMP-3.
+253 09     05  S8-K7-VPSENT-OPER-DESC          PIC S9(15)V9(2) COMP-3.
+262 09     05  S8-K7-VIOF-OPER-DESC            PIC S9(15)V9(2) COMP-3.
+271 09     05  S8-K7-VLIQ-OPER-DESC            PIC S9(15)V9(2) COMP-3.
+280 01     05  S8-K7-CINDCD-VALDC-ROTRO        PIC X(1).
+281 10     05  S8-K7-DVALDC-ROTRO-ELMTO        PIC X(10).
+291 05     05  S8-K7-CFUNC-VALDC-ROTRO         PIC S9(9)V COMP-3.
+296 10     05  S8-K7-DULT-ADTTO-OPER           PIC X(10).
+306 01     05  S8-K7-CINDCD-MOTVO-ADTTO        PIC X(1).
+307 26     05  S8-K7-HULT-ATULZ                PIC X(26).
+333 05     05  S8-K7-CFUNC-BDSCO               PIC S9(9)V COMP-3.
+338 08     05  S8-K7-CTERM                     PIC X(8).
+346 04     05  S8-K7-CCONTR-CORP-OPER          PIC S9(7)V COMP-3.
+350 10     05  S8-K7-DINCL-REG                 PIC X(10).
+360 05     05  S8-K7-CCART-LIM-CREDT           PIC X(5).
+365 45     05  S8-K7-CCHAVE-ELMTO-DESC         PIC X(45).
+410 02     05  S8-K7-CESPCE-TITLO-COBR         PIC S9(3)V COMP-3.
+412 01     05  S8-K7-CINDCD-ALIQT-REDZD        PIC X(1).
+413 05     05  S8-K7-PTX-JURO-DIA              PIC S9(3)V9(5) COMP-3.
+418 02     05  S8-K7-CINDCD-FREQ-TX            PIC X(2).

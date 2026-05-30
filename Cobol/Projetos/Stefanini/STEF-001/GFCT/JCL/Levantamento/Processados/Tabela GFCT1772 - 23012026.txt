@@ -1,0 +1,53 @@
+Tabela GFCT1772 - 23012026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002947    TICKET-53638
+==========================================================
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT1772 N P14          DFJ:GFCT1770 *                              GFCT1770 P14
+               GFCTDOCT   NAO HA DEPENDENCIAS/RELEASES                         
+               GFCT1772*  RJ:GFCT1774 *                              GFCT1772 P14
+               GFCT1774*  DJ:GFCT1772 *                              GFCT1772 P14
+                         RJ:GFCT1776 *                              GFCT1772 P14
+               GFCT1776 * DJ:GFCT1774*                               GFCT1772 P14
+                         RJ:GFCT1778 *                              GFCT1772 P14
+               GFCT1778*  DJ:GFCT1776*                               GFCT1772 P14
+                         RJ:GFCT1970 *                              GFCT1772 P14
+                        GFJ:                                       GFCT1779 P14
+               GFCT1970*  DJ:GFCT1779 *                              GFCT1779 P14
+                         DJ:GFCT1778*                               GFCT1772 P14
+                         RJ:GFCT1971*                               GFCT1772 P14
+               GFCT1971*  DJ:GFCT1970*                               GFCT1772 P14
+
+==========================================================================================
+
+
+job GFCT1770 - NAO HA IMPACTO
+
+job GFCT1772 - AJUSTADO
+   EXEC PGM=GFCT4810 (não) - NAO HA IMPACTO
+   EXEC PGM=GFCT4800 (utiliza book GFCTWE00 GFCTWE01) - AJUSTADO
+
+ 
+job GFCT1774 - NAO HA IMPACTO
+   EXEC PGM=GFCT4801 (não) - NAO HA IMPACTO
+    EXEC PGM=GFCT4802 (utiliza book GFCTWE01) - AJUSTADO
+   
+jpb GFCT1776 - NAO HA IMPACTO
+   EXEC PGM=GFCT4803 (não) - NAO HA IMPACTO
+   EXEC PGM=GFCT4804 (utiliza book GFCTWE01) - AJUSTADO
+   
+
+job GFCT1778 - AJUSTADO
+   EXEC PGM=GFCT4805 (utiliza book GFCTWE01 e GFCTWE02) - REVISAR AJUSTE
+   
+   
+job GFCT1779 - NAO HA IMPACTO
+
+
+   
+
+
+

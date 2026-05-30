@@ -1,0 +1,171 @@
+//GFCTN605 JOB 'GFCT,4008,PR14','B142376',MSGCLASS=Z,SCHENV=BATCH
+//JOBLIB   DD DSN=MX.BIBGERAL,DISP=SHR
+//         DD DSN=DB2M1.R2.DSNLOAD,DISP=SHR
+//         DD DSN=SYS1.CEE.SCEERUN,DISP=SHR
+//*
+//* ***    ------------------------------------------------------------
+//* ***    GFCT | PROJETO - GERACAO DE ARQUIVO PARA EXTRATO.
+//* ***    ------------------------------------------------------------
+//*
+//STEP1    EXEC PGM=GFCT2285
+//*
+//* ***    ------------------------------------------------------------
+//* ***    EXPURGO DO PRV DA EXECUCAO DIARIA COM 3 MESES.
+//* ***    ------------------------------------------------------------
+//*
+//PREPARAE DD DSN=MX.GFCT.PRV.PRECEXTF(0),
+//       DISP=SHR
+//ARQDATAS DD DSN=MX.GFCT.PRP.CTRLDATA(0),
+//       DISP=SHR
+//PREEXTFS DD DSN=MX.GFCT.PRV.PRECEXTF(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=(DISCO,59),
+//       SPACE=(TRK,(099900,19980),RLSE),
+//       DCB=(MX.A,LRECL=0122,RECFM=FB),
+//       DATACLAS=PRODX37
+//SYSOUT   DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=Y
+//*
+//STEP2    EXEC SORTD
+//*
+//* ***    ------------------------------------------------------------
+//* ***    CLASSIFICACAO DO ARQUIVO DE EXTRATOS PREVIA DIARIA MAIS
+//* ***     EXTRATOS DAS CESTAS - COMPLETO - CONTENDO REGISTROS A
+//* ***     SEREM RETIRADOS DE PESSOA JURIDICA
+//* ***    ------------------------------------------------------------
+//*
+//SORTIN   DD DSN=*.STEP1.PREEXTFS,
+//       DISP=SHR
+//         DD DSN=MX.GFCT.JN600S10.AB92CMET(0),
+//       DISP=SHR
+//SORTOUT  DD DSN=MX.GFCT.JN605S02.MENSEXTF(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=(DISCO,59),
+//       SPACE=(TRK,(099900,19980),RLSE),
+//       DCB=(MX.A,LRECL=0122,RECFM=FB),
+//       DATACLAS=PRODX37
+//SYSIN    DD *
+ SORT FIELDS=(3,5,A,8,11,A),FORMAT=BI
+ END
+//*
+//STEP3    EXEC PGM=GFCT2290,
+//       PARM=1
+//*
+//* ***    ------------------------------------------------------------
+//* ***    IDENTIFICACO DO MES DE ENVIO AO EXTF
+//* ***     PARM=1 - MOVIMENTO DO MES ANTERIOR
+//* ***    ------------------------------------------------------------
+//*
+//PREPARAE DD DSN=*.STEP2.SORT.SORTOUT,
+//       DISP=SHR
+//ARQDATAS DD DSN=MX.GFCT.PRP.CTRLDATA(0),
+//       DISP=SHR
+//PREEXTFS DD DSN=MX.GFCT.JN605S03.PREEXTFS(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=(DISCO,59),
+//       SPACE=(TRK,(099900,19980),RLSE),
+//       DCB=(MX.A,LRECL=0122,RECFM=FB),
+//       DATACLAS=PRODX37
+//SYSOUT   DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=Y
+//*
+//STEP4    EXEC PGM=POOL0262
+//*
+//* ***    GERA CLIENTE DESCOMPRIMIDO.
+//*
+//SORTIN   DD DSN=MJ.CLIE.PRP.CADNOVGR.ALFA(0),
+//       DISP=SHR
+//SORTOUT  DD DSN=MX.GFCT.JN605S04.CLIEGFCT(+1),
+//       DISP=(,CATLG,CATLG),
+//       UNIT=(DISCO,50),
+//       SPACE=(CYL,(006660,01332),RLSE),
+//       DCB=(MX.A,LRECL=0180,RECFM=FB),
+//       DATACLAS=PRODX37
+//SYSIN    DD *
+ SORT FIELDS=(1,3,A,7,4,A),FORMAT=BI
+ END
+//SORTLIB  DD DSN=SYS1.SORTLIB,
+//       DISP=SHR
+//SORTWK01 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK02 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK03 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK04 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK05 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK06 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK07 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK08 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK09 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK10 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK11 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK12 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK13 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK14 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK15 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK16 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK17 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK18 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK19 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK20 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SORTWK21 DD UNIT=DISCO,
+//       SPACE=(CYL,(1500))
+//SYSOUT   DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=Y
+//*
+//STEP5    EXEC SORTD
+//*
+//* ***    CLASSIFICA ARQUIVO DE CLIENTES POR AGENCIA CONTA
+//* ***    ELIMINANDO DUPLICIDADE E PESSOA JURIDICA
+//*
+//SORTIN   DD DSN=*.STEP4.SORTOUT,
+//       DISP=OLD
+//SORTOUT  DD DSN=MX.GFCT.JN605S05.CLIECLAS(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=(DISCO,50),
+//       SPACE=(CYL,(006660,01332),RLSE),
+//       DCB=(MX.A,LRECL=180,RECFM=FB),
+//       DATACLAS=PRODX37
+//SYSIN    DD *
+ SORT FIELDS=(1,3,A,7,4,A),FORMAT=BI
+ SUM FIELDS=NONE
+ OMIT COND=(17,3,PD,GT,0)
+ END
+//*
+//STEP6    EXEC PGM=GFCT2264
+//*
+//* ***    ------------------------------------------------------------
+//* ***    BALANCE LINE ENTRE EXTRATO E ARQUIVO DO CLIE, PESSOA FISICA.
+//* ***    ------------------------------------------------------------
+//*
+//EXTRAENT DD DSN=*.STEP3.PREEXTFS,
+//       DISP=SHR
+//CLIEFISI DD DSN=*.STEP5.SORT.SORTOUT,
+//       DISP=SHR
+//EXTRASAI DD DSN=MX.GFCT.JN605S06.EXTRASAI(+1),
+//       DISP=(,CATLG,DELETE),
+//       UNIT=(DISCO,59),
+//       SPACE=(TRK,(099900,19980),RLSE),
+//       DCB=(MX.A,LRECL=0122,RECFM=FB),
+//       DATACLAS=PRODX37
+//SYSOUT   DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=Y
+//*

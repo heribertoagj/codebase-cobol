@@ -1,0 +1,259 @@
+TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+LIG1001 N P11 SLIG1010  RJ:SLIG1030                               SLIG1001 P11
+                        RJ:SLIG1050                               SLIG1001 P11
+                        RJ:SLIG1012                               SLIG1001 P11
+                        RJ:SLIG1035                               SLIG1001 P11
+                        RJ:SLIG1015                               SLIG1001 P11
+                        RJ:SLIG1025                               SLIG1001 P11
+                        RJ:SLIG1052                               SLIG1001 P11
+                        RJ:SLIG1020                               SLIG1001 P11
+              SLIG1012  DJ:SLIG1010                               SLIG1001 P11
+                        RJ:SLIGA105                               SLIGA100 P11
+                        RJ:SLIG1075                               SLIG1001 P11
+              SLIG1015  DJ:SLIG1010                               SLIG1001 P11
+                        RJ:SLIG1060                               SLIG1001 P11
+              SLIG1020  DJ:SLIG1010                               SLIG1001 P11
+                        RJ:SLIG1060                               SLIG1001 P11
+              SLIG1025  DJ:SLIG1010                               SLIG1001 P11
+                        RJ:SLIG1060                               SLIG1001 P11
+              SLIG1030  DJ:SLIG1010                               SLIG1001 P11
+SLIG1001 N P11 SLIG1030 RJ:SLIG1060                               SLIG1001 P11
+               SLIG1035 DJ:SLIG1010                               SLIG1001 P11
+                         RJ:SLIG1060                               SLIG1001 P11
+               SLIG1050  DJ:SLIG1010                               SLIG1001 P11
+                         DJ:SLIG1073                               SLIG1001 P11
+                        DCO:SLIG0304                               SLIG0301 P11
+                         RJ:SLIG1055                               SLIG1001 P11
+                         RJ:SLIG1052                               SLIG1001 P11
+               SLIG1052  DJ:SLIG1010                               SLIG1001 P11
+                         DJ:SLIG1050                               SLIG1001 P11
+                         RJ:SLIG1075                               SLIG1001 P11
+                         RJ:SLIG1950                               SLIG1001 P11
+               SLIG1055  DJ:SLIG1050                               SLIG1001 P11
+                         RJ:SLIG1060                               SLIG1001 P11
+               SLIG1060  DJ:SLIG1030                               SLIG1001 P11
+                         DJ:SLIG1035                               SLIG1001 P11
+                         DJ:SLIG1020                               SLIG1001 P11
+                         DJ:SLIG1015                               SLIG1001 P11
+SLIG1001 N P11 SLIG1060  DJ:SLIG1055                               SLIG1001 P11
+                         DJ:SLIG1025                               SLIG1001 P11
+                         RJ:SLIG1950                               SLIG1001 P11
+                         RJ:SLIG1061                               SLIG1001 P11
+                         RJ:SLIG1075                               SLIG1001 P11
+               SLIG1061  DJ:SLIG1070                               SLIG1001 P11
+                         DJ:SLIG1060                               SLIG1001 P11
+                         RJ:SLIG1063                               SLIG1001 P11
+                         RJ:SLIG1062                               SLIG1001 P11
+               SLIG1062  DJ:SLIG1061                               SLIG1001 P11
+                         RJ:SLIG1075                               SLIG1001 P11
+               SLIG1063  DJ:SLIG1061                               SLIG1001 P11
+                         RJ:SLIG1075                               SLIG1001 P11
+               SLIG1064  DJ:SLIG1077                               SLIG1001 P11
+                         RJ:SLIG1066                               SLIG1001 P11
+                         RJ:SLIG1065                               SLIG1001 P11
+               SLIG1065  DJ:SLIG1064                               SLIG1001 P11
+                         RJ:SLIG1067                               SLIG1001 P11
+ SLIG1001 N P11 SLIG1066  DJ:SLIG1064                               SLIG1001 P11
+                          RJ:SLIG1067                               SLIG1001 P11
+                SLIG1067  DJ:SLIG1065                               SLIG1001 P11
+                          DJ:SLIG1066                               SLIG1001 P11
+                          RJ:SLIG1080                               SLIG1001 P11
+                          RJ:SLIGA105                               SLIGA100 P11
+                SLIG1070  RJ:SLIG1061                               SLIG1001 P11
+                          RJ:SLIG1075                               SLIG1001 P11
+                          RJ:SLIG1072                               SLIG1001 P11
+                          RJ:SLIG1073                               SLIG1001 P11
+                         GCO:SLIG1950                               SLIG1001 P11
+                         GCO:PM11SLIG                               PM11SLIG P11
+                         GFJ:                                       SLIG2000 P11
+                SLIG1072  DJ:SLIG1070                               SLIG1001 P11
+                          RJ:SLIG1010                               SLIG1001 P11
+                SLIG1073  DJ:SLIG1070                               SLIG1001 P11
+                          RJ:SLIG1050                               SLIG1001 P11
+                SLIG1075  DJ:SLIG1052                               SLIG1001 P11
+SLIG1001 N P11 SLIG1075  DJ:SLIG1012                               SLIG1001 P11
+                         DJ:SLIG1062                               SLIG1001 P11
+                         DJ:SLIG1063                               SLIG1001 P11
+                         DJ:SLIG1070                               SLIG1001 P11
+                         DJ:SLIG1060                               SLIG1001 P11
+                         RJ:SLIG1077                               SLIG1001 P11
+                         RJ:SLIG1080                               SLIG1001 P11
+               SLIG1077  DJ:SLIG1075                               SLIG1001 P11
+                         DJ:SLIG1011                               SLIG1011 P11
+                         DJ:SLIG1016                               SLIG1016 P11
+                         DJ:SLIG1017                               SLIG1017 P11
+                         DJ:SLIG1018                               SLIG1018 P11
+                         DJ:SLIG1005                               SLIG1001 P11
+                         DJ:SLIG1007                               SLIG1007 P11
+                         DJ:SLIG1008                               SLIG1008 P11
+                         DJ:SLIG1006                               SLIG1006 P11
+                         DJ:SLIG1009                               SLIG1009 P11
+                         DJ:SLIG1013                               SLIG1013 P11
+SLIG1001 N P11 SLIG1077  DJ:SLIG1014                               SLIG1014 P11
+                         RJ:SLIG1064                               SLIG1001 P11
+                         RJ:SLIG1080                               SLIG1001 P11
+                         RJ:SLIGA105                               SLIGA100 P11
+               SLIG1078  DJ:SLIG0520                               SLIG0501 P11
+                         DJ:SLIG0105                               SLIG0100 P11
+                         RJ:SLIG1950                               SLIG1001 P11
+               SLIG1079  DJ:SLIG1080                               SLIG1001 P11
+                         RJ:SLIG1081                               SLIG1001 P11
+                         RJ:SLIG1084                               SLIG1001 P11
+                         RJ:SLIG1083                               SLIG1001 P11
+                         RJ:SLIG1082                               SLIG1001 P11
+               SLIG1080  DJ:SLIG1077                               SLIG1001 P11
+                         DJ:SLIG1067                               SLIG1001 P11
+                         DJ:SLIG1075                               SLIG1001 P11
+                         RJ:SLIG1079                               SLIG1001 P11
+                         RJ:SLIG1085                               SLIG1001 P11
+               SLIG1081  DJ:SLIG1079                               SLIG1001 P11
+SLIG1001 N P11 SLIG1081  RJ:SLIG1085                               SLIG1001 P11
+               SLIG1082  DJ:SLIG1079                               SLIG1001 P11
+                         RJ:SLIG1085                               SLIG1001 P11
+               SLIG1083  DJ:SLIG1079                               SLIG1001 P11
+                         RJ:SLIG1085                               SLIG1001 P11
+               SLIG1084  DJ:SLIG1079                               SLIG1001 P11
+                         RJ:SLIG1085                               SLIG1001 P11
+               SLIG1085  DJ:SLIG1083                               SLIG1001 P11
+                         DJ:SLIG1084                               SLIG1001 P11
+                         DJ:SLIG1081                               SLIG1001 P11
+                         DJ:SLIG1082                               SLIG1001 P11
+                         DJ:SLIG1080                               SLIG1001 P11
+                         RJ:SLIG1087                               SLIG1001 P11
+                         RJ:SLIG1100                               SLIG1001 P11
+                         RJ:SLIG1101                               SLIG1001 P11
+                         RJ:SLIG1088                               SLIG1001 P11
+                         RJ:SLIG1175                               SLIG1001 P11
+                         RJ:SLIG1090                               SLIG1001 P11
+SLIG1001 N P11 SLIG1085  RJ:SLIG1139                               SLIG1001 P11
+                         RJ:SLIG1110                               SLIG1001 P11
+                         RJ:SLIG1130                               SLIG1001 P11
+                         RJ:SLIG1137                               SLIG1001 P11
+                         RJ:SLIG1120                               SLIG1001 P11
+                         RJ:SLIG1138                               SLIG1001 P11
+               SLIG1087  DJ:SLIG1085                               SLIG1001 P11
+                         RJ:SLIG1950                               SLIG1001 P11
+               SLIG1088  DJ:SLIG1085                               SLIG1001 P11
+                         RJ:SLIG1950                               SLIG1001 P11
+               SLIG1090  DJ:SLIG1085                               SLIG1001 P11
+                         RJ:SLIG1095                               SLIG1001 P11
+                         RJ:SLIG1152                               SLIG1001 P11
+               SLIG1095  DJ:SLIG1090                               SLIG1001 P11
+                         RJ:SLIG1152                               SLIG1001 P11
+                         RJ:SLIG1150                               SLIG1001 P11
+               SLIG1100  DJ:SLIG1085                               SLIG1001 P11
+                         RJ:SLIG1116                               SLIG1001 P11
+SLIG1001 N P11 SLIG1100  RJ:SLIG1105                               SLIG1001 P11
+                         RJ:SLIG1165                               SLIG1001 P11
+                         RJ:SLIG1195                               SLIG1001 P11
+                         RJ:SLIG1175                               SLIG1001 P11
+                         RJ:SLIG1185                               SLIG1001 P11
+               SLIG1101  DJ:SLIG1085                               SLIG1001 P11
+                         RJ:SLIG1175                               SLIG1001 P11
+               SLIG1105  DJ:SLIG1100                               SLIG1001 P11
+                         RJ:SLIG1150                               SLIG1001 P11
+               SLIG1110  DJ:SLIG1085                               SLIG1001 P11
+                         RJ:SLIG1160                               SLIG1001 P11
+                         RJ:SLIG1115                               SLIG1001 P11
+                         RJ:SLIG1195                               SLIG1001 P11
+               SLIG1115  DJ:SLIG1110                               SLIG1001 P11
+                         RJ:SLIG1116                               SLIG1001 P11
+                         RJ:SLIG1150                               SLIG1001 P11
+                         RJ:SLIG1705                               SLIG1700 P11
+               SLIG1116  DJ:SLIG1100                               SLIG1001 P11
+SLIG1001 N P11 SLIG1116  DJ:SLIG1115                               SLIG1001 P11
+                         RJ:SLIG1117                               SLIG1001 P11
+                         RJ:SLIG1118                               SLIG1001 P11
+                         RJ:SLIG1950                               SLIG1001 P11
+                        GFJ:                                       GATI1235 P11
+               SLIG1117  DJ:SLIG1116                               SLIG1001 P11
+               SLIG1118  DJ:SLIG1116                               SLIG1001 P11
+                         RJ:SLIG1950                               SLIG1001 P11
+               SLIG1120  DJ:SLIG1085                               SLIG1001 P11
+                         RJ:SLIG1125                               SLIG1001 P11
+               SLIG1125  DJ:SLIG1120                               SLIG1001 P11
+                         RJ:SLIG1150                               SLIG1001 P11
+               SLIG1130  DJ:SLIG1085                               SLIG1001 P11
+                         RJ:SLIG1150                               SLIG1001 P11
+                         RJ:SLIG1135                               SLIG1001 P11
+               SLIG1135  DJ:SLIG1130                               SLIG1001 P11
+                         RJ:SLIG1955                               SLIG1001 P11
+                         RJ:SLIG1950                               SLIG1001 P11
+
+
+
+
+SLIG1001 N P11 SLIG1067  DJ:SLIG1065                               SLIG1001 P11
+                         DJ:SLIG1066                               SLIG1001 P11
+                         RJ:SLIG1080                               SLIG1001 P11
+                         RJ:SLIGA105                               SLIGA100 P11
+
+
+
+TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+LIG1001 N P11 SLIG1010  RJ:SLIG1030                               SLIG1001 P11
+                        RJ:SLIG1050                               SLIG1001 P11
+                        RJ:SLIG1012                               SLIG1001 P11
+                        RJ:SLIG1035                               SLIG1001 P11
+                        RJ:SLIG1015                               SLIG1001 P11
+                        RJ:SLIG1025                               SLIG1001 P11
+                        RJ:SLIG1052                               SLIG1001 P11
+                        RJ:SLIG1020                               SLIG1001 P11
+              SLIG1012  DJ:SLIG1010                               SLIG1001 P11
+                        RJ:SLIGA105                               SLIGA100 P11
+                        RJ:SLIG1075                               SLIG1001 P11
+              SLIG1015  DJ:SLIG1010                               SLIG1001 P11
+                        RJ:SLIG1060                               SLIG1001 P11
+              SLIG1020  DJ:SLIG1010                               SLIG1001 P11
+                        RJ:SLIG1060                               SLIG1001 P11
+              SLIG1025  DJ:SLIG1010                               SLIG1001 P11
+                        RJ:SLIG1060                               SLIG1001 P11
+              SLIG1030  DJ:SLIG1010                               SLIG1001 P11
+SLIG1001 N P11 SLIG1030  RJ:SLIG1060                               SLIG1001 P11
+               SLIG1035  DJ:SLIG1010                               SLIG1001 P11
+                         RJ:SLIG1060                               SLIG1001 P11
+               SLIG1050  DJ:SLIG1010                               SLIG1001 P11
+                         DJ:SLIG1073                               SLIG1001 P11
+                        DCO:SLIG0304                               SLIG0301 P11
+                         RJ:SLIG1055                               SLIG1001 P11
+                         RJ:SLIG1052                               SLIG1001 P11
+               SLIG1052  DJ:SLIG1010                               SLIG1001 P11
+                         DJ:SLIG1050                               SLIG1001 P11
+                         RJ:SLIG1075                               SLIG1001 P11
+                         RJ:SLIG1950                               SLIG1001 P11
+               SLIG1055  DJ:SLIG1050                               SLIG1001 P11
+                         RJ:SLIG1060                               SLIG1001 P11
+               SLIG1060  DJ:SLIG1030                               SLIG1001 P11
+                         DJ:SLIG1035                               SLIG1001 P11
+                         DJ:SLIG1020                               SLIG1001 P11
+                         DJ:SLIG1015                               SLIG1001 P11
+SLIG1001 N P11 SLIG1060  DJ:SLIG1055                               SLIG1001 P11
+                         DJ:SLIG1025                               SLIG1001 P11
+                         RJ:SLIG1950                               SLIG1001 P11
+                         RJ:SLIG1061                               SLIG1001 P11
+                         RJ:SLIG1075                               SLIG1001 P11
+               SLIG1061  DJ:SLIG1070                               SLIG1001 P11
+                         DJ:SLIG1060                               SLIG1001 P11
+                         RJ:SLIG1063                               SLIG1001 P11
+                         RJ:SLIG1062                               SLIG1001 P11
+               SLIG1062  DJ:SLIG1061                               SLIG1001 P11
+                         RJ:SLIG1075                               SLIG1001 P11
+               SLIG1063  DJ:SLIG1061                               SLIG1001 P11
+                         RJ:SLIG1075                               SLIG1001 P11
+               SLIG1064  DJ:SLIG1077                               SLIG1001 P11
+                         RJ:SLIG1066                               SLIG1001 P11
+                         RJ:SLIG1065                               SLIG1001 P11
+               SLIG1065  DJ:SLIG1064                               SLIG1001 P11
+                         RJ:SLIG1067                               SLIG1001 P11
+SLIG1001 N P11 SLIG1066  DJ:SLIG1064                               SLIG1001 P11
+                         RJ:SLIG1067                               SLIG1001 P11
+               SLIG1067  DJ:SLIG1065                               SLIG1001 P11
+                         DJ:SLIG1066                               SLIG1001 P11
+                         RJ:SLIG1080                               SLIG1001 P11
+                         RJ:SLIGA105                               SLIGA100 P11
+               SLIG1070  RJ:SLIG1061                               SLIG1001 P11
+                         RJ:SLIG1075                               SLIG1001 P11
+                         RJ:SLIG1072                               SLIG1001 P11
+                         RJ:SLIG1073                               SLIG1001 P11
+                        GCO:SLIG1950                               SLIG1001 P11
+                                                                  

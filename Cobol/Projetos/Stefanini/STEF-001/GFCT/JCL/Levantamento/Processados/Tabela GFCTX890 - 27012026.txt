@@ -1,0 +1,25 @@
+Tabela GFCTX890 - 27012026
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002968   TICKET-56435
+==========================================================
+EXECUTA O PROGRAMA GFCT2Y2E  
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCTX890 N P14          DFJ:GFCTB003 *                              GARQPR14 P14
+               GFCTW790*  DJ:GFCTX890*                               GFCTX890 P14
+                         RJ:GFCTW791*                               GFCTX890 P14
+               GFCTW791*  DJ:GFCTW790 *                              GFCTX890 P14
+                         RJ:GFCTB003*                               GARQPR14 P14
+               GFCTX890*  RJ:GFCTW790*                               GFCTX890 P14
+
+
+================================================================================
+
+job GFCTB003 - verificar
+
+job GFCTX890
+   EXEC PGM=GFCT2Y2E (utiliza tabela GFCTB0I0) - AJUSTADO (POREM EXISTE APENAS O INCLUDE DA TABELA SEM UTILIZACAO)
+ 
+
+

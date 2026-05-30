@@ -1,0 +1,68 @@
+TABELA GFCT2610 - 09/02/2026
+
+
+==========================================================
+COLOCAR OS PROGRAMAS NO PACOTE  GFCT002944   TICKET-52719
+==========================================================
+
+
+
+TABELA GFCT2610
+JOB GFCT2610 ==> PGM GFCT2602 
+JOB GFCT2615 ==> PGM GFCT2608
+JOBS GFCT2625  ==> PGM GFCT2606 
+
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT2610 N P14          DFJ:GFCT2605*                               GFCT2605 P14
+               GFCT2610*  RJ:GFCT2615*                               GFCT2610 P14
+               GFCT2615*  DJ:GFCT2610*                               GFCT2610 P14
+                         RJ:GFCT2622*                               GFCT2610 P14
+               GFCT2622*  DJ:GFCT2615*                               GFCT2610 P14
+                         RJ:GFCT2625*                               GFCT2610 P14
+               GFCT2625*  DJ:GFCT2622*                               GFCT2610 P14
+                         RJ:GFCT2630*                               GFCT2610 P14
+               GFCT2630 * DJ:GFCT2625 *                              GFCT2610 P14
+                         RJ:GFCT2690*                               GFCT2610 P14
+                        GFJ:                                       GFCT2645 P14
+               GFCT2690 * DJ:GFCT2630*                               GFCT2610 P14
+                         RJ:GFCT2691*                               GFCT2610 P14
+               GFCT2691*  DJ:GFCT2690 *                              GFCT2610 P14
+                        GCO:GFCT0803                               GFCT0800 P14
+
+
+========================================================================================
+
+JOB GFCT2605
+    UTILIZA ARQUIVO MJ.EXMZ.GFCT.TARIFAPF gerado no MJ.JCLFILE(EXMZC017) - STEP2   
+    EXEC PGM=SCEX1912 (I#SCEXAV)
+       O book tem CNPJ e está alterado no pacote 
+       AD.CHGM.STAGE.SCEX.#001850.CPY(I#SCEXAV)(LEN 132 / PRD LEN 132) 
+       ### TAMANHO DO ARQUIVO PERMANECE IGUAL 
+
+       Esse arquivo gerado será lido por  
+       GFCTN380 STEP0 ATSOAC00  // 
+         EXEC PGM=GFCT2607 (utiliza book GFCTWAEX) - AJUSTADO 
+          
+       GFCT2610 STEP1    SORTD   // T7GF#005 STEP01   ATIV9700
+        
+   
+job GFCT2610
+   EXEC PGM=GFCT2602 (utiliza book GFCTWAEX, GFCTWADJ, GFCTWADK) - AJUSTADO
+
+
+job GFCT2615
+     EXEC PGM=GFCT2608  (utiliza book GFCTWADM, GFCTWADJ, GFCTWADK) - AJUSTADO
+
+
+JOB GFCT2622
+   EXEC PGM=GFCT2609 (utiliza book GFCTWADJ) - AJUSTADO
+
+
+JOB GFCT2625
+   EXEC PGM=GFCT2606  (utiliza book GFCTWADM) - AJUSTADO
+
+JOB GFCT0803 ---->> NAO HA IMPACTO APENAS ZERA ARQUIVOS
+
+
+

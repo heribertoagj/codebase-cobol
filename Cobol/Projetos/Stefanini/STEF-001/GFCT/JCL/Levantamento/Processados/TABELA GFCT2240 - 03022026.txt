@@ -1,0 +1,57 @@
+     PACOTE TABELA GFCT2240 - 03/02/2026
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+COLOCAR OS PROGRAMAS NO PACOTE GFCT002972, CASO ESTEJA EM OUTRO PACOTE, MOVER PARA ESSE.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ TABELA  T GRP JOBNAME      JOBNAME         DSNAME                 TABELA   GRP
+GFCT2240 N P14 GFCTD240  DJ:GFCT1750 *                              GFCT1750 P14
+               GFCT2240 *  DJ:GFCT1750 *                              GFCT1750 P14
+                         RJ:GFCT2242 *                              GFCT2240 P14
+               GFCT2242 *  DJ:GFCT2240 *                              GFCT2240 P14
+                         RJ:GFCT2244  *                             GFCT2240 P14
+               GFCT2244 *  DJ:GFCT2242  *                              GFCT2240 P14
+                         RJ:GFCT2246 *                              GFCT2240 P14
+               GFCT2246 *  DJ:GFCT2244  *                             GFCT2240 P14
+                         RJ:GFCT2248                               GFCT2240 P14
+               GFCT2248  DJ:GFCT2246 *                              GFCT2240 P14
+
+
+PACOTE GFCT002972
+=======================================================================
+JÁ ALTERADO HERIBERTO
+=======================================================================
+JOB GFCT1432  - SOLITARIO - NAO ESTÁ EM NENHUMA NET  - ALTERADO
+    PGM=GFCT1680   (RECOMP)  
+    PGM=GFCT1684   (RECOMP)
+    PGM=GFCT1686   (RECOMP)
+    PGM=GFCT1662  (RECOMP)
+
+
+job GFCT2246 - ALTERADO
+   PGM GFCT1128 (Ajustado) - PACOTE - GFCT003022  TICKET-69005 
+
+
+=======================================================================
+COMPLEMENTO - MARISA
+=======================================================================
+JOB GFCT1750
+    EXEC PGM=GFCT1121 (NÃO TEM AJUSTE)
+
+job GFCT2240
+    EXEC PGM=GFCT1126 (Não tem ajuste)
+
+job GFCT2242
+    EXEC PGM=GFCT1122 (Não tem ajuste)
+
+ 
+job GFCT2244
+    EXEC PGM=GFCT1127 (não tem ajuste)
+
+job GFCT2248
+    EXEC PGM=GFCT2122 (não tem ajuste)
+
+
+

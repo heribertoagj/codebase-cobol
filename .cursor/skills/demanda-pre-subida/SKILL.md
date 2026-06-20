@@ -9,11 +9,13 @@ description: Gate unificado de pre-subida para demandas COBOL AGROLEG — consol
 
 Executar um gate unico antes de promover fontes, consolidando todas as validacoes relevantes em um relatorio padronizado.
 
+**Padrao cliente (nao simplificar):** este gate permanece unificado — ver [../README.md](../README.md#nao-simplificar--padroes-do-cliente-obrigatorios).
+
 ## Quando usar
 
 - Usuario pede "pre-subida", "pronto para subida", "validar antes de promover".
 - Fase 5 do `demanda-workflow` (`Pre-subida AGROLEG-nnn`).
-- Apos implementacao (Fase 4), antes de subida MF.
+- Apos certificacao de riscos (Fase 4b), antes de subida MF.
 
 ## Entradas
 
@@ -24,6 +26,12 @@ Executar um gate unico antes de promover fontes, consolidando todas as validacoe
 ## Fluxo de validacao
 
 Execute nesta ordem. Checklist detalhado: `Cobol/Projetos/_indice/referencia-cobol/10-checklist-gate.md`
+
+### 0. Certificacao de riscos (Fase 4b)
+
+- [ ] Secao `## Certificacao de riscos (pos-desenvolvimento)` preenchida no README
+- [ ] Nenhum veredito **REALIZADO** em risco de codificacao
+- [ ] Se ausente ou reprovada: orientar `Certificar riscos <ID>` — nao marcar pronto para subida
 
 ### 1. README e escopo
 
@@ -77,6 +85,9 @@ Se houver `.mfs` ou `EXEC CICS`:
 === PRE-SUBIDA: AGROLEG-nnn ===
 
 RESUMO: [APROVADO | APROVADO COM RESSALVAS | REPROVADO]
+
+CERTIFICACAO DE RISCOS (Fase 4b)
+- [OK|BLOQUEANTE|AVISO] ...
 
 README
 - [OK|BLOQUEANTE|AVISO] ...

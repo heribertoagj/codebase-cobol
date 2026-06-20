@@ -8,14 +8,16 @@ alwaysApply: false
 
 Ao trabalhar em arquivos sob `Cobol/Projetos/`:
 
-1. Seguir skill `demanda-workflow` (7 fases com gates).
+1. Seguir skill `demanda-workflow` (7 fases + 4b certificacao de riscos, com gates).
 2. Capgemini: `Implementar AGROLEG-nnn.xml`. Stefanini/7Comm: `Iniciar demanda` (skill `demanda-intake-reuniao`).
-3. Implementacao COBOL: **somente** apos `Implementar plano <ID>`.
-4. Desenvolvimento e gate: `Cobol/Projetos/_indice/referencia-cobol/` (caps. 01–10).
-5. Alteracoes: comentar linha antiga + criar linha nova (cap. 03); **nao excluir linhas**.
-6. Pre-subida: skill `demanda-pre-subida` + cap. 10.
-7. Encerramento: `Finalizar <ID>` apos homologacao implantada.
-8. Pastas por componente: `pgm/`, `cpy/`, `jcl/`, `net/`; analise em `<componente>/analise/`. **Nao alterar** arquivos em `*/analise/`.
+3. Requisitos vagos ou README ambiguo: skills `brainstorming` / `Clarificar requisitos <ID>` (`clarification`) — so README/intake, sem alterar fontes.
+4. Implementacao COBOL: **somente** apos `Implementar plano <ID>`.
+5. Pos-desenvolvimento: `Certificar riscos <ID>` antes de pre-subida (Fase 4b — README + evidencia nos fontes).
+6. Desenvolvimento e gate: `Cobol/Projetos/_indice/referencia-cobol/` (caps. 01–10).
+7. Alteracoes: comentar linha antiga + criar linha nova (cap. 03); **nao excluir linhas**.
+8. Pre-subida: skill `demanda-pre-subida` + cap. 10 (requer Fase 4b concluida).
+9. Encerramento: `Finalizar <ID>` apos homologacao implantada.
+10. Pastas por componente: `pgm/`, `cpy/`, `jcl/`, `net/`; analise em `<componente>/analise/`. **Nao alterar** arquivos em `*/analise/`.
 
 Guia: `Cobol/Projetos/_indice/guia-fluxo-agroleg.md`
 Organizacao: `Cobol/Projetos/_indice/guia-organizacao-seguranca.md`

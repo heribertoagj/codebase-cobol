@@ -1,0 +1,97 @@
+SLIG0617 -> Arquivo não catalogado
+ STEP1 ENT00001 - DATA SET MX.CHRG.SLIG.CHRGDEPO 
+
+
+Aumentar tamanho de arquivo 
+SLIG1170
+SLIG1105
+SLIG1095
+
+
+JOB para alteração
+
+SLIG1170 - STP01
+ 
+DE
+
+//DB2UPROC.SYSUT1 DD DSN=MX.SLIG.SLIGS043(+1),       
+//       DISP=(,CATLG,DELETE),                       
+//       UNIT=(DISCO),                               
+//       SPACE=(TRK,(000010,000002),RLSE),           
+//       DCB=(MX.A)                                  
+//DB2UPROC.SORTOUT DD DSN=MX.SLIG.SLIGS043.SORT(+1), 
+//       DISP=(,CATLG,DELETE),                       
+//       UNIT=(DISCO),                               
+//       SPACE=(TRK,(000010,000002),RLSE),           
+//       DCB=(MX.A)                                  
+ 
+PARA
+
+//DB2UPROC.SYSUT1 DD DSN=MX.SLIG.SLIGS043(+1),       
+//       DISP=(,CATLG,DELETE),                       
+//       UNIT=(DISCO),                               
+//       SPACE=(TRK,(000150,000050),RLSE),           
+//       DCB=(MX.A)                                  
+//DB2UPROC.SORTOUT DD DSN=MX.SLIG.SLIGS043.SORT(+1), 
+//       DISP=(,CATLG,DELETE),                       
+//       UNIT=(DISCO),                               
+//       SPACE=(TRK,(000150,000050),RLSE),           
+//       DCB=(MX.A)                                  
+ 
+SLI1105 - STEP01
+ 
+DE
+
+//DB2UPROC.SYSUT1 DD DSN=MX.SLIG.SLIGS032(+1),            
+//       DISP=(,CATLG,DELETE),                            
+//       UNIT=(DISCO),                                    
+//       SPACE=(TRK,(000005,0002),RLSE),                  
+//       DCB=(MX.A)                                       
+//DB2UPROC.SORTOUT DD DSN=MX.SLIG.SLIGS032.SORT(+1),      
+//       DISP=(,CATLG,DELETE),                            
+//       UNIT=(DISCO),                                    
+//       SPACE=(TRK,(000005,0002),RLSE),                  
+//       DCB=(MX.A)                                                                             
+
+PARA
+
+//DB2UPROC.SYSUT1 DD DSN=MX.SLIG.SLIGS032(+1),            
+//       DISP=(,CATLG,DELETE),                            
+//       UNIT=(DISCO),                                    
+//       SPACE=(TRK,(000150,0050),RLSE),                  
+//       DCB=(MX.A)                                       
+//DB2UPROC.SORTOUT DD DSN=MX.SLIG.SLIGS032.SORT(+1),      
+//       DISP=(,CATLG,DELETE),                            
+//       UNIT=(DISCO),                                    
+//       SPACE=(TRK,(000150,0050),RLSE),                  
+//       DCB=(MX.A)   
+ 
+SLI1095 - STEP01
+ 
+DE
+
+//DB2UPROC.SYSUT1 DD DSN=MX.SLIG.SLIGS003(+1),       
+//       DISP=(,CATLG,DELETE),                       
+//       UNIT=(DISCO,03),                            
+//       SPACE=(TRK,(002904,581),RLSE),              
+//       DCB=(MX.A)                                  
+//DB2UPROC.SORTOUT DD DSN=MX.SLIG.SLIGS003.SORT(+1), 
+//       DISP=(,CATLG,DELETE),                       
+//       UNIT=(DISCO),                               
+//       SPACE=(TRK,(000005,0002),RLSE),             
+//       DCB=(MX.A)                                  
+  
+PARA
+
+//DB2UPROC.SYSUT1 DD DSN=MX.SLIG.SLIGS003(+1),       
+//       DISP=(,CATLG,DELETE),                       
+//       UNIT=(DISCO,03),                            
+//       SPACE=(TRK,(002904,581),RLSE),              
+//       DCB=(MX.A)                                                         
+//DB2UPROC.SORTOUT DD DSN=MX.SLIG.SLIGS003.SORT(+1), 
+//       DISP=(,CATLG,DELETE),                       
+//       UNIT=(DISCO),                               
+//       SPACE=(TRK,(000400,0100),RLSE),             
+//       DCB=(MX.A)     
+
+

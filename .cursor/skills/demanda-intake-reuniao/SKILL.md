@@ -44,16 +44,17 @@ Finalizar STEF-001
 ### Passos
 
 1. Identificar consultoria (Stefanini → STEF, 7Comm → 7COMM).
-2. Escanear `Cobol/Projetos/<Consultoria>/` e sugerir proximo ID livre.
-3. Se usuario nao informou titulo, inferir das notas ou pedir confirmacao.
-4. Criar pasta `Cobol/Projetos/<Consultoria>/<ID>/`.
-5. Copiar `Cobol/Projetos/_indice/template-intake-reuniao.md` → `intake.md` e preencher com notas do usuario.
-6. Copiar `Cobol/Projetos/_indice/template-README-demanda.md` → `README.md` e preencher secoes iniciais.
-7. Preencher `## Dados de origem` (nao usar Dados Jira).
-8. Montar `## Fontes pendentes baixa` preliminar.
-9. Listar **perguntas em aberto** se faltar informacao critica.
-10. Atualizar `Cobol/Projetos/_indice/catalogo-demandas.md`.
-11. Atualizar `## Status workflow`: `Intake concluido — aguardando fontes ou analise`.
+2. Se notas da reuniao forem vagas ou incompletas: acionar skill `brainstorming` (minimo 3 perguntas) **antes** de criar pasta.
+3. Escanear `Cobol/Projetos/<Consultoria>/` e sugerir proximo ID livre.
+4. Se usuario nao informou titulo, inferir das notas ou pedir confirmacao.
+5. Criar pasta `Cobol/Projetos/<Consultoria>/<ID>/`.
+6. Copiar `Cobol/Projetos/_indice/template-intake-reuniao.md` → `intake.md` e preencher com notas do usuario.
+7. Copiar `Cobol/Projetos/_indice/template-README-demanda.md` → `README.md` e preencher secoes iniciais.
+8. Preencher `## Dados de origem` (nao usar Dados Jira).
+9. Montar `## Fontes pendentes baixa` preliminar.
+10. Listar **perguntas em aberto**; se persistirem lacunas criticas, sugerir `Clarificar requisitos <ID>` (skill `clarification`).
+11. Atualizar `Cobol/Projetos/_indice/catalogo-demandas.md`.
+12. Atualizar `## Status workflow`: `Intake concluido — aguardando fontes ou analise`.
 
 ### Gate
 
@@ -121,3 +122,4 @@ Demandas atuais (migracao 2026-05-26):
 - STEF-001 — GFCT CNPJ/FILIAL
 - STEF-002 — CEPT2A16
 - 7COMM-001 — SLIG CBON01 / cadeia SLIG1067
+- 7COMM-002 — RUCA6630 / CNPJ RUCAT631

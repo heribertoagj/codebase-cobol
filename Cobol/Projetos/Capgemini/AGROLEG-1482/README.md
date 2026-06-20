@@ -24,6 +24,11 @@ Esta historia altera **somente fontes do centro de custo RUCA**. Nao ha desenvol
 - `RUEC8800` e chamado pelo RUCA8810 apenas como **fonte de dados**; `RUEC58-SIST-PROD` X(13) repassado por **MOVE direto** para `RUCA66-GP-COR0001-SIST-PRODC`.
 - Validacao RCOR x TMNF x SICOR: cenario de **teste integrado**, nao escopo de implementacao desta entrega.
 
+## Sequencia projeto (Capgemini — subida MF)
+
+- Codigo: **2021-0765286-5-035**
+- Uso: informar em pacotes Changeman, ticket de promocao (TICKET-85280) e solicitacao de implantacao PRD
+
 ## Pacotes changeman
 
 | Pacote | Tipo | Members | Status | Fontes workspace |

@@ -1,0 +1,19 @@
+i#SLIG43 - SLIG000876 
+I#SLIG98 - SLIG000877
+
+SLIG1330
+SLIG1355
+SLIG1375
+SLIG1385
+
+
+
+SLIGC120 
+esta com sort que classifica o arquivo para o 
+balance line com colunas a mais, e o CNPJ esta vindo zerado
+o que esta causando o problema de sequencia.
+
+SLIGC186
+Recebe o arquivo que vem do SLIG1218, assim como o SLIGC120
+
+Ambos utilizam o arquivo MX.CHUT.PRP.CADACLIE

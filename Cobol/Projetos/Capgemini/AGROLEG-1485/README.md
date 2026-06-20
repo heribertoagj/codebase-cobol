@@ -1,9 +1,9 @@
 # AGROLEG-1485 - SICOR 5.12 - Alteração do Contrato (COR0005)
 
 ## Status workflow
-- Fase atual: Desenvolvimento concluido — aguardando pre-subida
-- Ultimo comando: Implementar plano AGROLEG-1485
-- Proximo passo: `Pre-subida AGROLEG-1485`
+- Fase atual: Subida Changeman — pacotes RUCA000760 / RUCA000761
+- Ultimo comando: Tickets promocao TICKET-87025 (RUCA000760) + TICKET-87027 (RUCA000761)
+- Proximo passo: Compile Changeman + testes RUCA op.33 (payload COR0005 vs XSD 5.12)
 
 ## Objetivo
 - Eu como PO
@@ -271,21 +271,36 @@ Acao do plano: apos `5250-FORMATAR-GRUPO-PROPT` (`COR0005-10`), ir direto para S
 - [ ] Regressão: liberação de recursos / alteração taxa juros (disparos alternativos citados no Jira)
 - [ ] Validacao SICOR 5.12 — checklist em `initiatives/SICOR-5.12.md`
 
+## Sequencia projeto (Capgemini — subida MF)
+
+- Codigo: **2021-0765286-5-035**
+- Uso: informar em pacotes Changeman, tickets de promocao (TICKET-87025 / TICKET-87027) e solicitacao de implantacao PRD
+
 ## Pacotes changeman
 
 | Pacote | Tipo | Members | Status | Fontes workspace |
 |--------|------|---------|--------|------------------|
-| | Subida (implementacao) | | pendente | `pgm/`, `cpy/` |
-| | Contingencia (PRD pre-demanda) | | pendente | `pgm/analise/`, `cpy/analise/` |
+| **RUCA000760** | Subida AGROLEG-1485 (SICOR 5.12) | `RUCA8814`, `I#RUCA67` | Subido | `pgm/ruca8814.cbl`, `cpy/i#ruca67.cpy` |
+| **RUCA000761** | Contingencia (versao PRD pre-1485) | `RUCA8814`, `I#RUCA67` | Pacote criado | baseline PRD pre-5.12 (certif/rastreab/energia ativos no layout) |
+
+- **Subida:** pacote **RUCA000760** — exclusao COR0005 5.12 (`IndrConfcAlertSustldd`, certificacao, rastreabilidade, energia renovavel); **mantido** STN (`CodSTNEqulzc` / `COR0005-14`).
+- **Contingencia:** pacote **RUCA000761** com fontes **baseline PRD** pre-demanda — layout COR0005 pre-5.12 para retorno pos-implantacao (`IndrConfcAlertSustldd`, certificacao, rastreabilidade e energia renovavel ativos na mensageria).
 
 ## Promocao ambientes (Jira)
 
 | Ticket | Link | Pacote subida | Pacote contingencia | Status |
 |--------|------|---------------|---------------------|--------|
-| | | | | pendente |
+| **TICKET-87025** | https://jira.bradesco.com.br:8443/browse/TICKET-87025 | RUCA000760 | — | Criado |
+| **TICKET-87027** | https://jira.bradesco.com.br:8443/browse/TICKET-87027 | — | RUCA000761 | Criado |
+
+- Tickets Jira para promocao dos pacotes Changeman entre ambientes (TST / HOM / PRD conforme fluxo Bradesco).
 
 ## Evidencias
-- (a preencher)
+- Pacote Changeman **RUCA000760** — subida `RUCA8814` + `I#RUCA67`
+- Pacote contingencia **RUCA000761** — versao PRD baseline pre-5.12
+- Ticket promocao subida **[TICKET-87025](https://jira.bradesco.com.br:8443/browse/TICKET-87025)**
+- Ticket promocao contingencia **[TICKET-87027](https://jira.bradesco.com.br:8443/browse/TICKET-87027)**
+- (a preencher pos-homologacao: RC compile, payload COR0005, aceite SICOR)
 
 ## Dados de origem
 - Consultoria: Capgemini
@@ -307,6 +322,6 @@ Acao do plano: apos `5250-FORMATAR-GRUPO-PROPT` (`COR0005-10`), ir direto para S
 ## Status
 - [x] Em andamento
 - [ ] Em teste
-- [ ] Pronto para subida
+- [x] Pronto para subida
 - [ ] Em homologacao
 - [ ] Implantado

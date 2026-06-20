@@ -1,0 +1,2 @@
+# Z Open Editor auto-gera zapp.yaml na raiz; YAML tem precedencia sobre zapp.json
+/zapp.yaml

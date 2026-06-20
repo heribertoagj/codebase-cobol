@@ -6,11 +6,12 @@ O repositorio `codebase-cobol` tem esta estrutura:
 
 ```text
 codebase-cobol/          raiz Git e workspace Cursor
+├── zapp.json            ZAPP canonico (IBM Z Open Editor)
 ├── .cursor/             skills e rules do agente
 └── Cobol/               raiz logica do projeto COBOL
     ├── Projetos/
     ├── LIBS/
-    └── zapp.json
+    └── zapp.json        fallback se abrir so a pasta Cobol/
 ```
 
 Paths em skills, rules e scripts usam prefixo `Cobol/` a partir da raiz do repo.

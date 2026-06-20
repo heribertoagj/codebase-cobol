@@ -1,0 +1,95 @@
+//SLIGC184 JOB 'SLIG,4975,PR11','B031531',MSGCLASS=Z,SCHENV=BATCH
+//JOBLIB   DD DSN=MX.BIBGERAL,DISP=SHR
+//         DD DSN=DB2M1.R2.DSNLOAD,DISP=SHR
+//         DD DSN=SYS1.CEE.SCEERUN,DISP=SHR
+//STEP0    EXEC PGM=PLAN0260
+//*
+//* ***    VERIFICA SE ARQUIVO CONTEM REGISTRO
+//* ***    SE SIM , RC = 0000  = FAZ LOAD REPLACE E RUNSTATS DA TABELA
+//* ***    SE NAO , RC = 0004
+//*
+//LEITURA  DD DSN=MX.SLIG.JC182S03.DEPBANDA(0),
+//       DISP=SHR
+//SYSOUT   DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=Y
+//IFST1    IF (STEP0.RC = 0) THEN
+//*
+//STEP1    EXEC DB2M1UTB,
+//       UID=SLIGC184,
+//       SOUT=Z
+//* ***    LOAD REPLACE    (RTS) TABELA SLIGB010 - DEPDC_BANDA_MAGNT
+//*
+//SYSIN    DD DSN=MX.DBII.DEFUTIL(SLIG#010),
+//       DISP=SHR
+//DB2UPROC.SYSREC00 DD DSN=MX.SLIG.JC182S03.DEPBANDA(0),
+//       DISP=SHR
+//DB2UPROC.SYSCOPY DD DSN=MX.SLIG.R069369.SLIGB010(+1),
+//       DISP=(,CATLG,CATLG),
+//       UNIT=(VTSLG,,DEFER),
+//       VOL=(,,,99),
+//       DCB=(MX.A)
+//IFST1    ENDIF
+//*
+//STEP1A   EXEC DB2TUTIL,
+//       COND=ONLY,
+//       SOUT=Z
+//SYSTSIN  DD *
+DSN SYSTEM(DB2)  R(1) T(1)
+-TERM UTILITY (SLIGC184)
+//*
+**************************** Bottom of Data ****************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

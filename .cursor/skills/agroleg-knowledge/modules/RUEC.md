@@ -35,7 +35,7 @@ Iniciativa regulatória: `initiatives/SICOR-5.12.md`.
 | Historia | Escopo | Relacao |
 |---|---|---|
 | AGROLEG-993 | Ajustes renegociacao online (RUEC7951, RUEC7000) | base reneg |
-| AGROLEG-1239 | COR0005 batch — exclusao certificacao/rastreabilidade 5.12 | mesma-mensagem com 1109 |
+| AGROLEG-1239 | COR0005 batch — exclusao certificacao/rastreabilidade 5.12 | **Finalizada** (implantado PRD) |
 | AGROLEG-1109 | Levantamento SICOR 5.12 consolidado RUEC/RUCA/CRUR | mesma-mensagem COR0005 |
 
 ## Pontos sensiveis (impacto)

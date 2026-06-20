@@ -20,9 +20,9 @@ Adequar mensageria COR/CIR ao Catálogo de Serviços do SFN v5.12, garantindo co
 | História | Escopo | Status |
 |---|---|---|
 | AGROLEG-1109 | Levantamento técnico consolidado RUEC/RUCA/CRUR/RCOR | Finalizada |
-| AGROLEG-1239 | COR0005 batch — exclusão campos 5.12 (RUEC8831, I#RUECC5) | Em desenvolvimento |
+| AGROLEG-1239 | COR0005 batch — exclusão campos 5.12 (RUEC8831, I#RUECC5) | Finalizada |
 | AGROLEG-1392, 1395, 1396, 1400, 1402, 1403, 1405, 1412, 1418, 1424, 1446, 1595 | Subtarefas COR0005 online | A levantar |
-| AGROLEG-1243 | RCOR* — impacto a confirmar | Em andamento |
+| AGROLEG-1243 | RCOR* — compactacao WKTPart COR0001E | Finalizada |
 
 Ver também: `index.md` e `modules/RUEC.md`, `modules/RUCA.md`, `modules/RCOR.md`.
 

@@ -1,4 +1,9 @@
-# AGROLEG-1239
+# AGROLEG-1239 - SICOR 5.12 - Liberacao de contratos (COR0005 batch)
+
+## Status workflow
+- Fase atual: **Implantacao PRD** — pacotes RUEC001652 / RUEC001658
+- Ultimo comando: Tickets implantacao TICKET-87532 (RUEC001652) + TICKET-87535 (RUEC001658)
+- Proximo passo: Promocao PRD + validacao pos-implantacao COR0005 batch
 
 ## Objetivo
 - Adequar o processo de geração da mensageria **COR0005** para excluir os campos
@@ -19,8 +24,29 @@
 - RUEC (montagem da COR0005 via RUEC8831)
 - RUEC batch liberação (RUEC0895 — orquestrador, sem alteração prevista)
 
-## Pacores changeman
-- (a preencher)
+## Sequencia projeto (Capgemini — subida MF)
+
+- Codigo: **2021-0765286-5-035**
+- Uso: informar em pacotes Changeman, tickets de implantacao (TICKET-87532 / TICKET-87535) e solicitacao de implantacao PRD
+
+## Pacotes changeman
+
+| Pacote | Tipo | Members | Status | Fontes workspace |
+|--------|------|---------|--------|------------------|
+| **RUEC001652** | Implantacao AGROLEG-1239 (SICOR 5.12) | `RUEC8831`, `I#RUECC5` | Pacote criado | `pgm/ruec8831.cbl`, `cpy/i#ruecc5.cpy` |
+| **RUEC001658** | Contingencia (versao PRD pre-1239) | `RUEC8831`, `I#RUECC5` | Pacote criado | baseline PRD pre-5.12 (certif/rastreab/energia ativos no layout) |
+
+- **Implantacao:** pacote **RUEC001652** — exclusao COR0005 5.12 (`IndrConfcAlertSustldd`, certificacao, rastreabilidade, energia renovavel).
+- **Contingencia:** pacote **RUEC001658** com fontes **baseline PRD** pre-demanda — layout COR0005 pre-5.12 para retorno pos-implantacao (`IndrConfcAlertSustldd`, certificacao, rastreabilidade e energia renovavel ativos na mensageria).
+
+## Promocao ambientes (Jira)
+
+| Ticket | Link | Pacote implantacao | Pacote contingencia | Status |
+|--------|------|--------------------|---------------------|--------|
+| **TICKET-87532** | https://jira.bradesco.com.br:8443/browse/TICKET-87532 | RUEC001652 | — | Criado |
+| **TICKET-87535** | https://jira.bradesco.com.br:8443/browse/TICKET-87535 | — | RUEC001658 | Criado |
+
+- Tickets Jira para implantacao dos pacotes Changeman em PRD (sequencia projeto **2021-0765286-5-035**).
 
 ## Escopo tecnico
 - COBOL
@@ -76,7 +102,16 @@
 - Responsavel: HERIBERTO ANTONIO GIANNASI JUNIOR
 - Atualizado em: Fri, 22 May 2026 19:34:17 -0300
 
+## Evidencias
+- Pacote Changeman **RUEC001652** — implantacao `RUEC8831` + `I#RUECC5` (exclusao COR0005 SICOR 5.12)
+- Pacote contingencia **RUEC001658** — versao PRD baseline pre-5.12
+- Ticket implantacao **[TICKET-87532](https://jira.bradesco.com.br:8443/browse/TICKET-87532)** — pacote RUEC001652
+- Ticket implantacao contingencia **[TICKET-87535](https://jira.bradesco.com.br:8443/browse/TICKET-87535)** — pacote RUEC001658
+- Sequencia projeto Capgemini: **2021-0765286-5-035**
+
 ## Status
 - [x] Em andamento
-- [ ] Em teste
-- [ ] Pronto para subida
+- [x] Em teste
+- [x] Pronto para subida
+- [x] Em homologacao
+- [x] Implantado

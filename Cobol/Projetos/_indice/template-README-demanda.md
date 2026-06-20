@@ -1,7 +1,7 @@
 # AGROLEG-XXXX - [TITULO RESUMIDO]
 
 ## Status workflow
-- Fase atual: (Inicializacao / Analise em andamento / Analise concluida / Plano proposto / Implementacao / Pre-subida / Homologacao / Encerrada)
+- Fase atual: (Inicializacao / Analise em andamento / Analise concluida / Plano proposto / Implementacao / Certificacao de riscos / Pre-subida / Homologacao / Encerrada)
 - Ultimo comando:
 - Proximo passo:
 
@@ -103,10 +103,27 @@ Relacoes validas: `pre-requisito`, `complementa`, `mesma-mensagem`, `mesmo-progr
 ## Riscos e atencoes
 -
 
+## Certificacao de riscos (pos-desenvolvimento)
+
+Preencher na **Fase 4b** (`Certificar riscos <ID>`). Somente riscos de codificacao.
+
+| # | Risco (origem) | Veredito | Evidencia |
+|---|----------------|----------|-----------|
+| | | | |
+
+Vereditos: `NAO REALIZADO` | `MITIGADO PARCIAL` | `REALIZADO` | `N/A` | `PENDENTE TESTE` (nao codificacao — Fase 6)
+
 ## Plano de testes
 - [ ] Cenario funcional principal
 - [ ] Regressao relacionada
 - [ ] Validacao SICOR 5.12 (se aplicavel — checklist em initiatives/SICOR-5.12.md)
+
+## Sequencia projeto (Capgemini — subida MF)
+
+Preencher na **Fase 5b — Subida MF** quando consultoria = Capgemini. Informar o codigo em pacotes Changeman, tickets de promocao e implantacao PRD.
+
+- Codigo: **2021-0765286-5-035** (contrato alocacao AGROLEG)
+- Stefanini / 7Comm: usar sequencia propria da consultoria (ex.: `STEF-001/Anotações`)
 
 ## Pacotes changeman
 
@@ -145,7 +162,7 @@ Preencher na **Fase 5b — Subida MF** (`demanda-workflow`).
 
 ## Status
 - [ ] Em andamento
-- [ ] Em teste
-- [ ] Pronto para subida
-- [ ] Em homologacao
-- [ ] Implantado
+- [ ] Em teste (dev interno — antes da subida MF)
+- [ ] Pronto para subida (pre-subida aprovada)
+- [ ] Em homologacao (gestor testa **apos** subida MF)
+- [ ] Implantado (PRD — apos OK do gestor)

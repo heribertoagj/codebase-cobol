@@ -1,0 +1,47 @@
+{
+  "name": "Workspace Cobol",
+  "description": "this application to have a target of automatization of the EFIR processing",
+  "version": "1.0.0",
+  "author": {
+    "name": "IBM CORPORATION"
+  },
+  "propertyGroups": [
+    {
+      "name": "cobol-local-files",
+      "language": "cobol",
+      "libraries": [
+        {
+          "name": "syslib",
+          "type": "local",
+          "locations": [
+            "Cobol/LIBS/COPYLIB/**",
+            "Cobol/Projetos/**/cpy/**",
+            "Cobol/LIBS/DCLGEN/**",
+            "Cobol/Projetos/**/mfs/**"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "jcl-local-files",
+      "language": "jcl",
+      "libraries": [
+        {
+          "name": "jcllib",
+          "type": "local",
+          "locations": [
+            "Cobol/Projetos/**/jcl/**",
+            "Cobol/Historico/**/jcl/**"
+          ]
+        },
+        {
+          "name": "proclib",
+          "type": "local",
+          "locations": [
+            "Cobol/Projetos/**/jcl/**"
+          ]
+        }
+      ]
+    }
+  ]
+}

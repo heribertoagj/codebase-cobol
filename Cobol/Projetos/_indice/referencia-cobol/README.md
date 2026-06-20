@@ -1,6 +1,6 @@
 # Referencia COBOL Bradesco (desenvolvimento e gate)
 
-Manual padrao desta workspace para **desenvolvimento** (Fase 4 do fluxo AGROLEG) e **gate de qualidade** (Fase 5 / Hexavision).
+Manual padrao desta workspace para **desenvolvimento** (Fase 4), **certificacao de riscos** (Fase 4b) e **gate de qualidade** (Fase 5 / Hexavision).
 
 ## Quando consultar
 

@@ -1,6 +1,7 @@
 ---
 name: sicor-512-compliance
 description: Redirecionado — conteudo migrado para agroleg-knowledge/initiatives/SICOR-5.12.md (demanda de negocio, nao skill permanente).
+disable-model-invocation: true
 ---
 
 # SICOR 5.12 (legado)

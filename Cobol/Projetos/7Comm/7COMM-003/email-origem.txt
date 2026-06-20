@@ -1,0 +1,58 @@
+# E-mail de origem — 7COMM-003
+# Arquivo original: ENC_ SLIG CNPJ Alfa Cheques - Tabela SLIGB010 - CLI_CHEQ_CONSL - CNPJ SACADO zerado .msg
+# Anexos (prints): anexos-email/image001.png, image002.png
+
+--- E-MAIL ORIGINAL (Bradesco) ---
+
+De: EDINELSON PACCI <edinelson.ep.pacci@bradesco.com.br>
+Enviada em: sexta-feira, 19 de junho de 2026 10:01
+Para: Luciana Cristina Sato <luciana.sato@7comm.com.br>
+Cc: RODOLFO LUIZ DE OLIVEIRA SILVA; ALINE BACCILIERI COUTINHO; JULYO CESAR TREBESCHI MAIA;
+    BRUNO ASSUNCAO; Anderson Garcia de Souza
+Assunto: SLIG CNPJ Alfa Cheques - Tabela SLIGB010 - CLI_CHEQ_CONSL - CNPJ SACADO zerado
+
+Luciana, bom dia !
+
+Identifiquei + uma tabela SLIGB010 (todos os registros) esta com campos de CNPJ SACADO zerado.
+
+Acao: investigar/corrigir os Jobs/programas que montam a carga diaria dessa tabela.
+
+SELECT A.*, A.CINDCD_PSSOA_SACDO
+FROM DB2PRD.DEPDC_BANDA_MAGNT A
+ORDER BY CCGC_CPF_SACDO_ST DESC
+
+Evidencia (prints): campos CCGC_CPF_SACDO, CFLIAL_CGC_SACDO, CCTRL_CGC_SACDO zerados;
+CINDCD_PSSOA_SACDO preenchido (F/J). Valores de cheque (VCHEQ_*) tambem zerados.
+
+ats,
+Edinelson PACCI — Eng.SW Cobol Mainframe Hab.Credito — 4255/DS - Sustentacao
+
+--- RESPOSTA / INVESTIGACAO (7Comm — Luciana Cristina Sato) ---
+
+Data: 2026-06-19 16:27
+Para: Heriberto Antonio Giannasi Jr
+
+Nao encontrei programas que carregam essa base.
+
+Baixas solicitadas em TU:
+- MX.SLIG.PRV.MVTOCHDE(0) — contem dados; copybook AD.CHGM.STAGE.SLIG.#000876.CPY(I#SLIG27)
+- MX.SLIG.JC105S03.CONSCHEC(0) => VAZIO
+- MX.SLIG.D0PRVMZ.FIMPERCH(0) — a verificar
+
+Cadeia de datasets / steps (malha cheques):
+
+SLIGC184 => MX.SLIG.JC182S03.DEPBANDA(0)
+SLIGC182 => MX.SLIG.JC182S03.DEPBANDA(+1) / MX.SLIG.JC105S03.CONSCHEC(0)
+SLIGC105 => MX.SLIG.JC105S03.CONSCHEC(+1) / MX.SLIG.EMITCHEQ(0)
+SLIG1218 => MX.SLIG.EMITCHEQ(+1) / MX.SLIG.PREVCHEQ(0)
+SLIG1216 => MX.SLIG.PREVCHEQ(+1) / MX.SLIG.EMITCH01(0)
+SLIG1215 => MX.SLIG.EMITCH01(+1) / MX.SLIG.DECECHEQ(0)
+SLIG1210 => MX.SLIG.DECECHEQ(+1) / MX.SLIG.D0PRVMZ.FIMPERCH(0)
+SLIG1225 => MX.SLIG.D0PRVMZ.FIMPERCH(+1) / MX.SLIG.PRV.MVTOCHDE(0)
+SLIG0225 => MX.SLIG.PRV.MVTOCHDE(+1) / MX.CHEC.SLIG.MVTOCHDE / MX.SLIG.PRV.MVTOCHDE(+1)
+SLIG7120 => MX.SLIG.PRV.MVTOCHDE(+1) / MX.SLIG.MVTOCHDE.SAIDA(0)
+SLIG7110 => MX.SLIG.MVTOCHDE.SAIDA(+1) / MX.SLIG.PRV.MVTOCHDE(0)
+SLIG0225 => MX.SLIG.PRV.MVTOCHDE(+1) / MX.CHEC.SLIG.MVTOCHDE
+SLIG7120 => MX.SLIG.PRV.MVTOCHDE(+1)
+
+--- FIM ---

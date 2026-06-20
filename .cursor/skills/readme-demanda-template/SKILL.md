@@ -44,6 +44,7 @@ Guia do usuario: `Cobol/Projetos/_indice/guia-fluxo-agroleg.md`
 | Impacto tecnico (confirmado) | 2 (analise) + 4 (implementacao) |
 | Plano de ajuste (proposta) | 3 |
 | Decisoes tecnicas | 4 |
+| Certificacao de riscos (pos-desenvolvimento) | 4b |
 | Historias relacionadas | 1 + 7 |
 | Licoes para proximas analises | 7 |
 | Malha batch | 2 (se BATCH) |

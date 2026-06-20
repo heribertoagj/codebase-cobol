@@ -102,6 +102,7 @@ Integracao com `demanda-workflow`:
 - Detalhes regulatorios 5.12: `initiatives/SICOR-5.12.md`.
 - Onde no Bradesco: `modules/*.md`.
 - Regras COBOL/Hexavision: `bradesco-quality-code` (nao duplicar aqui).
+- Padroes do cliente (gates, rastreio, pre-subida): ver [../README.md](../README.md#nao-simplificar--padroes-do-cliente-obrigatorios).
 
 ## Integracao
 

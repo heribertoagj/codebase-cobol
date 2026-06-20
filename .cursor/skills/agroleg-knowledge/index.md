@@ -33,8 +33,8 @@
 |---|---|---|---|---|
 | AGROLEG-993 | Finalizada | RUCA, RUEC | N/A | Cobol/Projetos/Capgemini/Finalizada/AGROLEG-993/README.md |
 | AGROLEG-1109 | Finalizada | RUEC, RUCA, RCOR, CRUR | COR0001, COR0005, COR0006 | (sem README na raiz — ver pasta Finalizada) |
-| AGROLEG-1239 | Em desenvolvimento | RUEC | COR0005 5.12 | Cobol/Projetos/Capgemini/AGROLEG-1239/README.md |
-| AGROLEG-1243 | Em andamento | RCOR | (a levantar) | Cobol/Projetos/Capgemini/AGROLEG-1243/README.md |
+| AGROLEG-1239 | Finalizada | RUEC | COR0005 5.12 | Cobol/Projetos/Capgemini/Finalizada/AGROLEG-1239/README.md |
+| AGROLEG-1243 | Finalizada | RCOR | COR0001E | Cobol/Projetos/Capgemini/Finalizada/AGROLEG-1243/README.md |
 
 ## Subtarefas / dependencias entre historias
 

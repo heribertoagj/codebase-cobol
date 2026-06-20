@@ -82,6 +82,7 @@ Correcao recomendada: [acao objetiva]
 - [ ] Sem variavel elementar apenas receptora (quality #8)
 - [ ] README: plano validado, impacto confirmado, dependencias LIBS
 - [ ] Pendencias LIBS justificadas
+- [ ] Certificacao de riscos (Fase 4b): secao preenchida; nenhum **REALIZADO** em risco de codificacao
 
 ---
 

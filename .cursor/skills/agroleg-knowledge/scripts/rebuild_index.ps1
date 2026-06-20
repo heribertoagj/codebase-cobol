@@ -85,6 +85,7 @@ function Extract-SicorMessages {
 function Extract-Status {
     param([string]$Text)
     $statusSec = Get-SectionContent -Text $Text -Headers @("Status", "Dados Jira (sync)")
+    if ($Text -match "(?m)^-\s*\[x\]\s*Implantado") { return "Finalizada" }
     if ($Text -match "(?m)^-\s*\[x\]\s*Pronto para subida") { return "Pronto para subida" }
     if ($statusSec -match "(?m)^-\s*Status:\s*(.+)$") { return $Matches[1].Trim() }
     if ($Text -match "Finalizada") { return "Finalizada" }

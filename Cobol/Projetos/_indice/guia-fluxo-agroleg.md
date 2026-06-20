@@ -17,8 +17,10 @@ Capgemini:  XML Jira → Inicializacao → ...
 Stefanini:  Reuniao → Intake (Fase 0) → Inicializacao → ...
 7Comm:      Reuniao → Intake (Fase 0) → Inicializacao → ...
 
-[comum] → [loop] Baixa fontes + Analise → Plano → Implementacao → Pre-subida → Homologacao → Finalizar
+[comum] → [opcional] Clarificar requisitos → [loop] Baixa fontes + Analise → Plano → Implementacao → Certificar riscos → Pre-subida → Subida MF → Testes gestor → Implantacao PRD → Finalizar
 ```
+
+Requisitos vagos (reuniao ou XML): skills `brainstorming` / `clarification` — nao alteram fontes COBOL.
 
 ## Seus passos
 
@@ -28,19 +30,26 @@ Stefanini:  Reuniao → Intake (Fase 0) → Inicializacao → ...
 | 1 | (Capgemini) Baixa XML Jira | `Implementar AGROLEG-nnn.xml` |
 | 2 | Baixa fontes P1 que o agente listou | `Fontes baixados — continuar analise <ID>` |
 | 3 | Repete passo 2 ate analise concluida | (mesmo comando) |
+| 3b | (opcional) Esclarece lacunas no README | `Clarificar requisitos <ID>` |
 | 4 | Revisa plano no README | `Gerar plano de ajuste <ID>` (se ainda nao gerado) |
 | 5 | Valida plano | `Implementar plano <ID>` |
-| 6 | Valida implementacao | `Pre-subida <ID>` |
-| 7 | Sobe fontes para MF e homologa | (humano — informar status) |
-| 8 | Apos implantacao | `Finalizar <ID>` |
+| 6 | Certifica riscos de codificacao (pos-dev) | `Certificar riscos <ID>` |
+| 7 | Valida gate tecnico (Hexavision/SICOR) | `Pre-subida <ID>` |
+| 8 | Sobe fontes para MF (Changeman + compile) | Informar pacotes/ticket ao agente (Fase 5b) |
+| 9 | **Gestor testa no ambiente MF** (somente apos subida) | Informar resultado (aprovado / pendencias) |
+| 10 | **Implanta PRD** apos OK do gestor | Informar implantacao concluida |
+| 11 | Apos implantacao | `Finalizar <ID>` |
 
 ## Gates (o agente para e espera voce)
 
 1. **Apos inicializacao** — baixar fontes antes de analise profunda
 2. **Apos analise parcial** — baixar fontes faltantes
 3. **Apos plano** — validar antes de implementar
-4. **Apos pre-subida** — voce sobe MF
-5. **Apos homologacao** — confirmar implantacao antes de encerrar
+4. **Apos desenvolvimento** — certificar riscos de codificacao (`Certificar riscos <ID>`)
+5. **Apos pre-subida** — voce sobe MF (Fase 5b)
+6. **Apos subida MF** — gestor testa no ambiente (Fase 6); gestor **nao** testa antes da subida
+7. **Apos OK do gestor** — implantar PRD
+8. **Apos implantacao** — confirmar antes de encerrar (`Finalizar`)
 
 ## O agente NAO faz
 
@@ -76,7 +85,7 @@ Pastas por **componente** (nao por centro de custo). Detalhes: `guia-organizacao
 
 Manual completo: `Projetos/_indice/referencia-cobol/README.md`
 
-Fase 4 (implementacao) e Fase 5 (pre-subida) devem seguir caps. 01–10.
+Fase 4 (implementacao), Fase 4b (certificacao de riscos) e Fase 5 (pre-subida) devem seguir caps. 01–10.
 
 Malha batch (escopo BATCH): `Projetos/_indice/referencia-batch-malha/README.md`
 
@@ -89,4 +98,5 @@ Malha batch (escopo BATCH): `Projetos/_indice/referencia-batch-malha/README.md`
 | Malha batch | Fase 2 (BATCH) |
 | Plano de ajuste (proposta) | Fase 3 |
 | Impacto tecnico (confirmado) | Fase 2 (analise) + Fase 4 (implementacao) |
+| Certificacao de riscos (pos-desenvolvimento) | Fase 4b |
 | Licoes para proximas analises | Fase 7 |

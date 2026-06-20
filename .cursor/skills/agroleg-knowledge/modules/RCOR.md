@@ -24,12 +24,13 @@
 |---|---|
 | COR0001, COR0005, COR0006 | AGROLEG-1109 (levantamento) |
 | (a confirmar) | AGROLEG-1243 |
+| COR0001E | AGROLEG-1243 (finalizada) |
 
 ## Historias AGROLEG neste modulo
 
 | Historia | Escopo | Relacao |
 |---|---|---|
-| AGROLEG-1243 | Fontes RCOR* em pasta pgm | em andamento |
+| AGROLEG-1243 | Compactacao WKTPart COR0001E — RCOR8015/6007/B002 | **Finalizada** (implantado PRD) |
 | AGROLEG-1109 | Levantamento SICOR 5.12 | mesma-mensagem |
 
 ## Pontos sensiveis (impacto)
@@ -39,4 +40,5 @@
 
 ## Licoes registradas
 
-- (a registrar ao concluir AGROLEG-1243)
+- Compactacao WKTPart `{2210}` deve ocorrer **antes** da persistencia RCORB002 e no buffer MQ (RCOR6007) para evitar truncamento DB2.
+- Reutilizar rotinas 1050–1053 do RCOR8015 como referencia para RCORB002 (AGROLEG-1243).
